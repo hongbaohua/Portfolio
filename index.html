@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>洪寶華 Ivy — Portfolio</title>
+  <meta name="description" content="洪寶華 Ivy 的設計作品集，涵蓋品牌識別、包裝設計、平面視覺與數位媒體。" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome (icon 圖標) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- 樣式表 -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body class="page-body">
+
+  <!-- ================================================
+       導覽列
+       ================================================ -->
+  <nav class="nav" role="navigation" aria-label="主選單">
+    <div class="nav__inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-dot"></span>
+        Ivy Hong
+      </a>
+
+      <!-- 漢堡按鈕（行動版） -->
+      <button class="nav__toggle" aria-label="開啟選單">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- 導覽連結 -->
+      <ul class="nav__links" role="list">
+        <li><a href="index.html"  class="nav__link">首頁</a></li>
+        <li><a href="works.html" class="nav__link">設計作品</a></li>
+        <li><a href="ai.html"    class="nav__link">AI 學習</a></li>
+      </ul>
+
+    </div>
+  </nav><!-- /nav -->
+
+
+  <!-- ================================================
+       HERO — 英雄區塊
+       ================================================ -->
+  <section class="hero" aria-label="自我介紹">
+
+    <!-- 幾何裝飾色塊 -->
+    <div class="hero__geo-top"   aria-hidden="true"></div>
+    <div class="hero__geo-bottom" aria-hidden="true"></div>
+
+    <div class="hero__inner">
+
+      <!-- 左側文字 -->
+      <div class="hero__text">
+
+        <p class="hero__eyebrow">Commercial Design · Branding · Visual</p>
+
+        <h1 class="hero__title">
+          從好奇心到<br />
+          系統建構：<br />
+          <em>收集</em>的設計實踐者
+        </h1>
+
+        <p class="hero__desc">
+          我愛好「收集」——廣泛接觸與學習也能當作收集經驗。<br />
+          商業設計背景，擅長品牌識別、包裝與視覺整合。
+        </p>
+
+        <div class="hero__cta">
+          <a href="works.html" class="btn-primary">
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            查看作品集
+          </a>
+          <a href="mailto:hong.baohua.ivy@gmail.com" class="btn-ghost">
+            聯繫我
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </a>
+        </div>
+
+      </div><!-- /hero__text -->
+
+      <!-- 右側名片 -->
+      <div class="hero__visual">
+        <div class="hero__card">
+
+          <!-- 頭像 -->
+          <div class="hero__avatar" aria-hidden="true">
+            <i class="fa-solid fa-user"></i>
+          </div>
+
+          <p class="hero__card-name">洪寶華</p>
+          <p class="hero__card-en">Ivy Hong · Commercial Designer</p>
+
+          <div class="hero__card-divider"></div>
+
+          <!-- 聯絡資訊 -->
+          <ul class="hero__card-info">
+            <li class="hero__card-row">
+              <span class="icon-wrap" aria-hidden="true">
+                <i class="fa-solid fa-envelope"></i>
+              </span>
+              <span>hong.baohua.ivy@gmail.com</span>
+            </li>
+            <li class="hero__card-row">
+              <span class="icon-wrap" aria-hidden="true">
+                <i class="fa-solid fa-phone"></i>
+              </span>
+              <span>0905-508-171</span>
+            </li>
+            <li class="hero__card-row">
+              <span class="icon-wrap" aria-hidden="true">
+                <i class="fa-brands fa-github"></i>
+              </span>
+              <span>github.com/hongbaohua</span>
+            </li>
+          </ul>
+
+        </div><!-- /hero__card -->
+      </div><!-- /hero__visual -->
+
+    </div><!-- /hero__inner -->
+  </section><!-- /hero -->
+
+
+  <!-- ================================================
+       INFO — 個人資料三欄
+       ================================================ -->
+  <section class="section info-section" aria-label="個人資料">
+    <div class="container">
+
+      <div class="info-grid">
+
+        <!-- 學歷 -->
+        <article class="info-card reveal" data-delay="0">
+          <div class="info-card__head">
+            <div class="info-card__icon" aria-hidden="true">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <span class="info-card__label">學歷</span>
+          </div>
+          <div class="info-card__body">
+            <p class="info-card__main">國立臺中科技大學</p>
+            <p class="info-card__sub">商業設計系　學士</p>
+          </div>
+        </article>
+
+        <!-- 聯絡方式 -->
+        <article class="info-card reveal" data-delay="100">
+          <div class="info-card__head">
+            <div class="info-card__icon" aria-hidden="true">
+              <i class="fa-solid fa-id-card"></i>
+            </div>
+            <span class="info-card__label">聯絡方式</span>
+          </div>
+          <div class="info-card__body">
+            <p class="info-card__main">hong.baohua.ivy@gmail.com</p>
+            <p class="info-card__sub">0905-508-171</p>
+          </div>
+        </article>
+
+        <!-- 專長領域 -->
+        <article class="info-card reveal" data-delay="200">
+          <div class="info-card__head">
+            <div class="info-card__icon" aria-hidden="true">
+              <i class="fa-solid fa-palette"></i>
+            </div>
+            <span class="info-card__label">專長領域</span>
+          </div>
+          <div class="info-card__body">
+            <p class="info-card__main">品牌識別 · 包裝設計</p>
+            <p class="info-card__sub">平面視覺 · 數位媒體</p>
+          </div>
+        </article>
+
+      </div><!-- /info-grid -->
+
+    </div>
+  </section><!-- /info-section -->
+
+
+  <!-- ================================================
+       EDUCATION — 學歷與認證
+       ================================================ -->
+  <section class="section edu-section" aria-label="學歷與認證">
+    <div class="container">
+
+      <p class="section-label">Education &amp; Certifications</p>
+      <h2 class="section-title">學歷與專業認證</h2>
+
+      <div class="edu-grid">
+
+        <!-- 學歷 -->
+        <article class="edu-card reveal" data-delay="0">
+          <div class="edu-card__icon" aria-hidden="true">
+            <i class="fa-solid fa-university"></i>
+          </div>
+          <div>
+            <p class="edu-card__type">學歷</p>
+            <h3 class="edu-card__title">國立臺中科技大學 商業設計系</h3>
+            <p class="edu-card__sub">學士學位</p>
+          </div>
+        </article>
+
+        <!-- 認證 1 -->
+        <article class="edu-card reveal" data-delay="100">
+          <div class="edu-card__icon" aria-hidden="true">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <div>
+            <p class="edu-card__type">專業證照</p>
+            <h3 class="edu-card__title">金銀珠寶飾品加工技術士</h3>
+            <p class="edu-card__sub">丙級</p>
+          </div>
+        </article>
+
+        <!-- 認證 2 -->
+        <article class="edu-card reveal" data-delay="200">
+          <div class="edu-card__icon" aria-hidden="true">
+            <i class="fa-solid fa-cube"></i>
+          </div>
+          <div>
+            <p class="edu-card__type">專業證照</p>
+            <h3 class="edu-card__title">iPAS 3D 列印積層製造工程師</h3>
+            <p class="edu-card__sub">初級</p>
+          </div>
+        </article>
+
+      </div><!-- /edu-grid -->
+
+    </div>
+  </section><!-- /edu-section -->
+
+
+  <!-- ================================================
+       SKILLS — 專業技能
+       ================================================ -->
+  <section class="section skills-section" aria-label="專業技能">
+    <div class="container">
+
+      <p class="section-label">Skills &amp; Expertise</p>
+      <h2 class="section-title">專業技能</h2>
+
+      <div class="skills-grid">
+
+        <!-- 平面與視覺設計 -->
+        <article class="skill-card reveal" data-delay="0">
+          <div class="skill-card__head">
+            <div class="skill-card__icon" aria-hidden="true">
+              <i class="fa-solid fa-pen-nib"></i>
+            </div>
+            <h3 class="skill-card__category">平面與視覺設計</h3>
+          </div>
+          <ul class="skill-card__tags" aria-label="相關工具與技能">
+            <li><span class="skill-tag">Adobe Photoshop</span></li>
+            <li><span class="skill-tag">Adobe Illustrator</span></li>
+            <li><span class="skill-tag">品牌識別</span></li>
+            <li><span class="skill-tag">排版設計</span></li>
+            <li><span class="skill-tag">海報設計</span></li>
+          </ul>
+        </article>
+
+        <!-- 工藝實務 -->
+        <article class="skill-card reveal" data-delay="120">
+          <div class="skill-card__head">
+            <div class="skill-card__icon" aria-hidden="true">
+              <i class="fa-solid fa-hammer"></i>
+            </div>
+            <h3 class="skill-card__category">工藝實務</h3>
+          </div>
+          <ul class="skill-card__tags" aria-label="相關工藝技能">
+            <li><span class="skill-tag">金工</span></li>
+            <li><span class="skill-tag">木工</span></li>
+            <li><span class="skill-tag">陶藝</span></li>
+            <li><span class="skill-tag">漆藝</span></li>
+            <li><span class="skill-tag">3D 列印</span></li>
+          </ul>
+        </article>
+
+        <!-- 數位與行銷 -->
+        <article class="skill-card reveal" data-delay="240">
+          <div class="skill-card__head">
+            <div class="skill-card__icon" aria-hidden="true">
+              <i class="fa-solid fa-bullhorn"></i>
+            </div>
+            <h3 class="skill-card__category">數位與行銷</h3>
+          </div>
+          <ul class="skill-card__tags" aria-label="相關數位技能">
+            <li><span class="skill-tag">影片剪輯</span></li>
+            <li><span class="skill-tag">網頁設計</span></li>
+            <li><span class="skill-tag">廣告行銷</span></li>
+            <li><span class="skill-tag">品牌企劃</span></li>
+            <li><span class="skill-tag">AI 生圖應用</span></li>
+          </ul>
+        </article>
+
+      </div><!-- /skills-grid -->
+
+    </div>
+  </section><!-- /skills-section -->
+
+
+  <!-- ================================================
+       頁尾
+       ================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <span class="footer__name">洪寶華 Ivy Hong</span>
+      <a href="mailto:hong.baohua.ivy@gmail.com" class="footer__email">
+        hong.baohua.ivy@gmail.com
+      </a>
+      <p class="footer__copy">&copy; 2025 Ivy Hong. All rights reserved.</p>
+    </div>
+  </footer><!-- /footer -->
+
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

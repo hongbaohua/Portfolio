@@ -1,0 +1,330 @@
+/* ============================================================
+   ai.css — AI 學習頁專用樣式
+   涵蓋：頁首橫幅、學習時間軸、工具卡片、成果展示
+   ============================================================ */
+
+/* ────────────────────────────────────────────────
+   AI HERO — 頁首橫幅
+   ──────────────────────────────────────────────── */
+.ai-hero {
+  background: var(--dark);
+  padding: 80px 0 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 幾何裝飾：漸層網格線 */
+.ai-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(196, 163, 90, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(196, 163, 90, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+/* 幾何裝飾：右側光暈 */
+.ai-hero::after {
+  content: '';
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(196, 163, 90, 0.12), transparent 70%);
+  pointer-events: none;
+}
+
+.ai-hero .section-label {
+  color: var(--accent-light);
+}
+
+.ai-hero .section-label::before {
+  background: var(--accent-light);
+}
+
+.ai-hero .section-title {
+  color: var(--white);
+  margin-top: 12px;
+}
+
+.ai-hero__desc {
+  color: rgba(255,255,255,0.55);
+  font-size: 1rem;
+  margin-top: 16px;
+  max-width: 540px;
+}
+
+/* ────────────────────────────────────────────────
+   INTRO — 學習宣言
+   ──────────────────────────────────────────────── */
+.ai-intro {
+  background: var(--bg-dark);
+  border-bottom: 1px solid var(--border);
+  padding: 56px 0;
+}
+
+.ai-intro__card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-lg);
+  padding: 36px 40px;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.ai-intro__icon {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: var(--white);
+}
+
+.ai-intro__text h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.ai-intro__text p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* ────────────────────────────────────────────────
+   TOOLS — AI 工具使用卡片
+   ──────────────────────────────────────────────── */
+.ai-tools-section {
+  background: var(--bg);
+}
+
+.ai-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+
+/* 工具卡片 */
+.ai-tool-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.ai-tool-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+/* 卡片頂部 icon + 名稱行 */
+.ai-tool-card__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ai-tool-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius);
+  background: var(--bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--accent-dark);
+  flex-shrink: 0;
+}
+
+.ai-tool-card__name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.ai-tool-card__type {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.ai-tool-card__desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* 用途標籤 */
+.ai-tool-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.ai-tool-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 100px;
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ────────────────────────────────────────────────
+   TIMELINE — 學習歷程時間軸
+   ──────────────────────────────────────────────── */
+.ai-timeline-section {
+  background: var(--bg-dark);
+  border-top: 1px solid var(--border);
+}
+
+.ai-timeline {
+  margin-top: 48px;
+  position: relative;
+}
+
+/* 中央垂直線 */
+.ai-timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 8px;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+  border-radius: 2px;
+}
+
+/* 時間軸項目 */
+.ai-timeline__item {
+  display: flex;
+  gap: 32px;
+  padding-bottom: 36px;
+  position: relative;
+}
+
+.ai-timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+/* 左側圓點 */
+.ai-timeline__dot {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 0 4px var(--bg-dark);
+}
+
+/* 右側卡片 */
+.ai-timeline__card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  flex: 1;
+  transition: box-shadow var(--transition);
+}
+
+.ai-timeline__card:hover {
+  box-shadow: var(--shadow);
+}
+
+.ai-timeline__date {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  margin-bottom: 8px;
+}
+
+.ai-timeline__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.ai-timeline__desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ────────────────────────────────────────────────
+   PLACEHOLDER — 內容持續更新提示
+   ──────────────────────────────────────────────── */
+.ai-placeholder {
+  text-align: center;
+  padding: 80px 0 40px;
+}
+
+.ai-placeholder__icon {
+  font-size: 3rem;
+  color: var(--accent-light);
+  margin-bottom: 20px;
+}
+
+.ai-placeholder__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.ai-placeholder__desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── 響應式 ── */
+@media (max-width: 960px) {
+  .ai-tools-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .ai-tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-intro__card {
+    flex-direction: column;
+  }
+
+  .ai-timeline::before {
+    left: 18px;
+  }
+}

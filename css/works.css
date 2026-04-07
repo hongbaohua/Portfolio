@@ -1,0 +1,321 @@
+/* ============================================================
+   works.css — 設計作品頁專用樣式
+   涵蓋：頁首橫幅、分類篩選列、作品卡片網格、燈箱預覽
+   ============================================================ */
+
+/* ────────────────────────────────────────────────
+   WORKS HERO — 頁首橫幅
+   ──────────────────────────────────────────────── */
+.works-hero {
+  background: var(--dark);
+  padding: 80px 0 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 幾何裝飾：右側漸層圓 */
+.works-hero::before {
+  content: '';
+  position: absolute;
+  right: -120px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 480px;
+  height: 480px;
+  border: 56px solid rgba(196, 163, 90, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* 幾何裝飾：左下方斜角矩形 */
+.works-hero::after {
+  content: '';
+  position: absolute;
+  left: 60px;
+  bottom: -40px;
+  width: 120px;
+  height: 120px;
+  background: rgba(196, 163, 90, 0.07);
+  transform: rotate(20deg);
+  pointer-events: none;
+}
+
+/* 標題 */
+.works-hero .section-label {
+  color: var(--accent-light);
+}
+
+.works-hero .section-label::before {
+  background: var(--accent-light);
+}
+
+.works-hero .section-title {
+  color: var(--white);
+  margin-top: 12px;
+}
+
+.works-hero__desc {
+  color: rgba(255,255,255,0.55);
+  font-size: 1rem;
+  margin-top: 16px;
+  max-width: 520px;
+}
+
+/* ────────────────────────────────────────────────
+   FILTER — 分類篩選列
+   ──────────────────────────────────────────────── */
+.filter-bar {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 50;
+  padding: 0;
+}
+
+.filter-bar__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.filter-bar__inner::-webkit-scrollbar {
+  display: none;
+}
+
+/* 篩選按鈕 */
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 100px;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  font-size: 0.82rem;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition);
+}
+
+.filter-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent-dark);
+}
+
+/* 選中狀態 */
+.filter-btn.active {
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--white);
+}
+
+/* 每個篩選按鈕的小圓點計數 */
+.filter-btn__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.filter-btn:not(.active) .filter-btn__count {
+  background: var(--bg-dark);
+  color: var(--text-muted);
+}
+
+/* ────────────────────────────────────────────────
+   WORKS GRID — 作品網格
+   ──────────────────────────────────────────────── */
+.works-section {
+  padding: 56px 0 96px;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 0;
+}
+
+/* ── 作品卡片 ── */
+.work-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow var(--transition), transform var(--transition), opacity var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.work-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
+}
+
+/* 篩選隱藏狀態 */
+.work-card.hidden {
+  display: none;
+}
+
+/* 圖片容器 */
+.work-card__img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--bg-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 佔位背景（尚無圖片時顯示） */
+.work-card__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  color: var(--accent);
+  transition: transform var(--transition);
+}
+
+.work-card:hover .work-card__placeholder {
+  transform: scale(1.08);
+}
+
+/* 實際圖片（有圖時使用） */
+.work-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.work-card:hover .work-card__img img {
+  transform: scale(1.06);
+}
+
+/* hover 遮罩 */
+.work-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(28, 27, 24, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.work-card:hover .work-card__overlay {
+  opacity: 1;
+}
+
+.work-card__overlay-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+/* 卡片文字區 */
+.work-card__body {
+  padding: 22px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.work-card__name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.work-card__desc {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* 標籤列 */
+.work-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.work-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: var(--bg-dark);
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.work-card:hover .work-tag {
+  border-color: var(--accent-light);
+  color: var(--accent-dark);
+}
+
+/* ── 無結果提示 ── */
+.works-empty {
+  display: none;
+  text-align: center;
+  padding: 80px 0;
+  color: var(--text-muted);
+  font-size: 1rem;
+  grid-column: 1 / -1;
+}
+
+.works-empty i {
+  display: block;
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  color: var(--border);
+}
+
+/* ── 響應式 ── */
+@media (max-width: 1024px) {
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-bar__inner {
+    padding: 12px 20px;
+  }
+}

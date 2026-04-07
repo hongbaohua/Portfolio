@@ -1,0 +1,351 @@
+/* ============================================================
+   main.css — 共用樣式
+   涵蓋：設計變數、reset、導覽列、頁尾、動態效果、響應式基礎
+   ============================================================ */
+
+/* ── 設計系統變數 ── */
+:root {
+  --bg:           #FAFAF7;
+  --bg-dark:      #F0EDE6;
+  --text:         #1C1B18;
+  --text-muted:   #8A8575;
+  --accent:       #C4A35A;
+  --accent-light: #EAD89A;
+  --accent-dark:  #9A7A3A;
+  --border:       #E2DDD4;
+  --dark:         #2A2824;
+  --white:        #FFFFFF;
+
+  --font-sans: 'Noto Sans TC', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  --radius:    8px;
+  --radius-lg: 16px;
+  --shadow:    0 2px 12px rgba(28, 27, 24, 0.08);
+  --shadow-lg: 0 8px 32px rgba(28, 27, 24, 0.14);
+
+  --nav-h: 68px;
+  --transition: 0.28s ease;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ── 導覽列 ── */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-h);
+  background: rgba(250, 250, 247, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  transition: box-shadow var(--transition);
+}
+
+.nav.scrolled {
+  box-shadow: var(--shadow);
+}
+
+/* 導覽列內容容器 */
+.nav__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo 文字 */
+.nav__logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav__logo-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* 導覽連結清單 */
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav__link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  position: relative;
+  padding-bottom: 2px;
+  transition: color var(--transition);
+}
+
+/* 連結底線動態效果 */
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width var(--transition);
+}
+
+.nav__link:hover,
+.nav__link.active {
+  color: var(--text);
+}
+
+.nav__link:hover::after,
+.nav__link.active::after {
+  width: 100%;
+}
+
+/* 漢堡選單按鈕（行動版） */
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav__toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+/* ── 頁面主體偏移（避免被固定導覽列遮住） ── */
+.page-body {
+  padding-top: var(--nav-h);
+}
+
+/* ── 共用 Section 容器 ── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+/* ── Section 標題樣式 ── */
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 標題左側裝飾線 */
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+/* ── 幾何裝飾色塊（共用） ── */
+.geo-block {
+  position: absolute;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+/* ── 頁尾 ── */
+.footer {
+  background: var(--dark);
+  color: rgba(255,255,255,0.55);
+  padding: 48px 0 32px;
+}
+
+.footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer__name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.footer__email {
+  font-size: 0.85rem;
+  color: var(--accent-light);
+  transition: color var(--transition);
+}
+
+.footer__email:hover {
+  color: var(--white);
+}
+
+.footer__copy {
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+/* ── 進場動畫 ── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideRight {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* 捲動進場：預設隱藏 */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── 響應式 ── */
+@media (max-width: 768px) {
+  .nav__links {
+    display: none;
+    position: fixed;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 12px 0;
+    box-shadow: var(--shadow);
+  }
+
+  .nav__links.open {
+    display: flex;
+  }
+
+  .nav__link {
+    width: 100%;
+    padding: 14px 32px;
+    font-size: 1rem;
+  }
+
+  .nav__link::after {
+    display: none;
+  }
+
+  .nav__toggle {
+    display: flex;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .section {
+    padding: 56px 0;
+  }
+
+  .footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>設計作品 — 洪寶華 Ivy Portfolio</title>
+  <meta name="description" content="洪寶華 Ivy 的設計作品集，涵蓋品牌識別、包裝設計、平面視覺、IP 行銷與數位多媒體。" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- 樣式表 -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/works.css" />
+</head>
+
+<body class="page-body">
+
+  <!-- ================================================
+       導覽列
+       ================================================ -->
+  <nav class="nav" role="navigation" aria-label="主選單">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-dot"></span>
+        Ivy Hong
+      </a>
+      <button class="nav__toggle" aria-label="開啟選單">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" role="list">
+        <li><a href="index.html"  class="nav__link">首頁</a></li>
+        <li><a href="works.html" class="nav__link">設計作品</a></li>
+        <li><a href="ai.html"    class="nav__link">AI 學習</a></li>
+      </ul>
+    </div>
+  </nav><!-- /nav -->
+
+
+  <!-- ================================================
+       WORKS HERO — 頁首橫幅
+       ================================================ -->
+  <header class="works-hero" aria-label="設計作品">
+    <div class="container">
+      <p class="section-label">Portfolio · Design Works</p>
+      <h1 class="section-title">設計作品</h1>
+      <p class="works-hero__desc">
+        品牌識別、包裝設計、平面視覺、IP 行銷，以及數位多媒體——<br />
+        每件作品都是一次系統性的視覺思考實踐。
+      </p>
+    </div>
+  </header><!-- /works-hero -->
+
+
+  <!-- ================================================
+       FILTER BAR — 分類篩選列
+       ================================================ -->
+  <div class="filter-bar" role="navigation" aria-label="作品分類篩選">
+    <div class="filter-bar__inner">
+
+      <!-- 全部 -->
+      <button class="filter-btn active" data-filter="all" aria-pressed="true">
+        全部 (All)
+        <span class="filter-btn__count">8</span>
+      </button>
+
+      <!-- 品牌識別 -->
+      <button class="filter-btn" data-filter="branding" aria-pressed="false">
+        <i class="fa-solid fa-b" aria-hidden="true"></i>
+        品牌識別
+        <span class="filter-btn__count">6</span>
+      </button>
+
+      <!-- 包裝設計 -->
+      <button class="filter-btn" data-filter="packaging" aria-pressed="false">
+        <i class="fa-solid fa-box" aria-hidden="true"></i>
+        包裝設計
+        <span class="filter-btn__count">3</span>
+      </button>
+
+      <!-- 平面視覺 -->
+      <button class="filter-btn" data-filter="graphic" aria-pressed="false">
+        <i class="fa-solid fa-image" aria-hidden="true"></i>
+        平面視覺
+        <span class="filter-btn__count">4</span>
+      </button>
+
+      <!-- IP 與行銷 -->
+      <button class="filter-btn" data-filter="ip" aria-pressed="false">
+        <i class="fa-solid fa-star" aria-hidden="true"></i>
+        IP 與行銷
+        <span class="filter-btn__count">3</span>
+      </button>
+
+      <!-- 數位與多媒體 -->
+      <button class="filter-btn" data-filter="digital" aria-pressed="false">
+        <i class="fa-solid fa-film" aria-hidden="true"></i>
+        數位與多媒體
+        <span class="filter-btn__count">2</span>
+      </button>
+
+    </div>
+  </div><!-- /filter-bar -->
+
+
+  <!-- ================================================
+       WORKS GRID — 作品網格
+       ================================================ -->
+  <main class="section works-section" id="works" aria-label="作品列表">
+    <div class="container">
+      <div class="works-grid">
+
+        <!-- ── 作品 1：【啟航】餅乾品牌設計 ── -->
+        <!--
+          data-categories：用逗號分隔此作品所屬的篩選分類 key
+          可選值：branding / packaging / graphic / ip / digital
+        -->
+        <article
+          class="work-card reveal"
+          data-categories="branding,packaging"
+          data-delay="0"
+          tabindex="0"
+          aria-label="作品：啟航 餅乾品牌設計"
+        >
+          <!-- 圖片區（將作品圖放入 assets/images/ 並修改 src） -->
+          <div class="work-card__img">
+            <div class="work-card__placeholder" aria-hidden="true">
+              <i class="fa-solid fa-cookie-bite"></i>
+            </div>
+            <!-- 有圖片時取消下方註解並填入路徑：
+            <img src="assets/images/work-01.jpg" alt="啟航餅乾品牌設計封面" loading="lazy" />
+            -->
+            <div class="work-card__overlay" aria-hidden="true">
+              <span class="work-card__overlay-icon">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- 文字區 -->
+          <div class="work-card__body">
+            <h2 class="work-card__name">【啟航】餅乾品牌設計</h2>
+            <p class="work-card__desc">
+              既有品牌形象翻新，展現完整 VI 應用。從 LOGO 重塑到包裝系統一體化規劃。
+            </p>
+            <ul class="work-card__tags" aria-label="作品標籤">
+              <li><span class="work-tag">#品牌改造</span></li>
+              <li><span class="work-tag">#LOGO設計</span></li>
+              <li><span class="work-tag">#包裝設計</span></li>
+              <li><span class="work-tag">#企業識別系統</span></li>
+            </ul>
+          </div>
+        </article>
+
+
+        <!-- ── 作品 2：【月記LAB】手搖飲企劃 ── -->
+        <article
+          class="work-card reveal"
+          data-categories="branding,graphic"
+          data-delay="80"
+          tabindex="0"
+          aria-label="作品：月記LAB 手搖飲企劃"
+        >
+          <div class="work-card__img">
+            <div class="work-card__placeholder" aria-hidden="true">
+              <i class="fa-solid fa-mug-hot"></i>
+            </div>
+            <div class="work-card__overlay" aria-hidden="true">
+              <span class="work-card__overlay-icon">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </div>
+          </div>
+          <div class="work-card__body">
+            <h2 class="work-card__name">【月記LAB】手搖飲企劃</h2>
+            <p class="work-card__desc">
+              從零開始的品牌建立與視覺調性設定，涵蓋 LOGO、色彩計畫與菜單設計。
+            </p>
+            <ul class="work-card__tags" aria-label="作品標籤">
+              <li><span class="work-tag">#品牌企劃</span></li>
+              <li><span class="work-tag">#LOGO設計</span></li>
+              <li><span class="work-tag">#菜單設計</span></li>
+              <li><span class="work-tag">#色彩計畫</span></li>
+            </ul>
+          </div>
+        </article>
+
+
+        <!-- ── 作品 3：【存．一個故事】樂樂竹 ── -->
+        <article
+          class="work-card reveal"
+          data-categories="branding,ip,graphic"
+          data-delay="160"
+          tabindex="0"
+          aria-label="作品：存 一個故事 樂樂竹"
+        >
+          <div class="work-card__img">
+            <div class="work-card__placeholder" aria-hidden="true">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+            <div class="work-card__overlay" aria-hidden="true">
+              <span class="work-card__overlay-icon">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </div>
+          </div>
+          <div class="work-card__body">
+            <h2 class="work-card__name">【存．一個故事】樂樂竹</h2>
+            <p class="work-card__desc">
+              結合產品設計與行銷圖文的綜合企劃，打造品牌故事性與視覺溝通體系。
+            </p>
+            <ul class="work-card__tags" aria-label="作品標籤">
+              <li><span class="work-tag">#品牌企劃</span></li>
+              <li><span class="work-tag">#行銷企劃</span></li>
+              <li><span class="work-tag">#海報設計</span></li>
+              <li><span class="work-tag">#廣告圖文</span></li>
+            </ul>
+          </div>
+        </article>
+
+
+        <!-- ── 作品 4：【倆口囍】糕餅品牌 ── -->
+        <article
+          class="work-card reveal"
+          data-categories="branding,packaging"
+          data-delay="0"
+          tabindex="0"
+          aria-label="作品：倆口囍 糕餅品牌"
+        >
+          <div class="work-card__img">
+            <div class="work-card__placeholder" aria-hidden="true">
+              <i class="fa-solid fa-cake-candles"></i>
+            </div>
+            <div class="work-card__overlay" aria-hidden="true">
+              <span class="work-card__overlay-icon">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </div>
+          </div>
+          <div class="work-card__body">
+            <h2 class="work-card__name">【倆口囍】糕餅品牌</h2>
+            <p class="work-card__desc">
+              針對糕餅品牌市場調查驅動的產品包裝與視覺提案，LOGO 設計至包裝系列。
+            </p>
+            <ul class="work-card__tags" aria-label="作品標籤">
+              <li><span class="work-tag">#品牌企劃</span></li>
+              <li><span class="work-tag">#包裝設計</span></li>
+              <li><span class="work-tag">#LOGO設計</span></li>
+            </ul>
+          </div>
+        </article>
+
+
+        <!-- ── 作品 5：【小恆】保溫杯吉祥物 ── -->
+        <article
+          class="work-card reveal"
+          data-categories="ip,branding"
+          data-delay="80"
+          tabindex="0"
+          aria-label="作品：小恆 保溫杯吉祥物"
+        >
+          <div class="work-card__img">
+            <div class="work-card__placeholder" aria-hidden="true">
+              <i class="fa-solid fa-otter"></i>
+            </div>
+            <div class="work-card__overlay" aria-hidden="true">
+              <span class="work-card__overlay-icon">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </div>
+          </div>
+          <div class="work-card__body">
+            <h2 class="work-card__name">【小恆】保溫杯吉祥物</h2>
+            <p class="work-card__desc">
+              以 5W1H 邏輯建構的品牌角色識別，完整吉祥物設計與行銷應用規範。
+            </p>
+            <ul class="work-card__tags" aria-label="作品標籤">
+              <li><span class="work-tag">#行銷企劃</span></li>
+              <li><span class="work-tag">#品牌IP設計</span></li>
+              <li><span class="work-tag">#吉祥物設計</span></li>
+            </ul>
+          </div>
+        </article>
+
+
+        <!-- ── 作品 6：【YeBuff金運面膜】 ── -->
+        <article
+          class="work-card reveal"
+          data-categories="branding,packaging,digital"
+          data-delay="160"
+          tabindex="0"
+          aria-label="作品：YeBuff 金運面膜"
+        >
+          <div class="work-card__img">
+            <div class="work-card__placeholder" aria-hidden="true">
+              <i class="fa-solid fa-spa"></i>
+            </div>
+            <div class="work-card__overlay" aria-hidden="true">
+              <span class="work-card__overlay-icon">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </div>
+          </div>
+          <div class="work-card__body">
+            <h2 class="work-card__name">【YeBuff金運面膜】</h2>
+            <p class="work-card__desc">
+              跨足實體包裝與數位網頁原型的整合設計，串聯品牌企劃與 UI 視覺原型。
+            </p>
+            <ul class="work-card__tags" aria-label="作品標籤">
+              <li><span class="work-tag">#品牌企劃</span></li>
+              <li><span class="work-tag">#包裝設計</span></li>
+              <li><span class="work-tag">#網站設計</span></li>
+            </ul>
+          </div>
+        </article>
+
+
+        <!-- ── 作品 7：【孩能學做菜】教育圖書 ── -->
+        <article
+          class="work-card reveal"
+          data-categories="graphic,digital"
+          data-delay="0"
+          tabindex="0"
+          aria-label="作品：孩能學做菜 教育圖書"
+        >
+          <div class="work-card__img">
+            <div class="work-card__placeholder" aria-hidden="true">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div class="work-card__overlay" aria-hidden="true">
+              <span class="work-card__overlay-icon">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </div>
+          </div>
+          <div class="work-card__body">
+            <h2 class="work-card__name">【孩能學做菜】教育圖書</h2>
+            <p class="work-card__desc">
+              專為孩童設計的生活教育圖書，結合宣傳短片進行跨媒體推廣，並應用 AI 生圖。
+            </p>
+            <ul class="work-card__tags" aria-label="作品標籤">
+              <li><span class="work-tag">#圖書設計</span></li>
+              <li><span class="work-tag">#影片製作</span></li>
+              <li><span class="work-tag">#AI生圖應用</span></li>
+              <li><span class="work-tag">#廣告文案</span></li>
+            </ul>
+          </div>
+        </article>
+
+
+        <!-- ── 作品 8：【平面設計合集】 ── -->
+        <article
+          class="work-card reveal"
+          data-categories="graphic,ip"
+          data-delay="80"
+          tabindex="0"
+          aria-label="作品：平面設計合集"
+        >
+          <div class="work-card__img">
+            <div class="work-card__placeholder" aria-hidden="true">
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <div class="work-card__overlay" aria-hidden="true">
+              <span class="work-card__overlay-icon">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </div>
+          </div>
+          <div class="work-card__body">
+            <h2 class="work-card__name">【平面設計合集】</h2>
+            <p class="work-card__desc">
+              各類商業廣告、海報與字體排版能力展示，含吉祥物設計與廣告圖文多元類型。
+            </p>
+            <ul class="work-card__tags" aria-label="作品標籤">
+              <li><span class="work-tag">#吉祥物設計</span></li>
+              <li><span class="work-tag">#廣告圖文</span></li>
+              <li><span class="work-tag">#海報設計</span></li>
+              <li><span class="work-tag">#字體設計</span></li>
+            </ul>
+          </div>
+        </article>
+
+
+        <!-- 無搜尋結果提示（由 JS 控制顯示） -->
+        <div class="works-empty" role="status" aria-live="polite">
+          <i class="fa-regular fa-face-meh" aria-hidden="true"></i>
+          <p>此分類目前沒有作品</p>
+        </div>
+
+      </div><!-- /works-grid -->
+    </div>
+  </main><!-- /works-section -->
+
+
+  <!-- ================================================
+       頁尾
+       ================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <span class="footer__name">洪寶華 Ivy Hong</span>
+      <a href="mailto:hong.baohua.ivy@gmail.com" class="footer__email">
+        hong.baohua.ivy@gmail.com
+      </a>
+      <p class="footer__copy">&copy; 2025 Ivy Hong. All rights reserved.</p>
+    </div>
+  </footer><!-- /footer -->
+
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+  <script src="js/works.js"></script>
+
+</body>
+</html>
