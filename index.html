@@ -49,7 +49,7 @@
       <div class="hero__text">
         <p class="hero__eyebrow">Commercial Design · Branding · Visual</p>
         <!-- 板塊1 大標 -->
-        <h1 class="hero__title">我愛好<br />「收集」</h1>
+        <h1 class="hero__title">我愛好「收集」</h1>
         <!-- 板塊1 段落 -->
         <p class="hero__desc">廣泛接觸與學習也能當作收集經驗。</p>
         <div class="hero__cta">
@@ -63,22 +63,33 @@
         </div>
       </div>
 
-      <!-- 右側幾何裝飾卡片 -->
+      <!-- 右側：聯絡資料卡片 -->
       <div class="hero__visual">
-        <div class="hero__logo-wrap">
-          <!-- 幾何色塊 -->
-          <div class="hero__card-geo" aria-hidden="true">
-            <span></span><span></span><span></span><span></span>
+        <div class="hero__contact-card">
+          <!-- 頂部：logo 小圖 + 姓名 -->
+          <div class="hero__contact-card__head">
+            <img src="assets/images/name_logo.png" alt="Ivy Hong Logo" class="hero__name-logo" />
+            <div>
+              <p class="hero__contact-card__name">洪寶華 Ivy</p>
+              <p class="hero__contact-card__role">Commercial Designer</p>
+            </div>
           </div>
-          <!-- 個人資訊摘要 -->
-          <div class="hero__card-text">
-            <strong>洪寶華 Ivy Hong</strong>
-            商業設計系畢業<br />
-            品牌識別 · 包裝設計 · 平面視覺<br />
-            數位媒體 · AI 應用
-          </div>
-          <!-- Logo 小圖（作為識別符號） -->
-          <img src="assets/images/name_logo.png" alt="Ivy Hong Logo" class="hero__name-logo" />
+          <div class="hero__contact-card__divider"></div>
+          <!-- 聯絡資訊 -->
+          <ul class="hero__contact-card__list">
+            <li>
+              <span class="hero__contact-card__icon" aria-hidden="true"><i class="fa-solid fa-envelope"></i></span>
+              <a href="mailto:hong.baohua.ivy@gmail.com">hong.baohua.ivy@gmail.com</a>
+            </li>
+            <li>
+              <span class="hero__contact-card__icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></span>
+              <span>0905-508-171</span>
+            </li>
+            <li>
+              <span class="hero__contact-card__icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span>
+              <a href="https://github.com/hongbaohua" target="_blank" rel="noopener">github.com/hongbaohua</a>
+            </li>
+          </ul>
         </div>
       </div>
 
@@ -100,45 +111,7 @@
 
       <div class="about-grid">
 
-        <!-- 左欄：聯絡資料 -->
-        <aside class="about-contact reveal" data-delay="0">
-          <div class="about-card">
-            <p class="about-card__label">
-              <i class="fa-solid fa-id-card" aria-hidden="true"></i>
-              聯絡資料
-            </p>
-            <ul class="about-contact__list">
-              <li>
-                <span class="about-contact__icon" aria-hidden="true">
-                  <i class="fa-solid fa-user"></i>
-                </span>
-                <span>洪寶華 Ivy</span>
-              </li>
-              <li>
-                <span class="about-contact__icon" aria-hidden="true">
-                  <i class="fa-solid fa-envelope"></i>
-                </span>
-                <a href="mailto:hong.baohua.ivy@gmail.com">hong.baohua.ivy@gmail.com</a>
-              </li>
-              <li>
-                <span class="about-contact__icon" aria-hidden="true">
-                  <i class="fa-solid fa-phone"></i>
-                </span>
-                <span>0905-508-171</span>
-              </li>
-              <li>
-                <span class="about-contact__icon" aria-hidden="true">
-                  <i class="fa-brands fa-github"></i>
-                </span>
-                <a href="https://github.com/hongbaohua" target="_blank" rel="noopener">
-                  github.com/hongbaohua
-                </a>
-              </li>
-            </ul>
-          </div>
-        </aside>
-
-        <!-- 右欄：學歷認證 + 技能 -->
+        <!-- 學歷認證 + 技能（全寬） -->
         <div class="about-right">
 
           <!-- 學歷與認證 -->

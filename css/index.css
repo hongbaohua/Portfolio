@@ -148,24 +148,23 @@
   animation: fadeIn 1s ease 0.3s both;
 }
 
-/* 幾何裝飾卡片 */
-.hero__logo-wrap {
+/* 聯絡資料卡片 */
+.hero__contact-card {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 40px 40px 36px;
+  padding: 32px 32px 28px;
   box-shadow: var(--shadow-lg);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
+  gap: 0;
   position: relative;
-  max-width: 320px;
+  max-width: 340px;
   width: 100%;
 }
 
 /* 頂部金色條 */
-.hero__logo-wrap::before {
+.hero__contact-card::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
@@ -174,37 +173,79 @@
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
-/* 卡片內的幾何色塊裝飾 */
-.hero__card-geo {
+/* 卡片頂部：logo + 姓名 */
+.hero__contact-card__head {
   display: flex;
-  gap: 10px;
-  align-items: flex-end;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
 }
 
-.hero__card-geo span {
-  display: block;
-  border-radius: 4px;
-  background: var(--accent-light);
+/* logo 小圖示（在聯絡卡片內） */
+.hero__name-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
-.hero__card-geo span:nth-child(1) { width: 20px; height: 48px; }
-.hero__card-geo span:nth-child(2) { width: 20px; height: 72px; background: var(--accent); }
-.hero__card-geo span:nth-child(3) { width: 20px; height: 32px; }
-.hero__card-geo span:nth-child(4) { width: 20px; height: 56px; background: var(--dark); opacity: 0.15; }
-
-/* 卡片內文字 */
-.hero__card-text {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  line-height: 1.7;
-}
-
-.hero__card-text strong {
-  display: block;
+.hero__contact-card__name {
   font-size: 1rem;
   font-weight: 700;
   color: var(--text);
-  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.hero__contact-card__role {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+/* 分隔線 */
+.hero__contact-card__divider {
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 20px;
+}
+
+/* 聯絡資訊清單 */
+.hero__contact-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hero__contact-card__list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  word-break: break-all;
+}
+
+/* icon 小方塊 */
+.hero__contact-card__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius);
+  background: var(--bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: var(--accent-dark);
+  flex-shrink: 0;
+}
+
+.hero__contact-card__list a {
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+
+.hero__contact-card__list a:hover {
+  color: var(--accent-dark);
 }
 
 /* Hero 右側個人 Logo（中尺寸展示用） */
@@ -237,12 +278,9 @@
   display: inline-block;
 }
 
-/* 左右兩欄網格 */
+/* 學歷 + 技能全寬排列 */
 .about-grid {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 24px;
-  align-items: start;
+  display: block;
 }
 
 /* ── 共用卡片樣式 ── */
@@ -305,11 +343,12 @@
   color: var(--accent-dark);
 }
 
-/* ── 右欄 ── */
+/* ── 學歷 + 技能並排 ── */
 .about-right {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   gap: 20px;
+  align-items: start;
 }
 
 /* ── 學歷認證清單 ── */
@@ -379,7 +418,7 @@
 @media (max-width: 1024px) {
   .hero__inner {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
     padding-top: 48px;
     padding-bottom: 48px;
   }
@@ -388,7 +427,7 @@
     justify-content: flex-start;
   }
 
-  .about-grid {
+  .about-right {
     grid-template-columns: 1fr;
   }
 
@@ -402,7 +441,7 @@
     grid-template-columns: 1fr;
   }
 
-  .hero__name-logo {
-    max-width: 180px;
+  .hero__contact-card {
+    max-width: 100%;
   }
 }
