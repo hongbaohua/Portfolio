@@ -183,41 +183,43 @@
   display: none;
 }
 
-/* 圖片容器 */
+/* 圖片容器：固定比例，白底讓 logo 完整顯示 */
 .work-card__img {
   width: 100%;
   aspect-ratio: 4 / 3;
-  background: var(--bg-dark);
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
   position: relative;
   overflow: hidden;
-}
-
-/* 佔位背景（尚無圖片時顯示） */
-.work-card__placeholder {
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.4rem;
+  padding: 32px;
+}
+
+/* Logo 圖片：contain 完整顯示，不裁切 */
+.work-card__img img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform var(--transition);
+}
+
+.work-card:hover .work-card__img img {
+  transform: scale(1.06);
+}
+
+/* Icon 佔位（尚無 logo 時） */
+.work-card__placeholder {
+  font-size: 3rem;
   color: var(--accent);
   transition: transform var(--transition);
 }
 
 .work-card:hover .work-card__placeholder {
   transform: scale(1.08);
-}
-
-/* 實際圖片（有圖時使用） */
-.work-card__img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--transition);
-}
-
-.work-card:hover .work-card__img img {
-  transform: scale(1.06);
 }
 
 /* hover 遮罩 */
