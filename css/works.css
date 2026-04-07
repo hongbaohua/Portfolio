@@ -153,6 +153,14 @@
   margin-top: 0;
 }
 
+/* 整張卡片可點擊的連結包裝 */
+.work-card__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: inherit;
+}
+
 /* ── 作品卡片 ── */
 .work-card {
   background: var(--white);

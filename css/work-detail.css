@@ -1,0 +1,296 @@
+/* ============================================================
+   work-detail.css — 作品詳情頁共用樣式
+   涵蓋：頁首橫幅、作品資訊、圖片展示區、影片嵌入、返回按鈕
+   ============================================================ */
+
+/* ── 返回按鈕 ── */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  transition: color var(--transition);
+}
+
+.back-btn:hover {
+  color: var(--accent-dark);
+}
+
+/* ────────────────────────────────────────────────
+   WORK HERO — 作品頁首
+   ──────────────────────────────────────────────── */
+.work-hero {
+  background: var(--dark);
+  padding: 72px 0 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 幾何裝飾 */
+.work-hero::before {
+  content: '';
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 360px;
+  height: 360px;
+  border: 48px solid rgba(196, 163, 90, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.work-hero .section-label {
+  color: var(--accent-light);
+}
+
+.work-hero .section-label::before {
+  background: var(--accent-light);
+}
+
+.work-hero__title {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--white);
+  margin: 12px 0 16px;
+  line-height: 1.2;
+}
+
+/* 標籤列 */
+.work-hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.work-hero-tag {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(196, 163, 90, 0.4);
+  font-size: 0.8rem;
+  color: var(--accent-light);
+}
+
+/* ────────────────────────────────────────────────
+   WORK CONTENT — 主體內容區
+   ──────────────────────────────────────────────── */
+.work-content {
+  padding: 64px 0 96px;
+  background: var(--bg);
+}
+
+/* 兩欄：左側資訊 + 右側圖片 */
+.work-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+/* ── 左側資訊欄 ── */
+.work-info {
+  position: sticky;
+  top: calc(var(--nav-h) + 24px);
+}
+
+.work-info__section {
+  margin-bottom: 32px;
+}
+
+.work-info__label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  margin-bottom: 10px;
+}
+
+.work-info__text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.work-info__text strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* 外連按鈕（Canva、heyzine 等） */
+.work-external-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: var(--radius);
+  background: var(--text);
+  color: var(--white);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 8px;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.work-external-btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+.work-external-btn.secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid var(--border);
+}
+
+.work-external-btn.secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent-dark);
+}
+
+/* 資訊分隔線 */
+.work-info__divider {
+  height: 1px;
+  background: var(--border);
+  margin: 24px 0;
+}
+
+/* ── 右側圖片展示區 ── */
+.work-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* 簡介文字區塊（在圖片前） */
+.work-desc-block {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.9;
+  margin-bottom: 8px;
+}
+
+/* 圖片容器 */
+.work-img-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-dark);
+}
+
+.work-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.work-img-wrap:hover img {
+  transform: scale(1.02);
+}
+
+/* 圖說文字 */
+.work-img-caption {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+  padding-left: 4px;
+}
+
+/* 多圖並排（2欄） */
+.work-img-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* 多圖並排（3欄） */
+.work-img-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* ── 影片嵌入 ── */
+.work-video-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--dark);
+}
+
+.work-video-wrap video {
+  width: 100%;
+  display: block;
+  max-height: 560px;
+  object-fit: contain;
+}
+
+/* ── PDF 嵌入（iframe） ── */
+.work-pdf-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.work-pdf-wrap iframe {
+  width: 100%;
+  height: 680px;
+  display: block;
+  border: none;
+}
+
+/* ── 區塊標題 ── */
+.work-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.work-section-title::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 18px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* ── 響應式 ── */
+@media (max-width: 960px) {
+  .work-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .work-info {
+    position: static;
+  }
+
+  .work-img-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-img-grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .work-img-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
