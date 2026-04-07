@@ -94,23 +94,23 @@ ul, ol {
   justify-content: space-between;
 }
 
-/* Logo 文字 */
+/* Logo 連結 */
 .nav__logo {
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--text);
   display: flex;
   align-items: center;
-  gap: 10px;
+  flex-shrink: 0;
 }
 
-.nav__logo-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--accent);
-  border-radius: 50%;
-  display: inline-block;
+/* Logo 圖示（小尺寸，導覽列用） */
+.nav__logo-img {
+  height: 32px;
+  width: auto;
+  display: block;
+  transition: opacity var(--transition);
+}
+
+.nav__logo:hover .nav__logo-img {
+  opacity: 0.75;
 }
 
 /* 導覽連結清單 */
@@ -243,6 +243,20 @@ ul, ol {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
+}
+
+/* Footer logo 圖示（白色小版） */
+.footer__logo-img {
+  height: 24px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+  opacity: 0.6;
+  transition: opacity var(--transition);
+}
+
+.footer__logo-img:hover {
+  opacity: 1;
 }
 
 .footer__name {
