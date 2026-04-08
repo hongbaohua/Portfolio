@@ -310,10 +310,9 @@
 
 /* 卡片標題列（icon + 標籤文字） */
 .about-card__label {
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--accent-dark);
   margin-bottom: 20px;
   display: flex;
@@ -419,14 +418,14 @@
 }
 
 .about-skill-group__name {
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: var(--text);
   margin-bottom: 6px;
 }
 
 .about-skill-group__desc {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
   line-height: 1.6;
 }
