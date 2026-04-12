@@ -429,6 +429,33 @@
   margin-top: 8px;
 }
 
+.work-role-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.work-role-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 100px;
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.work-role-collab {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
 /* ────────────────────────────────────────────────
    LOGO WRAP — 品牌 LOGO 獨立展示
    ──────────────────────────────────────────────── */
