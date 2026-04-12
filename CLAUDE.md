@@ -95,7 +95,7 @@ web/
 
 ---
 
-## 目前網站狀態（最後更新：2026-04-12）
+## 目前網站狀態（最後更新：2026-04-13）
 
 ### 已完成頁面
 | 頁面 | 狀態 | 說明 |
@@ -103,6 +103,7 @@ web/
 | index.html | ✅ 完成 | Hero、聯絡卡、學歷技能區塊 |
 | works.html | ✅ 完成 | 作品卡列表，帶 logo，含 filter |
 | ai.html | ✅ 完成 | 工具卡、Callout、時間軸、AI Works 佔位卡 |
+| ai-stillwaiting.html | ✅ 完成 | 「仍在等」AI 作品詳細頁（影音 MV） |
 | work-egg.html | ✅ 完成 | EGG 餅乾品牌 |
 | work-graphic.html | ✅ 完成 | 平面設計合集 |
 | work-larkzhu.html | ✅ 完成 | 節節高 LARKZHU |
@@ -115,7 +116,7 @@ web/
 ### 待製作
 | 項目 | 說明 |
 |------|------|
-| AI Works 詳細頁 | ai-case-template.html 為模板，待用戶提供 AI新秀計畫作品內容後製作 |
+| AI Works 詳細頁 | 「仍在等」已完成；App 設計、更多 AI 應用仍待製作 |
 | ai.html 時間軸更新 | 待新增「經濟部產業發展署 AI新秀計畫（2025）」節點 |
 
 ---
