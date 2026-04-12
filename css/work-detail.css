@@ -126,18 +126,20 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 11px 20px;
+  padding: 10px 16px;
   border-radius: var(--radius);
-  background: var(--text);
-  color: var(--white);
+  background: var(--accent-light);
+  color: var(--accent-dark);
+  border: 1.5px solid var(--accent);
   font-size: 0.85rem;
   font-weight: 600;
   margin-top: 8px;
-  transition: background var(--transition), transform var(--transition);
+  transition: background var(--transition), color var(--transition), transform var(--transition);
 }
 
 .work-external-btn:hover {
-  background: var(--accent-dark);
+  background: var(--accent);
+  color: var(--white);
   transform: translateY(-2px);
 }
 
