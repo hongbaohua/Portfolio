@@ -354,6 +354,167 @@
   margin: 16px 0;
 }
 
+/* ────────────────────────────────────────────────
+   OUTLINE BAR — 頁面大綱錨點導覽
+   ──────────────────────────────────────────────── */
+.work-outline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 0 20px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: var(--nav-h, 64px);
+  background: var(--bg);
+  z-index: 20;
+  padding-top: 16px;
+}
+
+.work-outline__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+  white-space: nowrap;
+}
+
+.work-outline__item:hover {
+  color: var(--accent-dark);
+  border-color: var(--accent);
+}
+
+.work-outline__item.active {
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+/* ────────────────────────────────────────────────
+   COMPLETION BADGE — 獨立 / 小組完成標記
+   ──────────────────────────────────────────────── */
+.work-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.work-badge--solo {
+  background: rgba(196, 163, 90, 0.12);
+  color: var(--accent-dark);
+  border: 1px solid rgba(196, 163, 90, 0.35);
+}
+
+.work-badge--group {
+  background: rgba(90, 130, 196, 0.1);
+  color: #4a6fa5;
+  border: 1px solid rgba(90, 130, 196, 0.3);
+}
+
+.work-role-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-top: 8px;
+}
+
+/* ────────────────────────────────────────────────
+   LOGO WRAP — 品牌 LOGO 獨立展示
+   ──────────────────────────────────────────────── */
+.work-logo-wrap {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 160px;
+}
+
+.work-logo-wrap img {
+  max-width: 280px;
+  max-height: 140px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ────────────────────────────────────────────────
+   LIGHTBOX — 圖片燈箱放大
+   ──────────────────────────────────────────────── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  cursor: zoom-out;
+}
+
+.lightbox.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox__img {
+  max-width: 90vw;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: var(--radius);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+  cursor: default;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.lightbox__close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.lightbox__caption {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.78rem;
+  margin-top: 14px;
+  text-align: center;
+  max-width: 600px;
+}
+
 /* ── 響應式 ── */
 @media (max-width: 960px) {
   .work-layout {
@@ -372,10 +533,19 @@
   .work-img-grid-3 {
     grid-template-columns: 1fr 1fr;
   }
+
+  .work-outline {
+    position: static;
+    padding-top: 0;
+  }
 }
 
 @media (max-width: 600px) {
   .work-img-grid-3 {
     grid-template-columns: 1fr;
+  }
+
+  .work-logo-wrap {
+    padding: 28px 24px;
   }
 }

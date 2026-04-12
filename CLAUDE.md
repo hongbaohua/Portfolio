@@ -47,6 +47,16 @@ web/
 - 圖示：Font Awesome 6.5
 - 無使用任何 CSS 框架（非 Tailwind）
 
+### 作品詳情頁統一規範（2026-04-13 訂定）
+所有設計作品詳情頁必須符合以下規範，模板參考 `work-detail-template.html`：
+
+1. **大綱 bar**（`.work-outline`）：頁面頂部 sticky 錨點導覽，列出頁面所有區塊，捲動時自動 highlight 目前區塊
+2. **完成方式 badge**：左側欄必須標示「獨立完成」（`.work-badge--solo`）或「小組作品」（`.work-badge--group`）；小組作品需加上「我負責：...」說明
+3. **LOGO 獨立展示**：品牌 LOGO（PNG）獨立放在 `.work-logo-wrap`（白色底、置中），不與其他圖片混排
+4. **圖片點擊放大**：所有 `.work-img-wrap img` 自動支援燈箱放大（main.js 全域處理，不需額外 HTML）
+5. **區塊 ID**：各 section 需設 `id`（如 `section-intro`、`section-logo`、`section-gallery`、`section-doc`）以供大綱 bar 錨點使用
+6. **平面設計合集特殊處理**：每個子類別（海報、廣告圖文等）需加 `.work-desc-block` 個別說明
+
 ---
 
 ## 字體大小規範（標準層級）
