@@ -490,6 +490,14 @@
   display: block;
 }
 
+/* ── 簡介開頭 LOGO（輕量，不突兀） ── */
+.work-intro-logo {
+  max-height: 72px;
+  width: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
 /* ────────────────────────────────────────────────
    LIGHTBOX — 圖片燈箱放大
    ──────────────────────────────────────────────── */
