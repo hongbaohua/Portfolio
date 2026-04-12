@@ -490,12 +490,13 @@
   display: block;
 }
 
-/* ── 簡介開頭 LOGO（輕量，不突兀） ── */
+/* ── 簡介開頭 LOGO（輕量，置中） ── */
 .work-intro-logo {
-  max-height: 72px;
+  max-height: 100px;
+  max-width: 260px;
   width: auto;
   display: block;
-  margin-bottom: 20px;
+  margin: 0 auto 24px;
 }
 
 /* ────────────────────────────────────────────────
