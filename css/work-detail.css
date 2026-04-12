@@ -220,6 +220,17 @@
   gap: 16px;
 }
 
+/* 瀑布流（依圖片原始比例，無留白） */
+.work-img-masonry {
+  columns: 3;
+  column-gap: 16px;
+}
+
+.work-img-masonry .work-img-wrap {
+  break-inside: avoid;
+  margin-bottom: 16px;
+}
+
 /* ── 影片嵌入 ── */
 .work-video-wrap {
   border-radius: var(--radius-lg);
@@ -561,6 +572,10 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  .work-img-masonry {
+    columns: 2;
+  }
+
   .work-outline {
     position: static;
     padding-top: 0;
@@ -570,6 +585,10 @@
 @media (max-width: 600px) {
   .work-img-grid-3 {
     grid-template-columns: 1fr;
+  }
+
+  .work-img-masonry {
+    columns: 1;
   }
 
   .work-logo-wrap {
