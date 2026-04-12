@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ★ 修改標題 -->
+  <title>【案例名稱】— Ivy Hong AI 應用</title>
+  <meta name="description" content="說明文字" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/work-detail.css" />
+  <link rel="stylesheet" href="css/ai-case.css" />
+</head>
+
+<body class="page-body">
+
+  <!-- 導覽列 -->
+  <nav class="nav" role="navigation" aria-label="主選單">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/images/name_logo.png" alt="Ivy Hong Logo" class="nav__logo-img" />
+      </a>
+      <button class="nav__toggle" aria-label="開啟選單"><span></span><span></span><span></span></button>
+      <ul class="nav__links" role="list">
+        <li><a href="index.html"  class="nav__link">首頁</a></li>
+        <li><a href="works.html" class="nav__link">設計作品</a></li>
+        <li><a href="ai.html"    class="nav__link active">AI 學習</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ================================================
+       頁首橫幅
+       ★ 修改：section-label、標題、tag
+       ================================================ -->
+  <header class="work-hero ai-case-hero">
+    <div class="container">
+      <p class="section-label">AI Application · ★類型（影音 / App / 其他）</p>
+      <h1 class="work-hero__title">【案例名稱】</h1>
+      <div class="work-hero__tags">
+        <span class="work-hero-tag">#AI 工具</span>
+        <span class="work-hero-tag">#應用類型</span>
+        <!-- ★ 增減 tag -->
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ================================================
+       主體內容
+       ================================================ -->
+  <main class="work-content">
+    <div class="container">
+
+      <!-- 返回按鈕 -->
+      <a href="ai.html" class="back-btn">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        返回 AI 學習
+      </a>
+
+      <div class="work-layout">
+
+        <!-- ── 左側資訊欄 ── -->
+        <aside class="work-info">
+
+          <div class="work-info__section">
+            <p class="work-info__label">使用工具</p>
+            <p class="work-info__text">
+              <!-- ★ 填入工具名稱 -->
+              <strong>Claude</strong>、Midjourney…
+            </p>
+          </div>
+
+          <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
+            <p class="work-info__label">應用類型</p>
+            <p class="work-info__text">★ 影音 / App / 圖像生成…</p>
+          </div>
+
+          <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
+            <p class="work-info__label">完成時間</p>
+            <p class="work-info__text">★ 2025 年 XX 月</p>
+          </div>
+
+          <div class="work-info__divider"></div>
+
+          <!-- 外部連結（選填） -->
+          <!--
+          <div class="work-info__section">
+            <p class="work-info__label">查看成果</p>
+            <a href="★連結" target="_blank" rel="noopener" class="work-external-btn">
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+              開啟連結
+            </a>
+          </div>
+          -->
+
+        </aside><!-- /work-info -->
+
+
+        <!-- ── 右側內容區 ── -->
+        <div class="work-gallery">
+
+          <!-- 簡介 -->
+          <div class="work-desc-block">
+            ★ 這個案例的目標、背景與使用情境。一到兩段。
+          </div>
+
+          <!-- ── 過程區塊 1：Prompt / 工具設定 ── -->
+          <h2 class="work-section-title">工具與 Prompt 設計</h2>
+          <div class="work-desc-block">
+            ★ 使用什麼工具、如何下 prompt、設定了什麼參數。
+          </div>
+
+          <!-- 圖片（單張） -->
+          <!--
+          <figure>
+            <div class="work-img-wrap">
+              <img src="assets/images/★圖片.png" alt="★圖片說明" loading="lazy" />
+            </div>
+            <figcaption class="work-img-caption">★ 圖說文字</figcaption>
+          </figure>
+          -->
+
+          <!-- ── 過程區塊 2：成果展示 ── -->
+          <h2 class="work-section-title">成果展示</h2>
+
+          <!-- 影片嵌入（選用） -->
+          <!--
+          <div class="work-video-wrap">
+            <video controls preload="metadata">
+              <source src="assets/videos/★影片.mp4" type="video/mp4" />
+            </video>
+          </div>
+          -->
+
+          <!-- 圖片 2 欄並排（選用） -->
+          <!--
+          <div class="work-img-grid">
+            <div class="work-img-wrap">
+              <img src="assets/images/★圖A.png" alt="★" loading="lazy" />
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/★圖B.png" alt="★" loading="lazy" />
+            </div>
+          </div>
+          -->
+
+          <!-- ── 過程區塊 3：反思與心得 ── -->
+          <h2 class="work-section-title">過程反思</h2>
+          <div class="work-desc-block">
+            ★ 學到什麼？哪裡順、哪裡卡？下次會怎麼調整？
+          </div>
+
+        </div><!-- /work-gallery -->
+      </div><!-- /work-layout -->
+    </div>
+  </main><!-- /work-content -->
+
+
+  <!-- 頁尾 -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <a href="mailto:hong.baohua.ivy@gmail.com" class="footer__email">
+        hong.baohua.ivy@gmail.com
+      </a>
+      <p class="footer__copy">&copy; 2025 Ivy Hong. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

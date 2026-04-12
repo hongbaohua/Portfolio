@@ -100,7 +100,7 @@
   border-radius: 100px;
   border: 1.5px solid var(--border);
   background: transparent;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   font-weight: 500;
   font-family: var(--font-sans);
   color: var(--text-muted);
@@ -130,7 +130,7 @@
   height: 18px;
   border-radius: 50%;
   background: rgba(255,255,255,0.2);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 600;
 }
 
@@ -267,7 +267,7 @@
 }
 
 .work-card__desc {
-  font-size: 0.83rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
   line-height: 1.6;
 }
@@ -285,7 +285,7 @@
   padding: 3px 10px;
   border-radius: 100px;
   border: 1px solid var(--border);
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
   background: var(--bg-dark);
   transition: border-color var(--transition), color var(--transition);

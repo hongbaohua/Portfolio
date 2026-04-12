@@ -4,6 +4,12 @@
    ============================================================ */
 
 /* ────────────────────────────────────────────────
+   AI CASE HERO — 案例頁頁首（繼承 work-hero 深色底）
+   ──────────────────────────────────────────────── */
+.ai-case-hero .section-label { color: var(--accent-light); }
+.ai-case-hero .section-label::before { background: var(--accent-light); }
+
+/* ────────────────────────────────────────────────
    AI HERO — 頁首橫幅
    ──────────────────────────────────────────────── */
 .ai-hero {
@@ -98,7 +104,7 @@
 }
 
 .ai-intro__text p {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
   line-height: 1.8;
 }
@@ -112,7 +118,7 @@
 
 .ai-tools-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   margin-top: 48px;
 }
@@ -155,13 +161,13 @@
 }
 
 .ai-tool-card__name {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--text);
 }
 
 .ai-tool-card__type {
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
   margin-top: 2px;
 }
@@ -185,7 +191,7 @@
   border-radius: 100px;
   background: var(--bg-dark);
   border: 1px solid var(--border);
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
 }
 
@@ -258,7 +264,7 @@
 }
 
 .ai-timeline__date {
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -277,6 +283,135 @@
   font-size: 0.85rem;
   color: var(--text-muted);
   line-height: 1.7;
+}
+
+/* ────────────────────────────────────────────────
+   SITE CALLOUT — 本站即是 AI 實踐成果橫幅
+   ──────────────────────────────────────────────── */
+.ai-site-callout {
+  background: var(--dark);
+  border-top: 1px solid rgba(196, 163, 90, 0.15);
+  border-bottom: 1px solid rgba(196, 163, 90, 0.15);
+  padding: 64px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-site-callout::before {
+  content: '';
+  position: absolute;
+  left: -60px;
+  bottom: -60px;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(196, 163, 90, 0.1), transparent 70%);
+  pointer-events: none;
+}
+
+.ai-site-callout__inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.ai-site-callout__badge {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--white);
+}
+
+.ai-site-callout__body {
+  flex: 1;
+}
+
+.ai-site-callout__eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  margin-bottom: 10px;
+}
+
+.ai-site-callout__title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.ai-site-callout__desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.8;
+  max-width: 560px;
+}
+
+.ai-site-callout__desc strong {
+  color: var(--accent-light);
+}
+
+.ai-site-callout__tool {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 28px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(196, 163, 90, 0.25);
+  background: rgba(196, 163, 90, 0.06);
+  color: var(--accent-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ai-site-callout__tool i {
+  font-size: 1.5rem;
+}
+
+/* ────────────────────────────────────────────────
+   AI WORKS — 成果展示區
+   ──────────────────────────────────────────────── */
+.ai-works-section {
+  background: var(--bg-dark);
+  border-top: 1px solid var(--border);
+}
+
+/* 佔位圖區（尚未上傳圖片時） */
+.work-card__img-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--bg-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--border);
+}
+
+.work-card__img-placeholder i {
+  font-size: 2rem;
+  color: var(--border);
+}
+
+/* 整理中卡片：降低飽和感，禁止點擊 */
+.work-card--pending {
+  opacity: 0.65;
+  pointer-events: none;
 }
 
 /* ────────────────────────────────────────────────
@@ -309,9 +444,17 @@
 }
 
 /* ── 響應式 ── */
-@media (max-width: 960px) {
-  .ai-tools-grid {
-    grid-template-columns: 1fr 1fr;
+@media (max-width: 768px) {
+  .ai-site-callout__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .ai-site-callout__tool {
+    flex-direction: row;
+    align-self: stretch;
+    justify-content: center;
   }
 }
 
