@@ -123,14 +123,13 @@
 
 /* 外連按鈕（Canva、heyzine 等） */
 .work-external-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 16px;
+  padding: 8px 14px;
   border-radius: var(--radius);
-  background: var(--accent-light);
+  background: color-mix(in srgb, var(--accent-light) 50%, var(--bg));
   color: var(--accent-dark);
-  border: 1.5px solid var(--accent);
   font-size: 0.85rem;
   font-weight: 600;
   margin-top: 8px;
@@ -138,8 +137,8 @@
 }
 
 .work-external-btn:hover {
-  background: var(--accent);
-  color: var(--white);
+  background: var(--accent-light);
+  color: var(--accent-dark);
   transform: translateY(-2px);
 }
 
