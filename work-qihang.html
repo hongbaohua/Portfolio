@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>【啟航】餅乾品牌設計 — Ivy Hong Portfolio</title>
+  <meta name="description" content="既有品牌形象翻新，展現完整 VI 應用。從 LOGO 重塑到包裝系統的一體化規劃。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -11,7 +12,6 @@
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/work-detail.css" />
 </head>
-
 <body class="page-body">
 
   <nav class="nav" role="navigation" aria-label="主選單">
@@ -28,7 +28,6 @@
     </div>
   </nav>
 
-  <!-- 頁首 -->
   <header class="work-hero">
     <div class="container">
       <p class="section-label">Brand Identity · Packaging Design</p>
@@ -42,20 +41,32 @@
     </div>
   </header>
 
-  <!-- 主體內容 -->
   <main class="work-content">
     <div class="container">
       <a href="works.html" class="back-btn">
-        <i class="fa-solid fa-arrow-left"></i> 返回作品列表
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> 返回作品列表
       </a>
 
       <div class="work-layout">
 
-        <!-- 左側資訊欄 -->
         <aside class="work-info">
           <div class="work-info__section">
             <p class="work-info__label">作品類別</p>
             <p class="work-info__text">品牌識別 · 包裝設計</p>
+          </div>
+          <div class="work-info__divider"></div>
+          <div class="work-info__section">
+            <p class="work-info__label">完成方式</p>
+            <span class="work-badge work-badge--group">
+              <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+              小組作品
+            </span>
+            <div class="work-role-tags">
+              <span class="work-role-tag">品牌企劃書</span>
+              <span class="work-role-tag">攤車設計</span>
+              <span class="work-role-tag">識別應用系統</span>
+            </div>
+            <p class="work-role-collab">協作：LOGO 與標準字、包裝設計、品牌分析</p>
           </div>
           <div class="work-info__divider"></div>
           <div class="work-info__section">
@@ -64,45 +75,44 @@
           </div>
           <div class="work-info__divider"></div>
           <div class="work-info__section">
-            <p class="work-info__label">完整企劃書</p>
-            <a href="assets/images/啟航_企劃書.pdf" target="_blank" class="work-external-btn">
-              <i class="fa-solid fa-file-pdf"></i> 查看 PDF 企劃書
+            <p class="work-info__label">企劃書</p>
+            <a href="assets/images/啟航_企劃書.pdf" target="_blank" rel="noopener" class="work-external-btn">
+              <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> 查看 PDF 企劃書
             </a>
           </div>
         </aside>
 
-        <!-- 右側圖片展示 -->
         <div class="work-gallery">
 
-          <p class="work-desc-block">
-            以「啟航」為核心概念，對既有餅乾品牌進行全面的視覺翻新。
-            從品牌定位分析出發，重新建立 LOGO、色彩系統、字型規範，
-            再延伸至包裝設計，確保品牌識別在不同媒介上的一致性與辨識度。
-          </p>
+          <nav class="work-outline" aria-label="頁面大綱">
+            <a href="#section-intro"   class="work-outline__item">作品簡介</a>
+            <a href="#section-logo"    class="work-outline__item">品牌識別</a>
+            <a href="#section-doc"     class="work-outline__item">企劃書</a>
+          </nav>
 
-          <!-- LOGO -->
-          <div>
-            <p class="work-section-title">品牌 LOGO</p>
-            <div class="work-img-wrap reveal">
-              <img src="assets/images/啟航_logo.png" alt="啟航品牌 LOGO" loading="lazy" />
+          <section id="section-intro">
+            <div class="work-desc-block">
+              以「啟航」為核心概念，對既有餅乾品牌進行全面的視覺翻新。從品牌定位分析出發，重新建立 LOGO、色彩系統、字型規範，再延伸至包裝設計，確保品牌識別在不同媒介上的一致性與辨識度。本企劃完整呈現從市場調查到視覺落地的品牌改造流程。
             </div>
-          </div>
+          </section>
 
-          <!-- 企劃書嵌入 -->
-          <div>
-            <p class="work-section-title">完整企劃書</p>
+          <section id="section-logo">
+            <h2 class="work-section-title">品牌識別</h2>
+            <div class="work-logo-wrap">
+              <img src="assets/images/啟航_logo.png" alt="啟航品牌 LOGO" />
+            </div>
+          </section>
+
+          <section id="section-doc">
+            <h2 class="work-section-title">完整企劃書</h2>
             <div class="work-pdf-wrap reveal">
-              <iframe
-                src="assets/images/啟航_企劃書.pdf"
-                title="啟航餅乾品牌設計企劃書"
-                loading="lazy"
-              ></iframe>
+              <iframe src="assets/images/啟航_企劃書.pdf" title="啟航餅乾品牌設計企劃書" loading="lazy"></iframe>
             </div>
             <p class="work-img-caption">企劃書涵蓋品牌調查、視覺規範與包裝設計展示</p>
-          </div>
+          </section>
 
-        </div><!-- /work-gallery -->
-      </div><!-- /work-layout -->
+        </div>
+      </div>
     </div>
   </main>
 
@@ -112,7 +122,6 @@
       <p class="footer__copy">&copy; 2025 Ivy Hong. All rights reserved.</p>
     </div>
   </footer>
-
   <script src="js/main.js"></script>
 </body>
 </html>
