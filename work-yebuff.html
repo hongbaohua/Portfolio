@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>【YeBuff金運面膜】 — Ivy Hong Portfolio</title>
+  <title>【YeBuff】金運面膜品牌設計 — Ivy Hong Portfolio</title>
+  <meta name="description" content="跨足實體包裝與數位網頁原型的整合設計，從品牌企劃延伸至 UI 視覺與互動原型，串聯線上線下的品牌一致性。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -31,67 +32,160 @@
   <header class="work-hero">
     <div class="container">
       <p class="section-label">Brand Identity · Packaging Design · Digital &amp; Media</p>
-      <h1 class="work-hero__title">【YeBuff金運面膜】</h1>
+      <h1 class="work-hero__title">【YeBuff】金運面膜品牌設計</h1>
       <div class="work-hero__tags">
         <span class="work-hero-tag">#品牌企劃</span>
         <span class="work-hero-tag">#包裝設計</span>
         <span class="work-hero-tag">#網站設計</span>
+        <span class="work-hero-tag">#UI設計</span>
+        <span class="work-hero-tag">#Figma</span>
       </div>
     </div>
   </header>
 
   <main class="work-content">
     <div class="container">
-      <a href="works.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> 返回作品列表</a>
+
+      <a href="works.html" class="back-btn">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        返回作品列表
+      </a>
 
       <div class="work-layout">
 
         <aside class="work-info">
+
           <div class="work-info__section">
             <p class="work-info__label">作品類別</p>
-            <p class="work-info__text">品牌識別 · 包裝設計 · 數位與多媒體</p>
+            <p class="work-info__text">品牌識別 · 包裝設計 · 網站設計</p>
           </div>
+
           <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
+            <p class="work-info__label">完成方式</p>
+            <span class="work-badge work-badge--solo">
+              <i class="fa-solid fa-user" aria-hidden="true"></i>
+              獨立完成
+            </span>
+          </div>
+
+          <div class="work-info__divider"></div>
+
           <div class="work-info__section">
             <p class="work-info__label">核心說明</p>
-            <p class="work-info__text">跨足實體包裝與數位網頁原型的整合設計，從品牌企劃延伸至 UI 視覺原型，串聯線上線下的品牌一致性。</p>
+            <p class="work-info__text">跨足實體包裝與數位網頁原型的整合設計，從品牌企劃延伸至 UI 視覺與互動原型，串聯線上線下的品牌一致性。</p>
           </div>
+
+          <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
+            <p class="work-info__label">企劃書</p>
+            <a href="https://www.canva.com/design/DAG3q57FnP8/l9IRv_N5Kb-20XP7OgVP5g/view" target="_blank" rel="noopener" class="work-external-btn">
+              <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+              查看企劃書
+            </a>
+          </div>
+
+          <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
+            <p class="work-info__label">互動原型</p>
+            <a href="https://www.figma.com/proto/bANwAiaLMFaw7p8n6OvqRn/YeBuff?page-id=0%3A1&node-id=1-4&viewport=446%2C133%2C0.06&t=95V4CiaYQQmgxwXT-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A4" target="_blank" rel="noopener" class="work-external-btn">
+              <i class="fa-brands fa-figma" aria-hidden="true"></i>
+              查看互動原型
+            </a>
+          </div>
+
         </aside>
 
         <div class="work-gallery">
 
-          <p class="work-desc-block">
-            YeBuff 金運面膜是一個同時涵蓋實體包裝設計與數位網頁原型的整合品牌企劃。
-            以「金運」為品牌核心意象，建立從包裝視覺到網站 UI 的一致品牌語言，
-            展現跨媒介的設計整合能力。
-          </p>
+          <nav class="work-outline" aria-label="頁面大綱">
+            <a href="#section-intro"     class="work-outline__item">作品簡介</a>
+            <a href="#section-packaging" class="work-outline__item">包裝設計</a>
+            <a href="#section-web"       class="work-outline__item">網站原型</a>
+            <a href="#section-doc"       class="work-outline__item">企劃簡報</a>
+          </nav>
 
-          <!-- 主圖 -->
-          <div>
-            <p class="work-section-title">品牌視覺展示</p>
-            <div class="work-img-wrap reveal">
-              <img src="assets/images/Yebuff_01.jpg" alt="YeBuff金運面膜主視覺" loading="lazy" />
+          <!-- 作品簡介 -->
+          <section id="section-intro">
+            <div class="work-desc-block">
+              <img src="assets/images/Yebuff_logo.png" alt="YeBuff 品牌 LOGO" class="work-intro-logo" />
+              YeBuff 金運面膜是一個結合實體包裝設計與數位網頁原型的整合品牌企劃。以「金運」為品牌核心意象，建立從包裝視覺到網站 UI 的一致品牌語言，完整呈現從企劃定位到視覺落地的跨媒介設計整合能力。
             </div>
-          </div>
+          </section>
 
-          <!-- 其餘 4 張 -->
-          <div>
-            <p class="work-section-title">包裝設計 &amp; 網頁原型</p>
-            <div class="work-img-grid reveal" data-delay="0">
+          <!-- 包裝設計 -->
+          <section id="section-packaging">
+            <h2 class="work-section-title">包裝設計</h2>
+            <div class="work-img-masonry reveal">
               <div class="work-img-wrap">
-                <img src="assets/images/Yebuff_02.jpg" alt="YeBuff展示02" loading="lazy" />
+                <img src="assets/images/Yebuff_八入外包裝.jpg" alt="YeBuff 八入外包裝" loading="lazy" />
               </div>
               <div class="work-img-wrap">
-                <img src="assets/images/Yebuff_03.jpg" alt="YeBuff展示03" loading="lazy" />
+                <img src="assets/images/Yebuff_三入外包裝.jpg" alt="YeBuff 三入外包裝" loading="lazy" />
               </div>
               <div class="work-img-wrap">
-                <img src="assets/images/Yebuff_04.jpg" alt="YeBuff展示04" loading="lazy" />
+                <img src="assets/images/Yebuff_八入外包裝展開圖.jpg" alt="YeBuff 八入外包裝展開圖" loading="lazy" />
               </div>
               <div class="work-img-wrap">
-                <img src="assets/images/Yebuff_05.jpg" alt="YeBuff展示05" loading="lazy" />
+                <img src="assets/images/Yebuff_內包裝_01.jpg" alt="YeBuff 內包裝 01" loading="lazy" />
+              </div>
+              <div class="work-img-wrap">
+                <img src="assets/images/Yebuff_內包裝_02.jpg" alt="YeBuff 內包裝 02" loading="lazy" />
               </div>
             </div>
-          </div>
+            <p class="work-img-caption">點擊圖片可放大檢視</p>
+          </section>
+
+          <!-- 網站原型 -->
+          <section id="section-web">
+            <h2 class="work-section-title">網站原型</h2>
+            <div class="work-img-masonry reveal">
+              <div class="work-img-wrap">
+                <img src="assets/images/Yebuff_Figma原型_home.jpg" alt="YeBuff 網站首頁" loading="lazy" />
+              </div>
+              <div class="work-img-wrap">
+                <img src="assets/images/Yebuff_Figma原型_shop-home.jpg" alt="YeBuff 商店首頁" loading="lazy" />
+              </div>
+              <div class="work-img-wrap">
+                <img src="assets/images/Yebuff_Figma原型_shop.jpg" alt="YeBuff 商品列表頁" loading="lazy" />
+              </div>
+              <div class="work-img-wrap">
+                <img src="assets/images/Yebuff_Figma原型_Product page.jpg" alt="YeBuff 商品詳情頁" loading="lazy" />
+              </div>
+              <div class="work-img-wrap">
+                <img src="assets/images/Yebuff_Figma原型_About.jpg" alt="YeBuff 關於頁面" loading="lazy" />
+              </div>
+            </div>
+            <p class="work-img-caption">點擊圖片可放大檢視</p>
+
+            <h3 class="work-section-subtitle">操作示意</h3>
+            <div class="work-yt-wrap reveal">
+              <iframe
+                src="https://www.youtube.com/embed/BxCy9Bx98wE"
+                title="YeBuff 網站原型操作示意"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
+          </section>
+
+          <!-- 企劃簡報 -->
+          <section id="section-doc">
+            <h2 class="work-section-title">企劃簡報</h2>
+            <div class="work-pdf-wrap reveal">
+              <iframe
+                src="https://www.canva.com/design/DAG3q57FnP8/l9IRv_N5Kb-20XP7OgVP5g/view?embed"
+                title="YeBuff 金運面膜企劃簡報"
+                loading="lazy"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <p class="work-img-caption">涵蓋品牌定位、包裝設計與網站原型規劃</p>
+          </section>
 
         </div>
       </div>
@@ -104,6 +198,7 @@
       <p class="footer__copy">&copy; 2025 Ivy Hong. All rights reserved.</p>
     </div>
   </footer>
+
   <script src="js/main.js"></script>
 </body>
 </html>

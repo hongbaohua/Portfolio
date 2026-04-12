@@ -18,6 +18,7 @@ web/
 ├── works.html              設計作品列表頁（含 filter 功能）
 ├── ai.html                 AI 學習歷程頁
 ├── ai-case-template.html   AI 案例詳細頁模板（尚未正式使用）
+├── work-detail-template.html  設計作品詳情頁 HTML 模板
 ├── work-egg.html           作品詳細頁：EGG 餅乾品牌
 ├── work-graphic.html       作品詳細頁：平面設計合集
 ├── work-larkzhu.html       作品詳細頁：節節高 LARKZHU
@@ -52,10 +53,12 @@ web/
 
 1. **大綱 bar**（`.work-outline`）：頁面頂部 sticky 錨點導覽，列出頁面所有區塊，捲動時自動 highlight 目前區塊
 2. **完成方式 badge**：左側欄必須標示「獨立完成」（`.work-badge--solo`）或「小組作品」（`.work-badge--group`）；小組作品需加上「我負責：...」說明
-3. **LOGO 獨立展示**：品牌 LOGO（PNG）獨立放在 `.work-logo-wrap`（白色底、置中），不與其他圖片混排
+3. **LOGO 置於簡介開頭**：品牌 LOGO 使用 `.work-intro-logo`（max-height: 100px，置中，margin-bottom 24px），放在 `#section-intro` 的 `.work-desc-block` 最前面
 4. **圖片點擊放大**：所有 `.work-img-wrap img` 自動支援燈箱放大（main.js 全域處理，不需額外 HTML）
-5. **區塊 ID**：各 section 需設 `id`（如 `section-intro`、`section-logo`、`section-gallery`、`section-doc`）以供大綱 bar 錨點使用
-6. **平面設計合集特殊處理**：每個子類別（海報、廣告圖文等）需加 `.work-desc-block` 個別說明
+5. **區塊 ID**：各 section 需設 `id`（如 `section-intro`、`section-gallery`、`section-doc`）以供大綱 bar 錨點使用
+6. **按鈕名稱規範**：外部連結按鈕名稱統一如下：企劃書 PDF → `查看企劃書`、線上閱讀 → `線上閱讀`、外部作品連結 → `查看作品`、影片 → `觀看影片`
+7. **設計成果排列**：使用 `.work-img-masonry`（CSS columns: 3）排列，避免不同比例圖片產生空白
+8. **平面設計合集特殊處理**：每個子類別（海報、廣告圖文等）需加 `.work-desc-block` 個別說明
 
 ---
 

@@ -280,6 +280,14 @@
   border-radius: 2px;
 }
 
+/* ── 區塊次標題 ── */
+.work-section-subtitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 28px 0 12px;
+}
+
 /* ── YouTube 嵌入 ── */
 .work-yt-wrap {
   position: relative;
