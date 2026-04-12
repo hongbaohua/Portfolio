@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>仍在等 ── 動態歌詞影片 — Ivy Hong AI 應用</title>
+  <meta name="description" content="以角色扮演引導 ChatGPT 創作方文山風格歌詞，結合 SUNO v4.5 生成音樂、Gemini 與 Runway Gen-4 製作影像，剪映剪輯成完整動態歌詞影片。" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/work-detail.css" />
+</head>
+
+<body class="page-body">
+
+  <!-- 導覽列 -->
+  <nav class="nav" role="navigation" aria-label="主選單">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/images/name_logo.png" alt="Ivy Hong Logo" class="nav__logo-img" />
+      </a>
+      <button class="nav__toggle" aria-label="開啟選單"><span></span><span></span><span></span></button>
+      <ul class="nav__links" role="list">
+        <li><a href="index.html"  class="nav__link">首頁</a></li>
+        <li><a href="works.html" class="nav__link">設計作品</a></li>
+        <li><a href="ai.html"    class="nav__link active">AI 學習</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 頁首橫幅 -->
+  <header class="work-hero">
+    <div class="container">
+      <p class="section-label">AI Application · 影音製作</p>
+      <h1 class="work-hero__title">仍在等</h1>
+      <div class="work-hero__tags">
+        <span class="work-hero-tag">#影音製作</span>
+        <span class="work-hero-tag">#歌詞創作</span>
+        <span class="work-hero-tag">#SUNO</span>
+        <span class="work-hero-tag">#ChatGPT</span>
+        <span class="work-hero-tag">#Gemini</span>
+        <span class="work-hero-tag">#Runway</span>
+        <span class="work-hero-tag">#AI生成</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主體內容 -->
+  <main class="work-content">
+    <div class="container">
+
+      <a href="ai.html" class="back-btn">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        返回 AI 學習
+      </a>
+
+      <div class="work-layout">
+
+        <!-- ── 左側資訊欄 ── -->
+        <aside class="work-info">
+
+          <div class="work-info__section">
+            <p class="work-info__label">使用工具</p>
+            <p class="work-info__text">
+              <strong>ChatGPT</strong>、<strong>SUNO v4.5</strong>、<strong>Gemini</strong>、<strong>Runway Gen-4</strong>、剪映專業版
+            </p>
+          </div>
+
+          <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
+            <p class="work-info__label">應用類型</p>
+            <p class="work-info__text">影音製作 · 音樂創作</p>
+          </div>
+
+          <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
+            <p class="work-info__label">完成時間</p>
+            <p class="work-info__text">2025 年 12 月</p>
+          </div>
+
+          <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
+            <p class="work-info__label">查看成果</p>
+            <a href="https://youtu.be/Tz_tiJqV5PE" target="_blank" rel="noopener" class="work-external-btn">
+              <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+              觀看影片
+            </a>
+            <a href="https://suno.com/s/xhTgcUHDalSVixMO" target="_blank" rel="noopener" class="work-external-btn secondary" style="margin-top: 10px;">
+              <i class="fa-solid fa-music" aria-hidden="true"></i>
+              聆聽音樂
+            </a>
+          </div>
+
+        </aside><!-- /work-info -->
+
+
+        <!-- ── 右側內容區 ── -->
+        <div class="work-gallery">
+
+          <!-- 簡介 -->
+          <div class="work-desc-block">
+            「仍在等」是一首以「等公車」為主題的文言風流行抒情曲。創作過程以 ChatGPT 模擬方文山詞風產出歌詞，透過 4 輪溝通調整後，將歌詞與英文曲風 prompt 投入 SUNO v4.5 生成音樂；影像部分使用 Gemini 生成圖像、Runway Gen-4 生成動態影片片段，最後以剪映專業版剪輯合成並上傳 YouTube。整個流程橫跨 5 種 AI 工具，展示跨工具協作的完整影音創作鏈。
+          </div>
+
+          <!-- YouTube 嵌入 -->
+          <div class="work-yt-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/Tz_tiJqV5PE"
+              title="《仍在等》──「人潮散 我仍站 等那班未來的車啊」【動態歌詞】"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+
+          <!-- ── 工具與 Prompt 設計 ── -->
+          <h2 class="work-section-title">工具與 Prompt 設計</h2>
+
+          <div class="work-desc-block">
+            <strong>ChatGPT — 歌詞創作</strong><br /><br />
+            使用角色扮演策略，要求 ChatGPT 以「你是方文山」的設定創作歌詞，主題定為「等公車」，風格為文言文藝，出發點是等公車人的心理狀態。ChatGPT 一輪即產出完整歌詞，結構涵蓋主歌、副歌、橋段，風格符合預期。代表歌詞：
+            <blockquote class="work-lyric">
+              候車亭前風微斜　時光在指尖蒸發<br />
+              一盞黃燈半盞茶　等誰載我去天涯<br />
+              人潮散　我仍站　等那班未來的車啊
+            </blockquote>
+            拿到歌詞後，再要求 ChatGPT 轉化為 SUNO AI 可用的英文曲風提示詞，並主動指出去掉人名（Jay Chou、Vincent Fang），讓生成空間更開放。
+          </div>
+
+          <div class="work-desc-block">
+            <strong>SUNO v4.5 — 曲風 Prompt（最終使用版）</strong>
+          </div>
+          <pre class="work-code-block">A poetic Chinese pop ballad blending traditional Chinese instruments
+(guzheng, erhu, bamboo flute) with soft modern pop piano and strings.
+The song should feel nostalgic, calm, and emotional — like waiting quietly
+at a bus stop under the streetlights after rain. Gentle rhythm, around 75 BPM,
+with elegant and lyrical phrasing, evoking imagery of time passing, quiet waiting,
+and distant dreams. The atmosphere should be cinematic, delicate, and slightly
+melancholic, with a balance of ancient charm and modern warmth.
+
+Style tags: Chinese pop, poetic lyrics, guzheng, erhu, ambient pop, cinematic
+ballad, slow tempo, emotional, nostalgic, reflective, rainy mood, soft vocals,
+traditional-modern fusion</pre>
+
+          <div class="work-desc-block">
+            <strong>生成結果：</strong>古典中國流行抒情曲，古箏、二胡、竹笛搭配現代鋼琴弦樂，75 BPM，約 3 分 25 秒，氛圍懷舊電影感，符合預期設定。
+          </div>
+
+
+          <!-- ── 溝通調整過程 ── -->
+          <h2 class="work-section-title">溝通調整過程</h2>
+
+          <div class="work-table-wrap">
+            <table class="work-table">
+              <thead>
+                <tr>
+                  <th>輪次</th>
+                  <th>輸入指令</th>
+                  <th>效果</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>第 1 輪</td>
+                  <td>「你是方文山…寫作一曲以「等公車」為題，文言文藝風格的歌詞，從等公車人的心態出發，貼近人心，朗朗上口」</td>
+                  <td>直接產出完整歌詞，結構與風格符合預期</td>
+                </tr>
+                <tr>
+                  <td>第 2 輪</td>
+                  <td>「請提供用於 Suno AI 的曲風英文提示詞」</td>
+                  <td>產出含人名的英文 prompt</td>
+                </tr>
+                <tr>
+                  <td>第 3 輪</td>
+                  <td>「去掉人名」</td>
+                  <td>移除 Jay Chou、Vincent Fang，讓生成空間更開放</td>
+                </tr>
+                <tr>
+                  <td>第 4 輪</td>
+                  <td>「標題詩意一點」</td>
+                  <td>提供 5 個詩意標題，最終選定「仍在等」</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="work-desc-block">
+            <strong>關鍵技巧：</strong><br /><br />
+            角色扮演設定（「你是方文山」）讓 AI 快速鎖定風格，省去大量反覆調整；去掉人名是為了讓 SUNO 不受限於特定風格聯想，讓音樂詮釋空間更自由；標題從功能性（「等公車」）進化為詩意（「仍在等」），由 AI 提供候選，人工做最後決定——這個人機分工模式讓創作既有效率、又保留了主體的選擇權。
+          </div>
+
+
+          <!-- ── 過程反思 ── -->
+          <h2 class="work-section-title">過程反思</h2>
+
+          <div class="work-desc-block">
+            這次最大的收穫是體驗了「跨工具串接」的完整創作流程——從文字到音樂到影像，每一段都由不同的 AI 工具負責，而這些工具之間的承接需要人去翻譯和轉化（例如把歌詞意境轉成 SUNO 的英文曲風描述）。這個「翻譯」環節才是最需要設計感的地方。<br /><br />
+            如果下次再做，我會更早建立影像風格參考板，讓 Gemini 和 Runway 的生成結果更一致；剪映的動態歌詞排版也花了不少時間，未來可以提前規劃字體與節奏感。
+          </div>
+
+        </div><!-- /work-gallery -->
+      </div><!-- /work-layout -->
+    </div>
+  </main><!-- /work-content -->
+
+
+  <!-- 頁尾 -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <a href="mailto:hong.baohua.ivy@gmail.com" class="footer__email">
+        hong.baohua.ivy@gmail.com
+      </a>
+      <p class="footer__copy">&copy; 2025 Ivy Hong. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
