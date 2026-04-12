@@ -123,7 +123,7 @@
 
 /* 外連按鈕（Canva、heyzine 等） */
 .work-external-btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 8px;
   padding: 11px 20px;
