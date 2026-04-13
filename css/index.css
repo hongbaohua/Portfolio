@@ -468,7 +468,7 @@
 /* ── 學歷 + 技能並排 ── */
 .about-right {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: max-content 1fr;
   gap: 20px;
   align-items: stretch;
 }
