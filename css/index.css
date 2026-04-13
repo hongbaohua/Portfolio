@@ -227,6 +227,8 @@
 .hero__contact-card {
   background: var(--white);
   border: 1px solid var(--border);
+  border-top: 2.5px solid var(--accent);
+  border-left: 2.5px solid var(--accent);
   border-radius: var(--radius-lg);
   overflow: hidden;
   padding: 32px 32px 28px;
@@ -381,6 +383,8 @@
 .about-card {
   background: var(--white);
   border: 1px solid var(--border);
+  border-top: 2.5px solid var(--accent);
+  border-left: 2.5px solid var(--accent);
   border-radius: var(--radius-lg);
   padding: 28px 28px 32px;
   position: relative;
@@ -390,33 +394,6 @@
 }
 
 
-/* 上邊 + 左邊金色邊線；右/下設 transparent 使四角均有寬度，border-radius 才能正確彎曲 */
-.about-card::before,
-.hero__contact-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  border: 2.5px solid transparent;
-  border-top-color: var(--accent);
-  border-left-color: var(--accent);
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* 末端漸淡：白色覆蓋條，讓線條末端自然消失 */
-.about-card::after,
-.hero__contact-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background:
-    linear-gradient(to right,  transparent 35%, var(--white) 100%) top  / 100% 3px no-repeat,
-    linear-gradient(to bottom, transparent 35%, var(--white) 100%) left / 3px 100% no-repeat;
-  pointer-events: none;
-  z-index: 2;
-}
 
 /* 卡片標題列（icon + 標籤文字） */
 .about-card__label {
