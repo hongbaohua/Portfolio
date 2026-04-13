@@ -238,14 +238,14 @@
   width: 100%;
 }
 
-/* 頂部金色條 */
+/* 左側金色縱條 */
 .hero__contact-card::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-light));
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  top: 20px; bottom: 20px; left: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  border-radius: 0 2px 2px 0;
 }
 
 /* 卡片頂部：logo + 姓名 */
@@ -397,14 +397,14 @@
   flex-direction: column;
 }
 
-/* 卡片頂部金色漸層線 */
+/* 左側金色縱條 */
 .about-card::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-light));
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  top: 24px; bottom: 24px; left: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  border-radius: 0 2px 2px 0;
 }
 
 /* 卡片標題列（icon + 標籤文字） */
