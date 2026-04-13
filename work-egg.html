@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>【孩能學做菜】教育圖書 — Ivy Hong Portfolio</title>
+  <meta name="description" content="專為 9–12 歲孩童設計的生活教育圖書，結合宣傳短片進行跨媒體推廣，並應用 AI 生圖技術製作插圖素材。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -43,57 +44,114 @@
 
   <main class="work-content">
     <div class="container">
-      <a href="works.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> 返回作品列表</a>
 
       <div class="work-layout">
 
         <aside class="work-info">
+
+          <a href="works.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            返回作品列表
+          </a>
+          <div class="work-info__divider"></div>
+
           <div class="work-info__section">
             <p class="work-info__label">作品類別</p>
             <p class="work-info__text">平面視覺 · 數位與多媒體</p>
           </div>
+
           <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
+            <p class="work-info__label">完成方式</p>
+            <span class="work-badge work-badge--solo">
+              <i class="fa-solid fa-user" aria-hidden="true"></i>
+              獨立完成
+            </span>
+          </div>
+
+          <div class="work-info__divider"></div>
+
           <div class="work-info__section">
             <p class="work-info__label">核心說明</p>
             <p class="work-info__text">專為 9–12 歲孩童設計的生活教育圖書，結合宣傳短片進行跨媒體推廣，並應用 AI 生圖技術製作插圖素材。</p>
           </div>
+
           <div class="work-info__divider"></div>
+
           <div class="work-info__section">
             <p class="work-info__label">附件</p>
             <a href="https://heyzine.com/flip-book/c81d93fe9d.html" target="_blank" rel="noopener" class="work-external-btn">
-              <i class="fa-solid fa-book-open"></i> 線上閱讀電子書
+              <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+              線上閱讀電子書
             </a>
           </div>
-          <div class="work-info__section">
-            <p class="work-info__label">品牌 Logo</p>
-            <img src="assets/images/EGG_logo.png" alt="孩能學做菜 EGG Logo" style="max-width:160px; margin-top:8px; border-radius:8px;" />
-          </div>
+
         </aside>
 
         <div class="work-gallery">
 
-          <!-- 書籍簡介 -->
-          <div class="work-desc-block">
-            <strong>📘《孩能學做菜──料理從蛋開始》</strong><br />
-            Kids Can Cook! The EGG-cellent Start.<br /><br />
-            這是一本專為 9–12 歲孩童設計的生活教育圖書，以台灣經典蛋料理（菜脯蛋、蛋花湯、滷蛋等）為教材，
-            教會孩子最實用的生活能力。同時搭配宣傳短片與 AI 生圖插畫，進行跨媒體整合推廣。
-            本書完全免費，可線上閱讀或下載列印。
-          </div>
+          <nav class="work-outline" aria-label="頁面大綱">
+            <a href="#section-intro"    class="work-outline__item">作品簡介</a>
+            <a href="#section-video"    class="work-outline__item">宣傳影片</a>
+            <a href="#section-copy"     class="work-outline__item">社群文案</a>
+            <a href="#section-book"     class="work-outline__item">電子書</a>
+            <a href="#section-analysis" class="work-outline__item">製前分析</a>
+          </nav>
 
-          <!-- 影片封面 -->
-          <div>
-            <p class="work-section-title">宣傳影片</p>
-            <div class="work-img-wrap reveal">
-              <img src="assets/images/EGG_video cover.jpg" alt="孩能學做菜宣傳影片封面" loading="lazy" />
+          <!-- 作品簡介 -->
+          <section id="section-intro">
+            <div class="work-desc-block">
+              <img src="assets/images/EGG_logo.png" alt="孩能學做菜 EGG LOGO" class="work-intro-logo" />
+              《孩能學做菜──料理從蛋開始》是一本專為 9–12 歲孩童設計的生活教育圖書，以台灣經典蛋料理為教材，培養孩子的生活自理能力。完整企劃涵蓋圖書設計、AI 生圖插圖、宣傳影片製作及社群廣告文案，並提供免費電子書供線上閱讀或下載列印。
             </div>
-            <p class="work-img-caption">宣傳短片封面；影片以廣告文案形式推廣免費圖書</p>
-          </div>
+          </section>
 
-          <!-- 電子書嵌入 -->
-          <div>
-            <p class="work-section-title">電子書預覽</p>
-            <div class="work-pdf-wrap reveal" data-delay="80">
+          <!-- 宣傳影片 -->
+          <section id="section-video">
+            <h2 class="work-section-title">宣傳影片</h2>
+            <div class="work-yt-wrap reveal">
+              <iframe
+                src="https://www.youtube.com/embed/uWK9MV5RgLs"
+                title="孩能學做菜宣傳影片"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
+          </section>
+
+          <!-- 社群文案 -->
+          <section id="section-copy">
+            <h2 class="work-section-title">社群文案</h2>
+            <div class="work-copy-block reveal">
+              <p>📘 免費閱讀與下載｜適合9–12歲孩子的生活教育圖書</p>
+              <p>🥚煎第一顆蛋，學會第一份自理。</p>
+              <p>你也曾想過，孩子該從什麼時候開始學會照顧自己的一餐嗎？<br />
+              其實，不需要高難度技巧，也不用準備一堆材料——<br />
+              只要從冰箱裡那顆熟悉的蛋開始，就能教會孩子最實用的生活能力。</p>
+              <p>📗《孩能學做菜──料理從蛋開始》<br />
+              Kids Can Cook! The EGG-cellent Start.</p>
+              <p>這是一本專為9–12歲孩童設計的生活教育圖書，內容包含：<br />
+              ✔ 認識食用蛋，學會分辨新鮮與否<br />
+              ✔ 用臺灣經典蛋料理當教材（如菜脯蛋、蛋花湯、滷蛋等）<br />
+              ✔ 提供簡單、安全又美味的食譜，適合親子一同動手做</p>
+              <p>💡最棒的是，這本書完全免費！<br />
+              ✨ 可直接線上閱讀，也能下載列印，陪孩子一起翻翻看<br />
+              ✨ 材料家裡就有，操作步驟淺顯易懂，不增加家長負擔，只留下珍貴的親子共學時光</p>
+              <p>📚 電子書功能貼心設計：<br />
+              🔹 目錄互動：點選即可跳轉各章節<br />
+              🔹 書籤標記：可自行標記重要頁面<br />
+              🔹 PDF下載：永久保存，自由列印<br />
+              🔹 文字查找：快速搜尋感興趣內容</p>
+              <p>歡迎和孩子一起，從一顆蛋開始，學會生活的第一課。🥚✨</p>
+            </div>
+          </section>
+
+          <!-- 電子書 -->
+          <section id="section-book">
+            <h2 class="work-section-title">電子書</h2>
+            <div class="work-pdf-wrap reveal">
               <iframe
                 src="https://heyzine.com/flip-book/c81d93fe9d.html"
                 title="孩能學做菜電子書"
@@ -101,11 +159,23 @@
                 allowfullscreen
               ></iframe>
             </div>
-            <p class="work-img-caption">
-              電子書支援目錄跳轉、書籤標記、PDF 下載、文字查找。
+            <p class="work-img-caption">支援目錄跳轉、書籤標記、PDF 下載、文字查找．
               <a href="https://heyzine.com/flip-book/c81d93fe9d.html" target="_blank" rel="noopener" style="color:var(--accent-dark);">開新分頁閱讀</a>
             </p>
-          </div>
+          </section>
+
+          <!-- 製前分析 -->
+          <section id="section-analysis">
+            <h2 class="work-section-title">製前分析</h2>
+            <div class="work-pdf-wrap reveal">
+              <iframe
+                src="https://about-food.notion.site/ebd/1568f49fd02980009e31d5c67afdc9b2"
+                title="孩能學做菜製前分析"
+                loading="lazy"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </section>
 
         </div>
       </div>
@@ -118,6 +188,7 @@
       <p class="footer__copy">&copy; 2025 Ivy Hong. All rights reserved.</p>
     </div>
   </footer>
+
   <script src="js/main.js"></script>
 </body>
 </html>

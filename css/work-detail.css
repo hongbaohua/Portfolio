@@ -318,6 +318,25 @@
   display: block;
 }
 
+/* ── 社群文案區塊 ── */
+.work-copy-block {
+  background: var(--bg-dark);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 24px 28px;
+  font-size: 0.9rem;
+  line-height: 1.9;
+  color: var(--text);
+}
+
+.work-copy-block p {
+  margin-bottom: 16px;
+}
+
+.work-copy-block p:last-child {
+  margin-bottom: 0;
+}
+
 /* ── Prompt 程式碼區塊 ── */
 .work-code-block {
   background: var(--dark);
