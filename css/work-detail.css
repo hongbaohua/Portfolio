@@ -508,6 +508,22 @@
   margin: 0 auto 24px;
 }
 
+/* ── 兩個 LOGO 並排 ── */
+.work-intro-logo-pair {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.work-intro-logo-pair img {
+  max-height: 100px;
+  max-width: 200px;
+  width: auto;
+}
+
 /* ────────────────────────────────────────────────
    LIGHTBOX — 圖片燈箱放大
    ──────────────────────────────────────────────── */
