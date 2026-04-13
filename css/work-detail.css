@@ -188,6 +188,11 @@
   background: var(--bg-dark);
 }
 
+.work-img-wrap--half {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
 .work-img-wrap img {
   width: 100%;
   height: auto;
