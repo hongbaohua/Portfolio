@@ -14,8 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
     glow.style.left = e.clientX + 'px';
     glow.style.top  = e.clientY + 'px';
     glow.style.opacity = '1';
+    glow.style.transform = 'translate(-50%, -50%) scale(1)';
     clearTimeout(glowTimer);
-    glowTimer = setTimeout(() => { glow.style.opacity = '0'; }, 100);
+    glowTimer = setTimeout(() => {
+      glow.style.opacity = '0';
+      glow.style.transform = 'translate(-50%, -50%) scale(0.3)';
+    }, 100);
   }, { passive: true });
 
   /* ── 捲動進度條 ── */
