@@ -390,15 +390,16 @@
 }
 
 
-/* 上邊 + 左邊金色邊線，border-radius 原生處理轉角 */
+/* 上邊 + 左邊金色邊線；右/下設 transparent 使四角均有寬度，border-radius 才能正確彎曲 */
 .about-card::before,
 .hero__contact-card::before {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  border-top: 2.5px solid var(--accent);
-  border-left: 2.5px solid var(--accent);
+  border: 2.5px solid transparent;
+  border-top-color: var(--accent);
+  border-left-color: var(--accent);
   pointer-events: none;
   z-index: 1;
 }
