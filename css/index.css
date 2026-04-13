@@ -568,46 +568,50 @@
 }
 
 /* ── 關於本站 callout ── */
-.about-made-with {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  margin-top: 20px;
-  padding: 20px 24px;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  border-left: 3px solid var(--accent);
+/* ────────────────────────────────────────────────
+   關於這個網站 — 橫幅
+   ──────────────────────────────────────────────── */
+.made-with-banner {
+  background: var(--bg-dark);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 28px 0;
 }
 
-.about-made-with__icon {
-  width: 36px;
-  height: 36px;
+.made-with-banner__inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.made-with-banner__icon {
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius);
-  background: var(--bg-dark);
+  background: var(--white);
+  border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--accent-dark);
   flex-shrink: 0;
-  margin-top: 2px;
 }
 
-.about-made-with__title {
+.made-with-banner__title {
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--text);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
-.about-made-with__text {
+.made-with-banner__text {
   font-size: 0.85rem;
   color: var(--text-muted);
   line-height: 1.7;
 }
 
-.about-made-with__text strong {
+.made-with-banner__text strong {
   color: var(--text);
   font-weight: 600;
 }
