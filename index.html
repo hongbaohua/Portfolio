@@ -122,83 +122,124 @@
         <!-- 學歷認證 + 技能（全寬） -->
         <div class="about-right">
 
-          <!-- 學歷與認證 -->
-          <div class="about-card reveal" data-delay="80">
+          <!-- 學歷與認證 — Timeline -->
+          <div class="about-card reveal" data-delay="0">
             <p class="about-card__label">
               <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
               學歷與專業認證
             </p>
 
-            <!-- 學歷 -->
-            <p class="about-edu__sub-label">學歷</p>
-            <ul class="about-edu__list">
-              <li class="about-edu__item">
-                <span class="about-edu__year">2025</span>
-                <div class="about-edu__info">
-                  <strong>國立臺中科技大學 商業設計系</strong>
-                  <span>學士</span>
-                </div>
-              </li>
-            </ul>
+            <div class="edu-timeline">
 
-            <div class="about-edu__divider"></div>
+              <!-- 學歷 -->
+              <p class="edu-tl__section-label">學歷</p>
+              <div class="edu-tl__track">
+                <div class="edu-tl__item reveal" data-delay="100">
+                  <div class="edu-tl__node">
+                    <div class="edu-tl__dot edu-tl__dot--accent"></div>
+                  </div>
+                  <div class="edu-tl__body">
+                    <span class="edu-tl__year edu-tl__year--new">2025</span>
+                    <strong class="edu-tl__name">國立臺中科技大學 商業設計系</strong>
+                    <span class="edu-tl__badge edu-tl__badge--gold">學士學位</span>
+                  </div>
+                </div>
+              </div>
 
-            <!-- 證照 -->
-            <p class="about-edu__sub-label">證照</p>
-            <ul class="about-edu__list">
-              <li class="about-edu__item">
-                <span class="about-edu__year">2022</span>
-                <div class="about-edu__info">
-                  <strong>金銀珠寶飾品加工技術士</strong>
-                  <span>丙級</span>
+              <div class="edu-tl__sep"></div>
+
+              <!-- 專業認證 -->
+              <p class="edu-tl__section-label">專業認證</p>
+              <div class="edu-tl__track">
+                <div class="edu-tl__item reveal" data-delay="160">
+                  <div class="edu-tl__node">
+                    <div class="edu-tl__dot"></div>
+                    <div class="edu-tl__connector"></div>
+                  </div>
+                  <div class="edu-tl__body">
+                    <span class="edu-tl__year">2022</span>
+                    <strong class="edu-tl__name">金銀珠寶飾品加工技術士</strong>
+                    <span class="edu-tl__badge">丙級</span>
+                  </div>
                 </div>
-              </li>
-              <li class="about-edu__item">
-                <span class="about-edu__year">2022</span>
-                <div class="about-edu__info">
-                  <strong>iPAS 3D 列印積層製造工程師</strong>
-                  <span>初級</span>
+                <div class="edu-tl__item reveal" data-delay="220">
+                  <div class="edu-tl__node">
+                    <div class="edu-tl__dot"></div>
+                    <div class="edu-tl__connector"></div>
+                  </div>
+                  <div class="edu-tl__body">
+                    <span class="edu-tl__year">2022</span>
+                    <strong class="edu-tl__name">iPAS 3D 列印積層製造工程師</strong>
+                    <span class="edu-tl__badge">初級</span>
+                  </div>
                 </div>
-              </li>
-              <li class="about-edu__item">
-                <span class="about-edu__year">2026</span>
-                <div class="about-edu__info">
-                  <strong>iPAS AI 應用規劃師</strong>
-                  <span>初級</span>
+                <div class="edu-tl__item reveal" data-delay="280">
+                  <div class="edu-tl__node">
+                    <div class="edu-tl__dot edu-tl__dot--accent"></div>
+                  </div>
+                  <div class="edu-tl__body">
+                    <span class="edu-tl__year edu-tl__year--new">2026</span>
+                    <strong class="edu-tl__name">iPAS AI 應用規劃師</strong>
+                    <span class="edu-tl__badge edu-tl__badge--gold">初級</span>
+                  </div>
                 </div>
-              </li>
-            </ul>
+              </div>
+
+            </div>
           </div>
 
-          <!-- 專業技能 -->
-          <div class="about-card reveal" data-delay="160">
+          <!-- 專業技能 — 分組 Tag Chips -->
+          <div class="about-card reveal" data-delay="80">
             <p class="about-card__label">
               <i class="fa-solid fa-palette" aria-hidden="true"></i>
               專業技能
             </p>
-            <ul class="about-skill__list">
-              <li class="about-skill__item">
-                <span class="about-skill__icon" aria-hidden="true"><i class="fa-solid fa-pen-nib"></i></span>
-                <div>
+            <div class="skill-groups">
+
+              <div class="skill-group reveal" data-delay="160">
+                <div class="skill-group__head">
+                  <span class="skill-group__icon" aria-hidden="true"><i class="fa-solid fa-pen-nib"></i></span>
                   <strong>平面與視覺設計</strong>
-                  <p>熟練使用 Adobe Photoshop、Illustrator 等。</p>
                 </div>
-              </li>
-              <li class="about-skill__item">
-                <span class="about-skill__icon" aria-hidden="true"><i class="fa-solid fa-hammer"></i></span>
-                <div>
+                <div class="skill-group__chips">
+                  <span class="skill-chip">Adobe Photoshop</span>
+                  <span class="skill-chip">Adobe Illustrator</span>
+                  <span class="skill-chip">品牌識別</span>
+                  <span class="skill-chip">包裝設計</span>
+                  <span class="skill-chip">LOGO 設計</span>
+                  <span class="skill-chip">印刷設計</span>
+                </div>
+              </div>
+
+              <div class="skill-group reveal" data-delay="240">
+                <div class="skill-group__head">
+                  <span class="skill-group__icon" aria-hidden="true"><i class="fa-solid fa-hammer"></i></span>
                   <strong>工藝實務</strong>
-                  <p>金工、木工、陶藝、漆藝等工藝實作經驗。</p>
                 </div>
-              </li>
-              <li class="about-skill__item">
-                <span class="about-skill__icon" aria-hidden="true"><i class="fa-solid fa-bullhorn"></i></span>
-                <div>
+                <div class="skill-group__chips">
+                  <span class="skill-chip">金工飾品</span>
+                  <span class="skill-chip">木工</span>
+                  <span class="skill-chip">陶藝</span>
+                  <span class="skill-chip">漆藝</span>
+                  <span class="skill-chip">3D 列印</span>
+                </div>
+              </div>
+
+              <div class="skill-group reveal" data-delay="320">
+                <div class="skill-group__head">
+                  <span class="skill-group__icon" aria-hidden="true"><i class="fa-solid fa-bullhorn"></i></span>
                   <strong>數位與行銷</strong>
-                  <p>影片剪輯、網頁設計、廣告行銷與品牌企劃。</p>
                 </div>
-              </li>
-            </ul>
+                <div class="skill-group__chips">
+                  <span class="skill-chip">影片剪輯</span>
+                  <span class="skill-chip">網頁設計</span>
+                  <span class="skill-chip">廣告圖文</span>
+                  <span class="skill-chip">品牌企劃</span>
+                  <span class="skill-chip">AI 工具應用</span>
+                </div>
+              </div>
+
+            </div>
           </div>
 
         </div><!-- /about-right -->
