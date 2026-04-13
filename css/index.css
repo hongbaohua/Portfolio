@@ -388,20 +388,15 @@
 }
 
 
-/* 對角漸層邊線：左上角金色沿上緣與左緣同時漸淡，mask 遮罩使其跟著圓角走 */
+/* 上邊 + 左邊金色邊線，border-radius 原生處理轉角 */
 .about-card::before,
 .hero__contact-card::before {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  padding: 2.5px;
-  background: linear-gradient(135deg, var(--accent) 15%, transparent 60%);
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
+  border-top: 1.5px solid var(--accent);
+  border-left: 1.5px solid var(--accent);
   pointer-events: none;
   z-index: 1;
 }
