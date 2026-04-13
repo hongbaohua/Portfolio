@@ -124,22 +124,12 @@
   transform: rotate(-0.8deg);
 }
 
-/* 板塊1 副標 */
-.hero__subtitle {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  letter-spacing: 0.05em;
-  margin-top: -8px;
-  margin-bottom: 20px;
-}
-
 /* 板塊1 段落 */
 .hero__desc {
-  font-size: 1.1rem;
-  font-weight: 400;
+  font-size: 1.35rem;
+  font-weight: 500;
   color: var(--text-muted);
-  line-height: 1.8;
+  line-height: 1.75;
   margin-bottom: 40px;
 }
 
