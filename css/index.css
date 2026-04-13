@@ -227,7 +227,6 @@
 .hero__contact-card {
   background: var(--white);
   border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
   border-radius: var(--radius-lg);
   padding: 32px 32px 28px;
   box-shadow: var(--shadow-lg);
@@ -381,15 +380,42 @@
 .about-card {
   background: var(--white);
   border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
   border-radius: var(--radius-lg);
   padding: 28px 28px 32px;
   position: relative;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
+
+/* L 形漸層邊線：上邊 + 左邊同時由金色向外漸淡 */
+.about-card::before,
+.hero__contact-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(to right,  var(--accent) 0%, transparent 65%) top  / 100% 2px no-repeat,
+    linear-gradient(to bottom, var(--accent) 0%, transparent 65%) left / 2px 100% no-repeat;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 破圖元素：左上角小圓點，突破卡片邊界 */
+.about-card::after,
+.hero__contact-card::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--white);
+  z-index: 2;
+}
 
 /* 卡片標題列（icon + 標籤文字） */
 .about-card__label {
@@ -605,6 +631,18 @@
   border-color: rgba(196, 163, 90, 0.28);
 }
 
+
+/* 技能卡裝飾大圖示 */
+.skill-card__deco-icon {
+  position: absolute;
+  right: 8px;
+  bottom: 16px;
+  font-size: 5rem;
+  color: var(--accent);
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
 
 /* ────────────────────────────────────────────────
    技能分組 + Chip Tags
