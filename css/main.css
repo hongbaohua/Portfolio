@@ -325,8 +325,9 @@ ul, ol {
   pointer-events: none;
   z-index: 0;
   transform: translate(-50%, -50%);
-  transition: left 0.1s ease, top 0.1s ease;
-  will-change: left, top;
+  opacity: 0;
+  transition: left 0.1s ease, top 0.1s ease, opacity 0.4s ease;
+  will-change: left, top, opacity;
 }
 
 /* ── 捲動進度條 ── */

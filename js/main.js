@@ -5,13 +5,17 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ── 滑鼠光暈 ── */
+  /* ── 滑鼠光暈（移動顯示，靜止消失） ── */
   const glow = document.createElement('div');
   glow.className = 'cursor-glow';
   document.body.appendChild(glow);
+  let glowTimer;
   window.addEventListener('mousemove', e => {
     glow.style.left = e.clientX + 'px';
     glow.style.top  = e.clientY + 'px';
+    glow.style.opacity = '1';
+    clearTimeout(glowTimer);
+    glowTimer = setTimeout(() => { glow.style.opacity = '0'; }, 300);
   }, { passive: true });
 
   /* ── 捲動進度條 ── */
