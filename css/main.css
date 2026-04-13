@@ -317,10 +317,11 @@ ul, ol {
 /* ── 滑鼠光暈 ── */
 .cursor-glow {
   position: fixed;
-  width: 380px;
-  height: 380px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(196, 163, 90, 0.2) 0%, rgba(196, 163, 90, 0.06) 50%, rgba(196, 163, 90, 0) 100%);
+  background: radial-gradient(circle, rgba(196, 163, 90, 0.45) 0%, rgba(196, 163, 90, 0) 100%);
+  filter: blur(24px);
   pointer-events: none;
   z-index: 0;
   transform: translate(-50%, -50%);
