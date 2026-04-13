@@ -572,7 +572,7 @@
    關於這個網站 — 橫幅
    ──────────────────────────────────────────────── */
 .made-with-banner {
-  background: var(--accent-light);
+  background: #EDE5C4;
   padding: 64px 0;
 }
 
