@@ -88,11 +88,11 @@
   display: grid;
   grid-template-columns: 280px 1fr;
   gap: 56px;
-  align-items: start;
 }
 
 /* ── 左側資訊欄 ── */
 .work-info {
+  align-self: start;
   position: sticky;
   top: calc(var(--nav-h) + 24px);
 }
