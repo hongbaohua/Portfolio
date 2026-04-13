@@ -327,14 +327,7 @@
   font-size: 0.9rem;
   line-height: 1.9;
   color: var(--text);
-}
-
-.work-copy-block p {
-  margin-bottom: 16px;
-}
-
-.work-copy-block p:last-child {
-  margin-bottom: 0;
+  white-space: pre-line;
 }
 
 /* ── Prompt 程式碼區塊 ── */
