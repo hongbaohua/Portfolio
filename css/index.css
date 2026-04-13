@@ -105,7 +105,7 @@
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.01em;
-  color: var(--text);
+  color: var(--dark);
   margin-bottom: 20px;
 }
 
@@ -160,7 +160,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--text);
+  background: var(--accent-dark);
   color: var(--white);
   padding: 14px 28px;
   border-radius: var(--radius);
@@ -171,7 +171,7 @@
 }
 
 .btn-primary:hover {
-  background: var(--accent-dark);
+  background: var(--accent);
   transform: translateY(-2px);
 }
 
@@ -572,47 +572,49 @@
    關於這個網站 — 橫幅
    ──────────────────────────────────────────────── */
 .made-with-banner {
-  background: var(--bg-dark);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 28px 0;
+  background: var(--dark);
+  padding: 64px 0;
 }
 
 .made-with-banner__inner {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 20px;
+  text-align: center;
+  gap: 16px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .made-with-banner__icon {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: var(--radius);
-  background: var(--white);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
-  color: var(--accent-dark);
-  flex-shrink: 0;
+  font-size: 1.1rem;
+  color: var(--accent-light);
+  margin-bottom: 4px;
 }
 
 .made-with-banner__title {
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--white);
   margin-bottom: 4px;
 }
 
 .made-with-banner__text {
   font-size: 0.85rem;
-  color: var(--text-muted);
-  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.8;
 }
 
 .made-with-banner__text strong {
-  color: var(--text);
+  color: var(--accent-light);
   font-weight: 600;
 }
 
@@ -633,6 +635,112 @@
 .featured-more {
   text-align: center;
   margin-top: 48px;
+}
+
+/* ────────────────────────────────────────────────
+   聯繫我 Modal
+   ──────────────────────────────────────────────── */
+.contact-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-modal.is-open {
+  display: flex;
+}
+
+.contact-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(28, 27, 24, 0.55);
+  backdrop-filter: blur(4px);
+}
+
+.contact-modal__box {
+  position: relative;
+  z-index: 1;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 48px 40px 40px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-dark);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  transition: background var(--transition), color var(--transition);
+}
+
+.contact-modal__close:hover {
+  background: var(--border);
+  color: var(--text);
+}
+
+.contact-modal__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--accent-dark);
+  margin-bottom: 4px;
+}
+
+.contact-modal__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.contact-modal__email {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.contact-modal__send {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-dark);
+  color: var(--white);
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 8px;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.contact-modal__send:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
 }
 
 .btn-outline {

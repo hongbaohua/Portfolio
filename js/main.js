@@ -97,6 +97,24 @@ document.addEventListener('DOMContentLoaded', () => {
     syncOutline();
   }
 
+  /* ── 聯繫我 Modal ── */
+  const btnContact      = document.getElementById('btn-contact');
+  const contactModal    = document.getElementById('contactModal');
+  const contactClose    = document.getElementById('contactModalClose');
+  const contactBackdrop = document.getElementById('contactModalBackdrop');
+
+  if (btnContact && contactModal) {
+    const openModal  = () => { contactModal.classList.add('is-open');    document.body.style.overflow = 'hidden'; };
+    const closeModal = () => { contactModal.classList.remove('is-open'); document.body.style.overflow = ''; };
+
+    btnContact.addEventListener('click', openModal);
+    contactClose.addEventListener('click', closeModal);
+    contactBackdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && contactModal.classList.contains('is-open')) closeModal();
+    });
+  }
+
   /* ── 捲動進場動畫（IntersectionObserver） ── */
   const revealItems = document.querySelectorAll('.reveal');
   if (revealItems.length > 0) {
