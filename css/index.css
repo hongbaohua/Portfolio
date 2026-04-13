@@ -395,10 +395,24 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  border-top: 1.5px solid var(--accent);
-  border-left: 1.5px solid var(--accent);
+  border-top: 2.5px solid var(--accent);
+  border-left: 2.5px solid var(--accent);
   pointer-events: none;
   z-index: 1;
+}
+
+/* 末端漸淡：白色覆蓋條，讓線條末端自然消失 */
+.about-card::after,
+.hero__contact-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(to right,  transparent 35%, var(--white) 100%) top  / 100% 3px no-repeat,
+    linear-gradient(to bottom, transparent 35%, var(--white) 100%) left / 3px 100% no-repeat;
+  pointer-events: none;
+  z-index: 2;
 }
 
 /* 卡片標題列（icon + 標籤文字） */
