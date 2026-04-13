@@ -520,13 +520,6 @@
   transform: scale(1.25);
 }
 
-/* 最新項目：實心 dot + 光暈 */
-.edu-tl__dot--accent {
-  background: var(--accent);
-  border-color: var(--accent-dark);
-  box-shadow: 0 0 0 4px rgba(196, 163, 90, 0.18);
-}
-
 /* 連接線（最後一項不顯示） */
 .edu-tl__connector {
   flex: 1;
@@ -561,11 +554,6 @@
   margin-bottom: 6px;
 }
 
-.edu-tl__year--new {
-  background: rgba(154, 122, 58, 0.15);
-  border-color: var(--accent);
-}
-
 /* 名稱 */
 .edu-tl__name {
   display: block;
@@ -593,6 +581,16 @@
   color: var(--accent-dark);
   background: rgba(196, 163, 90, 0.08);
   border-color: rgba(196, 163, 90, 0.28);
+}
+
+/* 補充說明文字 */
+.edu-tl__detail {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 5px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 
 /* ────────────────────────────────────────────────
