@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     glow.style.top  = e.clientY + 'px';
     glow.style.opacity = '1';
     clearTimeout(glowTimer);
-    glowTimer = setTimeout(() => { glow.style.opacity = '0'; }, 300);
+    glowTimer = setTimeout(() => { glow.style.opacity = '0'; }, 100);
   }, { passive: true });
 
   /* ── 捲動進度條 ── */
