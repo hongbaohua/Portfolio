@@ -393,6 +393,8 @@
   padding: 28px 28px 32px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 /* 卡片頂部金色漸層線 */
@@ -415,6 +417,13 @@
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+/* 學歷 timeline 填滿卡片剩餘高度 */
+.edu-timeline {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ── 左欄：聯絡資料 ── */
@@ -461,7 +470,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  align-items: start;
+  align-items: stretch;
 }
 
 /* ────────────────────────────────────────────────
@@ -620,6 +629,8 @@
   display: flex;
   flex-direction: column;
   gap: 22px;
+  flex: 1;
+  justify-content: space-between;
 }
 
 .skill-group__head {
