@@ -5,6 +5,15 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* ── 捲動進度條 ── */
+  const scrollProgress = document.getElementById('scrollProgress');
+  if (scrollProgress) {
+    window.addEventListener('scroll', () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      scrollProgress.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+    }, { passive: true });
+  }
+
   /* ── 導覽列：捲動加陰影 ── */
   const nav = document.querySelector('.nav');
   window.addEventListener('scroll', () => {

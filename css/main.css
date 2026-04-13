@@ -314,6 +314,19 @@ ul, ol {
   transform: translateY(0);
 }
 
+/* ── 捲動進度條 ── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: var(--accent);
+  z-index: 1100;
+  pointer-events: none;
+  transition: width 0.1s linear;
+}
+
 /* ── 響應式 ── */
 @media (max-width: 768px) {
   .nav__links {
