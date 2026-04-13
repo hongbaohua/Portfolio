@@ -314,6 +314,20 @@ ul, ol {
   transform: translateY(0);
 }
 
+/* ── 滑鼠光暈 ── */
+.cursor-glow {
+  position: fixed;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196, 163, 90, 0.13) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  transition: left 0.12s ease, top 0.12s ease;
+  will-change: left, top;
+}
+
 /* ── 捲動進度條 ── */
 .scroll-progress {
   position: fixed;

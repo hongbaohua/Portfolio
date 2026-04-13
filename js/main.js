@@ -5,6 +5,15 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* ── 滑鼠光暈 ── */
+  const glow = document.createElement('div');
+  glow.className = 'cursor-glow';
+  document.body.appendChild(glow);
+  window.addEventListener('mousemove', e => {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top  = e.clientY + 'px';
+  }, { passive: true });
+
   /* ── 捲動進度條 ── */
   const scrollProgress = document.getElementById('scrollProgress');
   if (scrollProgress) {
