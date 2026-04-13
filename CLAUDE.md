@@ -48,6 +48,21 @@ web/
 - 圖示：Font Awesome 6.5
 - 無使用任何 CSS 框架（非 Tailwind）
 
+### 動效系統（2026-04-13 建立）
+勿重複實作已有的動效，新增動效前先確認此清單：
+
+| 效果 | 實作位置 | 說明 |
+|------|----------|------|
+| `fadeUp` / `fadeIn` / `slideRight` | `main.css` @keyframes | 全站共用進場動畫 |
+| `.reveal` + IntersectionObserver | `main.css` + `main.js` | 捲動進場，加 `data-delay` 可錯落 |
+| Hero 文字序列進場 | `index.css` | eyebrow(0.1s)→title(0.28s)→desc(0.46s)→cta(0.64s) 各自 fadeUp |
+| 捲動進度條 | `main.css` `.scroll-progress` + `main.js` | 頁頂 2px accent 線，`#scrollProgress`，隨捲動延伸 |
+| 滑鼠光暈 | `main.css` `.cursor-glow` + `main.js` | 移動時顯示，靜止 100ms 後同時縮小（scale 0.3）淡出 |
+| 圖片燈箱 | `main.js` 動態建立 | `.work-img-wrap img` 點擊放大，ESC 關閉 |
+| Work card hover | `works.css` | translateY(-6px) + shadow-lg + 圖片 scale(1.06) |
+| 按鈕 hover | `index.css` | translateY(-2px) |
+| Nav 底線展開 | `main.css` | `::after` scaleX 0→1 |
+
 ### 作品詳情頁統一規範（2026-04-13 訂定）
 所有設計作品詳情頁必須符合以下規範，模板參考 `work-detail-template.html`：
 
