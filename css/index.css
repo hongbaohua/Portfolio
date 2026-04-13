@@ -391,16 +391,16 @@
 
 
 
-/* L 形金色邊線：clip-path 強制只顯示上邊與左邊，轉角不滲色 */
+/* 上邊 + 左邊漸層線：純 background，顏色自然淡出為 transparent，不需要任何覆蓋或裁切 */
 .about-card::before,
 .hero__contact-card::before {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  border-top: 2.5px solid var(--accent);
-  border-left: 2.5px solid var(--accent);
-  clip-path: polygon(0 0, 100% 0, 100% 2.5px, 2.5px 2.5px, 2.5px 100%, 0 100%);
+  background:
+    linear-gradient(to right,  var(--accent) 0%, transparent 60%) top  left / 100% 2.5px no-repeat,
+    linear-gradient(to bottom, var(--accent) 0%, transparent 60%) top  left / 2.5px 100% no-repeat;
   pointer-events: none;
   z-index: 1;
 }
