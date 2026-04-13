@@ -395,7 +395,7 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  padding: 1.5px;
+  padding: 2.5px;
   background: linear-gradient(135deg, var(--accent) 0%, transparent 55%);
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
