@@ -125,14 +125,15 @@ web/
 
 ---
 
-## 目前網站狀態（最後更新：2026-04-16，EC Design 系列頁＋卡片連結完成）
+## 目前網站狀態（最後更新：2026-04-16，nav 重構＋ai-learning.html 新增）
 
 ### 已完成頁面
 | 頁面 | 狀態 | 說明 |
 |------|------|------|
-| index.html | ✅ 完成 | Hero、聯絡卡、學歷技能區塊（學歷加創意商品設計系修業；新增AI輔助創作技能組） |
+| index.html | ✅ 完成 | Hero、聯絡卡、學歷技能、精選作品、精選 AI 作品（3卡） |
 | works.html | ✅ 完成 | 作品卡列表，帶 logo，含 filter |
-| ai.html | ✅ 完成 | 工具卡、Callout、時間軸、AI Works 佔位卡 |
+| ai.html | ✅ 完成 | AI 應用成果作品卡列表（格式同 works.html），4 卡 |
+| ai-learning.html | ✅ 完成 | AI 學習歷程：工具卡、Callout、時間軸（5節點含AI新秀計畫）、精選 AI 作品（3卡） |
 | ai-stillwaiting.html | ✅ 完成 | 「仍在等」AI 作品詳細頁（影音 MV） |
 | work-egg.html | ✅ 完成 | EGG 餅乾品牌 |
 | work-graphic.html | ✅ 完成 | 平面設計合集 |
@@ -158,7 +159,7 @@ web/
 | 項目 | 說明 |
 |------|------|
 | AI Works 詳細頁 | 「仍在等」已完成；App 設計、更多 AI 應用仍待製作 |
-| ai.html 時間軸更新 | ✅ 已新增「AI新秀計畫（2025）」節點；內容細節待作品集完整後補充 |
+| ai-learning.html 時間軸 | ✅ 已新增「AI新秀計畫（2025）」節點；內容細節待作品集完整後補充 |
 | index.html AI 技能 chips | 作品集圖片全部上傳完成後，根據實際作品使用工具更新 AI 輔助創作分組內容 |
 
 ---
