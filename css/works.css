@@ -153,6 +153,11 @@
   margin-top: 0;
 }
 
+/* ai.html AI Works 區塊：標題與卡片網格同在一個 section 內，需補間距 */
+.ai-works-section .works-grid {
+  margin-top: 40px;
+}
+
 /* 整張卡片可點擊的連結包裝 */
 .work-card__link {
   display: flex;
