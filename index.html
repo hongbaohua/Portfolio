@@ -34,7 +34,16 @@
       <ul class="nav__links" role="list">
         <li><a href="index.html"  class="nav__link">首頁</a></li>
         <li><a href="works.html" class="nav__link">設計作品</a></li>
-        <li><a href="ai.html"    class="nav__link">AI 學習</a></li>
+        <li class="nav__item nav__item--has-dropdown">
+          <a href="ai.html" class="nav__link">AI 作品</a>
+          <button class="nav__caret-btn" aria-label="展開子選單" aria-expanded="false">
+            <i class="fa-solid fa-chevron-down nav__caret" aria-hidden="true"></i>
+          </button>
+          <ul class="nav__dropdown">
+            <li><a href="ai.html" class="nav__dropdown-link">AI 應用成果</a></li>
+            <li><a href="ai-learning.html" class="nav__dropdown-link">AI 學習歷程</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </nav>
@@ -134,7 +143,6 @@
               <!-- 學歷 -->
               <p class="edu-tl__section-label">學歷</p>
               <div class="edu-tl__track edu-tl__track--degree">
-                <i class="fa-solid fa-graduation-cap edu-tl__deco-icon" aria-hidden="true"></i>
                 <div class="edu-tl__item reveal" data-delay="100">
                   <div class="edu-tl__node">
                     <div class="edu-tl__dot"></div>
@@ -212,7 +220,6 @@
 
           <!-- 專業技能 — 分組 Tag Chips -->
           <div class="about-card reveal" data-delay="80">
-            <i class="fa-solid fa-palette skill-card__deco-icon" aria-hidden="true"></i>
             <p class="about-card__label">
               <i class="fa-solid fa-palette" aria-hidden="true"></i>
               專業技能
@@ -387,6 +394,89 @@
       <div class="featured-more reveal">
         <a href="works.html" class="btn-outline">
           查看全部作品 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       板塊 4 — 精選 AI 作品
+       ================================================ -->
+  <section class="section ai-featured-section" aria-label="精選 AI 作品">
+    <div class="container">
+
+      <p class="section-label">AI Works</p>
+      <h2 class="section-title featured-section__title">精選 AI 作品</h2>
+
+      <div class="works-grid">
+
+        <!-- 仍在等 -->
+        <article class="work-card reveal" data-delay="0">
+          <a href="ai-stillwaiting.html" class="work-card__link" aria-label="仍在等 — 查看詳情">
+            <div class="work-card__img">
+              <img src="https://i.ytimg.com/vi/Tz_tiJqV5PE/maxresdefault.jpg" alt="仍在等 動態歌詞影片縮圖" loading="lazy" />
+              <div class="work-card__overlay" aria-hidden="true">
+                <span class="work-card__overlay-icon"><i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+            <div class="work-card__body">
+              <h3 class="work-card__name">仍在等</h3>
+              <p class="work-card__desc">以角色扮演引導 ChatGPT 創作方文山風格歌詞，轉化為 SUNO prompt 生成音樂，結合 Gemini、Runway Gen-4 完成動態歌詞影片。</p>
+              <ul class="work-card__tags">
+                <li><span class="work-tag">#影音製作</span></li>
+                <li><span class="work-tag">#SUNO</span></li>
+                <li><span class="work-tag">#AI生成</span></li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+        <!-- AI 業主模擬練習 -->
+        <article class="work-card reveal" data-delay="80">
+          <a href="ai-ecdesign.html" class="work-card__link" aria-label="AI 業主模擬練習 — 查看詳情">
+            <div class="work-card__img">
+              <img src="assets/images/初霧Chuwu_v3.jpg" alt="AI 業主模擬練習 電商 Banner" loading="lazy" />
+              <div class="work-card__overlay" aria-hidden="true">
+                <span class="work-card__overlay-icon"><i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+            <div class="work-card__body">
+              <h3 class="work-card__name">AI 業主模擬練習</h3>
+              <p class="work-card__desc">以 Prompt Engineering 設定 AI 扮演電商業主，生成商業委託單，設計師實際執行並接受 AI 審稿評分。</p>
+              <ul class="work-card__tags">
+                <li><span class="work-tag">#PromptEngineering</span></li>
+                <li><span class="work-tag">#人機協作</span></li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+        <!-- 持續更新中 -->
+        <article class="work-card work-card--pending reveal" data-delay="160">
+          <div class="work-card__link" role="presentation">
+            <div class="work-card__img">
+              <div class="work-card__img-placeholder">
+                <i class="fa-solid fa-robot" aria-hidden="true"></i>
+                <span>持續更新中</span>
+              </div>
+            </div>
+            <div class="work-card__body">
+              <h3 class="work-card__name">更多 AI 作品</h3>
+              <p class="work-card__desc">持續整理中，更多 AI 工具的創作實踐與應用過程紀錄即將推出。</p>
+              <ul class="work-card__tags">
+                <li><span class="work-tag">#持續更新</span></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="featured-more reveal">
+        <a href="ai.html" class="btn-outline">
+          查看全部 AI 作品 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
         </a>
       </div>
 

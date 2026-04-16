@@ -44,19 +44,55 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.addEventListener('click', () => {
       links.classList.toggle('open');
     });
-    // 點連結後收合選單
-    links.querySelectorAll('.nav__link').forEach(link => {
-      link.addEventListener('click', () => links.classList.remove('open'));
+    // 點連結後收合選單（含下拉連結）
+    links.querySelectorAll('.nav__link, .nav__dropdown-link').forEach(link => {
+      link.addEventListener('click', () => {
+        links.classList.remove('open');
+        document.querySelectorAll('.nav__item--has-dropdown').forEach(item => item.classList.remove('is-open'));
+      });
     });
   }
 
+  /* ── 下拉選單 toggle（行動版） ── */
+  document.querySelectorAll('.nav__item--has-dropdown').forEach(item => {
+    const caretBtn = item.querySelector('.nav__caret-btn');
+    if (caretBtn) {
+      caretBtn.addEventListener('click', e => {
+        e.stopPropagation();
+        item.classList.toggle('is-open');
+        caretBtn.setAttribute('aria-expanded', item.classList.contains('is-open'));
+      });
+    }
+  });
+
+  // 點選外部時收合下拉
+  document.addEventListener('click', e => {
+    document.querySelectorAll('.nav__item--has-dropdown').forEach(item => {
+      if (!item.contains(e.target)) item.classList.remove('is-open');
+    });
+  });
+
   /* ── 標記目前頁面的 active 連結 ── */
   const currentPage = location.pathname.split('/').pop() || 'index.html';
+
+  // 主選單連結
   document.querySelectorAll('.nav__link').forEach(link => {
     const href = link.getAttribute('href');
     if (href === currentPage || (currentPage === '' && href === 'index.html')) {
       link.classList.add('active');
     }
+  });
+
+  // AI 系列頁：讓下拉選單父連結顯示 active
+  const aiPages = ['ai.html', 'ai-learning.html', 'ai-stillwaiting.html', 'ai-ecdesign.html'];
+  if (aiPages.includes(currentPage)) {
+    const aiNavLink = document.querySelector('.nav__item--has-dropdown > .nav__link');
+    if (aiNavLink) aiNavLink.classList.add('active');
+  }
+
+  // 下拉選單連結
+  document.querySelectorAll('.nav__dropdown-link').forEach(link => {
+    if (link.getAttribute('href') === currentPage) link.classList.add('active');
   });
 
   /* ── 圖片燈箱（點擊放大，動態建立） ── */

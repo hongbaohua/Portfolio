@@ -1,30 +1,20 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI 學習 — 洪寶華 Ivy Portfolio</title>
-  <meta name="description" content="洪寶華 Ivy 的 AI 學習歷程，記錄工具應用、創作實踐與持續探索。" />
-
-  <!-- Google Fonts -->
+  <title>AI 作品 — 洪寶華 Ivy Portfolio</title>
+  <meta name="description" content="洪寶華 Ivy 的 AI 應用成果，包含影音製作、Prompt Engineering、工作流設計等 AI 創作實踐。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- 樣式表 -->
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/works.css" />
-  <link rel="stylesheet" href="css/ai.css" />
 </head>
 
 <body class="page-body">
 
-  <!-- ================================================
-       導覽列
-       ================================================ -->
   <nav class="nav" role="navigation" aria-label="主選單">
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
@@ -36,295 +26,33 @@
       <ul class="nav__links" role="list">
         <li><a href="index.html"  class="nav__link">首頁</a></li>
         <li><a href="works.html" class="nav__link">設計作品</a></li>
-        <li><a href="ai.html"    class="nav__link">AI 學習</a></li>
+        <li class="nav__item nav__item--has-dropdown">
+          <a href="ai.html" class="nav__link">AI 作品</a>
+          <button class="nav__caret-btn" aria-label="展開子選單" aria-expanded="false">
+            <i class="fa-solid fa-chevron-down nav__caret" aria-hidden="true"></i>
+          </button>
+          <ul class="nav__dropdown">
+            <li><a href="ai.html" class="nav__dropdown-link">AI 應用成果</a></li>
+            <li><a href="ai-learning.html" class="nav__dropdown-link">AI 學習歷程</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
-  </nav><!-- /nav -->
+  </nav>
 
-
-  <!-- ================================================
-       AI HERO — 頁首橫幅
-       ================================================ -->
-  <header class="ai-hero" aria-label="AI 學習">
+  <header class="works-hero" aria-label="AI 作品">
     <div class="container">
-      <p class="section-label">AI Learning Journey</p>
-      <h1 class="section-title">AI 學習歷程</h1>
-      <p class="ai-hero__desc">
-        記錄我與 AI 工具共同探索創作的過程——<br />
-        從生圖應用到工作流整合，持續累積數位設計新能力。
+      <p class="section-label">AI Works</p>
+      <h1 class="section-title">AI 應用成果</h1>
+      <p class="works-hero__desc">
+        從影音製作、Prompt Engineering 到工作流設計——<br />
+        每件作品都是一次人機協作的完整實踐。
       </p>
     </div>
-  </header><!-- /ai-hero -->
+  </header>
 
-
-  <!-- ================================================
-       INTRO — 學習宣言
-       ================================================ -->
-  <section class="ai-intro" aria-label="學習宣言">
+  <main class="section works-section" id="works" aria-label="AI 作品列表">
     <div class="container">
-      <div class="ai-intro__card reveal">
-        <div class="ai-intro__icon" aria-hidden="true">
-          <i class="fa-solid fa-robot"></i>
-        </div>
-        <div class="ai-intro__text">
-          <h2>為什麼學習 AI？</h2>
-          <p>
-            設計師的工具箱不應設限。AI 不是取代創意，而是放大它——
-            讓我能更快速地驗證想法、探索視覺可能性，並將更多時間花在真正的設計決策上。
-            我把 AI 工具當作收集經驗的一種方式，廣泛接觸，系統整合。
-          </p>
-        </div>
-      </div>
-    </div>
-  </section><!-- /ai-intro -->
-
-
-  <!-- ================================================
-       TOOLS — AI 工具應用
-       ================================================ -->
-  <section class="section ai-tools-section" aria-label="AI 工具應用">
-    <div class="container">
-
-      <p class="section-label">Tools I Use</p>
-      <h2 class="section-title">AI 工具應用</h2>
-
-      <div class="ai-tools-grid">
-
-        <!-- 工具 1：AI 生圖 -->
-        <article class="ai-tool-card reveal" data-delay="0">
-          <div class="ai-tool-card__head">
-            <div class="ai-tool-card__icon" aria-hidden="true">
-              <i class="fa-solid fa-image"></i>
-            </div>
-            <div>
-              <p class="ai-tool-card__name">AI 生圖</p>
-              <p class="ai-tool-card__type">視覺生成</p>
-            </div>
-          </div>
-          <p class="ai-tool-card__desc">
-            運用 Midjourney、Adobe Firefly 等工具快速生成概念圖，
-            應用於書籍插圖、品牌情境圖與廣告素材製作。
-          </p>
-          <ul class="ai-tool-card__tags" aria-label="工具標籤">
-            <li><span class="ai-tool-tag">Midjourney</span></li>
-            <li><span class="ai-tool-tag">Adobe Firefly</span></li>
-            <li><span class="ai-tool-tag">概念圖生成</span></li>
-          </ul>
-        </article>
-
-        <!-- 工具 2：AI 文字輔助 -->
-        <article class="ai-tool-card reveal" data-delay="100">
-          <div class="ai-tool-card__head">
-            <div class="ai-tool-card__icon" aria-hidden="true">
-              <i class="fa-solid fa-comment-dots"></i>
-            </div>
-            <div>
-              <p class="ai-tool-card__name">AI 文字輔助</p>
-              <p class="ai-tool-card__type">文案 · 企劃</p>
-            </div>
-          </div>
-          <p class="ai-tool-card__desc">
-            使用 ChatGPT、Claude 協助廣告文案撰寫、品牌故事梳理，
-            以及市場調查報告初稿整理，提升企劃效率。
-          </p>
-          <ul class="ai-tool-card__tags" aria-label="工具標籤">
-            <li><span class="ai-tool-tag">ChatGPT</span></li>
-            <li><span class="ai-tool-tag">Claude</span></li>
-            <li><span class="ai-tool-tag">文案撰寫</span></li>
-          </ul>
-        </article>
-
-        <!-- 工具 3：AI 輔助設計 -->
-        <article class="ai-tool-card reveal" data-delay="200">
-          <div class="ai-tool-card__head">
-            <div class="ai-tool-card__icon" aria-hidden="true">
-              <i class="fa-solid fa-wand-magic-sparkles"></i>
-            </div>
-            <div>
-              <p class="ai-tool-card__name">AI 輔助設計</p>
-              <p class="ai-tool-card__type">工作流整合</p>
-            </div>
-          </div>
-          <p class="ai-tool-card__desc">
-            在 Adobe 系列軟體中整合 AI 功能，如生成填色、背景移除與智慧裁切，
-            提升設計製作流程效率。
-          </p>
-          <ul class="ai-tool-card__tags" aria-label="工具標籤">
-            <li><span class="ai-tool-tag">Adobe AI 功能</span></li>
-            <li><span class="ai-tool-tag">背景移除</span></li>
-            <li><span class="ai-tool-tag">智慧裁切</span></li>
-          </ul>
-        </article>
-
-        <!-- 工具 4：Claude Code 網站開發 -->
-        <article class="ai-tool-card reveal" data-delay="300">
-          <div class="ai-tool-card__head">
-            <div class="ai-tool-card__icon" aria-hidden="true">
-              <i class="fa-solid fa-terminal"></i>
-            </div>
-            <div>
-              <p class="ai-tool-card__name">Claude Code 開發</p>
-              <p class="ai-tool-card__type">網站 · 程式協作</p>
-            </div>
-          </div>
-          <p class="ai-tool-card__desc">
-            以 AI 工具協作規劃並建構這個作品集網站——架構設計、樣式規範到前端程式碼，
-            全程透過 Claude Code 對話式開發完成。
-          </p>
-          <ul class="ai-tool-card__tags" aria-label="工具標籤">
-            <li><span class="ai-tool-tag">Claude Code</span></li>
-            <li><span class="ai-tool-tag">HTML / CSS / JS</span></li>
-            <li><span class="ai-tool-tag">本站實踐</span></li>
-          </ul>
-        </article>
-
-      </div><!-- /ai-tools-grid -->
-
-    </div>
-  </section><!-- /ai-tools-section -->
-
-
-  <!-- ================================================
-       SITE CALLOUT — 本站即是 AI 實踐成果
-       ================================================ -->
-  <section class="ai-site-callout" aria-label="本站 AI 開發實踐">
-    <div class="container">
-      <div class="ai-site-callout__inner reveal">
-        <div class="ai-site-callout__badge" aria-hidden="true">
-          <i class="fa-solid fa-terminal"></i>
-        </div>
-        <div class="ai-site-callout__body">
-          <p class="ai-site-callout__eyebrow">This Site Is the Proof</p>
-          <h2 class="ai-site-callout__title">這個作品集，本身就是 AI 應用的成果</h2>
-          <p class="ai-site-callout__desc">
-            本網站從架構規劃、視覺設計到前端程式碼開發，全程透過
-            <strong>Claude Code</strong> AI 協作完成——
-            不只學習 AI，而是將 AI 工具深度整合進真實的創作工作流程中。
-          </p>
-        </div>
-        <div class="ai-site-callout__tool" aria-hidden="true">
-          <i class="fa-solid fa-code-branch"></i>
-          <span>Built with Claude Code</span>
-        </div>
-      </div>
-    </div>
-  </section><!-- /ai-site-callout -->
-
-
-  <!-- ================================================
-       TIMELINE — 學習歷程
-       ================================================ -->
-  <section class="section ai-timeline-section" aria-label="學習歷程時間軸">
-    <div class="container">
-
-      <p class="section-label">Learning Timeline</p>
-      <h2 class="section-title">學習歷程</h2>
-
-      <!-- 時間軸列表 -->
-      <ol class="ai-timeline" aria-label="AI 學習時間軸">
-
-        <!-- 項目 1 -->
-        <li class="ai-timeline__item reveal" data-delay="0">
-          <div class="ai-timeline__dot" aria-hidden="true">
-            <i class="fa-solid fa-seedling"></i>
-          </div>
-          <div class="ai-timeline__card">
-            <p class="ai-timeline__date">起步探索</p>
-            <h3 class="ai-timeline__title">初次接觸 AI 生圖工具</h3>
-            <p class="ai-timeline__desc">
-              於【孩能學做菜】圖書企劃中首次導入 AI 生圖技術，
-              以 AI 生成插圖素材輔助內頁視覺，探索 AI 在出版設計中的可能性。
-            </p>
-          </div>
-        </li>
-
-        <!-- 項目 2 -->
-        <li class="ai-timeline__item reveal" data-delay="100">
-          <div class="ai-timeline__dot" aria-hidden="true">
-            <i class="fa-solid fa-flask"></i>
-          </div>
-          <div class="ai-timeline__card">
-            <p class="ai-timeline__date">實驗應用</p>
-            <h3 class="ai-timeline__title">AI 文案與品牌企劃整合</h3>
-            <p class="ai-timeline__desc">
-              嘗試以 AI 工具輔助品牌故事撰寫與行銷文案，
-              並建立「人工智慧提示詞設計」的基本認知框架，學習 Prompt Engineering。
-            </p>
-          </div>
-        </li>
-
-        <!-- 項目 3 -->
-        <li class="ai-timeline__item reveal" data-delay="200">
-          <div class="ai-timeline__dot" aria-hidden="true">
-            <i class="fa-solid fa-rocket"></i>
-          </div>
-          <div class="ai-timeline__card">
-            <p class="ai-timeline__date">系統化整合</p>
-            <h3 class="ai-timeline__title">AI 工作流全面導入設計流程</h3>
-            <p class="ai-timeline__desc">
-              將 AI 工具納入從概念發想、視覺生成到內容行銷的完整設計流程，
-              建立個人化的 AI 輔助設計方法論。
-            </p>
-          </div>
-        </li>
-
-        <!-- 項目 4：AI新秀計畫 -->
-        <li class="ai-timeline__item reveal" data-delay="300">
-          <div class="ai-timeline__dot" aria-hidden="true">
-            <i class="fa-solid fa-award"></i>
-          </div>
-          <div class="ai-timeline__card">
-            <p class="ai-timeline__date">2025 · 經濟部產業發展署</p>
-            <h3 class="ai-timeline__title">參加「AI新秀計畫」系統性 AI 培訓</h3>
-            <p class="ai-timeline__desc">
-              參與經濟部產業發展署主辦的「AI新秀計畫」（AI Rookie Program），
-              透過系統化課程深化 AI 工具應用能力，並完成多件跨媒材的 AI 創作實踐成果。
-            </p>
-          </div>
-        </li>
-
-        <!-- 項目 5：AI 協作建構本站 -->
-        <li class="ai-timeline__item reveal" data-delay="400">
-          <div class="ai-timeline__dot" aria-hidden="true">
-            <i class="fa-solid fa-code"></i>
-          </div>
-          <div class="ai-timeline__card">
-            <p class="ai-timeline__date">2025–2026 · 持續進行中</p>
-            <h3 class="ai-timeline__title">以 Claude Code 協作建構本作品集網站</h3>
-            <p class="ai-timeline__desc">
-              從零以 AI 工具協作完成這個作品集的架構規劃、視覺規範制訂與前端開發——
-              透過「用 AI 實作完整專案」的方式，深化對 AI 協作工作流的理解與掌握。
-            </p>
-          </div>
-        </li>
-
-      </ol><!-- /ai-timeline -->
-
-      <!-- 持續更新提示 -->
-      <div class="ai-placeholder reveal" data-delay="300">
-        <div class="ai-placeholder__icon" aria-hidden="true">
-          <i class="fa-regular fa-bookmark"></i>
-        </div>
-        <h3 class="ai-placeholder__title">更多學習紀錄持續更新中</h3>
-        <p class="ai-placeholder__desc">
-          這個頁面會隨著我的 AI 學習旅程不斷擴充，<br />
-          記錄每一個新工具、新技能與新發現。
-        </p>
-      </div>
-
-    </div>
-  </section><!-- /ai-timeline-section -->
-
-
-  <!-- ================================================
-       AI WORKS — 成果展示
-       ================================================ -->
-  <section class="section ai-works-section" aria-label="AI 應用成果">
-    <div class="container">
-
-      <p class="section-label">AI Works</p>
-      <h2 class="section-title">AI 應用成果</h2>
-
       <div class="works-grid">
 
         <!-- 仍在等 -->
@@ -332,16 +60,18 @@
           <a href="ai-stillwaiting.html" class="work-card__link" aria-label="仍在等 — 查看詳情">
             <div class="work-card__img">
               <img src="https://i.ytimg.com/vi/Tz_tiJqV5PE/maxresdefault.jpg" alt="仍在等 動態歌詞影片縮圖" loading="lazy" />
+              <div class="work-card__overlay" aria-hidden="true">
+                <span class="work-card__overlay-icon"><i class="fa-solid fa-arrow-right"></i></span>
+              </div>
             </div>
             <div class="work-card__body">
-              <h3 class="work-card__name">仍在等</h3>
-              <p class="work-card__desc">以角色扮演引導 ChatGPT 創作方文山風格歌詞，轉化為 Suno prompt 生成音樂，再以 Gemini、Runway Gen-4 產製影像素材，用剪映剪輯成動態歌詞影片。</p>
+              <h2 class="work-card__name">仍在等</h2>
+              <p class="work-card__desc">以角色扮演引導 ChatGPT 創作方文山風格歌詞，轉化為 SUNO prompt 生成音樂，再以 Gemini、Runway Gen-4 產製影像，用剪映剪輯成動態歌詞影片。</p>
               <ul class="work-card__tags">
                 <li><span class="work-tag">#影音製作</span></li>
                 <li><span class="work-tag">#SUNO</span></li>
                 <li><span class="work-tag">#Runway</span></li>
                 <li><span class="work-tag">#AI生成</span></li>
-                <li><span class="work-tag">#歌詞創作</span></li>
               </ul>
             </div>
           </a>
@@ -352,21 +82,23 @@
           <a href="ai-ecdesign.html" class="work-card__link" aria-label="AI 業主模擬練習 — 查看詳情">
             <div class="work-card__img">
               <img src="assets/images/初霧Chuwu_v3.jpg" alt="AI 業主模擬練習 電商 Banner" loading="lazy" />
+              <div class="work-card__overlay" aria-hidden="true">
+                <span class="work-card__overlay-icon"><i class="fa-solid fa-arrow-right"></i></span>
+              </div>
             </div>
             <div class="work-card__body">
-              <h3 class="work-card__name">AI 業主模擬練習</h3>
-              <p class="work-card__desc">以 Prompt Engineering 設定 AI 語言模型扮演電商業主，生成具備商業壓力的設計委託單，由設計師實際執行並由 AI 審稿評分，模擬完整商業委託流程。</p>
+              <h2 class="work-card__name">AI 業主模擬練習</h2>
+              <p class="work-card__desc">以 Prompt Engineering 設定 AI 語言模型扮演電商業主，生成商業委託單，由設計師實際執行並接受 AI 審稿評分。</p>
               <ul class="work-card__tags">
                 <li><span class="work-tag">#PromptEngineering</span></li>
                 <li><span class="work-tag">#AI業主</span></li>
                 <li><span class="work-tag">#人機協作</span></li>
-                <li><span class="work-tag">#工作流設計</span></li>
               </ul>
             </div>
           </a>
         </article>
 
-        <!-- App 設計 -->
+        <!-- App 設計（整理中） -->
         <article class="work-card work-card--pending reveal" data-delay="160">
           <div class="work-card__link" role="presentation">
             <div class="work-card__img">
@@ -376,18 +108,17 @@
               </div>
             </div>
             <div class="work-card__body">
-              <h3 class="work-card__name">App 設計</h3>
+              <h2 class="work-card__name">App 設計</h2>
               <p class="work-card__desc">以 AI 工具輔助 UI 規劃與介面原型設計，記錄工具應用流程與設計思路。</p>
               <ul class="work-card__tags">
                 <li><span class="work-tag">#UI 設計</span></li>
                 <li><span class="work-tag">#App 原型</span></li>
-                <li><span class="work-tag">#AI 輔助</span></li>
               </ul>
             </div>
           </div>
         </article>
 
-        <!-- 其他應用（彈性位） -->
+        <!-- 更多 AI 應用（整理中） -->
         <article class="work-card work-card--pending reveal" data-delay="0">
           <div class="work-card__link" role="presentation">
             <div class="work-card__img">
@@ -397,7 +128,7 @@
               </div>
             </div>
             <div class="work-card__body">
-              <h3 class="work-card__name">更多 AI 應用</h3>
+              <h2 class="work-card__name">更多 AI 應用</h2>
               <p class="work-card__desc">持續整理中，包含其他 AI 工具的創作實踐與應用過程紀錄。</p>
               <ul class="work-card__tags">
                 <li><span class="work-tag">#持續更新</span></li>
@@ -406,26 +137,17 @@
           </div>
         </article>
 
-      </div><!-- /works-grid -->
+      </div>
     </div>
-  </section><!-- /ai-works-section -->
+  </main>
 
-
-  <!-- ================================================
-       頁尾
-       ================================================ -->
   <footer class="footer" role="contentinfo">
     <div class="footer__inner">
-      <a href="mailto:hong.baohua.ivy@gmail.com" class="footer__email">
-        hong.baohua.ivy@gmail.com
-      </a>
+      <a href="mailto:hong.baohua.ivy@gmail.com" class="footer__email">hong.baohua.ivy@gmail.com</a>
       <p class="footer__copy">&copy; 2025 Ivy Hong. All rights reserved.</p>
     </div>
-  </footer><!-- /footer -->
+  </footer>
 
-
-  <!-- JavaScript -->
   <script src="js/main.js"></script>
-
 </body>
 </html>

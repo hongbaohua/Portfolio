@@ -385,6 +385,7 @@
   border-right: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   border-radius: var(--radius-lg);
+  border-top-left-radius: 0; /* L形裝飾線需要直角左上角，才能無縫銜接 */
   padding: 28px 28px 32px;
   position: relative;
   overflow: hidden;

@@ -173,6 +173,83 @@ ul, ol {
   transition: transform var(--transition), opacity var(--transition);
 }
 
+/* ── 導覽列子項目（有下拉選單） ── */
+.nav__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.nav__caret-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 2px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  transition: color var(--transition);
+}
+
+.nav__caret-btn:hover {
+  color: var(--text);
+}
+
+.nav__caret {
+  font-size: 0.6rem;
+  transition: transform 0.2s ease;
+}
+
+.nav__item--has-dropdown:hover .nav__caret,
+.nav__item--has-dropdown.is-open .nav__caret {
+  transform: rotate(180deg);
+}
+
+/* 下拉選單 */
+.nav__dropdown {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: -12px;
+  min-width: 148px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 6px 0;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  z-index: 200;
+}
+
+.nav__item--has-dropdown:hover .nav__dropdown,
+.nav__item--has-dropdown:focus-within .nav__dropdown,
+.nav__item--has-dropdown.is-open .nav__dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav__dropdown-link {
+  display: block;
+  padding: 9px 16px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  white-space: nowrap;
+  transition: color var(--transition), background var(--transition);
+}
+
+.nav__dropdown-link:hover,
+.nav__dropdown-link.active {
+  color: var(--accent-dark);
+  background: color-mix(in srgb, var(--accent-light) 20%, var(--bg));
+}
+
 /* ── 頁面主體偏移（避免被固定導覽列遮住） ── */
 .page-body {
   padding-top: var(--nav-h);
@@ -376,6 +453,49 @@ ul, ol {
 
   .nav__toggle {
     display: flex;
+  }
+
+  .nav__item {
+    width: 100%;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .nav__caret-btn {
+    position: absolute;
+    right: 32px;
+    top: 14px;
+    padding: 8px;
+  }
+
+  .nav__dropdown {
+    position: static;
+    opacity: 0;
+    visibility: hidden;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-left: 2px solid var(--border);
+    border-radius: 0;
+    background: transparent;
+    padding: 4px 0;
+    margin-left: 32px;
+    width: calc(100% - 32px);
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease, opacity 0.2s ease, visibility 0.2s ease;
+  }
+
+  .nav__item--has-dropdown.is-open .nav__dropdown {
+    opacity: 1;
+    visibility: visible;
+    max-height: 200px;
+  }
+
+  .nav__dropdown-link {
+    padding: 10px 16px;
+    font-size: 0.9rem;
   }
 
   .container {
