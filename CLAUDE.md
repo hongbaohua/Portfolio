@@ -125,15 +125,15 @@ web/
 
 ---
 
-## 目前網站狀態（最後更新：2026-04-16，nav 重構＋ai-learning.html 新增）
+## 目前網站狀態（最後更新：2026-04-16，AI協作改名＋首頁精選合併）
 
 ### 已完成頁面
 | 頁面 | 狀態 | 說明 |
 |------|------|------|
-| index.html | ✅ 完成 | Hero、聯絡卡、學歷技能、精選作品、精選 AI 作品（3卡） |
+| index.html | ✅ 完成 | Hero、聯絡卡、學歷技能、精選作品（設計作品3卡+AI協作3卡，同一 section 含子標題） |
 | works.html | ✅ 完成 | 作品卡列表，帶 logo，含 filter |
-| ai.html | ✅ 完成 | AI 應用成果作品卡列表（格式同 works.html），4 卡 |
-| ai-learning.html | ✅ 完成 | AI 學習歷程：工具卡、Callout、時間軸（5節點含AI新秀計畫）、精選 AI 作品（3卡） |
+| ai.html | ✅ 完成 | AI 應用成果作品卡列表（格式同 works.html），4 卡；nav 主項改名「AI 協作」 |
+| ai-learning.html | ✅ 完成 | AI 學習歷程：工具卡、Callout、時間軸（5節點含AI新秀計畫）、精選 AI 協作（3卡） |
 | ai-stillwaiting.html | ✅ 完成 | 「仍在等」AI 作品詳細頁（影音 MV） |
 | work-egg.html | ✅ 完成 | EGG 餅乾品牌 |
 | work-graphic.html | ✅ 完成 | 平面設計合集 |
