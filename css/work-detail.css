@@ -610,6 +610,143 @@
 }
 
 /* ────────────────────────────────────────────────
+   EC CASE — 練習記錄卡（設計面，可重複新增）
+   ──────────────────────────────────────────────── */
+.ec-case {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.ec-case__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: var(--bg-dark);
+  border-bottom: 1px solid var(--border);
+}
+
+.ec-case__num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent-dark);
+  background: color-mix(in srgb, var(--accent-light) 30%, var(--bg));
+  border: 1px solid rgba(196, 163, 90, 0.35);
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+
+.ec-case__date {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.ec-case__score {
+  margin-left: auto;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.ec-case__img img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.ec-case:hover .ec-case__img img {
+  transform: scale(1.01);
+}
+
+.ec-case__body {
+  padding: 20px 24px;
+}
+
+.ec-case__name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.ec-case__type {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.ec-case__desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.ec-case__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.ec-case__chip {
+  font-size: 0.72rem;
+  padding: 3px 10px;
+  border-radius: 100px;
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+/* ── EC AI CASE — AI 練習紀錄區塊（可重複新增） ── */
+.ec-ai-case {
+  border-top: 1.5px solid var(--border);
+  padding-top: 40px;
+  margin-top: 40px;
+}
+
+.ec-ai-case:first-child {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.ec-ai-case__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.ec-ai-case__num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent-dark);
+  background: color-mix(in srgb, var(--accent-light) 30%, var(--bg));
+  border: 1px solid rgba(196, 163, 90, 0.35);
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+
+.ec-ai-case__name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.ec-ai-case__date {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+/* ────────────────────────────────────────────────
    WORK FLOW — 工作流程視覺化
    ──────────────────────────────────────────────── */
 .work-flow {

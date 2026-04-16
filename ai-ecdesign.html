@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI 業主模擬練習 ── 電商 Banner 設計 — Ivy Hong AI 應用</title>
-  <meta name="description" content="以 AI 語言模型扮演嚴格業主，設定商業情境、時程與預算限制，由設計師實際執行視覺設計並接受 AI 審稿，完整模擬真實電商委託流程。" />
+  <title>AI 業主模擬練習 — Ivy Hong AI 應用</title>
+  <meta name="description" content="以 Prompt Engineering 設定 AI 語言模型扮演嚴格業主，模擬真實電商設計委託流程：AI 出題、設計師執行、AI 審稿評分，持續進行的人機協作設計練習系列。" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -72,17 +72,24 @@
           <div class="work-info__divider"></div>
 
           <div class="work-info__section">
-            <p class="work-info__label">完成時間</p>
-            <p class="work-info__text">2026年4月</p>
+            <p class="work-info__label">開始時間</p>
+            <p class="work-info__text">2026年4月（持續進行中）</p>
           </div>
 
           <div class="work-info__divider"></div>
 
           <div class="work-info__section">
-            <p class="work-info__label">查看設計成果</p>
+            <p class="work-info__label">練習數量</p>
+            <p class="work-info__text">1 道（持續更新中）</p>
+          </div>
+
+          <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
+            <p class="work-info__label">設計成果</p>
             <a href="work-ecdesign.html" class="work-external-btn">
               <i class="fa-solid fa-paintbrush" aria-hidden="true"></i>
-              查看作品
+              查看設計作品
             </a>
           </div>
 
@@ -92,18 +99,18 @@
         <div class="work-gallery">
 
           <nav class="work-outline" aria-label="頁面大綱">
-            <a href="#section-intro"    class="work-outline__item">專案說明</a>
-            <a href="#section-flow"     class="work-outline__item">工作流程</a>
-            <a href="#section-brief"    class="work-outline__item">委託情境</a>
-            <a href="#section-split"    class="work-outline__item">AI vs 我</a>
-            <a href="#section-score"    class="work-outline__item">評分結果</a>
+            <a href="#section-intro"  class="work-outline__item">方法論說明</a>
+            <a href="#section-flow"   class="work-outline__item">工作流程</a>
+            <a href="#section-prompt" class="work-outline__item">Prompt 設計思路</a>
+            <a href="#section-cases"  class="work-outline__item">練習紀錄</a>
           </nav>
 
-          <!-- 專案說明 -->
+          <!-- 方法論說明 -->
           <section id="section-intro">
             <div class="work-desc-block">
-              這個企劃的核心問題是：<strong>能不能在沒有真實客戶的情況下，讓自己獲得接近真實的設計委託體驗？</strong><br /><br />
-              我透過 Prompt Engineering，設定 AI 語言模型扮演一位「台南在地保養品牌的業主陳小姐」，讓 AI 主動出題——包含品牌背景、目標受眾、設計規格、視覺風格與禁忌，甚至設定預算（$2,500–$3,500 台幣）與時程壓力（兩週內出稿）。設計師（我）根據這份 AI 生成的委託單，實際用 Photoshop 完成 Banner 設計，再交由 AI 業主角色進行審稿與評分，模擬完整的商業委託流程。
+              這個系列的核心問題是：<strong>能不能在沒有真實客戶的情況下，讓自己獲得接近真實的設計委託體驗？</strong><br /><br />
+              答案是透過 Prompt Engineering。我設定 AI 語言模型扮演「嚴格的電商業主」，讓它主動出題——包含品牌背景、目標受眾、設計規格、視覺風格要求，以及明確的禁忌。設計師（我）根據 AI 生成的委託單，實際用 Photoshop 製作，完成後再交由 AI 業主角色進行審稿與評分，模擬完整的商業委託流程。<br /><br />
+              這個方法可以無限重複——換一個產業、換一種調性，就是一道新的題目。
             </div>
           </section>
 
@@ -142,18 +149,54 @@
                 <div class="work-flow__sub">人工決策<br />定稿</div>
               </div>
             </div>
-            <p class="work-img-caption">這個流程可重複執行，每次換不同產業題目即可進行新一輪練習</p>
+            <p class="work-img-caption">此流程可重複執行——每次換不同產業與調性，即為一道新練習題</p>
           </section>
 
-          <!-- 委託情境 -->
-          <section id="section-brief">
-            <h2 class="work-section-title">委託情境（AI 生成）</h2>
+          <!-- Prompt 設計思路 -->
+          <section id="section-prompt">
+            <h2 class="work-section-title">Prompt 設計思路</h2>
 
             <div class="work-desc-block">
-              以下是 AI 業主角色（初霧保養 陳小姐）所產出的委託單節選。Prompt 設定要求 AI 以真實業主口吻書寫，涵蓋品牌背景、設計規格、風格關鍵字與明確禁忌。
+              要讓 AI 業主的委託單有說服力、有設計難度，Prompt 設計需要掌握幾個關鍵：
             </div>
 
-            <pre class="work-code-block">【品牌】初霧 Chūwù — 台南在地天然保濕品牌
+            <div class="work-desc-block reveal">
+              <strong>1. 給出具體的「矛盾張力」</strong><br />
+              例如：「要有品味但不能太貴氣」、「詩意但普通人也看得懂」。這些模糊邊界正是真實客戶最常出現的要求，迫使設計師去做判斷與取捨，而不是照單全收。
+            </div>
+
+            <div class="work-desc-block reveal" data-delay="1">
+              <strong>2. 設定真實的限制條件</strong><br />
+              預算範圍、修改次數、時程壓力——這些條件讓練習有「成本感」，會影響設計師在不同版本間做取捨的思維。沒有限制的練習，往往讓人忘記商業設計的核心本質。
+            </div>
+
+            <div class="work-desc-block reveal" data-delay="2">
+              <strong>3. 明確的禁忌清單</strong><br />
+              禁忌不只是限制，也是讓委託書有個性的關鍵。一份只說「要好看」的委託單沒有設計價值；一份說「不要粉紅色，因為我不想跟所有保養品撞色」的委託單，才有真實的品牌立場。
+            </div>
+          </section>
+
+          <!-- 練習紀錄 -->
+          <section id="section-cases">
+            <h2 class="work-section-title">練習紀錄</h2>
+
+            <!-- ══ No.01 — 初霧 Chūwù ══
+                 新增練習時，在此區塊下方複製一個 .ec-ai-case 區塊並填入內容
+            -->
+            <div class="ec-ai-case">
+
+              <div class="ec-ai-case__header">
+                <span class="ec-ai-case__num">No. 01</span>
+                <span class="ec-ai-case__name">初霧 Chūwù — 保養品牌電商 Banner</span>
+                <span class="ec-ai-case__date">2026.04</span>
+              </div>
+
+              <h3 class="work-section-subtitle">委託情境（AI 生成節選）</h3>
+              <div class="work-desc-block">
+                AI 業主人設：台南在地保養品牌「初霧保養」的負責人陳小姐，主打天然成分日常保濕系列，準備上架電商配合母親節檔期。
+              </div>
+
+              <pre class="work-code-block">【品牌】初霧 Chūwù — 台南在地天然保濕品牌
 【產品】晨露保濕精華乳（台灣高山薏仁萃取，清爽不黏膩）
 【受眾】25–38 歲女性，上班族，注重成分與 CP 值
 
@@ -167,95 +210,118 @@
 - 不要用粉紅色（太多保養品都在用）
 - 不要白底藍字醫療感
 - 不要塞太多字
-- 參考品牌：cosme kitchen、THREE（質感但不過度設計）
 
 【預算】$2,500–$3,500 台幣，修改以兩次為限
 【時程】兩週內出初稿（配合五月母親節檔期）</pre>
 
-            <div class="work-desc-block reveal">
-              <strong>Prompt Engineering 重點：</strong>要讓 AI 業主的委託單有說服力，關鍵在於給出具體的「矛盾張力」——例如「要有品味但不能太貴氣」、「要詩意但普通人也看得懂」。這些模糊邊界正是真實客戶最常出現的要求，迫使設計師去做判斷與取捨。
-            </div>
-          </section>
-
-          <!-- AI vs 我 -->
-          <section id="section-split">
-            <h2 class="work-section-title">AI 負責 vs 我負責</h2>
-
-            <div class="work-ai-split reveal">
-              <div class="work-ai-split__col work-ai-split__col--ai">
-                <p class="work-ai-split__label">AI 負責</p>
-                <ul class="work-ai-split__list">
-                  <li>商業情境生成（品牌名稱、背景故事、目標客群）</li>
-                  <li>設計委託書撰寫（規格、禁忌、預算、時程）</li>
-                  <li>文案方向提供（主標題、副標建議）</li>
-                  <li>扮演客戶角色進行審稿，給予客觀評分</li>
-                  <li>每版提供具體修改建議與優先順序</li>
-                </ul>
+              <h3 class="work-section-subtitle">AI vs 我</h3>
+              <div class="work-ai-split reveal">
+                <div class="work-ai-split__col work-ai-split__col--ai">
+                  <p class="work-ai-split__label">AI 負責</p>
+                  <ul class="work-ai-split__list">
+                    <li>商業情境生成（品牌名稱、背景、目標客群）</li>
+                    <li>委託書撰寫（規格、禁忌、預算、時程、文案建議）</li>
+                    <li>扮演客戶角色進行審稿，給出評分</li>
+                    <li>每版提供具體修改建議與優先順序</li>
+                  </ul>
+                </div>
+                <div class="work-ai-split__col work-ai-split__col--human">
+                  <p class="work-ai-split__label">我負責</p>
+                  <ul class="work-ai-split__list">
+                    <li>框架定義與 Prompt 設計（設定 AI 的業主人設與條件）</li>
+                    <li>需求過濾（判斷哪些指令可執行、哪些需追問）</li>
+                    <li>所有視覺元素的手動設計（配色、字型、版面）</li>
+                    <li>對 AI 審稿意見的判斷與取捨（最終定稿由我決定）</li>
+                  </ul>
+                </div>
               </div>
-              <div class="work-ai-split__col work-ai-split__col--human">
-                <p class="work-ai-split__label">我負責</p>
-                <ul class="work-ai-split__list">
-                  <li>框架定義與 Prompt 設計（設定 AI 的業主人設與條件）</li>
-                  <li>需求過濾（判斷哪些指令可執行、哪些需追問）</li>
-                  <li>所有視覺元素的手動設計（配色、字型、版面結構）</li>
-                  <li>Photoshop 製作與圖層管理</li>
-                  <li>對 AI 審稿意見的判斷與取捨（最終定稿由我決定）</li>
-                </ul>
+
+              <h3 class="work-section-subtitle">評分結果（v3 最終定稿）</h3>
+              <div class="work-table-wrap reveal">
+                <table class="work-table">
+                  <thead>
+                    <tr>
+                      <th>評分項目</th>
+                      <th>分數</th>
+                      <th>AI 業主評語</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>需求符合度</td>
+                      <td>8／10</td>
+                      <td>主要需求均已達到，色調與禁忌執行確實</td>
+                    </tr>
+                    <tr>
+                      <td>第一眼印象</td>
+                      <td>8／10</td>
+                      <td>整體視覺乾淨，第一眼能辨識品牌氣質</td>
+                    </tr>
+                    <tr>
+                      <td>文字與排版</td>
+                      <td>8／10</td>
+                      <td>中英混排有層次感，英文空格修正後流暢</td>
+                    </tr>
+                    <tr>
+                      <td>視覺風格</td>
+                      <td>9／10</td>
+                      <td>霧感灰綠色調精準呼應「早晨薄霧」，質感到位</td>
+                    </tr>
+                    <tr>
+                      <td>電商轉換感</td>
+                      <td>7／10</td>
+                      <td>缺乏 CTA 按鈕或促銷標籤，較難驅動點擊購買</td>
+                    </tr>
+                    <tr>
+                      <td><strong>總分</strong></td>
+                      <td><strong>40／50</strong></td>
+                      <td>完成度高的初級練習，往後可加強電商轉換元素</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-            </div>
-          </section>
 
-          <!-- 評分結果 -->
-          <section id="section-score">
-            <h2 class="work-section-title">評分結果（v3 最終定稿）</h2>
+              <h3 class="work-section-subtitle">版本迭代</h3>
+              <div class="work-table-wrap reveal">
+                <table class="work-table">
+                  <thead>
+                    <tr>
+                      <th>版次</th>
+                      <th>評分</th>
+                      <th>主要問題</th>
+                      <th>調整方向</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>v1</td>
+                      <td>33／50</td>
+                      <td>主標題被產品瓶切割、品牌名稱過小、對比度不足</td>
+                      <td>調整主標題位置，品牌名稱放大</td>
+                    </tr>
+                    <tr>
+                      <td>v2</td>
+                      <td>37／50</td>
+                      <td>副標與主標動線仍偏分散</td>
+                      <td>副標移至中央整合視覺動線</td>
+                    </tr>
+                    <tr>
+                      <td>v3</td>
+                      <td>40／50</td>
+                      <td>英文文案空格細節需修正</td>
+                      <td>修正排版，瓶子角度調整　✅ 定稿</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
 
-            <div class="work-table-wrap reveal">
-              <table class="work-table">
-                <thead>
-                  <tr>
-                    <th>評分項目</th>
-                    <th>分數</th>
-                    <th>AI 業主評語</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>需求符合度</td>
-                    <td>8／10</td>
-                    <td>主要需求均已達到，色調與禁忌執行確實</td>
-                  </tr>
-                  <tr>
-                    <td>第一眼印象</td>
-                    <td>8／10</td>
-                    <td>整體視覺乾淨，第一眼能辨識品牌氣質</td>
-                  </tr>
-                  <tr>
-                    <td>文字與排版</td>
-                    <td>8／10</td>
-                    <td>中英混排有層次感，英文空格修正後流暢</td>
-                  </tr>
-                  <tr>
-                    <td>視覺風格</td>
-                    <td>9／10</td>
-                    <td>霧感灰綠色調精準呼應「早晨薄霧」，質感到位</td>
-                  </tr>
-                  <tr>
-                    <td>電商轉換感</td>
-                    <td>7／10</td>
-                    <td>缺乏 CTA 按鈕或促銷標籤，較難驅動點擊購買</td>
-                  </tr>
-                  <tr>
-                    <td><strong>總分</strong></td>
-                    <td><strong>40／50</strong></td>
-                    <td>完成度高的初級練習作品，往後可加強電商轉換元素</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+              <div class="work-desc-block reveal">
+                <strong>這次最大的收穫：</strong>AI 評分讓我第一次清楚看見「設計好看」和「電商有效」之間的落差——視覺風格拿到全場最高分（9/10），電商轉換感卻是最低分（7/10）。這不是風格問題，而是思維框架的問題：電商 Banner 不只是品牌展示，它需要驅動購買行為。這個認知，是靠真實客戶很難那麼直接拿到的反饋。
+              </div>
 
-            <div class="work-desc-block reveal" data-delay="1">
-              <strong>這次最大的收穫：</strong>AI 評分讓我第一次看見「設計好看」和「電商有效」之間的落差——視覺風格拿到全場最高分（9/10），電商轉換感卻最低（7/10）。這不是風格問題，而是思維框架的問題：電商 Banner 不只是品牌展示，它需要驅動行為。這個認知是靠真實客戶很難那麼直接拿到的反饋。
             </div>
+            <!-- ／ No.01 -->
+
           </section>
 
           <!-- 跨頁連結 -->
@@ -265,8 +331,8 @@
             </div>
             <div class="work-crosslink__body">
               <p class="work-crosslink__label">設計成果</p>
-              <p class="work-crosslink__title">初霧 Chūwù · 電商 Banner 設計</p>
-              <p class="work-crosslink__desc">想看 AI 業主委託後，實際產出的 Banner 視覺成果嗎？查看三個版本的設計展示與版本迭代過程。</p>
+              <p class="work-crosslink__title">EC Design · 電商設計練習</p>
+              <p class="work-crosslink__desc">想看 AI 業主委託後，實際產出的 Banner 視覺成果嗎？查看各練習的最終定稿與版本展示。</p>
             </div>
             <a href="work-ecdesign.html" class="work-crosslink__btn">
               查看設計作品 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>

@@ -125,7 +125,7 @@ web/
 
 ---
 
-## 目前網站狀態（最後更新：2026-04-16，新增 work-ecdesign + ai-ecdesign）
+## 目前網站狀態（最後更新：2026-04-16，EC Design 系列頁＋卡片連結完成）
 
 ### 已完成頁面
 | 頁面 | 狀態 | 說明 |
@@ -142,8 +142,17 @@ web/
 | work-xiaoheng.html | ✅ 完成 | 小恆保溫杯吉祥物 |
 | work-yebuff.html | ✅ 完成 | YeBuff 金運面膜 |
 | work-yuejilabs.html | ✅ 完成 | 月記LAB 手搖飲 |
-| work-ecdesign.html | ✅ 完成 | 初霧 Chūwù 電商 Banner（AI 輔助出題設計實戰）|
-| ai-ecdesign.html | ✅ 完成 | AI 業主模擬練習（Prompt Engineering + 工作流設計）|
+| work-ecdesign.html | ✅ 完成 | EC Design 電商設計練習系列頁（持續更新，初霧 Chūwù 為 No.01）|
+| ai-ecdesign.html | ✅ 完成 | AI 業主模擬練習系列頁（方法論＋各練習 AI 紀錄，持續更新）|
+
+### EC Design 系列頁新增練習 SOP
+
+當完成一道新 EC Design 練習題時：
+1. 把最終版圖複製到 `assets/images/`（命名：`[品牌拼音]_v[n].jpg`）
+2. 在 `work-ecdesign.html` 的 `#section-log` 新增一個 `.ec-case` 區塊（參考 No.01 結構）
+3. 在 `ai-ecdesign.html` 的 `#section-cases` 新增一個 `.ec-ai-case` 區塊
+4. 更新 Obsidian md 練習索引表格
+5. `git commit & push`
 
 ### 待製作
 | 項目 | 說明 |
