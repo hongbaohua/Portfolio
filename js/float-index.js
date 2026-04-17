@@ -87,22 +87,31 @@
       opMin   = 0.25; opMax = 0.40;
       speedMax = 0.22;
     }
+    const type    = SHAPE_TYPES[randInt(0, SHAPE_TYPES.length - 1)];
+    const isCross = type === 'cross';
+
+    // Cross（實心）只在兩側生成，並給遠離中心的速度偏向
+    const SIDE_W = W * 0.22;
+    const x = isCross
+      ? (Math.random() < 0.5 ? rand(0, SIDE_W) : rand(W - SIDE_W, W))
+      : rand(0, W);
+    const vxBias = isCross ? (x < W / 2 ? -speedMax * 0.4 : speedMax * 0.4) : 0;
+
     const baseOp = rand(opMin, opMax);
     return {
-      x: rand(0, W), baseY: rand(0, H),
+      x, baseY: rand(0, H),
       y: 0,  // 供排斥計算暫用
-      type: SHAPE_TYPES[randInt(0, SHAPE_TYPES.length - 1)],
+      type,
       size: rand(sizeMin, sizeMax),
       tier,
       baseOp,
       opacity: baseOp,
       rot: rand(0, Math.PI * 2),
-      // XL 旋轉很慢，M 可以稍快
       rotSpeed: rand(-0.002, 0.002) * (tier === 'xl' ? 0.3 : tier === 'l' ? 0.7 : 1.2),
       sinePhase: rand(0, Math.PI * 2),
       sinePeriod: rand(tier === 'xl' ? 7000 : 4000, tier === 'xl' ? 12000 : 8000),
       sineAmp: tier === 'xl' ? 18 : tier === 'l' ? 12 : 7,
-      vx: rand(-speedMax, speedMax), vy: rand(-speedMax, speedMax),
+      vx: rand(-speedMax, speedMax) + vxBias, vy: rand(-speedMax, speedMax),
       ox: 0, oy: 0, ovx: 0, ovy: 0
     };
   }

@@ -16,6 +16,20 @@
   background: linear-gradient(135deg, var(--bg) 55%, var(--bg-dark) 100%);
 }
 
+/* ── Hero 幾何浮動動畫 ── */
+@keyframes heroFloatCircle {
+  0%, 100% { transform: translateY(0)    scale(1); }
+  50%       { transform: translateY(-26px) scale(1.06); }
+}
+@keyframes heroFloatRect {
+  0%, 100% { transform: rotate(-15deg) translateY(0); }
+  50%       { transform: rotate(-15deg) translateY(20px); }
+}
+@keyframes heroFloatSquare {
+  0%, 100% { transform: rotate(28deg) translateX(0); }
+  50%       { transform: rotate(28deg) translateX(18px); }
+}
+
 /* 幾何裝飾：左上旋轉大矩形 */
 .hero::before {
   content: '';
@@ -26,9 +40,9 @@
   height: 420px;
   background: var(--accent-light);
   opacity: 0.1;
-  transform: rotate(-15deg);
   border-radius: var(--radius-lg);
   pointer-events: none;
+  animation: heroFloatRect 11s ease-in-out infinite;
 }
 
 /* 幾何裝飾：右上實心大圓 */
@@ -42,6 +56,7 @@
   opacity: 0.22;
   border-radius: 50%;
   pointer-events: none;
+  animation: heroFloatCircle 8s ease-in-out infinite;
 }
 
 /* 幾何裝飾：左下旋轉方塊 */
@@ -53,11 +68,11 @@
   height: 200px;
   background: var(--accent);
   opacity: 0.07;
-  transform: rotate(28deg);
   pointer-events: none;
+  animation: heroFloatSquare 13s ease-in-out infinite;
 }
 
-/* geo-mid 停用（移除邊框線框避免穿幫） */
+/* geo-mid 停用 */
 .hero__geo-mid {
   display: none;
 }
