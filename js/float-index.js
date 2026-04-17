@@ -1,9 +1,7 @@
 /**
  * float-index.js
  * 首頁浮動背景動效 — 「設計師的工作桌碎片」
- * 元素：多層次幾何形（三角/方/菱/六角/十字）+ 細線段 + 圓點
- * 注意：刻意不用圓形為主，保留小圓點作為點綴
- * 互動：磁力排斥 / 滑鼠軌跡殘影 / Hero 感應光暈
+ * 元素活在「頁面座標空間」，draw() 以 scrollY 平移，視覺上跟著頁面滾動
  */
 (function () {
   'use strict';
@@ -22,23 +20,25 @@
     };
   }
   const CV     = getComputedStyle(document.documentElement);
-  const ACCENT = hexToRgb(CV.getPropertyValue('--accent'));      // #C4A35A
-  const MUTED  = hexToRgb(CV.getPropertyValue('--text-muted')); // #8A8575
+  const ACCENT = hexToRgb(CV.getPropertyValue('--accent'));
+  const MUTED  = hexToRgb(CV.getPropertyValue('--text-muted'));
 
   function rgba(c, a) {
     return `rgba(${c.r},${c.g},${c.b},${Math.max(0, Math.min(1, a)).toFixed(3)})`;
   }
 
-  // ── 畫布 ────────────────────────────────────────────────
-  let W = 0, H = 0;
+  // ── 畫布（viewport 大小，不隨頁面縮放） ──────────────────
+  let W = 0, H = 0, PAGE_H = 0;
+
   function resize() {
-    W = canvas.width  = window.innerWidth;
-    H = canvas.height = window.innerHeight;
+    W      = canvas.width  = window.innerWidth;
+    H      = canvas.height = window.innerHeight;
+    PAGE_H = Math.max(document.documentElement.scrollHeight, H);
   }
 
   // ── 工具 ────────────────────────────────────────────────
-  const rand    = (a, b) => Math.random() * (b - a) + a;
-  const randInt = (a, b) => Math.floor(rand(a, b + 1));
+  const rand     = (a, b) => Math.random() * (b - a) + a;
+  const randInt  = (a, b) => Math.floor(rand(a, b + 1));
   const isMobile = () => window.innerWidth < 768;
 
   // ── 物理常數 ─────────────────────────────────────────────
@@ -47,51 +47,40 @@
   const REPEL_R = 130;
   const REPEL_F = 5.5;
 
-  // ── 形狀類型（刻意去掉 circle，保留多樣幾何） ─────────────
   const SHAPE_TYPES = ['triangle', 'square', 'diamond', 'hexagon', 'cross'];
 
-  // ── 元素 ────────────────────────────────────────────────
-  let lines  = [];
-  let shapes = [];   // 包含 XL / L / M 三層尺寸
-  let dots   = [];
+  // ── 元素陣列 ─────────────────────────────────────────────
+  let lines = [], shapes = [], dots = [];
 
   // ─── 類型 A：細線段 ──────────────────────────────────────
   function makeLine() {
-    const thick = Math.random() < 0.3 ? 2 : 1;
     return {
-      x: rand(0, W), y: rand(0, H),
+      x: rand(0, W), y: rand(0, PAGE_H),   // 頁面座標
       len: rand(40, 110),
       angle: rand(0, Math.PI * 2),
       color: Math.random() < 0.55 ? ACCENT : MUTED,
       opacity: rand(0.22, 0.42),
-      thick,
+      thick: Math.random() < 0.3 ? 2 : 1,
       vx: rand(-0.22, 0.22), vy: rand(-0.22, 0.22),
       ox: 0, oy: 0, ovx: 0, ovy: 0
     };
   }
 
-  // ─── 類型 B：幾何形（三層大小層次） ─────────────────────
+  // ─── 類型 B：幾何形（三層大小） ──────────────────────────
   function makeShape(tier) {
-    // tier: 'xl' | 'l' | 'm'
     let sizeMin, sizeMax, opMin, opMax, speedMax;
     if (tier === 'xl') {
-      sizeMin = 70; sizeMax = 120;
-      opMin   = 0.10; opMax = 0.18;
-      speedMax = 0.08;
+      sizeMin = 70; sizeMax = 120; opMin = 0.10; opMax = 0.18; speedMax = 0.08;
     } else if (tier === 'l') {
-      sizeMin = 35; sizeMax = 65;
-      opMin   = 0.18; opMax = 0.30;
-      speedMax = 0.14;
+      sizeMin = 35; sizeMax = 65;  opMin = 0.18; opMax = 0.30; speedMax = 0.14;
     } else {
-      sizeMin = 12; sizeMax = 30;
-      opMin   = 0.25; opMax = 0.40;
-      speedMax = 0.22;
+      sizeMin = 12; sizeMax = 30;  opMin = 0.25; opMax = 0.40; speedMax = 0.22;
     }
+
     const type    = SHAPE_TYPES[randInt(0, SHAPE_TYPES.length - 1)];
     const isCross = type === 'cross';
-
-    // Cross（實心）只在兩側生成，並給遠離中心的速度偏向
-    const SIDE_W = W * 0.22;
+    const SIDE_W  = W * 0.22;
+    // cross 只在兩側生成
     const x = isCross
       ? (Math.random() < 0.5 ? rand(0, SIDE_W) : rand(W - SIDE_W, W))
       : rand(0, W);
@@ -99,13 +88,10 @@
 
     const baseOp = rand(opMin, opMax);
     return {
-      x, baseY: rand(0, H),
-      y: 0,  // 供排斥計算暫用
-      type,
-      size: rand(sizeMin, sizeMax),
-      tier,
-      baseOp,
-      opacity: baseOp,
+      x, baseY: rand(0, PAGE_H),   // 頁面座標
+      y: 0,
+      type, size: rand(sizeMin, sizeMax), tier,
+      baseOp, opacity: baseOp,
       rot: rand(0, Math.PI * 2),
       rotSpeed: rand(-0.002, 0.002) * (tier === 'xl' ? 0.3 : tier === 'l' ? 0.7 : 1.2),
       sinePhase: rand(0, Math.PI * 2),
@@ -116,10 +102,10 @@
     };
   }
 
-  // ─── 類型 C：圓點（點綴） ────────────────────────────────
+  // ─── 類型 C：圓點 ─────────────────────────────────────────
   function makeDot() {
     return {
-      x: rand(0, W), y: rand(0, H),
+      x: rand(0, W), y: rand(0, PAGE_H),   // 頁面座標
       r: rand(2, 5),
       opacity: rand(0.20, 0.38),
       wvx: rand(-0.2, 0.2), wvy: rand(-0.2, 0.2),
@@ -128,38 +114,32 @@
   }
 
   function buildAll() {
-    const m = isMobile();
-
-    // 線段
-    lines = Array.from({ length: m ? 10 : 22 }, makeLine);
-
-    // 幾何形：XL 幾個大錨點 + L 中層 + M 細節
-    const xlN = m ? 2 : 4;
-    const lN  = m ? 4 : 9;
-    const mN  = m ? 5 : 12;
+    const m   = isMobile();
+    lines  = Array.from({ length: m ? 10 : 22 }, makeLine);
     shapes = [
-      ...Array.from({ length: xlN }, () => makeShape('xl')),
-      ...Array.from({ length: lN  }, () => makeShape('l')),
-      ...Array.from({ length: mN  }, () => makeShape('m'))
+      ...Array.from({ length: m ? 2 :  4 }, () => makeShape('xl')),
+      ...Array.from({ length: m ? 4 :  9 }, () => makeShape('l')),
+      ...Array.from({ length: m ? 5 : 12 }, () => makeShape('m'))
     ];
-
-    // 點
     dots = Array.from({ length: m ? 10 : 20 }, makeDot);
   }
 
-  // ── 滑鼠狀態 ─────────────────────────────────────────────
-  const mouse = { x: -9999, y: -9999 };
-  const trail = [];
+  // ── 滑鼠狀態（mouse.y = 頁面座標） ───────────────────────
+  const mouse = { x: -9999, y: -9999, prevClientY: -9999 };
+  const trail = [];   // trail 也用頁面座標
 
-  // ── Hero 光暈倍率 ─────────────────────────────────────────
-  let heroRect = null, heroMult = 1.0;
+  // ── Hero 感應（offsetTop 是頁面座標，不隨捲動變化） ───────
+  let heroTop = 0, heroBottom = 0, heroMult = 1.0;
 
-  function updateHeroRect() {
+  function updateHeroPos() {
     const el = document.querySelector('.hero');
-    if (el) heroRect = el.getBoundingClientRect();
+    if (el) {
+      heroTop    = el.offsetTop;
+      heroBottom = el.offsetTop + el.offsetHeight;
+    }
   }
 
-  // ── 彈簧排斥（共用） ─────────────────────────────────────
+  // ── 彈簧排斥（所有座標均為頁面空間） ─────────────────────
   function applySpringRepel(el) {
     el.ovx += (0 - el.ox) * SPRING;
     el.ovy += (0 - el.oy) * SPRING;
@@ -178,34 +158,27 @@
     }
   }
 
+  // 邊界回繞（頁面座標空間）
   function wrapXY(el) {
-    if (el.x < 0) el.x += W; else if (el.x > W) el.x -= W;
-    if (el.y < 0) el.y += H; else if (el.y > H) el.y -= H;
+    if (el.x < 0) el.x += W;          else if (el.x > W)      el.x -= W;
+    if (el.y < 0) el.y += PAGE_H;     else if (el.y > PAGE_H) el.y -= PAGE_H;
   }
-
   function wrapShape(s) {
-    if (s.x < 0) s.x += W; else if (s.x > W) s.x -= W;
-    if (s.baseY < 0) s.baseY += H; else if (s.baseY > H) s.baseY -= H;
+    if (s.x < 0) s.x += W;            else if (s.x > W)        s.x -= W;
+    if (s.baseY < 0) s.baseY += PAGE_H; else if (s.baseY > PAGE_H) s.baseY -= PAGE_H;
   }
 
   // ── 更新 ─────────────────────────────────────────────────
   function update(ts) {
-    // Hero 光暈
-    let inHero = false;
-    if (heroRect) {
-      inHero = mouse.x >= heroRect.left && mouse.x <= heroRect.right &&
-               mouse.y >= heroRect.top  && mouse.y <= heroRect.bottom;
-    }
+    // Hero 光暈：mouse.y 為頁面座標，比對 offsetTop/offsetBottom
+    const inHero = mouse.y >= heroTop && mouse.y <= heroBottom;
     heroMult += ((inHero ? 1.8 : 1.0) - heroMult) * (inHero ? 0.04 : 0.025);
 
-    // 線段
     for (const l of lines) {
       applySpringRepel(l);
       l.x += l.vx; l.y += l.vy;
       wrapXY(l);
     }
-
-    // 幾何形
     for (const s of shapes) {
       s.y = s.baseY;
       applySpringRepel(s);
@@ -215,27 +188,22 @@
       s.opacity = Math.min(0.55, s.baseOp * heroMult);
       wrapShape(s);
     }
-
-    // 圓點
     for (const d of dots) {
       applySpringRepel(d);
       d.wvx += rand(-0.04, 0.04);
       d.wvy += rand(-0.04, 0.04);
       d.wvx  = Math.max(-0.3, Math.min(0.3, d.wvx));
       d.wvy  = Math.max(-0.3, Math.min(0.3, d.wvy));
-      d.x   += d.wvx;
-      d.y   += d.wvy;
+      d.x   += d.wvx; d.y += d.wvy;
       wrapXY(d);
     }
-
-    // 軌跡淡出
     for (let i = trail.length - 1; i >= 0; i--) {
       trail[i].life -= 0.038;
       if (trail[i].life <= 0) trail.splice(i, 1);
     }
   }
 
-  // ── 繪製各形狀 ───────────────────────────────────────────
+  // ── 繪製形狀 ─────────────────────────────────────────────
   function drawTriangle(ctx, size) {
     const r = size / 2;
     ctx.moveTo(0, -r);
@@ -243,21 +211,13 @@
     ctx.lineTo(-r * 0.866,  r * 0.5);
     ctx.closePath();
   }
-
   function drawSquare(ctx, size) {
-    const h = size / 2;
-    ctx.rect(-h, -h, size, size);
+    const h = size / 2; ctx.rect(-h, -h, size, size);
   }
-
   function drawDiamond(ctx, size) {
     const h = size / 2;
-    ctx.moveTo(0, -h);
-    ctx.lineTo(h, 0);
-    ctx.lineTo(0, h);
-    ctx.lineTo(-h, 0);
-    ctx.closePath();
+    ctx.moveTo(0, -h); ctx.lineTo(h, 0); ctx.lineTo(0, h); ctx.lineTo(-h, 0); ctx.closePath();
   }
-
   function drawHexagon(ctx, size) {
     const r = size / 2;
     for (let i = 0; i < 6; i++) {
@@ -267,7 +227,6 @@
     }
     ctx.closePath();
   }
-
   function drawCross(ctx, size) {
     const arm = size / 2, thick = size * 0.18;
     ctx.rect(-thick, -arm, thick * 2, size);
@@ -278,22 +237,17 @@
     const x       = s.x + s.ox;
     const sineOff = Math.sin(ts / s.sinePeriod + s.sinePhase) * s.sineAmp;
     const y       = s.baseY + s.oy + sineOff;
-
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(s.rot);
-
     if (s.type === 'cross') {
-      // cross 用 fill 更清晰
       ctx.fillStyle = rgba(ACCENT, s.opacity * 0.65);
-      ctx.beginPath();
-      drawCross(ctx, s.size);
-      ctx.fill();
+      ctx.beginPath(); drawCross(ctx, s.size); ctx.fill();
     } else {
       ctx.strokeStyle = rgba(ACCENT, s.opacity);
-      ctx.lineWidth   = s.tier === 'xl' ? 1 : 1;
+      ctx.lineWidth   = 1;
       ctx.beginPath();
-      if (s.type === 'triangle')  drawTriangle(ctx, s.size);
+      if      (s.type === 'triangle') drawTriangle(ctx, s.size);
       else if (s.type === 'square')   drawSquare(ctx, s.size);
       else if (s.type === 'diamond')  drawDiamond(ctx, s.size);
       else if (s.type === 'hexagon')  drawHexagon(ctx, s.size);
@@ -303,7 +257,7 @@
   }
 
   function drawLine(l) {
-    const x   = l.x + l.ox, y = l.y + l.oy;
+    const x = l.x + l.ox, y = l.y + l.oy;
     const cos = Math.cos(l.angle), sin = Math.sin(l.angle);
     const hl  = l.len / 2;
     const grd = ctx.createLinearGradient(x - cos*hl, y - sin*hl, x + cos*hl, y + sin*hl);
@@ -320,60 +274,76 @@
 
   // ── 整體繪製 ─────────────────────────────────────────────
   function draw(ts) {
+    const sy = window.scrollY;
     ctx.clearRect(0, 0, W, H);
+
+    // 平移到頁面座標空間：元素跟著頁面捲動
+    ctx.save();
+    ctx.translate(0, -sy);
 
     for (const l of lines)  drawLine(l);
     for (const s of shapes) drawShape(s, ts);
-
-    // 圓點
     for (const d of dots) {
       ctx.beginPath();
       ctx.arc(d.x + d.ox, d.y + d.oy, d.r, 0, Math.PI * 2);
       ctx.fillStyle = rgba(ACCENT, d.opacity);
       ctx.fill();
     }
-
-    // 軌跡殘影
+    // 軌跡殘影（頁面座標，隨頁面捲動）
     for (const t of trail) {
       ctx.beginPath();
       ctx.arc(t.x, t.y, t.r * t.life, 0, Math.PI * 2);
       ctx.fillStyle = rgba(ACCENT, 0.4 * t.life);
       ctx.fill();
     }
+
+    ctx.restore();
   }
 
   // ── 動畫迴圈 ─────────────────────────────────────────────
   let paused = false;
-
   function loop(ts) {
     if (!paused) { update(ts); draw(ts); }
     requestAnimationFrame(loop);
   }
-
   document.addEventListener('visibilitychange', () => { paused = document.hidden; });
 
   // ── 事件 ────────────────────────────────────────────────
   window.addEventListener('mousemove', e => {
-    const vel = Math.hypot(e.clientX - mouse.x, e.clientY - mouse.y);
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
+    // 速度以 viewport 座標計算（避免捲動時誤觸發殘影）
+    const vel = Math.hypot(e.clientX - mouse.x, e.clientY - mouse.prevClientY);
+    mouse.x         = e.clientX;
+    mouse.prevClientY = e.clientY;
+    mouse.y         = e.clientY + window.scrollY;   // 頁面座標
+
     if (vel > 3) {
       const n = randInt(3, 5);
       for (let i = 0; i < n; i++) {
-        trail.push({ x: e.clientX + rand(-6,6), y: e.clientY + rand(-6,6), r: rand(1.5,3), life: 1 });
+        trail.push({
+          x: mouse.x + rand(-6, 6),
+          y: mouse.y + rand(-6, 6),   // 頁面座標
+          r: rand(1.5, 3), life: 1
+        });
       }
     }
-    updateHeroRect();
   });
 
-  window.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
+  window.addEventListener('mouseleave', () => {
+    mouse.x = -9999; mouse.y = -9999;
+  });
 
-  window.addEventListener('resize', () => { resize(); buildAll(); updateHeroRect(); });
-  window.addEventListener('scroll', updateHeroRect, { passive: true });
+  window.addEventListener('resize', () => {
+    resize(); buildAll(); updateHeroPos();
+  });
+
+  // 頁面完全載入後更新 PAGE_H（圖片等資源可能改變頁高）
+  window.addEventListener('load', () => {
+    resize(); buildAll(); updateHeroPos();
+  });
 
   // ── 初始化 ───────────────────────────────────────────────
   resize();
   buildAll();
-  updateHeroRect();
+  updateHeroPos();
   requestAnimationFrame(loop);
 })();
