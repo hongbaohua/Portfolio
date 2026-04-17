@@ -613,9 +613,9 @@
 }
 
 /* 學歷區塊裝飾 */
+/* 移除 overflow:hidden，避免 dot hover 的 scale transform 被裁切而被白色遮蓋 */
 .edu-tl__track--degree {
   position: relative;
-  overflow: hidden;
 }
 
 .edu-tl__deco-icon {
