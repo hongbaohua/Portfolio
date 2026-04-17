@@ -114,14 +114,19 @@
   }
 
   function buildAll() {
-    const m   = isMobile();
-    lines  = Array.from({ length: m ? 10 : 22 }, makeLine);
+    const m = isMobile();
+    // 每個視口高度維持相同密度：按 PAGE_H/H 等比增加，上限避免效能問題
+    const r = Math.min(PAGE_H / Math.max(H, 1), 5);
+
+    const n = (base, cap) => Math.min(Math.round(base * r), cap);
+
+    lines  = Array.from({ length: n(m ? 10 : 22, 90)  }, makeLine);
     shapes = [
-      ...Array.from({ length: m ? 2 :  4 }, () => makeShape('xl')),
-      ...Array.from({ length: m ? 4 :  9 }, () => makeShape('l')),
-      ...Array.from({ length: m ? 5 : 12 }, () => makeShape('m'))
+      ...Array.from({ length: n(m ? 2 :  4, 18) }, () => makeShape('xl')),
+      ...Array.from({ length: n(m ? 4 :  9, 38) }, () => makeShape('l')),
+      ...Array.from({ length: n(m ? 5 : 12, 55) }, () => makeShape('m'))
     ];
-    dots = Array.from({ length: m ? 10 : 20 }, makeDot);
+    dots = Array.from({ length: n(m ? 10 : 20, 80) }, makeDot);
   }
 
   // ── 滑鼠狀態（mouse.y = 頁面座標） ───────────────────────

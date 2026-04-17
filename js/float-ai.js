@@ -81,9 +81,12 @@
   }
 
   function buildAll() {
-    const m  = isMobile();
-    const nc = m ? 15 : 25;
+    const m = isMobile();
+    // 節點在頁面空間：按頁面高度等比增加，維持每個視口區域的密度
+    const r  = Math.min(PAGE_H / Math.max(H, 1), 5);
+    const nc = Math.min(Math.round((m ? 15 : 25) * r), 110);
     nodes = Array.from({ length: nc }, makeNode);
+    // 二進位字元在 viewport 空間，數量固定
     bits  = m ? [] : Array.from({ length: randInt(12, 16) }, makeBit);
   }
 
