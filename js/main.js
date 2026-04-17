@@ -5,22 +5,24 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ── 滑鼠光暈（移動顯示，靜止消失） ── */
-  const glow = document.createElement('div');
-  glow.className = 'cursor-glow';
-  document.body.appendChild(glow);
-  let glowTimer;
-  window.addEventListener('mousemove', e => {
-    glow.style.left = e.clientX + 'px';
-    glow.style.top  = e.clientY + 'px';
-    glow.style.opacity = '1';
-    glow.style.transform = 'translate(-50%, -50%) scale(1)';
-    clearTimeout(glowTimer);
-    glowTimer = setTimeout(() => {
-      glow.style.opacity = '0';
-      glow.style.transform = 'translate(-50%, -50%) scale(0.3)';
-    }, 100);
-  }, { passive: true });
+  /* ── 滑鼠光暈（有 #floatBg 的頁面自帶滑鼠效果，不需光暈） ── */
+  if (!document.getElementById('floatBg')) {
+    const glow = document.createElement('div');
+    glow.className = 'cursor-glow';
+    document.body.appendChild(glow);
+    let glowTimer;
+    window.addEventListener('mousemove', e => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top  = e.clientY + 'px';
+      glow.style.opacity = '1';
+      glow.style.transform = 'translate(-50%, -50%) scale(1)';
+      clearTimeout(glowTimer);
+      glowTimer = setTimeout(() => {
+        glow.style.opacity = '0';
+        glow.style.transform = 'translate(-50%, -50%) scale(0.3)';
+      }, 100);
+    }, { passive: true });
+  }
 
   /* ── 捲動進度條 ── */
   const scrollProgress = document.getElementById('scrollProgress');
