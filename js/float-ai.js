@@ -55,7 +55,7 @@
   function computeSectionBounds() {
     sectionBounds = [];
     // 包含 .ai-hero（大標題深色格紋區）
-    document.querySelectorAll('.hero, .ai-hero, .section').forEach(el => {
+    document.querySelectorAll('.hero, .ai-hero, section').forEach(el => {
       sectionBounds.push(el.offsetTop);
       sectionBounds.push(el.offsetTop + el.offsetHeight);
     });
@@ -91,12 +91,15 @@
   function makeNode(zone) {
     const inHero = zone === 'hero';
     const baseOp = inHero ? rand(0.38, 0.65) : rand(0.20, 0.38);
-    const x = inHero ? rand(0, W) : biasedX();
+    // hero 區節點集中在右側（52%～100% 寬度）
+    const x = inHero ? rand(W * 0.52, W) : biasedX();
     const y = inHero ? rand(aiHeroTop, aiHeroBottom) : biasedY();
     return {
       x, y,
       r: rand(inHero ? 2.5 : 2, inHero ? 6 : 5),
       baseOp, opacity: baseOp,
+      displayOp: 0,                         // 淡入進度
+      fadeElapsed: -rand(0, 2500),          // 錯落淡入：負值表示延遲時間（ms）
       vx: rand(-0.35, 0.35), vy: rand(-0.35, 0.35),
       ox: 0, oy: 0, ovx: 0, ovy: 0,
       glowR: 0, glowOp: 0, activeLeft: 0,
@@ -123,11 +126,11 @@
     computeAiHeroBounds();
     const m  = isMobile();
     const r  = Math.min(PAGE_H / Math.max(H, 1), 5);
-    const nc = Math.min(Math.round((m ? 18 : 32) * r), 130);
+    const nc = Math.min(Math.round((m ? 16 : 22) * r), 110);
 
-    // 38% 集中在深色大標題區（ai-hero）
+    // 14% 集中在深色大標題區右側（ai-hero），避免過於擁擠
     const heroN = aiHeroBottom > aiHeroTop
-      ? Math.round(nc * 0.38)
+      ? Math.round(nc * 0.14)
       : 0;
     nodes = [
       ...Array.from({ length: heroN        }, () => makeNode('hero')),
@@ -178,6 +181,13 @@
     }
 
     for (const n of nodes) {
+      // 錯落淡入（fadeElapsed < 0 為等待期，>= 0 開始淡入）
+      if (n.displayOp < n.baseOp) {
+        n.fadeElapsed += dt;
+        if (n.fadeElapsed > 0) {
+          n.displayOp = Math.min(n.baseOp, n.displayOp + n.baseOp * (dt / 800));
+        }
+      }
       // 活躍光暈
       if (n.activeLeft > 0) {
         n.activeLeft -= dt; n.glowR += 0.7;
@@ -241,7 +251,11 @@
         const bx = b.x + b.ox, by = b.y + b.oy;
         const d  = Math.hypot(bx - ax, by - ay);
         if (d >= EDGE_R) continue;
-        const edgeOp = 0.22 * (1 - d / EDGE_R);
+        // 兩端節點都完成淡入才畫邊
+        const fadeRatio = Math.min(a.displayOp / Math.max(a.baseOp, 0.001),
+                                   b.displayOp / Math.max(b.baseOp, 0.001));
+        if (fadeRatio < 0.05) continue;
+        const edgeOp = 0.22 * (1 - d / EDGE_R) * fadeRatio;
         ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(bx, by);
         ctx.strokeStyle = rgba(ACCENT, edgeOp); ctx.lineWidth = 1; ctx.stroke();
 
@@ -252,7 +266,7 @@
         for (const ph of [ph1, ph2]) {
           ctx.beginPath();
           ctx.arc(ax + (bx - ax) * ph, ay + (by - ay) * ph, 1.5, 0, Math.PI * 2);
-          ctx.fillStyle = rgba(ACCENT, 0.65); ctx.fill();
+          ctx.fillStyle = rgba(ACCENT, 0.65 * fadeRatio); ctx.fill();
         }
       }
 
@@ -282,7 +296,7 @@
       ctx.save();
       ctx.shadowBlur  = 6; ctx.shadowColor = rgba(ACCENT, 0.35);
       ctx.beginPath(); ctx.arc(x, y, n.r, 0, Math.PI * 2);
-      ctx.fillStyle = rgba(ACCENT, n.baseOp); ctx.fill();
+      ctx.fillStyle = rgba(ACCENT, n.displayOp); ctx.fill();
       ctx.restore();
     }
 
