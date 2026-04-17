@@ -86,7 +86,7 @@
       x: biasedX(), y: biasedY(),
       len: rand(40, 110),
       angle: rand(0, Math.PI * 2),
-      color: Math.random() < 0.55 ? ACCENT : MUTED,
+      color: ACCENT,
       opacity: rand(0.22, 0.42),
       thick: Math.random() < 0.3 ? 2 : 1,
       vx: rand(-0.22, 0.22), vy: rand(-0.22, 0.22),

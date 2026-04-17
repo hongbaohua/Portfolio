@@ -50,13 +50,20 @@
 
   // ── 空間分布輔助 ─────────────────────────────────────────
   let sectionBounds = [];
+  let aiHeroTop = 0, aiHeroBottom = 0;
 
   function computeSectionBounds() {
     sectionBounds = [];
-    document.querySelectorAll('.hero, .section').forEach(el => {
+    // 包含 .ai-hero（大標題深色格紋區）
+    document.querySelectorAll('.hero, .ai-hero, .section').forEach(el => {
       sectionBounds.push(el.offsetTop);
       sectionBounds.push(el.offsetTop + el.offsetHeight);
     });
+  }
+
+  function computeAiHeroBounds() {
+    const el = document.querySelector('.ai-hero');
+    if (el) { aiHeroTop = el.offsetTop; aiHeroBottom = el.offsetTop + el.offsetHeight; }
   }
 
   function biasedX() {
@@ -80,11 +87,16 @@
   const pulses = [];
 
   // ─── 節點（頁面座標） ─────────────────────────────────────
-  function makeNode() {
-    const baseOp = rand(0.15, 0.30);
+  // zone: 'hero'（深色大標題區，全寬 + 高 opacity）| 'normal'
+  function makeNode(zone) {
+    const inHero = zone === 'hero';
+    const baseOp = inHero ? rand(0.38, 0.65) : rand(0.20, 0.38);
+    const x = inHero ? rand(0, W) : biasedX();
+    const y = inHero ? rand(aiHeroTop, aiHeroBottom) : biasedY();
     return {
-      x: biasedX(), y: biasedY(),
-      r: rand(2, 5), baseOp, opacity: baseOp,
+      x, y,
+      r: rand(inHero ? 2.5 : 2, inHero ? 6 : 5),
+      baseOp, opacity: baseOp,
       vx: rand(-0.35, 0.35), vy: rand(-0.35, 0.35),
       ox: 0, oy: 0, ovx: 0, ovy: 0,
       glowR: 0, glowOp: 0, activeLeft: 0,
@@ -99,7 +111,7 @@
       y: rand(0, H),     // viewport 座標
       char: Math.random() < 0.5 ? '0' : '1',
       size: rand(10, 14),
-      opacity: rand(0.04, 0.10),
+      opacity: rand(0.07, 0.16),
       speed: rand(0.15, 0.35),
       driftPhase: rand(0, Math.PI * 2),
       boosted: false, boostLeft: 0
@@ -107,13 +119,23 @@
   }
 
   function buildAll() {
-    computeSectionBounds();  // 先取板塊邊界
-    const m = isMobile();
+    computeSectionBounds();
+    computeAiHeroBounds();
+    const m  = isMobile();
     const r  = Math.min(PAGE_H / Math.max(H, 1), 5);
-    const nc = Math.min(Math.round((m ? 15 : 25) * r), 110);
-    nodes = Array.from({ length: nc }, makeNode);
+    const nc = Math.min(Math.round((m ? 18 : 32) * r), 130);
+
+    // 38% 集中在深色大標題區（ai-hero）
+    const heroN = aiHeroBottom > aiHeroTop
+      ? Math.round(nc * 0.38)
+      : 0;
+    nodes = [
+      ...Array.from({ length: heroN        }, () => makeNode('hero')),
+      ...Array.from({ length: nc - heroN   }, () => makeNode('normal'))
+    ];
+
     // 二進位字元在 viewport 空間，數量固定
-    bits  = m ? [] : Array.from({ length: randInt(12, 16) }, makeBit);
+    bits  = m ? [] : Array.from({ length: randInt(14, 20) }, makeBit);
   }
 
   // ── 滑鼠狀態 ─────────────────────────────────────────────
@@ -219,7 +241,7 @@
         const bx = b.x + b.ox, by = b.y + b.oy;
         const d  = Math.hypot(bx - ax, by - ay);
         if (d >= EDGE_R) continue;
-        const edgeOp = 0.12 * (1 - d / EDGE_R);
+        const edgeOp = 0.22 * (1 - d / EDGE_R);
         ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(bx, by);
         ctx.strokeStyle = rgba(ACCENT, edgeOp); ctx.lineWidth = 1; ctx.stroke();
 
@@ -230,7 +252,7 @@
         for (const ph of [ph1, ph2]) {
           ctx.beginPath();
           ctx.arc(ax + (bx - ax) * ph, ay + (by - ay) * ph, 1.5, 0, Math.PI * 2);
-          ctx.fillStyle = rgba(ACCENT, 0.5); ctx.fill();
+          ctx.fillStyle = rgba(ACCENT, 0.65); ctx.fill();
         }
       }
 
@@ -238,7 +260,7 @@
       if (mouse.inside) {
         const d = Math.hypot(mouse.x - ax, mouse.y - ay);
         if (d < MOUSE_R) {
-          const edgeOp = 0.35 * (1 - d / MOUSE_R);
+          const edgeOp = 0.48 * (1 - d / MOUSE_R);
           ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(mouse.x, mouse.y);
           ctx.strokeStyle = rgba(ACCENT, edgeOp); ctx.lineWidth = 1; ctx.stroke();
           const spd = 1.0 + (i % 5) * 0.12;
@@ -343,6 +365,7 @@
   window.addEventListener('resize', () => { resize(); buildAll(); });
 
   window.addEventListener('load', () => { resize(); buildAll(); });
+
 
   // ── 初始化 ───────────────────────────────────────────────
   resize();
