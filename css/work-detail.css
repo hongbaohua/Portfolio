@@ -986,3 +986,202 @@
     gap: 8px;
   }
 }
+
+/* ────────────────────────────────────────────────
+   WORK SLOGAN — 品牌口號區塊
+   ──────────────────────────────────────────────── */
+.work-slogan {
+  margin-top: 20px;
+  padding: 16px 22px;
+  background: var(--bg-dark);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+}
+
+.work-slogan__main {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.work-slogan__sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 6px 0 0;
+}
+
+/* ────────────────────────────────────────────────
+   WORK CHAR GRID — 角色特質卡片組
+   ──────────────────────────────────────────────── */
+.work-char-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.work-char-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+}
+
+.work-char-card--full {
+  grid-column: 1 / -1;
+}
+
+.work-char-card--core {
+  border-top-color: var(--accent);
+}
+
+.work-char-card--item {
+  border-top-color: var(--border);
+}
+
+.work-char-card--warm {
+  border-top-color: #e6722a;
+}
+
+.work-char-card--cold {
+  border-top-color: #3d9fcc;
+}
+
+.work-char-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.work-char-card__badge--core {
+  background: rgba(196, 163, 90, 0.12);
+  color: var(--accent-dark);
+  border: 1px solid rgba(196, 163, 90, 0.3);
+}
+
+.work-char-card__badge--item {
+  background: var(--bg-dark);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.work-char-card__badge--warm {
+  background: rgba(224, 100, 30, 0.1);
+  color: #b85a15;
+  border: 1px solid rgba(224, 100, 30, 0.25);
+}
+
+.work-char-card__badge--cold {
+  background: rgba(50, 130, 200, 0.1);
+  color: #1a6090;
+  border: 1px solid rgba(50, 130, 200, 0.25);
+}
+
+.work-char-card__body {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+/* ────────────────────────────────────────────────
+   WORK 5W1H GRID — 企劃分析視覺卡片
+   ──────────────────────────────────────────────── */
+.work-5w1h-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.work-5w1h-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-5w1h-card__watermark {
+  position: absolute;
+  right: 14px;
+  bottom: 8px;
+  font-size: 3.8rem;
+  font-weight: 800;
+  color: var(--accent);
+  opacity: 0.07;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+.work-5w1h-card__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.work-5w1h-card__icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent-light) 25%, var(--bg));
+  border: 1px solid rgba(196, 163, 90, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-dark);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.work-5w1h-card__key {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  line-height: 1.2;
+}
+
+.work-5w1h-card__category {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.work-5w1h-card__point {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.work-5w1h-card__desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 680px) {
+  .work-5w1h-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-char-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-char-card--full {
+    grid-column: auto;
+  }
+}

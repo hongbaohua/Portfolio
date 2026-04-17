@@ -120,9 +120,9 @@
               <img src="assets/images/小恆.png" alt="小恆 Tempy 吉祥物" class="work-intro-logo" />
               <p>Tempy（小恆）是為保溫杯品牌量身打造的品牌吉祥物 IP，以河馬為造型原型。「小恆」取「恆溫」之意，象徵持久穩定的守護；英文名 Tempy 則由 Temperature（溫度）與 Empathy（同理心）合體，傳遞溫度與情感的雙重守護。</p>
               <p style="margin-top: 12px;">以 5W1H 分析框架為骨架，系統性地建立 Tempy 的背景故事、個性特質與視覺形象，最終延伸出完整的行銷應用規範，確保吉祥物在各媒介中保持一致的品牌識別。</p>
-              <div class="work-slogan-block" style="margin-top: 20px; padding: 16px 20px; background: var(--bg-dark); border-left: 3px solid var(--accent); border-radius: 4px;">
-                <p style="font-size: 1rem; font-weight: 600; color: var(--text); margin: 0;">你的溫度，小恆守護</p>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 6px 0 0;">Hot or cold, Tempy holds.</p>
+              <div class="work-slogan">
+                <p class="work-slogan__main">你的溫度，小恆守護</p>
+                <p class="work-slogan__sub">Hot or cold, Tempy holds.</p>
               </div>
             </div>
           </section>
@@ -132,38 +132,47 @@
             <h2 class="work-section-title">吉祥物角色背景</h2>
 
             <div class="work-desc-block reveal">
-              <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 12px;">背景故事</h3>
+              <h3 class="work-section-subtitle" style="margin-bottom: 12px;">背景故事</h3>
               <p>小恆來自一座名為「<strong>恆溫島</strong>」的神秘之地——那裡四季永遠保持完美平衡，冷熱交融而不衝突。在那座島上成長的小恆，天生擁有「冷暖平衡」的天賦，能夠感知並守護任何事物的溫度狀態。</p>
               <p style="margin-top: 12px;">某一天，小恆離開恆溫島，踏上旅程，將這份守護溫度的力量帶給世界上每一個需要「恆溫陪伴」的人。</p>
             </div>
 
-            <div class="work-table-wrap reveal" style="margin-top: 24px;">
-              <table class="work-table">
-                <thead>
-                  <tr>
-                    <th style="width: 22%;">面向</th>
-                    <th>說明</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>核心能力</strong></td>
-                    <td><strong>溫度守恆力</strong>——不主動改變飲品溫度，而是以穩定的守護力量延長冷熱狀態。就如保溫杯本身：不創造溫度，只忠實守護溫度。</td>
-                  </tr>
-                  <tr>
-                    <td><strong>常駐配件</strong></td>
-                    <td>雙色雙面披風（暖面橙紅 / 冷面藍白）＋ 調節手杖（旋轉末端顯示太陽或雪花）</td>
-                  </tr>
-                  <tr>
-                    <td><strong>保暖模式</strong></td>
-                    <td>暖色圍巾 ＋ 蒸氣效果 ＋ 火焰冠（橙紅王冠）；性格：溫柔耐心，如冬日暖陽般穩定陪伴</td>
-                  </tr>
-                  <tr>
-                    <td><strong>保冷模式</strong></td>
-                    <td>冰晶項圈 ＋ 雪花冰霜裝飾 ＋ 冰晶冠（冷藍色）；性格：活潑爽朗，如夏日涼風般輕快靈動</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="work-char-grid reveal" style="margin-top: 16px;">
+
+              <!-- 核心能力 -->
+              <div class="work-char-card work-char-card--core work-char-card--full">
+                <span class="work-char-card__badge work-char-card__badge--core">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i> 核心能力
+                </span>
+                <p class="work-char-card__body"><strong style="color:var(--text);">溫度守恆力</strong>——不主動改變飲品溫度，而是以穩定的守護力量延長冷熱狀態。就如保溫杯本身：不創造溫度，只忠實守護溫度。</p>
+              </div>
+
+              <!-- 常駐配件 -->
+              <div class="work-char-card work-char-card--item work-char-card--full">
+                <span class="work-char-card__badge work-char-card__badge--item">
+                  <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> 常駐配件
+                </span>
+                <p class="work-char-card__body">雙色雙面披風（暖面橙紅 / 冷面藍白）＋ 調節手杖（旋轉末端顯示太陽或雪花）</p>
+              </div>
+
+              <!-- 保暖模式 -->
+              <div class="work-char-card work-char-card--warm">
+                <span class="work-char-card__badge work-char-card__badge--warm">
+                  <i class="fa-solid fa-sun" aria-hidden="true"></i> 保暖模式
+                </span>
+                <p class="work-char-card__body">暖色圍巾 ＋ 蒸氣效果 ＋ 火焰冠（橙紅王冠）</p>
+                <p class="work-char-card__body" style="margin-top:8px; color:var(--text-muted); font-style:italic;">性格：溫柔耐心，如冬日暖陽般穩定陪伴</p>
+              </div>
+
+              <!-- 保冷模式 -->
+              <div class="work-char-card work-char-card--cold">
+                <span class="work-char-card__badge work-char-card__badge--cold">
+                  <i class="fa-solid fa-snowflake" aria-hidden="true"></i> 保冷模式
+                </span>
+                <p class="work-char-card__body">冰晶項圈 ＋ 雪花冰霜裝飾 ＋ 冰晶冠（冷藍色）</p>
+                <p class="work-char-card__body" style="margin-top:8px; color:var(--text-muted); font-style:italic;">性格：活潑爽朗，如夏日涼風般輕快靈動</p>
+              </div>
+
             </div>
           </section>
 
@@ -171,48 +180,104 @@
           <section id="section-5w1h">
             <h2 class="work-section-title">企劃分析（5W1H 框架）</h2>
 
-            <div class="work-table-wrap reveal">
-              <table class="work-table">
-                <thead>
-                  <tr>
-                    <th style="width: 18%;">面向</th>
-                    <th style="width: 32%;">重點</th>
-                    <th>說明</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>Who<br /><span style="font-weight:400; font-size:0.78rem; color:var(--text-muted);">目標族群</span></strong></td>
-                    <td>20–40 歲上班族、學生、戶外運動愛好者</td>
-                    <td>重視健康與便利性的生活型態；次要族群為家庭主婦與家長，尋求可全年使用的日常用品。</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Why<br /><span style="font-weight:400; font-size:0.78rem; color:var(--text-muted);">企劃目的</span></strong></td>
-                    <td>傳達保冷保暖雙功能、建立人性化品牌形象</td>
-                    <td>演繹從炎夏到嚴冬的四季使用場景；透過吉祥物 IP 注入品牌溫度，與市場競爭者形成差異。</td>
-                  </tr>
-                  <tr>
-                    <td><strong>What<br /><span style="font-weight:400; font-size:0.78rem; color:var(--text-muted);">產品核心</span></strong></td>
-                    <td>高效雙功能保溫杯 ＋ IP 限量版設計</td>
-                    <td>核心產品提供高效保冷／保暖雙功能；延伸推出結合四季主題與吉祥物 IP 的限量款，增加收藏價值。</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Where<br /><span style="font-weight:400; font-size:0.78rem; color:var(--text-muted);">推廣通路</span></strong></td>
-                    <td>線上平台 ＋ 線下活動 ＋ 周邊商品</td>
-                    <td>品牌官網、社群媒體趣味漫畫；傳統廣告、宣傳 DM、快閃活動吉祥物人偶裝；IP 設計印製於杯體、包裝及周邊配件。</td>
-                  </tr>
-                  <tr>
-                    <td><strong>When<br /><span style="font-weight:400; font-size:0.78rem; color:var(--text-muted);">推廣時機</span></strong></td>
-                    <td>全年配合季節輪替 ＋ 節慶集中爆發</td>
-                    <td>隨季節推出專屬主題內容；重點鎖定夏季旅遊旺季，以及冬季聖誕與新年購物季。</td>
-                  </tr>
-                  <tr>
-                    <td><strong>How<br /><span style="font-weight:400; font-size:0.78rem; color:var(--text-muted);">執行方式</span></strong></td>
-                    <td>動畫 × 社群 × 商品 × 活動</td>
-                    <td>製作動畫短片與視覺吸睛的靜態插畫；設計吉祥物貼圖、GIF 提升社群互動；將吉祥物融入杯體設計與附加配件；快閃活動現身加強現場記憶點。</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="work-5w1h-grid reveal">
+
+              <!-- Who -->
+              <div class="work-5w1h-card">
+                <span class="work-5w1h-card__watermark">W</span>
+                <div class="work-5w1h-card__header">
+                  <div class="work-5w1h-card__icon">
+                    <i class="fa-solid fa-users" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <p class="work-5w1h-card__key">Who</p>
+                    <p class="work-5w1h-card__category">目標族群</p>
+                  </div>
+                </div>
+                <p class="work-5w1h-card__point">20–40 歲上班族、學生、戶外運動愛好者</p>
+                <p class="work-5w1h-card__desc">重視健康與便利性的生活型態；次要族群為家庭主婦與家長，尋求可全年使用的日常用品。</p>
+              </div>
+
+              <!-- Why -->
+              <div class="work-5w1h-card">
+                <span class="work-5w1h-card__watermark">W</span>
+                <div class="work-5w1h-card__header">
+                  <div class="work-5w1h-card__icon">
+                    <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <p class="work-5w1h-card__key">Why</p>
+                    <p class="work-5w1h-card__category">企劃目的</p>
+                  </div>
+                </div>
+                <p class="work-5w1h-card__point">傳達保冷保暖雙功能、建立人性化品牌形象</p>
+                <p class="work-5w1h-card__desc">演繹從炎夏到嚴冬的四季使用場景；透過吉祥物 IP 注入品牌溫度，與市場競爭者形成差異。</p>
+              </div>
+
+              <!-- What -->
+              <div class="work-5w1h-card">
+                <span class="work-5w1h-card__watermark">W</span>
+                <div class="work-5w1h-card__header">
+                  <div class="work-5w1h-card__icon">
+                    <i class="fa-solid fa-mug-hot" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <p class="work-5w1h-card__key">What</p>
+                    <p class="work-5w1h-card__category">產品核心</p>
+                  </div>
+                </div>
+                <p class="work-5w1h-card__point">高效雙功能保溫杯 ＋ IP 限量版設計</p>
+                <p class="work-5w1h-card__desc">核心產品提供高效保冷／保暖雙功能；延伸推出結合四季主題與吉祥物 IP 的限量款，增加收藏價值。</p>
+              </div>
+
+              <!-- Where -->
+              <div class="work-5w1h-card">
+                <span class="work-5w1h-card__watermark">W</span>
+                <div class="work-5w1h-card__header">
+                  <div class="work-5w1h-card__icon">
+                    <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <p class="work-5w1h-card__key">Where</p>
+                    <p class="work-5w1h-card__category">推廣通路</p>
+                  </div>
+                </div>
+                <p class="work-5w1h-card__point">線上平台 ＋ 線下活動 ＋ 周邊商品</p>
+                <p class="work-5w1h-card__desc">品牌官網、社群媒體趣味漫畫；傳統廣告、宣傳 DM、快閃活動吉祥物人偶裝；IP 設計印製於杯體、包裝及周邊配件。</p>
+              </div>
+
+              <!-- When -->
+              <div class="work-5w1h-card">
+                <span class="work-5w1h-card__watermark">W</span>
+                <div class="work-5w1h-card__header">
+                  <div class="work-5w1h-card__icon">
+                    <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <p class="work-5w1h-card__key">When</p>
+                    <p class="work-5w1h-card__category">推廣時機</p>
+                  </div>
+                </div>
+                <p class="work-5w1h-card__point">全年配合季節輪替 ＋ 節慶集中爆發</p>
+                <p class="work-5w1h-card__desc">隨季節推出專屬主題內容；重點鎖定夏季旅遊旺季，以及冬季聖誕與新年購物季。</p>
+              </div>
+
+              <!-- How -->
+              <div class="work-5w1h-card">
+                <span class="work-5w1h-card__watermark">H</span>
+                <div class="work-5w1h-card__header">
+                  <div class="work-5w1h-card__icon">
+                    <i class="fa-solid fa-wand-sparkles" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <p class="work-5w1h-card__key">How</p>
+                    <p class="work-5w1h-card__category">執行方式</p>
+                  </div>
+                </div>
+                <p class="work-5w1h-card__point">動畫 × 社群 × 商品 × 活動</p>
+                <p class="work-5w1h-card__desc">製作動畫短片與視覺吸睛的靜態插畫；設計吉祥物貼圖、GIF 提升社群互動；將吉祥物融入杯體設計與附加配件；快閃活動現身加強現場記憶點。</p>
+              </div>
+
             </div>
           </section>
 
@@ -220,17 +285,18 @@
           <section id="section-gallery">
             <h2 class="work-section-title">吉祥物設計展示</h2>
 
-            <div class="work-img-grid-3 reveal">
-              <div class="work-img-wrap">
+            <div class="work-img-grid-3">
+              <div class="work-img-wrap reveal" data-delay="0">
                 <img src="assets/images/小恆_01.jpg" alt="Tempy 吉祥物設計 01" loading="lazy" />
               </div>
-              <div class="work-img-wrap">
+              <div class="work-img-wrap reveal" data-delay="100">
                 <img src="assets/images/小恆_02.jpg" alt="Tempy 吉祥物設計 02" loading="lazy" />
               </div>
-              <div class="work-img-wrap">
+              <div class="work-img-wrap reveal" data-delay="200">
                 <img src="assets/images/小恆_03.jpg" alt="Tempy 吉祥物設計 03" loading="lazy" />
               </div>
             </div>
+            <p class="work-img-caption">點擊圖片可放大檢視</p>
           </section>
 
         </div><!-- /work-gallery -->
