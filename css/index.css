@@ -840,6 +840,27 @@
   transform: translateY(-2px);
 }
 
+/* AI 應用成果按鈕（藍色系，與站內 AI 元件色彩一致） */
+.btn-ai {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: var(--radius);
+  border: 1.5px solid #6c9fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4a6fa5;
+  letter-spacing: 0.04em;
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+
+.btn-ai:hover {
+  background: #4a6fa5;
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
 /* ── 響應式 ── */
 @media (max-width: 1024px) {
   .hero__inner {
