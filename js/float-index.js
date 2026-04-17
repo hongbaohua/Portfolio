@@ -55,15 +55,15 @@
   let shapes = [];   // 包含 XL / L / M 三層尺寸
   let dots   = [];
 
-  // ─── 類型 A：細線段（更長、更多樣） ─────────────────────
+  // ─── 類型 A：細線段 ──────────────────────────────────────
   function makeLine() {
-    const thick = Math.random() < 0.25 ? 1.5 : 1; // 偶有粗線
+    const thick = Math.random() < 0.3 ? 2 : 1;
     return {
       x: rand(0, W), y: rand(0, H),
-      len: rand(30, 90),
+      len: rand(40, 110),
       angle: rand(0, Math.PI * 2),
       color: Math.random() < 0.55 ? ACCENT : MUTED,
-      opacity: rand(0.10, 0.22),
+      opacity: rand(0.22, 0.42),
       thick,
       vx: rand(-0.22, 0.22), vy: rand(-0.22, 0.22),
       ox: 0, oy: 0, ovx: 0, ovy: 0
@@ -75,16 +75,16 @@
     // tier: 'xl' | 'l' | 'm'
     let sizeMin, sizeMax, opMin, opMax, speedMax;
     if (tier === 'xl') {
-      sizeMin = 50; sizeMax = 85;
-      opMin   = 0.03; opMax = 0.07;
+      sizeMin = 70; sizeMax = 120;
+      opMin   = 0.10; opMax = 0.18;
       speedMax = 0.08;
     } else if (tier === 'l') {
-      sizeMin = 25; sizeMax = 48;
-      opMin   = 0.07; opMax = 0.13;
+      sizeMin = 35; sizeMax = 65;
+      opMin   = 0.18; opMax = 0.30;
       speedMax = 0.14;
     } else {
-      sizeMin = 8;  sizeMax = 22;
-      opMin   = 0.10; opMax = 0.20;
+      sizeMin = 12; sizeMax = 30;
+      opMin   = 0.25; opMax = 0.40;
       speedMax = 0.22;
     }
     const baseOp = rand(opMin, opMax);
@@ -107,12 +107,12 @@
     };
   }
 
-  // ─── 類型 C：圓點（小圓點作為點綴） ─────────────────────
+  // ─── 類型 C：圓點（點綴） ────────────────────────────────
   function makeDot() {
     return {
       x: rand(0, W), y: rand(0, H),
-      r: rand(1.5, 4),
-      opacity: rand(0.08, 0.18),
+      r: rand(2, 5),
+      opacity: rand(0.20, 0.38),
       wvx: rand(-0.2, 0.2), wvy: rand(-0.2, 0.2),
       ox: 0, oy: 0, ovx: 0, ovy: 0
     };
@@ -203,7 +203,7 @@
       s.rot   += s.rotSpeed;
       s.x     += s.vx;
       s.baseY += s.vy;
-      s.opacity = Math.min(s.baseOp * 2.5, s.baseOp * heroMult);
+      s.opacity = Math.min(0.55, s.baseOp * heroMult);
       wrapShape(s);
     }
 
