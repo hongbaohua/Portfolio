@@ -126,7 +126,7 @@
     computeAiHeroBounds();
     const m  = isMobile();
     const r  = Math.min(PAGE_H / Math.max(H, 1), 5);
-    const nc = Math.min(Math.round((m ? 16 : 22) * r), 110);
+    const nc = Math.min(Math.round((m ? 20 : 32) * r), 150);
 
     // 14% 集中在深色大標題區右側（ai-hero），避免過於擁擠
     const heroN = aiHeroBottom > aiHeroTop
