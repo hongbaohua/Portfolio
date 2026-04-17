@@ -48,6 +48,32 @@
   const MOUSE_R  = 180;
   const REPEL_F  = 5.0;
 
+  // ── 空間分布輔助 ─────────────────────────────────────────
+  let sectionBounds = [];
+
+  function computeSectionBounds() {
+    sectionBounds = [];
+    document.querySelectorAll('.hero, .section').forEach(el => {
+      sectionBounds.push(el.offsetTop);
+      sectionBounds.push(el.offsetTop + el.offsetHeight);
+    });
+  }
+
+  function biasedX() {
+    const r = Math.random();
+    if (r < 0.55) return Math.random() < 0.5 ? rand(0, W * 0.22) : rand(W * 0.78, W);
+    if (r < 0.80) return Math.random() < 0.5 ? rand(W * 0.22, W * 0.36) : rand(W * 0.64, W * 0.78);
+    return rand(W * 0.36, W * 0.64);
+  }
+
+  function biasedY() {
+    if (sectionBounds.length > 0 && Math.random() < 0.55) {
+      const b = sectionBounds[randInt(0, sectionBounds.length - 1)];
+      return Math.max(0, Math.min(PAGE_H, b + rand(-160, 160)));
+    }
+    return rand(0, PAGE_H);
+  }
+
   // ── 元素 ────────────────────────────────────────────────
   let nodes = [];
   let bits  = [];           // viewport 空間（不跟頁面走）
@@ -57,7 +83,7 @@
   function makeNode() {
     const baseOp = rand(0.15, 0.30);
     return {
-      x: rand(0, W), y: rand(0, PAGE_H),   // 頁面座標
+      x: biasedX(), y: biasedY(),
       r: rand(2, 5), baseOp, opacity: baseOp,
       vx: rand(-0.35, 0.35), vy: rand(-0.35, 0.35),
       ox: 0, oy: 0, ovx: 0, ovy: 0,
@@ -81,8 +107,8 @@
   }
 
   function buildAll() {
+    computeSectionBounds();  // 先取板塊邊界
     const m = isMobile();
-    // 節點在頁面空間：按頁面高度等比增加，維持每個視口區域的密度
     const r  = Math.min(PAGE_H / Math.max(H, 1), 5);
     const nc = Math.min(Math.round((m ? 15 : 25) * r), 110);
     nodes = Array.from({ length: nc }, makeNode);

@@ -49,13 +49,41 @@
 
   const SHAPE_TYPES = ['triangle', 'square', 'diamond', 'hexagon', 'cross'];
 
+  // ── 空間分布輔助 ─────────────────────────────────────────
+  let sectionBounds = [];
+
+  function computeSectionBounds() {
+    sectionBounds = [];
+    document.querySelectorAll('.hero, .section').forEach(el => {
+      sectionBounds.push(el.offsetTop);
+      sectionBounds.push(el.offsetTop + el.offsetHeight);
+    });
+  }
+
+  // X 偏向兩側，中央稀疏
+  function biasedX() {
+    const r = Math.random();
+    if (r < 0.55) return Math.random() < 0.5 ? rand(0, W * 0.22) : rand(W * 0.78, W);
+    if (r < 0.80) return Math.random() < 0.5 ? rand(W * 0.22, W * 0.36) : rand(W * 0.64, W * 0.78);
+    return rand(W * 0.36, W * 0.64);
+  }
+
+  // Y 偏向板塊邊界過渡帶，其餘均勻分布
+  function biasedY() {
+    if (sectionBounds.length > 0 && Math.random() < 0.55) {
+      const b = sectionBounds[randInt(0, sectionBounds.length - 1)];
+      return Math.max(0, Math.min(PAGE_H, b + rand(-160, 160)));
+    }
+    return rand(0, PAGE_H);
+  }
+
   // ── 元素陣列 ─────────────────────────────────────────────
   let lines = [], shapes = [], dots = [];
 
   // ─── 類型 A：細線段 ──────────────────────────────────────
   function makeLine() {
     return {
-      x: rand(0, W), y: rand(0, PAGE_H),   // 頁面座標
+      x: biasedX(), y: biasedY(),
       len: rand(40, 110),
       angle: rand(0, Math.PI * 2),
       color: Math.random() < 0.55 ? ACCENT : MUTED,
@@ -80,15 +108,15 @@
     const type    = SHAPE_TYPES[randInt(0, SHAPE_TYPES.length - 1)];
     const isCross = type === 'cross';
     const SIDE_W  = W * 0.22;
-    // cross 只在兩側生成
+    // cross 強制兩側；其餘用 biasedX（偏向兩側但允許中央）
     const x = isCross
       ? (Math.random() < 0.5 ? rand(0, SIDE_W) : rand(W - SIDE_W, W))
-      : rand(0, W);
+      : biasedX();
     const vxBias = isCross ? (x < W / 2 ? -speedMax * 0.4 : speedMax * 0.4) : 0;
 
     const baseOp = rand(opMin, opMax);
     return {
-      x, baseY: rand(0, PAGE_H),   // 頁面座標
+      x, baseY: biasedY(),
       y: 0,
       type, size: rand(sizeMin, sizeMax), tier,
       baseOp, opacity: baseOp,
@@ -105,7 +133,7 @@
   // ─── 類型 C：圓點 ─────────────────────────────────────────
   function makeDot() {
     return {
-      x: rand(0, W), y: rand(0, PAGE_H),   // 頁面座標
+      x: biasedX(), y: biasedY(),
       r: rand(2, 5),
       opacity: rand(0.20, 0.38),
       wvx: rand(-0.2, 0.2), wvy: rand(-0.2, 0.2),
@@ -114,8 +142,8 @@
   }
 
   function buildAll() {
+    computeSectionBounds();  // 先取得板塊邊界，供 biasedY() 使用
     const m = isMobile();
-    // 每個視口高度維持相同密度：按 PAGE_H/H 等比增加，上限避免效能問題
     const r = Math.min(PAGE_H / Math.max(H, 1), 5);
 
     const n = (base, cap) => Math.min(Math.round(base * r), cap);
