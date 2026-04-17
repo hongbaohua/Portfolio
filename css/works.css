@@ -318,6 +318,72 @@
   color: var(--border);
 }
 
+/* ────────────────────────────────────────────────
+   FEATURED SECTION — 精選作品 / 精選 AI 協作 共用
+   （index.html 與 ai-learning.html 皆使用）
+   ──────────────────────────────────────────────── */
+.featured-section {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+.featured-section__title {
+  margin-top: 8px;
+  margin-bottom: 40px;
+}
+
+.featured-sub-group + .featured-sub-group {
+  margin-top: 64px;
+}
+
+.featured-sub-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 0.02em;
+}
+
+.featured-sub-title::before {
+  content: '';
+  display: block;
+  width: 3px;
+  height: 1.1em;
+  background: var(--accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.featured-more {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* 查看全部按鈕（黑色外框） */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.04em;
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+
+.btn-outline:hover {
+  background: var(--text);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+
 /* ── 響應式 ── */
 @media (max-width: 1024px) {
   .works-grid {

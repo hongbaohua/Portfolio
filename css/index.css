@@ -776,71 +776,8 @@
 /* ────────────────────────────────────────────────
    板塊3 — 精選作品
    ──────────────────────────────────────────────── */
-.featured-section {
-  background: var(--bg);
-  border-top: 1px solid var(--border);
-}
-
-.featured-section__title {
-  margin-top: 8px;
-  margin-bottom: 40px;
-}
-
-/* 精選作品子分類群組 */
-.featured-sub-group + .featured-sub-group {
-  margin-top: 64px;
-}
-
-/* 子分類標題（設計作品 / AI 協作） */
-.featured-sub-title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  letter-spacing: 0.02em;
-}
-
-.featured-sub-title::before {
-  content: '';
-  display: block;
-  width: 3px;
-  height: 1.1em;
-  background: var(--accent);
-  border-radius: 2px;
-  flex-shrink: 0;
-}
-
-/* 查看全部按鈕 */
-.featured-more {
-  text-align: center;
-  margin-top: 40px;
-}
-
-
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 13px 28px;
-  border-radius: var(--radius);
-  border: 1.5px solid var(--text);
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text);
-  letter-spacing: 0.04em;
-  transition: background var(--transition), color var(--transition), transform var(--transition);
-}
-
-.btn-outline:hover {
-  background: var(--text);
-  color: var(--white);
-  transform: translateY(-2px);
-}
-
-/* AI 應用成果按鈕（咖啡色系，深棕實心 → hover 淺棕） */
+/* AI 應用成果按鈕（咖啡色系，深棕實心 → hover 淺棕）
+   featured-section / featured-sub / featured-more / btn-outline → 已移至 works.css */
 .btn-ai {
   display: inline-flex;
   align-items: center;
