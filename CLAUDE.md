@@ -64,6 +64,8 @@ web/
 | Nav 底線展開 | `main.css` | `::after` scaleX 0→1 |
 | Timeline dot hover | `index.css` | `.edu-tl__dot` scale(1.25) + 填色 |
 | Skill chip hover | `index.css` | `.skill-chip` translateY(-2px) + accent 色調 |
+| 首頁浮動背景 | `js/float-index.js` + `#floatBg` canvas | 細線段/幾何形/圓點；磁力排斥+軌跡殘影+Hero光暈 |
+| AI頁浮動背景 | `js/float-ai.js` + `#floatBg` canvas | 節點圖+二進位字元；滑鼠超級節點+點擊脈衝波+靜止吸引 |
 
 ### 作品詳情頁統一規範（2026-04-13 訂定）
 所有設計作品詳情頁必須符合以下規範，模板參考 `work-detail-template.html`：
@@ -125,7 +127,7 @@ web/
 
 ---
 
-## 目前網站狀態（最後更新：2026-04-16，AI協作改名＋首頁精選合併）
+## 目前網站狀態（最後更新：2026-04-18，首頁＋AI頁浮動背景動效上線）
 
 ### 已完成頁面
 | 頁面 | 狀態 | 說明 |
