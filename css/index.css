@@ -226,9 +226,12 @@
 /* 聯絡資料卡片 */
 .hero__contact-card {
   background: var(--white);
-  border: 1px solid var(--border);
+  border-top: none;
+  border-left: none;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  overflow: hidden;
+  border-top-left-radius: 0;
   padding: 32px 32px 28px;
   box-shadow: var(--shadow-lg);
   display: flex;
@@ -315,13 +318,7 @@
   color: var(--accent-dark);
 }
 
-/* Hero 右側個人 Logo（中尺寸展示用） */
-.hero__name-logo {
-  max-width: 140px;
-  height: auto;
-  display: block;
-  opacity: 0.85;
-}
+
 
 
 /* ────────────────────────────────────────────────
@@ -388,7 +385,6 @@
   border-top-left-radius: 0; /* L形裝飾線需要直角左上角，才能無縫銜接 */
   padding: 28px 28px 32px;
   position: relative;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -405,6 +401,22 @@
     linear-gradient(to bottom, var(--accent) 0%, transparent 60%) top  left / 2.5px 100% no-repeat;
   pointer-events: none;
   z-index: 1;
+}
+
+/* 四角芒星：對齊 L 形直角頂點 */
+.about-card::after,
+.hero__contact-card::after {
+  content: '✦';
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  line-height: 1;
+  color: var(--accent);
+  z-index: 2;
+  pointer-events: none;
+  font-style: normal;
 }
 
 /* 卡片標題列（icon + 標籤文字） */
