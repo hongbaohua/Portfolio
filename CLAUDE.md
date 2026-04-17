@@ -24,7 +24,7 @@ web/
 ├── work-larkzhu.html       作品詳細頁：節節高 LARKZHU
 ├── work-liangkouxi.html    作品詳細頁：倆口囍
 ├── work-qihang.html        作品詳細頁：啟航
-├── work-xiaoheng.html      作品詳細頁：小恆
+├── work-tempy.html         作品詳細頁：小恆 Tempy
 ├── work-yebuff.html        作品詳細頁：YeBuff
 ├── work-yuejilabs.html     作品詳細頁：月記LAB
 ├── css/
@@ -140,7 +140,7 @@ web/
 | work-larkzhu.html | ✅ 完成 | 節節高 LARKZHU |
 | work-liangkouxi.html | ✅ 完成 | 倆口囍糕餅 |
 | work-qihang.html | ✅ 完成 | 啟航餅乾品牌 |
-| work-xiaoheng.html | ✅ 完成 | 小恆保溫杯吉祥物 |
+| work-tempy.html | ✅ 完成 | 小恆 Tempy 保溫杯吉祥物 |
 | work-yebuff.html | ✅ 完成 | YeBuff 金運面膜 |
 | work-yuejilabs.html | ✅ 完成 | 月記LAB 手搖飲 |
 | work-ecdesign.html | ✅ 完成 | EC Design 電商設計練習系列頁（持續更新，初霧 Chūwù 為 No.01）|
