@@ -840,24 +840,23 @@
   transform: translateY(-2px);
 }
 
-/* AI 應用成果按鈕（咖啡色系） */
+/* AI 應用成果按鈕（咖啡色系，深棕實心 → hover 淺棕） */
 .btn-ai {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 13px 28px;
   border-radius: var(--radius);
-  border: 1.5px solid #a07245;
+  background: #7a5030;
+  color: var(--white);
   font-size: 0.9rem;
   font-weight: 600;
-  color: #7a5030;
   letter-spacing: 0.04em;
-  transition: background var(--transition), color var(--transition), transform var(--transition);
+  transition: background var(--transition), transform var(--transition);
 }
 
 .btn-ai:hover {
-  background: #7a5030;
-  color: var(--white);
+  background: #a07245;
   transform: translateY(-2px);
 }
 
