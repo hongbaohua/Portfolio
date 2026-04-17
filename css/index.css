@@ -407,7 +407,7 @@
 .hero__contact-card::after {
   content: '✦';
   position: absolute;
-  top: 1px;
+  top: 0;
   left: 1px;
   transform: translate(-50%, -50%);
   font-size: 18px;
