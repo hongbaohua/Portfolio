@@ -147,6 +147,7 @@ web/
 | work-yuejilabs.html | ✅ 完成 | 月記LAB 手搖飲 |
 | work-ecdesign.html | ✅ 完成 | EC Design 電商設計練習系列頁（持續更新，初霧 Chūwù 為 No.01）|
 | ai-ecdesign.html | ✅ 完成 | AI 業主模擬練習系列頁（方法論＋各練習 AI 紀錄，持續更新）|
+| ai-pawket.html | ✅ 完成 | 喵喵財庫 Pawket 詳細頁（Prompt Engineering × App 開發，2026-04-18）|
 
 ### EC Design 系列頁新增練習 SOP
 
@@ -160,7 +161,7 @@ web/
 ### 待製作
 | 項目 | 說明 |
 |------|------|
-| AI Works 詳細頁 | 「仍在等」已完成；App 設計、更多 AI 應用仍待製作 |
+| AI Works 詳細頁 | 「仍在等」、「Pawket」已完成；更多 AI 應用仍待製作 |
 | ai-learning.html 時間軸 | ✅ 已新增「AI新秀計畫（2025）」節點；內容細節待作品集完整後補充 |
 | index.html AI 技能 chips | 作品集圖片全部上傳完成後，根據實際作品使用工具更新 AI 輔助創作分組內容 |
 

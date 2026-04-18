@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>喵喵財庫 Pawket — Prompt Engineering 驅動的智慧記帳 App · Ivy Hong</title>
+  <meta name="description" content="以 Prompt Engineering 引導 Gemini 完成 16 個功能架構決策，再由 Google AI Studio 生成完整 React + TypeScript 財務管理 Web App。" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/work-detail.css" />
+</head>
+
+<body class="page-body">
+
+  <!-- 導覽列 -->
+  <nav class="nav" role="navigation" aria-label="主選單">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/images/name_logo.png" alt="Ivy Hong Logo" class="nav__logo-img" />
+      </a>
+      <button class="nav__toggle" aria-label="開啟選單"><span></span><span></span><span></span></button>
+      <ul class="nav__links" role="list">
+        <li><a href="index.html" class="nav__link">首頁</a></li>
+        <li><a href="works.html" class="nav__link">設計作品</a></li>
+        <li class="nav__item nav__item--has-dropdown">
+          <a href="ai.html" class="nav__link">AI 協作</a>
+          <button class="nav__caret-btn" aria-label="展開子選單" aria-expanded="false">
+            <i class="fa-solid fa-chevron-down nav__caret" aria-hidden="true"></i>
+          </button>
+          <ul class="nav__dropdown">
+            <li><a href="ai.html" class="nav__dropdown-link">AI 應用成果</a></li>
+            <li><a href="ai-learning.html" class="nav__dropdown-link">AI 學習歷程</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 頁首橫幅 -->
+  <header class="work-hero">
+    <div class="container">
+      <p class="section-label">AI Collaboration · Prompt Engineering · App 開發</p>
+      <h1 class="work-hero__title">喵喵財庫 Pawket</h1>
+      <div class="work-hero__tags">
+        <span class="work-hero-tag">#PromptEngineering</span>
+        <span class="work-hero-tag">#GeminiAPI</span>
+        <span class="work-hero-tag">#GoogleAIStudio</span>
+        <span class="work-hero-tag">#React</span>
+        <span class="work-hero-tag">#TypeScript</span>
+        <span class="work-hero-tag">#財務管理</span>
+        <span class="work-hero-tag">#WebApp</span>
+        <span class="work-hero-tag">#AI新秀計畫</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主體內容 -->
+  <main class="work-content">
+    <div class="container">
+      <div class="work-layout">
+
+        <!-- ── 左側資訊欄 ── -->
+        <aside class="work-info">
+
+          <a href="ai.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            返回 AI 協作
+          </a>
+          <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
+            <p class="work-info__label">使用工具</p>
+            <p class="work-info__text">
+              <strong>Gemini</strong>（架構設計）、<strong>Google AI Studio</strong>（程式碼生成）、<strong>Gemini API</strong>（App 內 OCR）、<strong>Claude Code</strong>（Bug 修正）
+            </p>
+          </div>
+
+          <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
+            <p class="work-info__label">應用類型</p>
+            <p class="work-info__text">App 開發 · Prompt Engineering</p>
+          </div>
+
+          <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
+            <p class="work-info__label">技術架構</p>
+            <p class="work-info__text">React 18 + TypeScript · Tailwind CSS · Vite · Recharts</p>
+          </div>
+
+          <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
+            <p class="work-info__label">開始時間</p>
+            <p class="work-info__text">2025 年 11 月，持續開發中</p>
+          </div>
+
+          <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
+            <p class="work-info__label">查看成果</p>
+            <a href="https://pawket-omega.vercel.app" target="_blank" rel="noopener" class="work-external-btn">
+              <i class="fa-solid fa-cat" aria-hidden="true"></i>
+              試用 App
+            </a>
+            <a href="https://github.com/hongbaohua/Pawket" target="_blank" rel="noopener" class="work-external-btn secondary" style="margin-top: 10px;">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              GitHub
+            </a>
+          </div>
+
+        </aside><!-- /work-info -->
+
+
+        <!-- ── 右側內容區 ── -->
+        <div class="work-gallery">
+
+          <!-- 簡介 -->
+          <div class="work-desc-block">
+            Pawket（喵喵財庫）是一個以貓咪為主題的財務管理 Web App，從無到有全程以 Prompt Engineering 驅動開發。整個過程分為三個階段：先以「30年投資理財專家」角色引導 Gemini 透過 16 輪問答完成功能架構決策，再以「20年 UI/UX 設計師」角色制定貓咪主題視覺規範，最後將完整規格 Prompt 交付 Google AI Studio 生成程式碼。App 整合 Gemini API 實現帳單 OCR 辨識，以吉祥物 Meowney 作為財務健康情緒指標。
+          </div>
+
+
+          <!-- ── Prompt 工程設計策略 ── -->
+          <h2 class="work-section-title">Prompt 工程設計策略</h2>
+
+          <div class="work-desc-block">
+            <strong>角色設定：讓 AI 成為領域專家</strong><br /><br />
+            這個專案使用了兩組核心角色設定，分別負責功能架構與視覺設計兩個維度。角色扮演的關鍵在於讓 AI 從「工具」轉化為「顧問」，使其在回答每個問題時都帶入專業立場與設計邏輯。
+          </div>
+
+          <pre class="work-code-block">【功能架構角色設定】
+你是一位年資30年專業的投資理財專家，正在著手準備製作一個
+「掃描對帳單後，並自動分類費用項目」的 app
+現在正在 app 的研發初期，請用一次只問一個問題的方式，逐漸擴充完成這個 app 的功能
+
+【UI/UX 角色設定】
+你是20年經驗的網頁平面設計師，正在為這個專業財務 App 設計 UI/UX
+請以客群為年輕女性為主，打造輕巧、活潑、可愛的元素氛圍
+準確提供給 AI Studio 的 prompt
+
+【命名決策】
+重新命名財富貓咪，使其更有創意性（財富、貓咪基礎元素不變）
+→ Gemini 提出 Purrse / Meowney / Pawket
+→ 選定 Pawket（Paw + Pocket）、吉祥物命名 Meowney（Meow + Money）</pre>
+
+          <div class="work-desc-block">
+            <strong>「一次只問一個問題」的問答推進法</strong><br /><br />
+            刻意在 Prompt 中限制 Gemini 的回應方式——每輪只問一個決策問題，強迫對話以遞進的邏輯展開。這讓每個功能決策都有清楚的原因，而非一次丟出大量模糊需求。共進行了 16 輪問答，涵蓋從資料模型到警示公式的完整架構設計。
+          </div>
+
+
+          <!-- ── 16 個架構決策 ── -->
+          <h2 class="work-section-title">16 個功能架構決策</h2>
+
+          <div class="work-table-wrap">
+            <table class="work-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>決策問題</th>
+                  <th>選擇方向</th>
+                  <th>設計邏輯</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>鎖定哪類對帳單</td><td>信用卡＋簽帳金融卡</td><td>切入消費核心，黏著度高</td></tr>
+                <tr><td>2</td><td>分類優先策略</td><td>大類別歸納（Category First）</td><td>讓用戶 3 秒看到圓餅圖，建立信任感</td></tr>
+                <tr><td>3</td><td>模糊商家處理</td><td>預設最大機率 + 允許手動拆單</td><td>流暢度優先，保留專家介入能力</td></tr>
+                <tr><td>4</td><td>分類體系</td><td>現金流三大指標（固定/變動/投資）</td><td>直接服務預算編列目標</td></tr>
+                <tr><td>5</td><td>子分類深度</td><td>詳細三級分類</td><td>「不是餐飲花太多，是咖啡花太多」的精準洞察</td></tr>
+                <tr><td>6</td><td>拆單方式</td><td>手動快速填寫（不要求收據）</td><td>降低操作摩擦力</td></tr>
+                <tr><td>7</td><td>分析定位</td><td>主動預算監控 + 警告</td><td>財務教練（事前干預），而非帳本（事後報告）</td></tr>
+                <tr><td>8</td><td>預警機制</td><td>動態時間加權警示</td><td>依月份已過天數比對消費進度，更早預警</td></tr>
+                <tr><td>9</td><td>OCR 驗證方式</td><td>針對性高風險驗證（信心度 &lt; 85% 才標記）</td><td>效率優先，不強制全欄位確認</td></tr>
+                <tr><td>10</td><td>預算初始值</td><td>智能歷史建議</td><td>數據驅動，起始預算就精準</td></tr>
+                <tr><td>11</td><td>主儀表板焦點</td><td>變動支出警示聚焦</td><td>立即行動導向，看到就知道要處理什麼</td></tr>
+                <tr><td>12</td><td>初始預算設定</td><td>智能歷史建議</td><td>預算與實際生活吻合</td></tr>
+                <tr><td>13</td><td>數據儲存</td><td>設備端優先 + 可選備份下載</td><td>最高隱私承諾</td></tr>
+                <tr><td>14</td><td>導出格式</td><td>PDF 優先 + CSV 次要</td><td>PDF 視覺衝擊、CSV 專業分析</td></tr>
+                <tr><td>15</td><td>MVP 必備導出</td><td>PDF 報表優先</td><td>視覺衝擊力利於分享宣傳</td></tr>
+                <tr><td>—</td><td>追加修正</td><td>新增收入辨識（Income 分類體系）</td><td>簽帳金融卡有轉入/存款等收入，需區分收支</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <!-- ── 核心公式設計 ── -->
+          <h2 class="work-section-title">核心公式：動態時間加權警示</h2>
+
+          <div class="work-desc-block">
+            由 Gemini 理財專家角色設計，這個公式解決了傳統記帳 App「月底才知道超支」的問題。以當月已過天數為基準，即時推算消費速率是否超出預算節奏。
+          </div>
+
+          <pre class="work-code-block">當前已花費 / 當月已過天數  &gt;  當月總預算 / 當月總天數 × K（K = 1.15）
+
+超標率 > 20%  → 🔴 Critical（紅色警示）
+超標率 ≤ 20%  → 🟡 Warning（黃色警示）
+
+例：月預算 $12,000，已過 15 天，已花 $8,000
+當前日均：8,000 / 15 = $533
+預算日均上限：12,000 / 30 × 1.15 = $460
+超標率：(533 - 460) / 460 = 15.9%  → Warning</pre>
+
+
+          <!-- ── App 功能概覽 ── -->
+          <h2 class="work-section-title">App 三頁面架構</h2>
+
+          <div class="work-desc-block">
+            <strong>① 貓咪指揮中心（Dashboard）</strong><br /><br />
+            核心儀表板，以 Meowney 吉祥物情緒指標（Smile / Meh / Frown）呈現當前財務健康狀態。包含動態時間加權警示、DTI 償債比率、財務結構圓餅圖（固定/變動/投資）、潛在財富機會試算（變動支出投入 7% 年化報酬 10 年後獲利估算）、夢想目標進度條（4 段動畫：種子→成長→衝刺→豐收）、異常消費偵測、季節性支出熱圖，以及 PDF 報告匯出。
+          </div>
+
+          <div class="work-desc-block">
+            <strong>② 餵食帳單 Scanner</strong><br /><br />
+            上傳銀行或信用卡帳單截圖，Gemini API 自動執行 OCR 辨識，智能區分收入與支出，標記三級分類。Prompt 設計採「主表優先原則」避免摘要欄位重複計算，並加入指數退避重試機制（最多 3 次，1s → 2s → 4s）。
+          </div>
+
+          <div class="work-desc-block">
+            <strong>③ 罐罐明細本（交易明細）</strong><br /><br />
+            全文搜尋、L2+L3 標籤篩選、拆帳（分裝）功能（含 Undo 5 秒復原）、批次修正相似交易、JSON 匯入/匯出備份、手動新增交易。三級分類體系（L1 → L2 → L3）讓支出可以細緻追蹤到「咖啡」而非只有「餐飲」層級。
+          </div>
+
+
+          <!-- ── 開發挑戰與版本演進 ── -->
+          <h2 class="work-section-title">開發挑戰：AI Studio 的無法復原限制</h2>
+
+          <div class="work-desc-block">
+            Google AI Studio 的對話是覆蓋式的——每次修改都直接覆蓋前一次的程式碼，沒有 Undo。這導致「修好一個功能，後續對話又把其他功能改壞」的情況反覆發生。應對策略是在每次重大修改前手動另存一個新版本資料夾，最終累積了 9 個版本。
+          </div>
+
+          <div class="work-table-wrap">
+            <table class="work-table">
+              <thead>
+                <tr><th>版本</th><th>主要更新</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>v1.1</td><td>初始雛形，基本三頁框架</td></tr>
+                <tr><td>v2.1</td><td>UI/UX 重構，導入貓咪主題視覺</td></tr>
+                <tr><td>v3.2</td><td>新增夢想目標功能、標籤系統</td></tr>
+                <tr><td>v3.3</td><td>統一頁面命名、新增快速查找</td></tr>
+                <tr><td>v4.2</td><td>首頁分析邏輯修正</td></tr>
+                <tr><td>v4.3</td><td>目前最新版本，多項 Bug 修正；Claude Code 接手後持續優化</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="work-desc-block">
+            版本演進中最難解決的問題是<strong>夢想目標進度條邏輯錯誤</strong>：原本的加權公式（70% 存款進度 + 30% 時間進度）導致「還沒存任何錢但快到期時，進度條自動顯示 24%」的誤導性結果。此問題在 Claude Code 接手後，透過直接閱讀 logicService.ts 找到根因，將 weightedPercent 改為直接等於 financialPercent（實際存款比例）才得以修正。
+          </div>
+
+
+          <!-- ── 設計原意 vs 實作落差 ── -->
+          <h2 class="work-section-title">設計原意 vs 實作落差</h2>
+
+          <div class="work-desc-block">
+            AI Studio 的技術限制造成部分原始設計未能實現，以下是誠實的記錄：
+          </div>
+
+          <div class="work-table-wrap">
+            <table class="work-table">
+              <thead>
+                <tr><th>設計原意</th><th>實際結果</th><th>原因</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Meowney 客製化貓咪插圖，情緒動畫切換</td>
+                  <td>Lucide icon（Cat/Smile/Meh/Frown）代替</td>
+                  <td>AI Studio 無法匯入自訂圖片</td>
+                </tr>
+                <tr>
+                  <td>三級分類各有專屬 Q 版貓咪圖示</td>
+                  <td>標準 Lucide 圖示</td>
+                  <td>同上</td>
+                </tr>
+                <tr>
+                  <td>掃描三個月歷史數據自動生成初始預算</td>
+                  <td>用戶手動設定預算</td>
+                  <td>AI Studio 未實作此邏輯</td>
+                </tr>
+                <tr>
+                  <td>AES-256 設備端加密儲存</td>
+                  <td>僅 JSON 備份，無加密</td>
+                  <td>AI Studio 未實作</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <!-- ── 過程反思 ── -->
+          <h2 class="work-section-title">過程反思</h2>
+
+          <div class="work-desc-block">
+            這個專案最大的收穫是驗證了「Prompt Engineering 作為產品設計方法」的可行性——透過角色設定和問答式推進，讓 AI 扮演理財專家完成了一份紮實的功能規格書，而不是讓設計師憑空想像功能需求。16 個決策點的問答過程，其實就是一份結構化的產品思維文件。<br /><br />
+            AI Studio 的無法復原限制則是一個重要的課題：它讓我學到「AI 生成工具的使用策略」和「版本管理的必要性」。每次修改前先備份、每個 Prompt 都要明確指定範圍，是降低風險的關鍵。<br /><br />
+            最後接手 Claude Code 修正 Bug 的過程，讓我體驗了不同 AI 工具在同一個專案中各自扮演的角色——Gemini 適合發散思考與規格設計，AI Studio 適合初始程式碼生成，Claude Code 適合精確的除錯與邏輯修正。三者組合，才是完整的 AI 輔助開發鏈。
+          </div>
+
+        </div><!-- /work-gallery -->
+      </div><!-- /work-layout -->
+    </div>
+  </main><!-- /work-content -->
+
+
+  <!-- 頁尾 -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <a href="mailto:hong.baohua.ivy@gmail.com" class="footer__email">
+        hong.baohua.ivy@gmail.com
+      </a>
+      <p class="footer__copy">&copy; 2025 Ivy Hong. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
