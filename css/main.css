@@ -472,11 +472,27 @@ ul, ol {
     position: relative;
   }
 
+  /* 有下拉選單的 li：link 與 caret 並排，各自獨立點擊區域 */
+  .nav__item--has-dropdown {
+    align-items: stretch;
+  }
+
+  .nav__item--has-dropdown > .nav__link {
+    width: auto;
+    flex: 1;
+    padding-right: 12px;
+  }
+
   .nav__caret-btn {
-    position: absolute;
-    right: 32px;
-    top: 14px;
-    padding: 8px;
+    position: static;
+    width: 52px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid var(--border);
+    flex-shrink: 0;
+    align-self: stretch;
   }
 
   .nav__dropdown {
@@ -490,8 +506,8 @@ ul, ol {
     border-radius: 0;
     background: transparent;
     padding: 4px 0;
-    margin-left: 32px;
-    width: calc(100% - 32px);
+    margin-left: 0;
+    width: 100%;
     display: block;
     max-height: 0;
     overflow: hidden;

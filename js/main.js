@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (link.getAttribute('href') === currentPage) link.classList.add('active');
   });
 
-  /* ── 圖片燈箱（點擊放大，動態建立） ── */
+  /* ── 圖片燈箱（點擊開啟，支援縮放 / 平移） ── */
   const workImgs = document.querySelectorAll('.work-img-wrap img');
   if (workImgs.length > 0) {
     const lb = document.createElement('div');
@@ -109,35 +109,134 @@ document.addEventListener('DOMContentLoaded', () => {
       <button class="lightbox__close" aria-label="關閉"><i class="fa-solid fa-xmark"></i></button>
       <img class="lightbox__img" src="" alt="" />
       <p class="lightbox__caption"></p>
+      <span class="lightbox__hint">滾輪縮放・雙擊重設・拖曳平移</span>
     `;
     document.body.appendChild(lb);
 
     const lbImg     = lb.querySelector('.lightbox__img');
     const lbCaption = lb.querySelector('.lightbox__caption');
 
+    // ── 縮放狀態 ──
+    let scale = 1, tx = 0, ty = 0;
+    let isDragging = false, didDrag = false;
+    let dragStartX = 0, dragStartY = 0;
+    let pinchDist  = 0;
+    let singleTX   = 0, singleTY = 0;
+    const MIN_SCALE = 1, MAX_SCALE = 6;
+
+    function applyTransform() {
+      lbImg.style.transform = `translate(${tx}px,${ty}px) scale(${scale})`;
+      lbImg.style.cursor = scale > 1 ? 'move' : 'zoom-in';
+    }
+
+    function resetTransform() {
+      scale = 1; tx = 0; ty = 0;
+      applyTransform();
+    }
+
+    // ── 開啟燈箱 ──
     workImgs.forEach(img => {
       img.style.cursor = 'zoom-in';
       img.addEventListener('click', () => {
         lbImg.src = img.src;
         lbImg.alt = img.alt;
-        // 嘗試抓同層 figcaption，否則用 alt
         const fig = img.closest('figure');
         lbCaption.textContent = fig?.querySelector('figcaption')?.textContent || img.alt || '';
+        resetTransform();
         lb.classList.add('open');
         document.body.style.overflow = 'hidden';
       });
     });
 
+    // ── 關閉燈箱 ──
     const closeLb = () => {
       lb.classList.remove('open');
       document.body.style.overflow = '';
+      resetTransform();
     };
 
     lb.querySelector('.lightbox__close').addEventListener('click', closeLb);
-    lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+    lb.addEventListener('click', e => { if (e.target === lb && !didDrag) closeLb(); });
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && lb.classList.contains('open')) closeLb();
     });
+
+    // ── 滾輪縮放 ──
+    lb.addEventListener('wheel', e => {
+      e.preventDefault();
+      const factor = e.deltaY < 0 ? 1.15 : 0.87;
+      scale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, scale * factor));
+      if (scale === MIN_SCALE) { tx = 0; ty = 0; }
+      applyTransform();
+    }, { passive: false });
+
+    // ── 雙擊放大 / 重設 ──
+    lbImg.addEventListener('dblclick', e => {
+      if (scale > 1) { resetTransform(); }
+      else           { scale = 2.5; applyTransform(); }
+      e.stopPropagation();
+    });
+
+    // ── 滑鼠拖曳平移 ──
+    lbImg.addEventListener('mousedown', e => {
+      if (scale <= 1) return;
+      isDragging = true; didDrag = false;
+      dragStartX = e.clientX - tx;
+      dragStartY = e.clientY - ty;
+      lbImg.style.cursor = 'grabbing';
+      e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', e => {
+      if (!isDragging) return;
+      didDrag = true;
+      tx = e.clientX - dragStartX;
+      ty = e.clientY - dragStartY;
+      applyTransform();
+    });
+
+    document.addEventListener('mouseup', () => {
+      if (!isDragging) return;
+      isDragging = false;
+      setTimeout(() => { didDrag = false; }, 50);
+      applyTransform(); // restores move/zoom-in cursor
+    });
+
+    // ── 觸控：雙指縮放 + 單指平移 ──
+    lb.addEventListener('touchstart', e => {
+      if (e.touches.length === 2) {
+        pinchDist = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY
+        );
+      } else if (e.touches.length === 1 && scale > 1) {
+        singleTX = e.touches[0].clientX - tx;
+        singleTY = e.touches[0].clientY - ty;
+      }
+    }, { passive: true });
+
+    lb.addEventListener('touchmove', e => {
+      if (e.touches.length === 2) {
+        e.preventDefault();
+        const d = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY
+        );
+        if (pinchDist > 0) {
+          scale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, scale * (d / pinchDist)));
+          if (scale === MIN_SCALE) { tx = 0; ty = 0; }
+          applyTransform();
+        }
+        pinchDist = d;
+      } else if (e.touches.length === 1 && scale > 1) {
+        e.preventDefault();
+        tx = e.touches[0].clientX - singleTX;
+        ty = e.touches[0].clientY - singleTY;
+        applyTransform();
+      }
+    }, { passive: false });
+
+    lb.addEventListener('touchend', () => { pinchDist = 0; }, { passive: true });
   }
 
   /* ── 大綱 bar：滾動時標記目前區塊 ── */
