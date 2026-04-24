@@ -242,6 +242,49 @@
   margin-bottom: 16px;
 }
 
+/* ── 橫向滑動（長圖用） ── */
+.work-img-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+
+.work-img-scroll:active {
+  cursor: grabbing;
+}
+
+.work-img-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.work-img-scroll::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+  border-radius: 2px;
+}
+
+.work-img-scroll::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+.work-img-scroll .work-img-wrap {
+  flex: 0 0 300px;
+  height: 500px;
+  scroll-snap-align: start;
+  margin-bottom: 0;
+}
+
+.work-img-scroll .work-img-wrap img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
 /* ── 影片嵌入 ── */
 .work-video-wrap {
   border-radius: var(--radius-lg);
@@ -967,6 +1010,11 @@
 
   .work-img-masonry {
     columns: 1;
+  }
+
+  .work-img-scroll .work-img-wrap {
+    flex: 0 0 240px;
+    height: 420px;
   }
 
   .work-logo-wrap {
