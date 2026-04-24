@@ -306,6 +306,70 @@ document.addEventListener('DOMContentLoaded', () => {
     syncOutline();
   }
 
+  /* ── 橫向滑動列：加導航按鈕 + 滑鼠拖曳 ── */
+  document.querySelectorAll('.work-img-scroll').forEach(scroll => {
+    // 建立包裝容器，把 reveal 移至 wrapper 讓按鈕一起進場
+    const wrapper = document.createElement('div');
+    wrapper.className = 'scroll-wrap';
+    if (scroll.classList.contains('reveal')) {
+      scroll.classList.remove('reveal');
+      wrapper.classList.add('reveal');
+      if (scroll.dataset.delay) wrapper.dataset.delay = scroll.dataset.delay;
+    }
+    scroll.parentNode.insertBefore(wrapper, scroll);
+    wrapper.appendChild(scroll);
+
+    // 前後按鈕
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'scroll-btn scroll-btn--prev';
+    prevBtn.setAttribute('aria-label', '向左滑動');
+    prevBtn.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
+
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'scroll-btn scroll-btn--next';
+    nextBtn.setAttribute('aria-label', '向右滑動');
+    nextBtn.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
+
+    wrapper.insertBefore(prevBtn, scroll);
+    wrapper.appendChild(nextBtn);
+
+    const STEP = 320;
+
+    const syncBtns = () => {
+      prevBtn.classList.toggle('is-faded', scroll.scrollLeft <= 0);
+      nextBtn.classList.toggle('is-faded',
+        scroll.scrollLeft >= scroll.scrollWidth - scroll.clientWidth - 1);
+    };
+
+    prevBtn.addEventListener('click', () => scroll.scrollBy({ left: -STEP, behavior: 'smooth' }));
+    nextBtn.addEventListener('click', () => scroll.scrollBy({ left:  STEP, behavior: 'smooth' }));
+    scroll.addEventListener('scroll', syncBtns, { passive: true });
+    requestAnimationFrame(syncBtns);
+
+    // 滑鼠拖曳
+    let isDown = false, startX = 0, startScrollLeft = 0;
+
+    scroll.addEventListener('mousedown', e => {
+      isDown = true;
+      startX = e.pageX;
+      startScrollLeft = scroll.scrollLeft;
+      scroll.style.cursor = 'grabbing';
+      e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', e => {
+      if (!isDown) return;
+      scroll.scrollLeft = startScrollLeft - (e.pageX - startX);
+    });
+
+    document.addEventListener('mouseup', () => {
+      if (!isDown) return;
+      isDown = false;
+      scroll.style.cursor = 'grab';
+      syncBtns();
+    });
+  });
+
   /* ── 捲動進場動畫（IntersectionObserver） ── */
   const revealItems = document.querySelectorAll('.reveal');
   if (revealItems.length > 0) {

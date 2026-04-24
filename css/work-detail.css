@@ -258,19 +258,9 @@
   cursor: grabbing;
 }
 
-.work-img-scroll::-webkit-scrollbar {
-  height: 4px;
-}
-
-.work-img-scroll::-webkit-scrollbar-track {
-  background: var(--bg-dark);
-  border-radius: 2px;
-}
-
-.work-img-scroll::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 2px;
-}
+/* 隱藏滾動條（以按鈕代替） */
+.work-img-scroll::-webkit-scrollbar { display: none; }
+.work-img-scroll { scrollbar-width: none; }
 
 .work-img-scroll .work-img-wrap {
   flex: 0 0 300px;
@@ -284,6 +274,47 @@
   width: 100%;
   object-fit: cover;
   object-position: top;
+}
+
+/* ── 橫向滑動：外層包裝 + 導航按鈕 ── */
+.scroll-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.scroll-wrap .work-img-scroll {
+  flex: 1;
+  min-width: 0;
+}
+
+.scroll-btn {
+  flex-shrink: 0;
+  align-self: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: color 0.18s, opacity 0.18s, background 0.18s, border-color 0.18s;
+}
+
+.scroll-btn:hover {
+  color: var(--accent-dark);
+  background: var(--accent-light);
+  border-color: var(--accent);
+}
+
+.scroll-btn.is-faded {
+  opacity: 0.22;
+  pointer-events: none;
 }
 
 /* ── 影片嵌入 ── */
@@ -1063,8 +1094,18 @@
   }
 
   .work-img-scroll .work-img-wrap {
-    flex: 0 0 240px;
-    height: 420px;
+    flex: 0 0 220px;
+    height: 400px;
+  }
+
+  .scroll-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.75rem;
+  }
+
+  .scroll-wrap {
+    gap: 6px;
   }
 
   .work-logo-wrap {
