@@ -246,6 +246,7 @@
 /* ── 橫向滑動（長圖用） ── */
 .work-img-scroll {
   display: flex;
+  align-items: flex-start;
   gap: 16px;
   overflow-x: auto;
   padding-bottom: 10px;
@@ -263,17 +264,18 @@
 .work-img-scroll { scrollbar-width: none; }
 
 .work-img-scroll .work-img-wrap {
-  flex: 0 0 300px;
-  height: 500px;
+  flex-shrink: 0;
+  height: auto;
   scroll-snap-align: start;
   margin-bottom: 0;
 }
 
 .work-img-scroll .work-img-wrap img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  object-position: top;
+  width: auto;
+  height: auto;
+  max-width: 340px;
+  max-height: 560px;
+  display: block;
 }
 
 /* ── 橫向滑動：外層包裝 + 導航按鈕 ── */
@@ -1093,9 +1095,9 @@
     columns: 1;
   }
 
-  .work-img-scroll .work-img-wrap {
-    flex: 0 0 220px;
-    height: 400px;
+  .work-img-scroll .work-img-wrap img {
+    max-width: 220px;
+    max-height: 400px;
   }
 
   .scroll-btn {

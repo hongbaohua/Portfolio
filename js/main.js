@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <img class="lightbox__img" src="" alt="" />
       <p class="lightbox__caption"></p>
       <span class="lightbox__counter"></span>
-      <span class="lightbox__hint">← → 切換・滾輪縮放・雙擊重設</span>
+      <span class="lightbox__hint">← → 切換・滾輪縮放・點擊放大</span>
     `;
     document.body.appendChild(lb);
 
@@ -129,7 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let pinchDist = 0, singleTX = 0, singleTY = 0;
     let swipeStartX = 0, swipeStartY = 0, isSwiping = false;
     let currentIdx = 0;
-    const MIN_SCALE = 1, MAX_SCALE = 6;
+    const MIN_SCALE = 1;
+    let MAX_SCALE = 6;
     const hasMultiple = workImgsArr.length > 1;
 
     function applyTransform() {
@@ -151,6 +152,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const fig = img.closest('figure');
       lbCaption.textContent = fig?.querySelector('figcaption')?.textContent || img.alt || '';
       lbCounter.textContent = hasMultiple ? `${currentIdx + 1} / ${workImgsArr.length}` : '';
+      // 依圖片長寬比動態調整最大縮放倍率（長圖可放更大）
+      const ratio = img.naturalHeight / (img.naturalWidth || 1);
+      MAX_SCALE = Math.max(6, Math.round(ratio * 2.5));
       resetTransform();
     }
 
@@ -198,8 +202,9 @@ document.addEventListener('DOMContentLoaded', () => {
       applyTransform();
     }, { passive: false });
 
-    // ── 雙擊放大 / 重設 ──
-    lbImg.addEventListener('dblclick', e => {
+    // ── 單擊放大 / 重設 ──
+    lbImg.addEventListener('click', e => {
+      if (didDrag) return;
       if (scale > 1) { resetTransform(); }
       else           { scale = 2.5; applyTransform(); }
       e.stopPropagation();
