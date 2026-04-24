@@ -11,20 +11,20 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy:   #1e2235;
-      --navy2:  #252b42;
-      --gold:   #c4a35a;
-      --gold2:  #a8883e;
-      --white:  #ffffff;
-      --light:  #f7f7f5;
-      --text:   #1a1a1a;
-      --muted:  #5a5a5a;
-      --muted2: #8a8a8a;
-      --border: #e2e2de;
+      --sidebar-bg: #f0efeb;
+      --navy:  #1e2235;
+      --gold:  #b8924a;
+      --gold2: #9a7a3c;
+      --white: #ffffff;
+      --light: #f7f6f2;
+      --text:  #1a1a2e;
+      --muted: #585858;
+      --muted2:#909090;
+      --border:#dddbd5;
     }
 
     html, body {
-      background: #d4d4d0;
+      background: #cccac4;
       min-height: 100vh;
       font-family: 'Noto Sans TC', 'Inter', sans-serif;
       -webkit-print-color-adjust: exact;
@@ -36,49 +36,50 @@
       min-height: 297mm;
       margin: 20px auto;
       background: var(--white);
-      box-shadow: 0 4px 40px rgba(0,0,0,0.22);
+      box-shadow: 0 4px 40px rgba(0,0,0,0.18);
       display: grid;
-      grid-template-columns: 70mm 1fr;
+      grid-template-columns: 66mm 1fr;
     }
 
-    /* ═══════════════════════════
-       LEFT SIDEBAR
-       ═══════════════════════════ */
+    /* ══════════════════════════
+       SIDEBAR — light warm gray
+       ══════════════════════════ */
     .sidebar {
-      background: var(--navy);
-      padding: 28px 22px 28px;
+      background: var(--sidebar-bg);
+      padding: 26px 20px 26px;
       display: flex;
       flex-direction: column;
       gap: 0;
-      color: var(--white);
+      border-right: 1px solid var(--border);
     }
 
+    /* 頭像 + 姓名 */
     .sidebar__avatar {
-      width: 64px;
-      height: 64px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
-      background: var(--gold);
+      background: var(--navy);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 14px;
+      color: #e8d9bc;
+      margin-bottom: 11px;
       flex-shrink: 0;
     }
 
     .sidebar__name {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       font-weight: 800;
-      color: var(--white);
+      color: var(--navy);
       line-height: 1.3;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.03em;
     }
 
     .sidebar__name-en {
-      font-size: 0.76rem;
-      font-weight: 500;
+      font-size: 0.72rem;
+      font-weight: 600;
       color: var(--gold);
       letter-spacing: 0.14em;
       margin-top: 2px;
@@ -86,134 +87,122 @@
     }
 
     .sidebar__target {
-      font-size: 0.66rem;
-      color: rgba(255,255,255,0.45);
+      font-size: 0.62rem;
+      color: var(--muted2);
       margin-top: 5px;
-      letter-spacing: 0.05em;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     .sidebar__divider {
       height: 1px;
-      background: rgba(255,255,255,0.1);
-      margin: 18px 0;
+      background: var(--border);
+      margin: 14px 0;
     }
 
-    .s-section {
-      margin-bottom: 20px;
-    }
+    .s-section { margin-bottom: 16px; }
 
     .s-title {
-      font-size: 0.58rem;
+      font-size: 0.56rem;
       font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 9px;
-      padding-bottom: 5px;
-      border-bottom: 1px solid rgba(196,163,90,0.3);
+      color: var(--gold2);
+      margin-bottom: 8px;
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid var(--gold);
+      opacity: 0.9;
     }
 
     /* 聯絡 */
     .contact-item {
       display: flex;
       align-items: flex-start;
-      gap: 8px;
-      margin-bottom: 7px;
-      font-size: 0.68rem;
-      color: rgba(255,255,255,0.75);
+      gap: 7px;
+      margin-bottom: 6px;
+      font-size: 0.65rem;
+      color: var(--muted);
       line-height: 1.5;
     }
 
     .contact-item .icon {
-      width: 13px;
+      width: 12px;
       flex-shrink: 0;
       color: var(--gold);
-      font-size: 0.62rem;
-      margin-top: 2px;
+      font-size: 0.6rem;
+      margin-top: 1px;
       text-align: center;
     }
 
     .contact-item a {
-      color: rgba(255,255,255,0.75);
+      color: var(--muted);
       text-decoration: none;
     }
 
-    .contact-placeholder {
-      color: rgba(255,255,255,0.3);
-      font-style: italic;
-    }
-
     /* 學歷 */
-    .edu-item {
-      margin-bottom: 12px;
-    }
-
+    .edu-item { margin-bottom: 10px; }
     .edu-item:last-child { margin-bottom: 0; }
 
     .edu-item__school {
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 700;
-      color: var(--white);
+      color: var(--navy);
       line-height: 1.4;
     }
 
     .edu-item__dept {
-      font-size: 0.65rem;
-      color: rgba(255,255,255,0.6);
+      font-size: 0.63rem;
+      color: var(--muted);
       margin-top: 1px;
-      line-height: 1.5;
     }
 
     .edu-item__row {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       margin-top: 3px;
     }
 
     .edu-item__year {
-      font-size: 0.6rem;
-      color: var(--gold);
+      font-size: 0.58rem;
+      color: var(--gold2);
+      font-weight: 600;
     }
 
     .edu-badge {
-      font-size: 0.56rem;
-      padding: 1px 6px;
+      font-size: 0.54rem;
+      padding: 1px 5px;
       border-radius: 2px;
-      background: rgba(196,163,90,0.18);
-      color: var(--gold);
-      border: 1px solid rgba(196,163,90,0.35);
+      background: rgba(184,146,74,0.12);
+      color: var(--gold2);
+      border: 1px solid rgba(184,146,74,0.3);
       font-weight: 600;
     }
 
     .edu-badge--grey {
-      background: rgba(255,255,255,0.07);
-      color: rgba(255,255,255,0.4);
-      border-color: rgba(255,255,255,0.12);
+      background: rgba(0,0,0,0.05);
+      color: var(--muted2);
+      border-color: var(--border);
     }
 
-    /* 設計工具技能條 */
-    .skill-item {
-      margin-bottom: 9px;
-    }
+    /* 技能條 */
+    .skill-item { margin-bottom: 8px; }
 
     .skill-item__label {
-      font-size: 0.65rem;
-      color: rgba(255,255,255,0.8);
-      margin-bottom: 4px;
+      font-size: 0.63rem;
+      color: var(--muted);
+      margin-bottom: 3px;
       display: flex;
       justify-content: space-between;
     }
 
     .skill-item__label span:last-child {
-      font-size: 0.58rem;
-      color: rgba(255,255,255,0.45);
+      font-size: 0.56rem;
+      color: var(--muted2);
     }
 
     .skill-item__bar {
       height: 3px;
-      background: rgba(255,255,255,0.1);
+      background: rgba(0,0,0,0.08);
       border-radius: 2px;
       overflow: hidden;
     }
@@ -222,138 +211,105 @@
       height: 100%;
       background: var(--gold);
       border-radius: 2px;
+      opacity: 0.85;
     }
 
     /* 標籤式技能 */
     .skill-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 5px;
+      gap: 4px;
     }
 
     .skill-tag {
-      font-size: 0.6rem;
+      font-size: 0.58rem;
       padding: 2px 7px;
       border-radius: 3px;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.13);
-      color: rgba(255,255,255,0.72);
+      background: rgba(0,0,0,0.05);
+      border: 1px solid var(--border);
+      color: var(--muted);
       line-height: 1.5;
     }
 
-    .skill-tag--gold {
-      background: rgba(196,163,90,0.14);
-      border-color: rgba(196,163,90,0.38);
-      color: var(--gold);
+    .skill-tag--accent {
+      background: rgba(184,146,74,0.1);
+      border-color: rgba(184,146,74,0.3);
+      color: var(--gold2);
     }
-
-    /* 語言 */
-    .lang-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 7px;
-      font-size: 0.68rem;
-      color: rgba(255,255,255,0.75);
-    }
-
-    .lang-dots {
-      display: flex;
-      gap: 3px;
-    }
-
-    .lang-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.15);
-    }
-
-    .lang-dot.filled { background: var(--gold); }
 
     /* 證照 */
     .cert-item {
-      font-size: 0.65rem;
-      color: rgba(255,255,255,0.7);
+      font-size: 0.63rem;
+      color: var(--muted);
       padding: 5px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      line-height: 1.55;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.5;
     }
 
     .cert-item:last-child { border-bottom: none; }
 
     .cert-item strong {
-      color: rgba(255,255,255,0.9);
+      color: var(--navy);
       display: block;
       font-weight: 600;
-      font-size: 0.68rem;
+      font-size: 0.65rem;
     }
 
-    .cert-highlight {
-      background: rgba(196,163,90,0.1);
-      border: 1px solid rgba(196,163,90,0.25);
-      border-radius: 4px;
-      padding: 6px 8px;
-      margin-bottom: 5px;
+    .cert-item--highlight {
+      background: rgba(184,146,74,0.08);
+      border: 1px solid rgba(184,146,74,0.22);
+      border-radius: 3px;
+      padding: 5px 7px;
+      margin-bottom: 4px;
     }
 
-    .cert-highlight strong {
-      color: var(--gold) !important;
-    }
+    .cert-item--highlight strong { color: var(--gold2); }
 
-    /* ══════════════════════════════
-       RIGHT MAIN CONTENT
-       ══════════════════════════════ */
+    /* ══════════════════════════
+       MAIN
+       ══════════════════════════ */
     .main {
-      padding: 28px 26px 24px;
+      padding: 26px 24px 22px;
       display: flex;
       flex-direction: column;
       gap: 0;
     }
 
     .m-title {
-      font-size: 0.6rem;
+      font-size: 0.58rem;
       font-weight: 700;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--navy);
-      margin-bottom: 9px;
-      padding-bottom: 5px;
-      border-bottom: 2px solid var(--gold);
-      display: flex;
-      align-items: center;
-      gap: 7px;
+      margin-bottom: 8px;
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid var(--gold);
     }
 
-    .m-section {
-      margin-bottom: 18px;
-    }
+    .m-section { margin-bottom: 16px; }
 
     /* 職涯摘要 */
     .summary {
-      background: var(--light);
-      border-left: 3px solid var(--gold);
-      border-radius: 0 4px 4px 0;
-      padding: 11px 13px;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       color: var(--muted);
       line-height: 1.9;
+      padding: 10px 12px;
+      background: var(--light);
+      border-left: 2.5px solid var(--gold);
+      border-radius: 0 3px 3px 0;
     }
 
-    .summary strong {
-      color: var(--text);
-      font-weight: 700;
-    }
+    .summary strong { color: var(--text); font-weight: 700; }
 
-    /* 核心能力 chips */
+    /* 核心能力 */
     .ability-row {
       display: flex;
-      gap: 6px;
+      gap: 5px;
       flex-wrap: wrap;
     }
 
     .ability-chip {
-      font-size: 0.64rem;
+      font-size: 0.62rem;
       padding: 3px 9px;
       border-radius: 100px;
       border: 1px solid var(--border);
@@ -361,16 +317,16 @@
       background: var(--white);
     }
 
-    .ability-chip--strong {
+    .ability-chip--navy {
       background: var(--navy);
-      color: var(--white);
+      color: #e8d9bc;
       border-color: var(--navy);
     }
 
-    .ability-chip--accent {
-      background: rgba(196,163,90,0.1);
+    .ability-chip--gold {
+      background: rgba(184,146,74,0.1);
       color: var(--gold2);
-      border-color: rgba(196,163,90,0.4);
+      border-color: rgba(184,146,74,0.35);
     }
 
     /* 工作經歷 */
@@ -390,41 +346,42 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 8px;
-      margin-bottom: 2px;
+      gap: 6px;
+      margin-bottom: 1px;
     }
 
     .exp-item__title {
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 700;
       color: var(--text);
+      line-height: 1.4;
     }
 
     .exp-item__period {
-      font-size: 0.63rem;
+      font-size: 0.6rem;
       color: var(--muted2);
       white-space: nowrap;
       padding-top: 2px;
     }
 
     .exp-item__company {
-      font-size: 0.68rem;
+      font-size: 0.65rem;
       color: var(--gold2);
       font-weight: 600;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
 
     .exp-item__desc {
-      font-size: 0.68rem;
+      font-size: 0.67rem;
       color: var(--muted);
-      line-height: 1.75;
+      line-height: 1.8;
       list-style: none;
     }
 
     .exp-item__desc li {
-      padding-left: 11px;
+      padding-left: 12px;
       position: relative;
-      margin-bottom: 2px;
+      margin-bottom: 1px;
     }
 
     .exp-item__desc li::before {
@@ -435,135 +392,132 @@
       font-weight: 700;
     }
 
-    .exp-placeholder {
-      font-size: 0.68rem;
-      color: rgba(196,163,90,0.6);
-      font-style: italic;
-      border: 1px dashed rgba(196,163,90,0.3);
-      border-radius: 3px;
-      padding: 7px 10px;
-      line-height: 1.6;
-    }
-
-    /* AI 亮點欄 */
+    /* AI 亮點 */
     .ai-highlight {
-      background: linear-gradient(135deg, #1e2235 0%, #252b42 100%);
-      border-radius: 5px;
+      background: var(--navy);
+      border-radius: 4px;
       padding: 10px 13px;
       display: flex;
-      align-items: center;
-      gap: 11px;
+      align-items: flex-start;
+      gap: 10px;
     }
 
     .ai-highlight__icon {
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       flex-shrink: 0;
+      margin-top: 1px;
+      opacity: 0.9;
     }
 
     .ai-highlight__text {
-      font-size: 0.66rem;
-      color: rgba(255,255,255,0.75);
-      line-height: 1.75;
+      font-size: 0.64rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.8;
     }
 
     .ai-highlight__text strong {
-      color: var(--gold);
+      color: #e8d9bc;
       display: block;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       margin-bottom: 2px;
     }
 
-    /* 代表專案 */
-    .proj-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 7px;
+    /* 設計能力 + QR */
+    .cap-list {
+      list-style: none;
+      margin-bottom: 12px;
     }
 
-    .proj-card {
-      border: 1px solid var(--border);
-      border-radius: 5px;
-      padding: 9px 11px;
-      background: var(--light);
+    .cap-list li {
+      font-size: 0.68rem;
+      color: var(--muted);
+      line-height: 1.75;
+      padding: 4px 0 4px 14px;
       position: relative;
-      overflow: hidden;
+      border-bottom: 1px solid var(--border);
     }
 
-    .proj-card::before {
+    .cap-list li:last-child { border-bottom: none; }
+
+    .cap-list li::before {
       content: '';
       position: absolute;
-      top: 0; left: 0;
-      width: 3px;
-      height: 100%;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
       background: var(--gold);
+      opacity: 0.75;
     }
 
-    .proj-card__name {
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 2px;
-    }
-
-    .proj-card__type {
-      font-size: 0.58rem;
-      color: var(--gold2);
+    .cap-list li strong {
+      color: var(--navy);
       font-weight: 600;
-      margin-bottom: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
     }
 
-    .proj-card__desc {
-      font-size: 0.63rem;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    .proj-card__tags {
+    .portfolio-box {
       display: flex;
-      flex-wrap: wrap;
-      gap: 3px;
-      margin-top: 5px;
+      align-items: center;
+      gap: 14px;
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 10px 14px;
     }
 
-    .proj-tag {
-      font-size: 0.56rem;
-      padding: 2px 5px;
-      border-radius: 2px;
-      background: rgba(196,163,90,0.08);
-      color: var(--gold2);
-      border: 1px solid rgba(196,163,90,0.25);
+    .portfolio-box__qr img {
+      display: block;
+      width: 72px;
+      height: 72px;
+    }
+
+    .portfolio-box__info {
+      flex: 1;
+    }
+
+    .portfolio-box__label {
+      font-size: 0.58rem;
+      color: var(--muted2);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+
+    .portfolio-box__url {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.01em;
+      word-break: break-all;
+    }
+
+    .portfolio-box__desc {
+      font-size: 0.6rem;
+      color: var(--muted2);
+      margin-top: 4px;
+      line-height: 1.6;
     }
 
     /* Footer */
     .resume-footer {
       margin-top: auto;
-      padding-top: 9px;
+      padding-top: 8px;
       border-top: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .resume-footer__url {
-      font-size: 0.6rem;
-      color: var(--muted2);
-    }
-
-    .resume-footer__date {
-      font-size: 0.6rem;
+    .resume-footer span {
+      font-size: 0.58rem;
       color: var(--muted2);
     }
 
     @media print {
       html, body { background: none; }
-      .page {
-        margin: 0;
-        box-shadow: none;
-        width: 210mm;
-        min-height: 297mm;
-      }
+      .page { margin: 0; box-shadow: none; width: 210mm; min-height: 297mm; }
     }
   </style>
 </head>
@@ -574,11 +528,10 @@
   <!-- ══════════ LEFT SIDEBAR ══════════ -->
   <aside class="sidebar">
 
-    <!-- 頭像 + 姓名 -->
     <div class="sidebar__avatar">洪</div>
     <div class="sidebar__name">洪寶華</div>
     <div class="sidebar__name-en">Ivy Hong</div>
-    <div class="sidebar__target">應徵：ERP 相關設計 ／ UI 設計師 ／ 數位轉型</div>
+    <div class="sidebar__target">應徵：設計企劃 ／ UI 設計師 ／ 數位轉型</div>
 
     <div class="sidebar__divider"></div>
 
@@ -594,12 +547,8 @@
         <span>0905-508-171</span>
       </div>
       <div class="contact-item">
-        <span class="icon">◎</span>
-        <span class="contact-placeholder">現居地（待補充）</span>
-      </div>
-      <div class="contact-item">
         <span class="icon">⬡</span>
-        <a href="https://hongbaohua.github.io/Portfolio/" target="_blank">作品集網站</a>
+        <a href="https://hongbaohua.github.io/Portfolio/" target="_blank">hongbaohua.github.io/Portfolio</a>
       </div>
     </div>
 
@@ -649,43 +598,19 @@
     <div class="s-section">
       <div class="s-title">商業 ／ 數位技能</div>
       <div class="skill-tags">
-        <span class="skill-tag skill-tag--gold">品牌企劃</span>
-        <span class="skill-tag skill-tag--gold">整合行銷</span>
-        <span class="skill-tag skill-tag--gold">UI 原型設計</span>
+        <span class="skill-tag skill-tag--accent">品牌企劃</span>
+        <span class="skill-tag skill-tag--accent">整合行銷</span>
+        <span class="skill-tag skill-tag--accent">UI 原型設計</span>
         <span class="skill-tag">HTML ／ CSS（基礎）</span>
-        <span class="skill-tag">Excel（基礎）</span>
-      </div>
-    </div>
-
-    <!-- 語言 -->
-    <div class="s-section">
-      <div class="s-title">語言能力</div>
-      <div class="lang-item">
-        <span>中文（母語）</span>
-        <div class="lang-dots">
-          <div class="lang-dot filled"></div>
-          <div class="lang-dot filled"></div>
-          <div class="lang-dot filled"></div>
-          <div class="lang-dot filled"></div>
-          <div class="lang-dot filled"></div>
-        </div>
-      </div>
-      <div class="lang-item">
-        <span>英文（中等）</span>
-        <div class="lang-dots">
-          <div class="lang-dot filled"></div>
-          <div class="lang-dot filled"></div>
-          <div class="lang-dot filled"></div>
-          <div class="lang-dot"></div>
-          <div class="lang-dot"></div>
-        </div>
+        <span class="skill-tag">電商平台操作</span>
+        <span class="skill-tag">SEO 圖文素材製作</span>
       </div>
     </div>
 
     <!-- 證照 / 認證 -->
     <div class="s-section">
       <div class="s-title">證照 ／ 認證</div>
-      <div class="cert-item cert-highlight">
+      <div class="cert-item cert-item--highlight">
         <strong>AI 新秀計畫 結業</strong>
         經濟部產業發展署 · 2025
       </div>
@@ -712,7 +637,7 @@
     <div class="m-section">
       <div class="m-title">職涯摘要</div>
       <div class="summary">
-        具備<strong>品牌識別、整合行銷企劃與 UI 設計</strong>實務，擅長將複雜資訊轉化為清晰易懂的視覺語言，並建立一致的品牌溝通邏輯。參與<strong>經濟部 AI 新秀計畫</strong>，具備 Prompt Engineering 與多元 AI 工具協作實踐。雖尚無直接 ERP 系統操作背景，但具備<strong>流程視覺化、文件規劃、跨部門溝通</strong>的設計底子，期望以視覺轉譯能力與快速學習力，在 ERP 相關職位或數位轉型專案中貢獻跨域價值。
+        具備<strong>品牌識別、整合行銷企劃與 UI 設計</strong>的複合實務背景，擅長將複雜資訊轉化為清晰一致的視覺語言。具電商運營實際操作經驗，理解從商品視覺到平台上架的完整流程。參與<strong>經濟部 AI 新秀計畫</strong>，善用 Prompt Engineering 與 AI 工具加速設計產出。期望以視覺轉譯能力、數位工具應用與快速學習力，在 ERP 相關職位或數位轉型專案中創造跨域貢獻。
       </div>
     </div>
 
@@ -720,25 +645,46 @@
     <div class="m-section">
       <div class="m-title">核心能力</div>
       <div class="ability-row">
-        <span class="ability-chip ability-chip--strong">視覺化溝通</span>
-        <span class="ability-chip ability-chip--strong">品牌策略規劃</span>
-        <span class="ability-chip ability-chip--accent">AI 工具應用</span>
-        <span class="ability-chip ability-chip--accent">UI 原型設計</span>
+        <span class="ability-chip ability-chip--navy">視覺化溝通</span>
+        <span class="ability-chip ability-chip--navy">品牌策略規劃</span>
+        <span class="ability-chip ability-chip--gold">AI 工具應用</span>
+        <span class="ability-chip ability-chip--gold">UI 原型設計</span>
+        <span class="ability-chip">電商平台操作</span>
         <span class="ability-chip">流程文件製作</span>
-        <span class="ability-chip">跨部門協作</span>
         <span class="ability-chip">獨立專案執行</span>
-        <span class="ability-chip">快速自學能力</span>
+        <span class="ability-chip">快速自學</span>
       </div>
     </div>
 
-    <!-- 工作 / 實習經歷 -->
+    <!-- 工作 / 兼職經歷 -->
     <div class="m-section">
-      <div class="m-title">工作 ／ 實習經歷</div>
-      <div class="exp-placeholder">
-        ⚑ 請補充：如有任何打工、兼差、實習或接案經歷，請填入此處。<br>
-        格式：職稱｜公司名稱｜時間｜主要負責內容（1–2 點）<br>
-        如無業界工作經歷，可刪除此區塊。
+      <div class="m-title">工作 ／ 兼職經歷</div>
+
+      <div class="exp-item">
+        <div class="exp-item__header">
+          <div class="exp-item__title">外包美編設計師</div>
+          <div class="exp-item__period">2025.04 – 2025.07（4 個月）</div>
+        </div>
+        <div class="exp-item__company">瑪卡鎷網路行銷有限公司</div>
+        <ul class="exp-item__desc">
+          <li>協助客戶行銷網站製作文章封面圖與內文配圖，配合 SEO 內容策略調整視覺呈現方向</li>
+          <li>依文章主題與品牌調性快速產出圖文素材，確保視覺風格一致性</li>
+        </ul>
       </div>
+
+      <div class="exp-item">
+        <div class="exp-item__header">
+          <div class="exp-item__title">電商工讀生</div>
+          <div class="exp-item__period">2024.09 – 2025.05（9 個月）</div>
+        </div>
+        <div class="exp-item__company">華寶軒國際有限公司</div>
+        <ul class="exp-item__desc">
+          <li>負責商品攝影及照片後製優化，提升商品在電商平台上的視覺吸引力</li>
+          <li>執行多平台商品上架作業，包含資料整理、貼標編號、庫存清點</li>
+          <li>熟悉電商倉儲完整作業流程，包含揀貨、包裝、出貨等環節</li>
+        </ul>
+      </div>
+
     </div>
 
     <!-- AI 亮點 -->
@@ -747,62 +693,38 @@
         <div class="ai-highlight__icon">◈</div>
         <div class="ai-highlight__text">
           <strong>AI 協作能力 — 經濟部產業發展署 AI 新秀計畫（2025）</strong>
-          具備 Prompt Engineering 實務，能以 AI 工具快速完成需求分析、流程圖生成與原型設計輔助。開發「喵喵財庫 Pawket」記帳 App 原型，涵蓋需求定義、介面設計、功能測試的完整產品開發流程。
+          具備 Prompt Engineering 實務，能以 AI 工具加速需求分析、流程圖生成與原型設計輔助。主導開發「喵喵財庫 Pawket」記帳 App 原型，完整執行需求定義、UI 設計、功能測試流程。
         </div>
       </div>
     </div>
 
-    <!-- 代表專案 -->
+    <!-- 設計能力 + 作品集 -->
     <div class="m-section">
-      <div class="m-title">代表專案</div>
-      <div class="proj-grid">
-        <div class="proj-card">
-          <div class="proj-card__type">Brand × UI Design</div>
-          <div class="proj-card__name">YeBuff 金運面膜</div>
-          <div class="proj-card__desc">整合品牌企劃、包裝設計與網站 UI 原型，建立線上線下一致的品牌語言。</div>
-          <div class="proj-card__tags">
-            <span class="proj-tag">品牌識別</span>
-            <span class="proj-tag">包裝設計</span>
-            <span class="proj-tag">Figma 原型</span>
-          </div>
+      <div class="m-title">設計實務能力</div>
+      <ul class="cap-list">
+        <li><strong>品牌識別與視覺系統</strong> — 從品牌定位、LOGO 設計到印刷應用，建立完整品牌識別規範</li>
+        <li><strong>包裝設計</strong> — 商品包裝概念至完稿，具備印刷製作知識與實體落地經驗</li>
+        <li><strong>UI ／ UX 原型設計</strong> — Figma 高保真介面設計，涵蓋 App、網站原型與使用者流程規劃</li>
+        <li><strong>整合行銷企劃</strong> — 品牌故事建構、廣告圖文、活動視覺、提案簡報一手包辦</li>
+        <li><strong>AI 協作創作</strong> — 以 Prompt Engineering 主導 AI 工具生成視覺、文案與 App 原型</li>
+      </ul>
+
+      <div class="portfolio-box">
+        <div class="portfolio-box__qr">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=72x72&data=https://hongbaohua.github.io/Portfolio/&bgcolor=f7f6f2&color=1e2235&margin=3" alt="作品集 QR Code" />
         </div>
-        <div class="proj-card">
-          <div class="proj-card__type">Marketing × Graphic</div>
-          <div class="proj-card__name">節節高 LARKZHU</div>
-          <div class="proj-card__desc">兒童教育品牌整合行銷企劃，涵蓋品牌故事、廣告圖文、線下活動視覺設計。</div>
-          <div class="proj-card__tags">
-            <span class="proj-tag">整合行銷</span>
-            <span class="proj-tag">活動設計</span>
-            <span class="proj-tag">小組協作</span>
-          </div>
-        </div>
-        <div class="proj-card">
-          <div class="proj-card__type">AI × App Design</div>
-          <div class="proj-card__name">喵喵財庫 Pawket</div>
-          <div class="proj-card__desc">以 AI Studio 進行 Prompt Engineering 輔助開發的理財 App，含完整 UI 介面與操作原型。</div>
-          <div class="proj-card__tags">
-            <span class="proj-tag">Prompt Engineering</span>
-            <span class="proj-tag">App UI</span>
-            <span class="proj-tag">AI 協作</span>
-          </div>
-        </div>
-        <div class="proj-card">
-          <div class="proj-card__type">Brand × Packaging</div>
-          <div class="proj-card__name">EGG 餅乾品牌</div>
-          <div class="proj-card__desc">從品牌定位到包裝設計的完整執行，建立清晰品牌個性與視覺語言，獨立完成。</div>
-          <div class="proj-card__tags">
-            <span class="proj-tag">品牌策略</span>
-            <span class="proj-tag">包裝設計</span>
-            <span class="proj-tag">獨立完成</span>
-          </div>
+        <div class="portfolio-box__info">
+          <div class="portfolio-box__label">線上作品集</div>
+          <div class="portfolio-box__url">hongbaohua.github.io/Portfolio</div>
+          <div class="portfolio-box__desc">包含品牌識別、包裝設計、UI 原型、AI 協作等完整作品案例</div>
         </div>
       </div>
     </div>
 
     <!-- Footer -->
     <div class="resume-footer">
-      <span class="resume-footer__url">作品集：hongbaohua.github.io/Portfolio</span>
-      <span class="resume-footer__date">更新：2026 年 4 月</span>
+      <span>hongbaohua.github.io/Portfolio</span>
+      <span>更新：2026 年 4 月</span>
     </div>
 
   </main>
