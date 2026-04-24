@@ -97,32 +97,40 @@ document.addEventListener('DOMContentLoaded', () => {
     if (link.getAttribute('href') === currentPage) link.classList.add('active');
   });
 
-  /* ── 圖片燈箱（點擊開啟，支援縮放 / 平移） ── */
-  const workImgs = document.querySelectorAll('.work-img-wrap img');
-  if (workImgs.length > 0) {
+  /* ── 圖片燈箱（點擊開啟，支援切換 / 縮放 / 平移） ── */
+  const workImgsArr = Array.from(document.querySelectorAll('.work-img-wrap img'));
+  if (workImgsArr.length > 0) {
     const lb = document.createElement('div');
     lb.className = 'lightbox';
     lb.setAttribute('role', 'dialog');
     lb.setAttribute('aria-modal', 'true');
     lb.setAttribute('aria-label', '圖片放大檢視');
     lb.innerHTML = `
+      <button class="lightbox__prev" aria-label="上一張"><i class="fa-solid fa-chevron-left"></i></button>
       <button class="lightbox__close" aria-label="關閉"><i class="fa-solid fa-xmark"></i></button>
+      <button class="lightbox__next" aria-label="下一張"><i class="fa-solid fa-chevron-right"></i></button>
       <img class="lightbox__img" src="" alt="" />
       <p class="lightbox__caption"></p>
-      <span class="lightbox__hint">滾輪縮放・雙擊重設・拖曳平移</span>
+      <span class="lightbox__counter"></span>
+      <span class="lightbox__hint">← → 切換・滾輪縮放・雙擊重設</span>
     `;
     document.body.appendChild(lb);
 
     const lbImg     = lb.querySelector('.lightbox__img');
     const lbCaption = lb.querySelector('.lightbox__caption');
+    const lbCounter = lb.querySelector('.lightbox__counter');
+    const lbPrev    = lb.querySelector('.lightbox__prev');
+    const lbNext    = lb.querySelector('.lightbox__next');
 
     // ── 縮放狀態 ──
     let scale = 1, tx = 0, ty = 0;
     let isDragging = false, didDrag = false;
     let dragStartX = 0, dragStartY = 0;
-    let pinchDist  = 0;
-    let singleTX   = 0, singleTY = 0;
+    let pinchDist = 0, singleTX = 0, singleTY = 0;
+    let swipeStartX = 0, swipeStartY = 0, isSwiping = false;
+    let currentIdx = 0;
     const MIN_SCALE = 1, MAX_SCALE = 6;
+    const hasMultiple = workImgsArr.length > 1;
 
     function applyTransform() {
       lbImg.style.transform = `translate(${tx}px,${ty}px) scale(${scale})`;
@@ -134,15 +142,28 @@ document.addEventListener('DOMContentLoaded', () => {
       applyTransform();
     }
 
+    // ── 切換圖片 ──
+    function showImage(idx) {
+      currentIdx = (idx + workImgsArr.length) % workImgsArr.length;
+      const img = workImgsArr[currentIdx];
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      const fig = img.closest('figure');
+      lbCaption.textContent = fig?.querySelector('figcaption')?.textContent || img.alt || '';
+      lbCounter.textContent = hasMultiple ? `${currentIdx + 1} / ${workImgsArr.length}` : '';
+      resetTransform();
+    }
+
+    // 切換按鈕：單張圖時隱藏
+    lbPrev.style.display = hasMultiple ? '' : 'none';
+    lbNext.style.display = hasMultiple ? '' : 'none';
+    lbCounter.style.display = hasMultiple ? '' : 'none';
+
     // ── 開啟燈箱 ──
-    workImgs.forEach(img => {
+    workImgsArr.forEach((img, i) => {
       img.style.cursor = 'zoom-in';
       img.addEventListener('click', () => {
-        lbImg.src = img.src;
-        lbImg.alt = img.alt;
-        const fig = img.closest('figure');
-        lbCaption.textContent = fig?.querySelector('figcaption')?.textContent || img.alt || '';
-        resetTransform();
+        showImage(i);
         lb.classList.add('open');
         document.body.style.overflow = 'hidden';
       });
@@ -157,8 +178,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     lb.querySelector('.lightbox__close').addEventListener('click', closeLb);
     lb.addEventListener('click', e => { if (e.target === lb && !didDrag) closeLb(); });
+    lbPrev.addEventListener('click', e => { e.stopPropagation(); showImage(currentIdx - 1); });
+    lbNext.addEventListener('click', e => { e.stopPropagation(); showImage(currentIdx + 1); });
+
+    // ── 鍵盤：Esc 關閉，← → 切換 ──
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && lb.classList.contains('open')) closeLb();
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape')      closeLb();
+      if (e.key === 'ArrowLeft')   showImage(currentIdx - 1);
+      if (e.key === 'ArrowRight')  showImage(currentIdx + 1);
     });
 
     // ── 滾輪縮放 ──
@@ -199,19 +227,26 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!isDragging) return;
       isDragging = false;
       setTimeout(() => { didDrag = false; }, 50);
-      applyTransform(); // restores move/zoom-in cursor
+      applyTransform();
     });
 
-    // ── 觸控：雙指縮放 + 單指平移 ──
+    // ── 觸控：雙指縮放 + 單指平移（放大時）/ 橫掃切換（縮放=1時） ──
     lb.addEventListener('touchstart', e => {
       if (e.touches.length === 2) {
+        isSwiping = false;
         pinchDist = Math.hypot(
           e.touches[0].clientX - e.touches[1].clientX,
           e.touches[0].clientY - e.touches[1].clientY
         );
-      } else if (e.touches.length === 1 && scale > 1) {
-        singleTX = e.touches[0].clientX - tx;
-        singleTY = e.touches[0].clientY - ty;
+      } else if (e.touches.length === 1) {
+        if (scale > 1) {
+          singleTX = e.touches[0].clientX - tx;
+          singleTY = e.touches[0].clientY - ty;
+        } else {
+          swipeStartX = e.touches[0].clientX;
+          swipeStartY = e.touches[0].clientY;
+          isSwiping = true;
+        }
       }
     }, { passive: true });
 
@@ -236,7 +271,18 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, { passive: false });
 
-    lb.addEventListener('touchend', () => { pinchDist = 0; }, { passive: true });
+    lb.addEventListener('touchend', e => {
+      // 橫掃切換（僅在未縮放時）
+      if (isSwiping && e.changedTouches.length === 1 && scale <= 1) {
+        const dx = e.changedTouches[0].clientX - swipeStartX;
+        const dy = Math.abs(e.changedTouches[0].clientY - swipeStartY);
+        if (Math.abs(dx) > 60 && Math.abs(dx) > dy) {
+          dx < 0 ? showImage(currentIdx + 1) : showImage(currentIdx - 1);
+        }
+        isSwiping = false;
+      }
+      pinchDist = 0;
+    }, { passive: true });
   }
 
   /* ── 大綱 bar：滾動時標記目前區塊 ── */
