@@ -53,20 +53,20 @@
       border-right: 1px solid var(--border);
     }
 
-    /* 頭像 + 姓名 橫排 */
+    /* 頭像 + 姓名 縱排 */
     .sidebar__header {
       display: flex;
-      align-items: center;
-      gap: 12px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
       margin-bottom: 0;
     }
 
     .sidebar__avatar {
-      width: 64px;
-      height: 64px;
+      width: 128px;
+      height: 128px;
       border-radius: 50%;
       overflow: hidden;
-      flex-shrink: 0;
       border: 2px solid var(--border);
     }
 
@@ -78,11 +78,10 @@
       display: block;
     }
 
-    .sidebar__id {
+    .sidebar__name-row {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-width: 0;
+      align-items: center;
+      gap: 7px;
     }
 
     .sidebar__name {
@@ -98,14 +97,8 @@
       font-weight: 600;
       color: var(--gold);
       letter-spacing: 0.14em;
-      margin-top: 2px;
+      margin-top: 0;
       text-transform: uppercase;
-    }
-
-    .sidebar__name-row {
-      display: flex;
-      align-items: center;
-      gap: 7px;
     }
 
     .sidebar__logo {
@@ -222,14 +215,14 @@
     }
 
     .skill-item__bar {
-      height: 3px;
+      height: 4px;
       background: rgba(0,0,0,0.08);
       border-radius: 2px;
       overflow: hidden;
     }
 
     .skill-item__fill {
-      height: 100%;
+      height: 4px;
       background: var(--gold);
       border-radius: 2px;
       opacity: 0.85;
@@ -528,13 +521,11 @@
       <div class="sidebar__avatar">
         <img src="assets/images/profile-photo.jpg" alt="洪寶華 Ivy Hong" />
       </div>
-      <div class="sidebar__id">
-        <div class="sidebar__name-row">
-          <div class="sidebar__name">洪寶華</div>
-          <img src="assets/images/name_logo.png" alt="Ivy Hong Logo" class="sidebar__logo" />
-        </div>
-        <div class="sidebar__name-en">Ivy Hong</div>
+      <div class="sidebar__name-row">
+        <img src="assets/images/name_logo.png" alt="Ivy Hong Logo" class="sidebar__logo" />
+        <div class="sidebar__name">洪寶華</div>
       </div>
+      <div class="sidebar__name-en">Ivy Hong</div>
     </div>
 
     <div class="sidebar__divider"></div>
