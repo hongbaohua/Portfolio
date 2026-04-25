@@ -11,20 +11,20 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --sidebar-bg: #f0efeb;
-      --navy:  #1e2235;
-      --gold:  #b8924a;
-      --gold2: #9a7a3c;
+      --sidebar-bg: #F0EDE6;
+      --navy:  #2A2824;
+      --gold:  #C4A35A;
+      --gold2: #9A7A3A;
       --white: #ffffff;
-      --light: #f7f6f2;
-      --text:  #1a1a2e;
-      --muted: #585858;
-      --muted2:#909090;
-      --border:#dddbd5;
+      --light: #FAFAF7;
+      --text:  #1C1B18;
+      --muted: #5A5750;
+      --muted2:#8A8575;
+      --border:#E2DDD4;
     }
 
     html, body {
-      background: #cccac4;
+      background: #D5D0C8;
       min-height: 100vh;
       font-family: 'Noto Sans TC', 'Inter', sans-serif;
       -webkit-print-color-adjust: exact;
@@ -38,7 +38,7 @@
       background: var(--white);
       box-shadow: 0 4px 40px rgba(0,0,0,0.18);
       display: grid;
-      grid-template-columns: 66mm 1fr;
+      grid-template-columns: 63mm 1fr;
     }
 
     /* ══════════════════════════
@@ -46,7 +46,7 @@
        ══════════════════════════ */
     .sidebar {
       background: var(--sidebar-bg);
-      padding: 26px 20px 26px;
+      padding: 30px 18px 30px 28px;
       display: flex;
       flex-direction: column;
       gap: 0;
@@ -58,15 +58,18 @@
       width: 56px;
       height: 56px;
       border-radius: 50%;
-      background: var(--navy);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: #e8d9bc;
+      overflow: hidden;
       margin-bottom: 11px;
       flex-shrink: 0;
+      border: 2px solid var(--border);
+    }
+
+    .sidebar__avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
     }
 
     .sidebar__name {
@@ -86,11 +89,11 @@
       text-transform: uppercase;
     }
 
-    .sidebar__target {
-      font-size: 0.62rem;
-      color: var(--muted2);
-      margin-top: 5px;
-      line-height: 1.6;
+    .sidebar__logo {
+      height: 18px;
+      margin-top: 8px;
+      opacity: 0.55;
+      display: block;
     }
 
     .sidebar__divider {
@@ -102,9 +105,9 @@
     .s-section { margin-bottom: 16px; }
 
     .s-title {
-      font-size: 0.56rem;
+      font-size: 0.62rem;
       font-weight: 700;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.17em;
       text-transform: uppercase;
       color: var(--gold2);
       margin-bottom: 8px;
@@ -128,7 +131,7 @@
       width: 12px;
       flex-shrink: 0;
       color: var(--gold);
-      font-size: 0.6rem;
+      font-size: 0.63rem;
       margin-top: 1px;
       text-align: center;
     }
@@ -150,7 +153,7 @@
     }
 
     .edu-item__dept {
-      font-size: 0.63rem;
+      font-size: 0.65rem;
       color: var(--muted);
       margin-top: 1px;
     }
@@ -163,13 +166,13 @@
     }
 
     .edu-item__year {
-      font-size: 0.58rem;
+      font-size: 0.65rem;
       color: var(--gold2);
       font-weight: 600;
     }
 
     .edu-badge {
-      font-size: 0.54rem;
+      font-size: 0.62rem;
       padding: 1px 5px;
       border-radius: 2px;
       background: rgba(184,146,74,0.12);
@@ -188,7 +191,7 @@
     .skill-item { margin-bottom: 8px; }
 
     .skill-item__label {
-      font-size: 0.63rem;
+      font-size: 0.65rem;
       color: var(--muted);
       margin-bottom: 3px;
       display: flex;
@@ -196,7 +199,7 @@
     }
 
     .skill-item__label span:last-child {
-      font-size: 0.56rem;
+      font-size: 0.62rem;
       color: var(--muted2);
     }
 
@@ -222,7 +225,7 @@
     }
 
     .skill-tag {
-      font-size: 0.58rem;
+      font-size: 0.63rem;
       padding: 2px 7px;
       border-radius: 3px;
       background: rgba(0,0,0,0.05);
@@ -239,7 +242,7 @@
 
     /* 證照 */
     .cert-item {
-      font-size: 0.63rem;
+      font-size: 0.65rem;
       color: var(--muted);
       padding: 5px 0;
       border-bottom: 1px solid var(--border);
@@ -252,15 +255,7 @@
       color: var(--navy);
       display: block;
       font-weight: 600;
-      font-size: 0.65rem;
-    }
-
-    .cert-item--highlight {
-      background: rgba(184,146,74,0.08);
-      border: 1px solid rgba(184,146,74,0.22);
-      border-radius: 3px;
-      padding: 5px 7px;
-      margin-bottom: 4px;
+      font-size: 0.67rem;
     }
 
     .cert-item--highlight strong { color: var(--gold2); }
@@ -269,14 +264,14 @@
        MAIN
        ══════════════════════════ */
     .main {
-      padding: 26px 24px 22px;
+      padding: 93px 28px 30px 20px;
       display: flex;
       flex-direction: column;
       gap: 0;
     }
 
     .m-title {
-      font-size: 0.58rem;
+      font-size: 0.63rem;
       font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
@@ -318,15 +313,15 @@
     }
 
     .ability-chip--navy {
-      background: var(--navy);
-      color: #e8d9bc;
-      border-color: var(--navy);
+      background: rgba(42,40,36,0.07);
+      color: var(--text);
+      border-color: rgba(42,40,36,0.22);
     }
 
     .ability-chip--gold {
-      background: rgba(184,146,74,0.1);
+      background: rgba(196,163,90,0.12);
       color: var(--gold2);
-      border-color: rgba(184,146,74,0.35);
+      border-color: rgba(196,163,90,0.38);
     }
 
     /* 工作經歷 */
@@ -358,7 +353,7 @@
     }
 
     .exp-item__period {
-      font-size: 0.6rem;
+      font-size: 0.65rem;
       color: var(--muted2);
       white-space: nowrap;
       padding-top: 2px;
@@ -372,7 +367,7 @@
     }
 
     .exp-item__desc {
-      font-size: 0.67rem;
+      font-size: 0.68rem;
       color: var(--muted);
       line-height: 1.8;
       list-style: none;
@@ -392,34 +387,11 @@
       font-weight: 700;
     }
 
-    /* AI 亮點 */
-    .ai-highlight {
-      background: var(--navy);
-      border-radius: 4px;
-      padding: 10px 13px;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-
-    .ai-highlight__icon {
-      font-size: 1.1rem;
-      flex-shrink: 0;
-      margin-top: 1px;
-      opacity: 0.9;
-    }
-
-    .ai-highlight__text {
-      font-size: 0.64rem;
-      color: rgba(255,255,255,0.72);
-      line-height: 1.8;
-    }
-
-    .ai-highlight__text strong {
-      color: #e8d9bc;
-      display: block;
+    /* AI 段落說明 */
+    .ai-desc {
       font-size: 0.68rem;
-      margin-bottom: 2px;
+      color: var(--muted);
+      line-height: 1.85;
     }
 
     /* 設計能力 + QR */
@@ -478,7 +450,7 @@
     }
 
     .portfolio-box__label {
-      font-size: 0.58rem;
+      font-size: 0.62rem;
       color: var(--muted2);
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -493,8 +465,14 @@
       word-break: break-all;
     }
 
+    .portfolio-box__hint {
+      font-size: 0.62rem;
+      color: var(--gold2);
+      margin-top: 2px;
+    }
+
     .portfolio-box__desc {
-      font-size: 0.6rem;
+      font-size: 0.65rem;
       color: var(--muted2);
       margin-top: 4px;
       line-height: 1.6;
@@ -511,7 +489,7 @@
     }
 
     .resume-footer span {
-      font-size: 0.58rem;
+      font-size: 0.62rem;
       color: var(--muted2);
     }
 
@@ -528,10 +506,12 @@
   <!-- ══════════ LEFT SIDEBAR ══════════ -->
   <aside class="sidebar">
 
-    <div class="sidebar__avatar">洪</div>
+    <div class="sidebar__avatar">
+      <img src="assets/images/profile-photo.jpg" alt="洪寶華 Ivy Hong" />
+    </div>
     <div class="sidebar__name">洪寶華</div>
     <div class="sidebar__name-en">Ivy Hong</div>
-    <div class="sidebar__target">應徵：設計企劃 ／ UI 設計師 ／ 數位轉型</div>
+    <img src="assets/images/name_logo.png" alt="Ivy Hong Logo" class="sidebar__logo" />
 
     <div class="sidebar__divider"></div>
 
@@ -577,20 +557,24 @@
     <div class="s-section">
       <div class="s-title">設計工具</div>
       <div class="skill-item">
-        <div class="skill-item__label"><span>Figma</span><span>熟練</span></div>
-        <div class="skill-item__bar"><div class="skill-item__fill" style="width:90%"></div></div>
-      </div>
-      <div class="skill-item">
         <div class="skill-item__label"><span>Adobe Illustrator</span><span>熟練</span></div>
-        <div class="skill-item__bar"><div class="skill-item__fill" style="width:85%"></div></div>
+        <div class="skill-item__bar"><div class="skill-item__fill" style="width:75%"></div></div>
       </div>
       <div class="skill-item">
         <div class="skill-item__label"><span>Adobe Photoshop</span><span>熟練</span></div>
-        <div class="skill-item__bar"><div class="skill-item__fill" style="width:80%"></div></div>
+        <div class="skill-item__bar"><div class="skill-item__fill" style="width:70%"></div></div>
       </div>
       <div class="skill-item">
         <div class="skill-item__label"><span>Canva</span><span>熟練</span></div>
-        <div class="skill-item__bar"><div class="skill-item__fill" style="width:88%"></div></div>
+        <div class="skill-item__bar"><div class="skill-item__fill" style="width:65%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-item__label"><span>Figma</span><span>基礎應用</span></div>
+        <div class="skill-item__bar"><div class="skill-item__fill" style="width:52%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-item__label"><span>Adobe InDesign</span><span>基礎應用</span></div>
+        <div class="skill-item__bar"><div class="skill-item__fill" style="width:42%"></div></div>
       </div>
     </div>
 
@@ -603,7 +587,7 @@
         <span class="skill-tag skill-tag--accent">UI 原型設計</span>
         <span class="skill-tag">HTML ／ CSS（基礎）</span>
         <span class="skill-tag">電商平台操作</span>
-        <span class="skill-tag">SEO 圖文素材製作</span>
+        <span class="skill-tag">SEO 文章配圖製作</span>
       </div>
     </div>
 
@@ -611,8 +595,8 @@
     <div class="s-section">
       <div class="s-title">證照 ／ 認證</div>
       <div class="cert-item cert-item--highlight">
-        <strong>AI 新秀計畫 結業</strong>
-        經濟部產業發展署 · 2025
+        <strong>AI 新秀計畫</strong>
+        經濟部產業發展署 · 2025–2026
       </div>
       <div class="cert-item">
         <strong>iPAS AI 應用規劃師</strong>
@@ -635,9 +619,9 @@
 
     <!-- 職涯摘要 -->
     <div class="m-section">
-      <div class="m-title">職涯摘要</div>
+      <div class="m-title">個人簡介</div>
       <div class="summary">
-        具備<strong>品牌識別、整合行銷企劃與 UI 設計</strong>的複合實務背景，擅長將複雜資訊轉化為清晰一致的視覺語言。具電商運營實際操作經驗，理解從商品視覺到平台上架的完整流程。參與<strong>經濟部 AI 新秀計畫</strong>，善用 Prompt Engineering 與 AI 工具加速設計產出。期望以視覺轉譯能力、數位工具應用與快速學習力，在 ERP 相關職位或數位轉型專案中創造跨域貢獻。
+        設計系畢業，在學期間獨立完成品牌識別、包裝設計與 UI 原型等設計案，同時兼職累積商業視覺製作的實務經驗。持續學習並實際應用 AI 工具於創作流程，以 Prompt Engineering、生成式 AI 與 AI 輔助開發工具完成多件作品，並於 2026 年取得 iPAS AI 應用規劃師認證。
       </div>
     </div>
 
@@ -650,15 +634,14 @@
         <span class="ability-chip ability-chip--gold">AI 工具應用</span>
         <span class="ability-chip ability-chip--gold">UI 原型設計</span>
         <span class="ability-chip">電商平台操作</span>
-        <span class="ability-chip">流程文件製作</span>
-        <span class="ability-chip">獨立專案執行</span>
-        <span class="ability-chip">快速自學</span>
+        <span class="ability-chip">包裝設計</span>
+        <span class="ability-chip">商品視覺製作</span>
       </div>
     </div>
 
     <!-- 工作 / 兼職經歷 -->
     <div class="m-section">
-      <div class="m-title">工作 ／ 兼職經歷</div>
+      <div class="m-title">在學兼職經歷</div>
 
       <div class="exp-item">
         <div class="exp-item__header">
@@ -667,8 +650,8 @@
         </div>
         <div class="exp-item__company">瑪卡鎷網路行銷有限公司</div>
         <ul class="exp-item__desc">
-          <li>協助客戶行銷網站製作文章封面圖與內文配圖，配合 SEO 內容策略調整視覺呈現方向</li>
-          <li>依文章主題與品牌調性快速產出圖文素材，確保視覺風格一致性</li>
+          <li>為客戶行銷網站的 SEO 文章製作封面圖與內文配圖</li>
+          <li>依文章主題與品牌調性快速產出配圖，確保視覺風格一致性</li>
         </ul>
       </div>
 
@@ -687,36 +670,38 @@
 
     </div>
 
-    <!-- AI 亮點 -->
+    <!-- 設計作品選 -->
     <div class="m-section">
-      <div class="ai-highlight">
-        <div class="ai-highlight__icon">◈</div>
-        <div class="ai-highlight__text">
-          <strong>AI 協作能力 — 經濟部產業發展署 AI 新秀計畫（2025）</strong>
-          具備 Prompt Engineering 實務，能以 AI 工具加速需求分析、流程圖生成與原型設計輔助。主導開發「喵喵財庫 Pawket」記帳 App 原型，完整執行需求定義、UI 設計、功能測試流程。
-        </div>
-      </div>
+      <div class="m-title">在學設計作品</div>
+      <ul class="cap-list">
+        <li><strong>【月記LAB】手搖飲品牌識別</strong> — 品牌定位、LOGO 設計至視覺系統規劃，獨立完成完整品牌識別</li>
+        <li><strong>【倆口囍】糕餅品牌識別與包裝</strong> — 品牌故事建構、LOGO 設計至包裝完稿，含印刷規格製作</li>
+        <li><strong>【YeBuff】金運面膜品牌包裝與網頁</strong> — 商品包裝設計結合 Figma 網頁介面原型規劃</li>
+        <li><strong>【孩能學做菜】兒童烹飪教育圖書</strong> — InDesign 書籍排版，以 AI 生圖製作插圖與宣傳影片素材</li>
+      </ul>
     </div>
+
 
     <!-- 設計能力 + 作品集 -->
     <div class="m-section">
-      <div class="m-title">設計實務能力</div>
+      <div class="m-title">AI 應用作品成果</div>
       <ul class="cap-list">
-        <li><strong>品牌識別與視覺系統</strong> — 從品牌定位、LOGO 設計到印刷應用，建立完整品牌識別規範</li>
-        <li><strong>包裝設計</strong> — 商品包裝概念至完稿，具備印刷製作知識與實體落地經驗</li>
-        <li><strong>UI ／ UX 原型設計</strong> — Figma 高保真介面設計，涵蓋 App、網站原型與使用者流程規劃</li>
-        <li><strong>整合行銷企劃</strong> — 品牌故事建構、廣告圖文、活動視覺、提案簡報一手包辦</li>
-        <li><strong>AI 協作創作</strong> — 以 Prompt Engineering 主導 AI 工具生成視覺、文案與 App 原型</li>
+        <li><strong>AI 生圖應用</strong> — ChatGPT 生成插圖用於【孩能學做菜】書籍；Gemini 生成【仍在等】動態影像素材</li>
+        <li><strong>Prompt Engineering</strong> — ChatGPT、Claude 協助品牌文案撰寫，設計角色設定與多輪迭代策略</li>
+        <li><strong>AI App 開發</strong> — Google AI Studio＋Gemini API 生成 React＋TS 代碼，完成帳單 OCR 辨識功能</li>
+        <li><strong>AI 音樂／影像生成</strong> — SUNO v4.5 生成歌曲、Runway Gen-4 生成影片，獨立完成 MV 製作</li>
+        <li><strong>Claude Code 網站開發</strong> — 以 AI 協作建構作品集完整網站（HTML ／ CSS ／ JS）</li>
       </ul>
 
       <div class="portfolio-box">
         <div class="portfolio-box__qr">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=72x72&data=https://hongbaohua.github.io/Portfolio/&bgcolor=f7f6f2&color=1e2235&margin=3" alt="作品集 QR Code" />
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=72x72&data=https://hongbaohua.github.io/Portfolio/&bgcolor=FAFAF7&color=2A2824&margin=3" alt="作品集 QR Code" />
         </div>
         <div class="portfolio-box__info">
-          <div class="portfolio-box__label">線上作品集</div>
+          <div class="portfolio-box__label">線上完整作品集</div>
           <div class="portfolio-box__url">hongbaohua.github.io/Portfolio</div>
-          <div class="portfolio-box__desc">包含品牌識別、包裝設計、UI 原型、AI 協作等完整作品案例</div>
+          <div class="portfolio-box__hint">掃描 QR Code 或輸入網址即可瀏覽</div>
+          <div class="portfolio-box__desc">含設計作品（品牌識別、包裝、UI 原型）與 AI 應用作品（App 開發、MV 製作、Prompt Engineering）</div>
         </div>
       </div>
     </div>
@@ -724,7 +709,7 @@
     <!-- Footer -->
     <div class="resume-footer">
       <span>hongbaohua.github.io/Portfolio</span>
-      <span>更新：2026 年 4 月</span>
+      <span>2026 年 5 月</span>
     </div>
 
   </main>
