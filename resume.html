@@ -102,13 +102,17 @@
       text-transform: uppercase;
     }
 
+    .sidebar__name-row {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
     .sidebar__logo {
-      height: 16px;
+      height: 14px;
       width: auto;
-      max-width: 100%;
-      margin-top: 6px;
       opacity: 0.6;
-      display: block;
+      flex-shrink: 0;
     }
 
     .sidebar__divider {
@@ -526,9 +530,11 @@
         <img src="assets/images/profile-photo.jpg" alt="洪寶華 Ivy Hong" />
       </div>
       <div class="sidebar__id">
-        <div class="sidebar__name">洪寶華</div>
+        <div class="sidebar__name-row">
+          <div class="sidebar__name">洪寶華</div>
+          <img src="assets/images/name_logo.png" alt="Ivy Hong Logo" class="sidebar__logo" />
+        </div>
         <div class="sidebar__name-en">Ivy Hong</div>
-        <img src="assets/images/name_logo.png" alt="Ivy Hong Logo" class="sidebar__logo" />
       </div>
     </div>
 
