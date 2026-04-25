@@ -53,13 +53,19 @@
       border-right: 1px solid var(--border);
     }
 
-    /* 頭像 + 姓名 */
+    /* 頭像 + 姓名 橫排 */
+    .sidebar__header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 0;
+    }
+
     .sidebar__avatar {
-      width: 56px;
-      height: 56px;
+      width: 64px;
+      height: 64px;
       border-radius: 50%;
       overflow: hidden;
-      margin-bottom: 11px;
       flex-shrink: 0;
       border: 2px solid var(--border);
     }
@@ -72,8 +78,15 @@
       display: block;
     }
 
+    .sidebar__id {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+    }
+
     .sidebar__name {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 800;
       color: var(--navy);
       line-height: 1.3;
@@ -81,7 +94,7 @@
     }
 
     .sidebar__name-en {
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 600;
       color: var(--gold);
       letter-spacing: 0.14em;
@@ -90,9 +103,11 @@
     }
 
     .sidebar__logo {
-      height: 18px;
-      margin-top: 8px;
-      opacity: 0.55;
+      height: 16px;
+      width: auto;
+      max-width: 100%;
+      margin-top: 6px;
+      opacity: 0.6;
       display: block;
     }
 
@@ -506,12 +521,16 @@
   <!-- ══════════ LEFT SIDEBAR ══════════ -->
   <aside class="sidebar">
 
-    <div class="sidebar__avatar">
-      <img src="assets/images/profile-photo.jpg" alt="洪寶華 Ivy Hong" />
+    <div class="sidebar__header">
+      <div class="sidebar__avatar">
+        <img src="assets/images/profile-photo.jpg" alt="洪寶華 Ivy Hong" />
+      </div>
+      <div class="sidebar__id">
+        <div class="sidebar__name">洪寶華</div>
+        <div class="sidebar__name-en">Ivy Hong</div>
+        <img src="assets/images/name_logo.png" alt="Ivy Hong Logo" class="sidebar__logo" />
+      </div>
     </div>
-    <div class="sidebar__name">洪寶華</div>
-    <div class="sidebar__name-en">Ivy Hong</div>
-    <img src="assets/images/name_logo.png" alt="Ivy Hong Logo" class="sidebar__logo" />
 
     <div class="sidebar__divider"></div>
 
@@ -621,7 +640,7 @@
     <div class="m-section">
       <div class="m-title">個人簡介</div>
       <div class="summary">
-        設計系畢業，在學期間獨立完成品牌識別、包裝設計與 UI 原型等設計案，同時兼職累積商業視覺製作的實務經驗。持續學習並實際應用 AI 工具於創作流程，以 Prompt Engineering、生成式 AI 與 AI 輔助開發工具完成多件作品，並於 2026 年取得 iPAS AI 應用規劃師認證。
+        設計系畢業，在學期間獨立完成品牌識別、包裝設計與 UI 原型等設計案，同時兼職累積商業視覺製作的實務經驗。持續學習並實際應用 AI 工具於創作流程，以 Prompt Engineering、生成式 AI 與 AI 輔助開發工具完成多件作品，亦使用 AI 工具輔助備考，並於 2026 年取得 iPAS AI 應用規劃師認證。
       </div>
     </div>
 
