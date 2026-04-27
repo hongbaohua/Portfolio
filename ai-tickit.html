@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tickit — Prompt Engineering × 備考 Web App · Ivy Hong</title>
+  <meta name="description" content="以 Prompt Engineering 引導 Gemini 生成題庫、Claude Code 開發程式的備考刷題 App。支援多使用者、跨單元混搭出題與弱點分析，部署於 GitHub Pages。" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/work-detail.css" />
+</head>
+
+<body class="page-body">
+
+  <!-- 導覽列 -->
+  <nav class="nav" role="navigation" aria-label="主選單">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/images/name_logo.png" alt="Ivy Hong Logo" class="nav__logo-img" />
+      </a>
+      <button class="nav__toggle" aria-label="開啟選單"><span></span><span></span><span></span></button>
+      <ul class="nav__links" role="list">
+        <li><a href="index.html" class="nav__link">首頁</a></li>
+        <li><a href="works.html" class="nav__link">設計作品</a></li>
+        <li class="nav__item nav__item--has-dropdown">
+          <a href="ai.html" class="nav__link">AI 協作</a>
+          <button class="nav__caret-btn" aria-label="展開子選單" aria-expanded="false">
+            <i class="fa-solid fa-chevron-down nav__caret" aria-hidden="true"></i>
+          </button>
+          <ul class="nav__dropdown">
+            <li><a href="ai.html" class="nav__dropdown-link">AI 應用成果</a></li>
+            <li><a href="ai-learning.html" class="nav__dropdown-link">AI 學習歷程</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 頁首橫幅 -->
+  <header class="work-hero">
+    <div class="container">
+      <p class="section-label">AI Collaboration · Prompt Engineering · Web App 開發</p>
+      <h1 class="work-hero__title">Tickit</h1>
+      <div class="work-hero__tags">
+        <span class="work-hero-tag">#PromptEngineering</span>
+        <span class="work-hero-tag">#HTML</span>
+        <span class="work-hero-tag">#CSS</span>
+        <span class="work-hero-tag">#JavaScript</span>
+        <span class="work-hero-tag">#Supabase</span>
+        <span class="work-hero-tag">#GitHubPages</span>
+        <span class="work-hero-tag">#Gemini</span>
+        <span class="work-hero-tag">#ClaudeCode</span>
+        <span class="work-hero-tag">#備考工具</span>
+        <span class="work-hero-tag">#WebApp</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主體內容 -->
+  <main class="work-content">
+    <div class="container">
+      <div class="work-layout">
+
+        <!-- ── 左側資訊欄 ── -->
+        <aside class="work-info">
+
+          <a href="ai.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            返回 AI 協作
+          </a>
+          <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
+            <p class="work-info__label">使用工具</p>
+            <p class="work-info__text">
+              <strong>Gemini</strong>（出題生成）、<strong>Claude Code</strong>（程式開發）、<strong>Obsidian</strong>（題庫管理）、<strong>Supabase</strong>（雲端資料庫）、<strong>GitHub Pages</strong>（部署）
+            </p>
+          </div>
+
+          <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
+            <p class="work-info__label">應用類型</p>
+            <p class="work-info__text">Web App 開發 · Prompt Engineering</p>
+          </div>
+
+          <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
+            <p class="work-info__label">技術架構</p>
+            <p class="work-info__text">HTML5 / CSS3 / Vanilla JS · Supabase REST API · GitHub Pages</p>
+          </div>
+
+          <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
+            <p class="work-info__label">開始時間</p>
+            <p class="work-info__text">2026 年 4 月，持續更新中</p>
+          </div>
+
+          <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
+            <p class="work-info__label">查看成果</p>
+            <a href="https://hongbaohua.github.io/quiz-app/" target="_blank" rel="noopener" class="work-external-btn">
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+              試用 App
+            </a>
+            <a href="https://github.com/hongbaohua/quiz-app" target="_blank" rel="noopener" class="work-external-btn secondary" style="margin-top: 10px;">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              GitHub
+            </a>
+          </div>
+
+        </aside><!-- /work-info -->
+
+
+        <!-- ── 右側內容區 ── -->
+        <div class="work-gallery">
+
+          <!-- 簡介 -->
+          <div class="work-desc-block">
+            Tickit（通往及格的通行證）是一個為備考「品牌企劃師初級」自製的線上刷題 Web App，後擴充至 ERP 軟體應用師。先以 Prompt Engineering 引導 Gemini 以嚴格 Markdown 格式生成題目與解析，再以完整架構規劃驅動 Claude Code 開發純前端應用。平台支援多使用者識別、主題與單元混搭出題、隨機抽題（含題組保護邏輯），完成後公布成績並自動分析弱點，所有紀錄永久保存於 Supabase 雲端資料庫。開發過程從 Python/Streamlit 全面重構為純前端 HTML/CSS/JS + GitHub Pages，並歷經 parser bug 修正、版面置中重構、UI 品牌化等多輪迭代。
+          </div>
+
+
+          <!-- ── 我的角色 ── -->
+          <h2 class="work-section-title">我在這個專案中做了什麼</h2>
+
+          <div class="work-desc-block">
+            <strong>規劃與驅動，而非執行程式碼。</strong><br /><br />
+            這個專案中，我負責的是整體架構設計與 Prompt 策略——設計 Prompt 框架讓 Gemini 扮演出題者、以完整開場白向 Claude Code 說明架構需求、主導每次版本迭代方向（重構技術棧、UI 品牌化、部署遷移）、以及命名品牌 Tickit（Tick + it + Ticket，ck 連筆形成勾號為 Logo 核心）。Supabase 雲端資料庫設定、GitHub Pages 部署、GitHub 日常維護也全數自主完成。
+          </div>
+
+
+          <!-- ── Prompt 策略 ── -->
+          <h2 class="work-section-title">Prompt 策略：讓 Gemini 成為出題者</h2>
+
+          <div class="work-desc-block">
+            Gemini 出題的難點在於格式控制——題目、選項、答案、解析必須在同一份 Markdown 檔案中，格式嚴格符合 parser.js 的解析規則。第一次要求時格式不符（選項換行錯誤、分隔字串不一致），追加 Prompt 明確指定格式後才達標。
+          </div>
+
+          <pre class="work-code-block">【給 Gemini 的出題指令（節錄）】
+以下是「品牌企劃師初級」Day 1 的考試範圍：
+品牌相關知識 (一) - 品牌的定義、品牌元素選擇準則（意義性、保護性等）、設計概論與品牌視覺。
+
+請生成 10 題單選題，格式必須嚴格遵守：
+1. 題目文字
+
+   (A) 選項一
+   (B) 選項二
+   (C) 選項三
+   (D) 選項四
+
+2. 下一題...
+
+解答與詳細解析
+
+1. (B) 解析說明...
+2. (A) 解析說明...</pre>
+
+          <div class="work-desc-block">
+            Day 7 與 Day 12 刻意要求「將前期概念融合為商業情境題」，難度與風格明顯不同，考驗情境理解而非單純記憶。目前已完成品牌企劃師 Day 1～12（含全科總測驗）共 12 個單元。
+          </div>
+
+
+          <!-- ── 架構開場白 ── -->
+          <h2 class="work-section-title">驅動 Claude Code 的架構開場白</h2>
+
+          <div class="work-desc-block">
+            給 Claude Code 的第一段 Prompt 是整個開發的起點，必須讓 AI 清楚理解需求邊界、技術選型與部署方式，才能避免後續大量修正。
+          </div>
+
+          <pre class="work-code-block">於 C:\Users\Master\Projects 建立資料夾 quiz-app。
+目標：製作一個支援多使用者的線上測驗 Web App，
+題庫由 Obsidian 匯出的 Markdown 檔案管理，不定期更新。
+
+架構規劃如下：
+首頁：用戶識別（輸入代號，無需密碼）；選擇主題與單元（支援多選混搭）；
+      選擇全部或隨機 N 題。
+測驗頁：逐題顯示，完成後才公布成績（答對 / 總題數）；
+        列出錯題與解析；可展開所有解析。
+考生管理頁：過往測驗紀錄；弱點分析（依題型統計錯誤模式，提供強化建議）。
+
+完成後上傳 GitHub，部署至 GitHub Pages（靜態網站，docs/ 資料夾）。</pre>
+
+
+          <!-- ── 三頁面架構 ── -->
+          <h2 class="work-section-title">三頁面功能架構</h2>
+
+          <div class="work-desc-block">
+            <strong>① 首頁（index.html）— 測驗設定</strong><br /><br />
+            用戶代號識別（無需密碼，輸入代號即建立或讀取帳戶）、選擇測驗主題（自動讀取 manifest.json）、選擇單元（多選混搭，即時顯示各單元題數）、選擇題數（全部 / 隨機 N 題）。隨機模式以題組為單位抽取，不拆散「承上題」情境題。
+          </div>
+
+          <div class="work-desc-block">
+            <strong>② 測驗頁（quiz.html）</strong><br /><br />
+            逐題顯示題目與四選項（不即時顯示對錯）、進度條 + 題號標籤。完成後公布成績（答對數 / 總題數），預設列出錯誤題目與解析，可展開查看全部解析。弱點摘要（單元答對率 &lt; 75% 自動標記），成績自動寫入 Supabase 雲端資料庫。
+          </div>
+
+          <div class="work-desc-block">
+            <strong>③ 考生管理頁（dashboard.html）</strong><br /><br />
+            下拉選單選擇考生、關鍵指標卡片（測驗次數、平均答對率、累計題數、最高答對率）、過往測驗紀錄列表（含回顧錯題功能）、答對率趨勢折線圖（Chart.js）、弱點診斷（各單元三色分類 + 強化建議）、各單元答對率橫條圖、高頻錯題 Top 10。
+          </div>
+
+
+          <!-- ── 版本迭代 ── -->
+          <h2 class="work-section-title">版本迭代紀錄</h2>
+
+          <div class="work-table-wrap">
+            <table class="work-table">
+              <thead>
+                <tr><th>版本</th><th>主要更新</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>v1.0</td><td>Streamlit 基本架構，SQLite 本地資料庫</td></tr>
+                <tr><td>v2.0</td><td>全面重設計 UI/UX（側欄導航、弱點診斷）</td></tr>
+                <tr><td>v2.1</td><td>改用 Supabase 雲端資料庫</td></tr>
+                <tr><td>v3.0</td><td>UI 完全重設計（深色側欄、線條色塊風格）</td></tr>
+                <tr><td>v3.1</td><td>修正隨機模式題號、承上題題組保護</td></tr>
+                <tr><td><strong>v4.0</strong></td><td><strong>全面重構：Python/Streamlit → 純前端 HTML/CSS/JS + GitHub Pages</strong></td></tr>
+                <tr><td>v4.1</td><td>新增 ERP 軟體應用師配銷模組題庫（三單元）</td></tr>
+                <tr><td>v4.2</td><td>修正 parser.js 題號 regex bug（Q2 消失問題）、ERP 共同科目缺字修正</td></tr>
+                <tr><td>v4.3</td><td>品牌命名確認：Tickit；全站品牌化（✓ icon、slogan、漸層按鈕、卡片陰影）</td></tr>
+                <tr><td>v4.4</td><td>版面置中重構（layout max-width + sticky sidebar）；新增品牌企劃師 Day 9～12</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <!-- ── 題庫現況 ── -->
+          <h2 class="work-section-title">題庫現況</h2>
+
+          <div class="work-table-wrap">
+            <table class="work-table">
+              <thead>
+                <tr><th>主題</th><th>單元</th><th>主題內容</th></tr>
+              </thead>
+              <tbody>
+                <tr><td rowspan="12">品牌企劃師初級備考</td><td>Day 1</td><td>品牌定義、品牌元素選擇準則、設計概論與品牌視覺</td></tr>
+                <tr><td>Day 2</td><td>品牌架構、品牌與消費者心理學基礎</td></tr>
+                <tr><td>Day 3</td><td>品牌權益（Brand Equity）核心概念、品牌知識結構</td></tr>
+                <tr><td>Day 4</td><td>價值主張（Value Proposition）的建構、品牌承諾與實踐</td></tr>
+                <tr><td>Day 5</td><td>目標市場選定、品牌定位點（POP）與差異點（POD）分析</td></tr>
+                <tr><td>Day 6</td><td>差異化策略實務、品牌性格與擬人化</td></tr>
+                <tr><td>Day 7</td><td>第一階段情境綜合測驗（Day 1～6 融合商業情境題）</td></tr>
+                <tr><td>Day 8</td><td>IMC 整合行銷溝通、廣告訴求、代言人與意見領袖策略</td></tr>
+                <tr><td>Day 9</td><td>媒體渠道選擇與整合、品牌接觸點優化</td></tr>
+                <tr><td>Day 10</td><td>品牌延伸策略、多品牌策略（Multi-Brand Strategy）</td></tr>
+                <tr><td>Day 11</td><td>品牌危機管理、品牌重塑與動態調整策略</td></tr>
+                <tr><td>Day 12</td><td>《品牌管理概論》全科總測驗（第一考科全面模擬）</td></tr>
+                <tr><td rowspan="3">ERP 軟體應用師<br />配銷模組 S/4HANA</td><td>單元一</td><td>配銷模組（SD）與整合（一）</td></tr>
+                <tr><td>單元二</td><td>配銷模組（SD）與整合（二）</td></tr>
+                <tr><td>單元三</td><td>SAP S/4HANA 共同科目</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <!-- ── 開發挑戰 ── -->
+          <h2 class="work-section-title">開發挑戰一：Parser Regex Bug</h2>
+
+          <div class="work-desc-block">
+            <strong>問題：Q2 整題從測驗中消失。</strong><br /><br />
+            ERP 共同科目題庫中，某題的解析以數字條列格式呈現（<code>1. R/2</code>、<code>2. ERP ECC</code>），而 parser.js 解析題號的 regex 為 <code>/^\s*(\d+)[.、\s]\s*/gm</code>，這個格式完全符合 regex 的題號判斷條件——parser 把解析裡的子項目誤判為新題號，導致 Q2 被「切斷」，整題從測驗中消失，且 Q2 的選項變成一道沒有題目文字的孤立題。<br /><br />
+            修正方式：將解析中的數字條列改為括號格式（<code>(1) R/2</code>），避免觸發 regex。這次 bug 讓我深刻體會到：題庫格式的每個細節都可能影響 parser 行為，Markdown 格式規範必須納入題庫管理流程。
+          </div>
+
+
+          <!-- ── 開發挑戰二 ── -->
+          <h2 class="work-section-title">開發挑戰二：版面「數學正確但視覺偏左」</h2>
+
+          <div class="work-desc-block">
+            <strong>問題：主內容區明明置中計算，但視覺上仍偏向左側。</strong><br /><br />
+            第一次嘗試：側欄使用 <code>position: fixed</code>，主內容以 <code>padding</code> 公式補償（<code>padding: 2rem max(1.5rem, calc((100vw - 220px - 680px) / 2))</code>）。數學上是對的，但因為側欄佔據了左側固定空間，「右側剩餘區域的中央」並非「整個畫面的中央」，視覺感知還是偏左。<br /><br />
+            真正的解法：讓側欄回到文件流（<code>position: sticky</code>），整個 <code>.layout</code> 容器設 <code>max-width: 1280px; margin: 0 auto</code>，主內容區再以 <code>align-items: center</code> + <code>.main &gt; * { max-width: 660px }</code> 控制寬度。側欄與主內容並排，整體容器在畫面中央，才真正達到視覺置中。
+          </div>
+
+
+          <!-- ── 資料庫結構 ── -->
+          <h2 class="work-section-title">資料庫結構（Supabase / PostgreSQL）</h2>
+
+          <div class="work-table-wrap">
+            <table class="work-table">
+              <thead>
+                <tr><th>資料表</th><th>欄位</th><th>說明</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>users</td><td>id、name（唯一）、created_at</td><td>考生帳號，代號識別</td></tr>
+                <tr><td>quiz_sessions</td><td>id、user_id（FK）、topic、units（JSON）、total_questions、correct_count、taken_at</td><td>每次測驗紀錄</td></tr>
+                <tr><td>question_results</td><td>id、session_id（FK）、question_id、topic、unit、is_correct、user_answer、correct_answer</td><td>逐題作答紀錄；question_id 格式：主題__Day_N__題號</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <!-- ── 過程反思 ── -->
+          <h2 class="work-section-title">過程反思</h2>
+
+          <div class="work-desc-block">
+            這個專案最大的收穫是親身體驗了「設計師如何用 AI 工具完成一個完整的軟體產品」——從需求定義、Prompt 策略、架構規劃，到每輪迭代的問題排查，都需要清晰的系統思維，而不只是會下指令。<br /><br />
+            Gemini 出題 + Claude Code 開發這樣的工具分工，讓我理解不同 AI 工具有各自的強項：Gemini 擅長創意發散與知識生成，Claude Code 擅長理解程式架構脈絡並精準修正。選對工具、給對 Prompt，才能讓 AI 真正發揮作用。<br /><br />
+            最後，Tickit 不只是一個備考工具——它本身就是一件 AI 協作作品，記錄了從零開始驅動 AI 開發完整軟體產品的完整思考過程。
+          </div>
+
+        </div><!-- /work-gallery -->
+      </div><!-- /work-layout -->
+    </div>
+  </main><!-- /work-content -->
+
+
+  <!-- 頁尾 -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <a href="mailto:hong.baohua.ivy@gmail.com" class="footer__email">
+        hong.baohua.ivy@gmail.com
+      </a>
+      <p class="footer__copy">&copy; 2025 Ivy Hong. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
