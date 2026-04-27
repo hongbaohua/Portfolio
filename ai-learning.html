@@ -290,19 +290,49 @@
 
         <article class="work-card reveal" data-delay="160">
           <a href="ai-pawket.html" class="work-card__link" aria-label="喵喵財庫 Pawket — 查看詳情">
-            <div class="work-card__img">
-              <img src="assets/images/pawket_cover.jpg" alt="喵喵財庫 Pawket App 介面截圖" loading="lazy" />
-              <div class="work-card__overlay" aria-hidden="true">
-                <span class="work-card__overlay-icon"><i class="fa-solid fa-arrow-right"></i></span>
+            <div class="work-card__img" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0c1a2e 100%); display:flex; align-items:center; justify-content:center; min-height:200px; position:relative; overflow:hidden;">
+              <div style="text-align:center; position:relative; z-index:1;">
+                <i class="fa-solid fa-cat" style="font-size:3.2rem; color:#f59e0b;" aria-hidden="true"></i>
+                <p style="margin-top:10px; font-size:0.78rem; letter-spacing:0.18em; color:#94a3b8; font-weight:600;">PAWKET</p>
               </div>
+              <div style="position:absolute; inset:0; background: radial-gradient(ellipse at 30% 40%, rgba(245,158,11,0.08) 0%, transparent 60%);"></div>
+            </div>
+            <div class="work-card__overlay" aria-hidden="true">
+              <span class="work-card__overlay-icon"><i class="fa-solid fa-arrow-right"></i></span>
             </div>
             <div class="work-card__body">
-              <h3 class="work-card__name">【喵喵財庫 Pawket】AI App 開發 × Prompt Engineering</h3>
-              <p class="work-card__desc">以 Prompt Engineering 引導 Gemini 完成 App 架構設計，再以 Google AI Studio 生成 React + TypeScript 程式碼，整合 Gemini API 實現帳單 OCR 辨識與財務分析。</p>
+              <h3 class="work-card__name">喵喵財庫 Pawket — Prompt Engineering × App 開發</h3>
+              <p class="work-card__desc">以 Prompt Engineering 引導 AI 從零設計的智慧記帳 App。掃描帳單自動分類、動態預算警示、貓咪情緒指標——展示設計師如何用提示詞驅動完整產品思維。</p>
               <ul class="work-card__tags">
                 <li><span class="work-tag">#PromptEngineering</span></li>
                 <li><span class="work-tag">#GeminiAPI</span></li>
                 <li><span class="work-tag">#WebApp</span></li>
+                <li><span class="work-tag">#AI新秀計畫</span></li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+        <article class="work-card reveal" data-delay="240">
+          <a href="ai-tickit.html" class="work-card__link" aria-label="Tickit — 查看詳情">
+            <div class="work-card__img" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0a1628 100%); display:flex; align-items:center; justify-content:center; min-height:200px; position:relative; overflow:hidden;">
+              <div style="text-align:center; position:relative; z-index:1;">
+                <span style="font-size:3rem; font-weight:900; color:#fff; font-family:sans-serif; letter-spacing:-0.04em;">&#10003;</span>
+                <p style="margin-top:10px; font-size:0.78rem; letter-spacing:0.2em; color:#94a3b8; font-weight:600;">TICKIT</p>
+              </div>
+              <div style="position:absolute; inset:0; background: radial-gradient(ellipse at 40% 40%, rgba(99,102,241,0.12) 0%, transparent 60%);"></div>
+            </div>
+            <div class="work-card__overlay" aria-hidden="true">
+              <span class="work-card__overlay-icon"><i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+            <div class="work-card__body">
+              <h3 class="work-card__name">Tickit — Prompt Engineering × 備考 Web App</h3>
+              <p class="work-card__desc">以 Prompt Engineering 引導 Gemini 生成題庫、Claude Code 開發程式的備考刷題 App。支援多使用者、跨單元混搭出題與弱點分析，部署於 GitHub Pages。</p>
+              <ul class="work-card__tags">
+                <li><span class="work-tag">#PromptEngineering</span></li>
+                <li><span class="work-tag">#WebApp</span></li>
+                <li><span class="work-tag">#Supabase</span></li>
+                <li><span class="work-tag">#備考工具</span></li>
               </ul>
             </div>
           </a>
