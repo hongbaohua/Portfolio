@@ -121,6 +121,32 @@
   font-weight: 600;
 }
 
+/* 工具 Chips（側欄使用工具列表） */
+.work-info__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.work-info__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+
+.work-info__chip i {
+  font-size: 0.72rem;
+  color: var(--accent-dark);
+}
+
 /* 外連按鈕（Canva、heyzine 等） */
 .work-external-btn {
   display: inline-flex;
