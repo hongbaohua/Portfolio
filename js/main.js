@@ -403,19 +403,19 @@ document.addEventListener('DOMContentLoaded', () => {
         track.scrollLeft >= track.scrollWidth - track.clientWidth - 1);
     };
 
-    prevBtn.addEventListener('click', () => track.scrollBy({ left: -getStep(), behavior: 'smooth' }));
-    nextBtn.addEventListener('click', () => track.scrollBy({ left:  getStep(), behavior: 'smooth' }));
-    track.addEventListener('scroll', syncBtns, { passive: true });
-    requestAnimationFrame(syncBtns);
+    // 讓尚未 reveal 的卡片即刻出現（無動畫），避免與水平滑入動畫衝突
+    const revealAll = () => {
+      track.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+        el.style.transition = 'none';
+        el.classList.add('visible');
+        requestAnimationFrame(() => el.style.removeProperty('transition'));
+      });
+    };
 
-    // 滾輪：垂直轉水平
-    track.addEventListener('wheel', e => {
-      if (e.deltaY !== 0) {
-        e.preventDefault();
-        track.scrollLeft += e.deltaY;
-        syncBtns();
-      }
-    }, { passive: false });
+    prevBtn.addEventListener('click', () => { revealAll(); track.scrollBy({ left: -getStep(), behavior: 'smooth' }); });
+    nextBtn.addEventListener('click', () => { revealAll(); track.scrollBy({ left:  getStep(), behavior: 'smooth' }); });
+    track.addEventListener('scroll', () => { syncBtns(); revealAll(); }, { passive: true });
+    requestAnimationFrame(syncBtns);
 
     let isDown = false, startX = 0, startScrollLeft = 0;
     track.addEventListener('mousedown', e => {
