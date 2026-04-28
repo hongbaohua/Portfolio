@@ -316,7 +316,8 @@
       <div class="featured-sub-group">
         <h3 class="featured-sub-title">設計作品</h3>
 
-        <div class="works-grid">
+        <div class="featured-scroll-wrap">
+          <div class="featured-scroll-track featured-scroll-track--design">
 
           <!-- 樂樂竹 -->
           <article class="work-card reveal" data-delay="0">
@@ -382,6 +383,7 @@
             </a>
           </article>
 
+          </div>
         </div>
 
         <div class="featured-more reveal">
@@ -395,7 +397,8 @@
       <div class="featured-sub-group">
         <h3 class="featured-sub-title">AI 協作</h3>
 
-        <div class="works-grid">
+        <div class="featured-scroll-wrap">
+          <div class="featured-scroll-track featured-scroll-track--ai">
 
           <!-- 仍在等 -->
           <article class="work-card reveal" data-delay="0">
@@ -438,25 +441,57 @@
             </a>
           </article>
 
-          <!-- 持續更新中 -->
-          <article class="work-card work-card--pending reveal" data-delay="160">
-            <div class="work-card__link" role="presentation">
-              <div class="work-card__img">
-                <div class="work-card__img-placeholder">
-                  <i class="fa-solid fa-robot" aria-hidden="true"></i>
-                  <span>持續更新中</span>
+          <!-- 喵喵財庫 Pawket -->
+          <article class="work-card reveal" data-delay="160">
+            <a href="ai-pawket.html" class="work-card__link" aria-label="喵喵財庫 Pawket — 查看詳情">
+              <div class="work-card__img" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0c1a2e 100%); padding: 0; position: relative; overflow: hidden;">
+                <div style="text-align:center; position:relative; z-index:1;">
+                  <i class="fa-solid fa-cat" style="font-size:3.2rem; color:#f59e0b;" aria-hidden="true"></i>
+                  <p style="margin-top:10px; font-size:0.78rem; letter-spacing:0.18em; color:#94a3b8; font-weight:600;">PAWKET</p>
+                </div>
+                <div style="position:absolute; inset:0; background: radial-gradient(ellipse at 30% 40%, rgba(245,158,11,0.08) 0%, transparent 60%); pointer-events:none;"></div>
+                <div class="work-card__overlay" aria-hidden="true">
+                  <span class="work-card__overlay-icon"><i class="fa-solid fa-arrow-right"></i></span>
                 </div>
               </div>
               <div class="work-card__body">
-                <h3 class="work-card__name">更多 AI 協作</h3>
-                <p class="work-card__desc">持續整理中，更多 AI 工具的創作實踐與應用過程紀錄即將推出。</p>
+                <h3 class="work-card__name">喵喵財庫 Pawket — Prompt Engineering × App 開發</h3>
+                <p class="work-card__desc">以 Prompt Engineering 引導 AI 從零設計的智慧記帳 App，展示設計師如何用提示詞驅動完整產品思維。</p>
                 <ul class="work-card__tags">
-                  <li><span class="work-tag">#持續更新</span></li>
+                  <li><span class="work-tag">#PromptEngineering</span></li>
+                  <li><span class="work-tag">#GeminiAPI</span></li>
+                  <li><span class="work-tag">#WebApp</span></li>
                 </ul>
               </div>
-            </div>
+            </a>
           </article>
 
+          <!-- Tickit 備考刷題 App -->
+          <article class="work-card reveal" data-delay="240">
+            <a href="ai-tickit.html" class="work-card__link" aria-label="Tickit — 查看詳情">
+              <div class="work-card__img" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0a1628 100%); padding: 0; position: relative; overflow: hidden;">
+                <div style="text-align:center; position:relative; z-index:1;">
+                  <span style="font-size:3rem; font-weight:900; color:#fff; font-family:sans-serif; letter-spacing:-0.04em;">&#10003;</span>
+                  <p style="margin-top:10px; font-size:0.78rem; letter-spacing:0.2em; color:#94a3b8; font-weight:600;">TICKIT</p>
+                </div>
+                <div style="position:absolute; inset:0; background: radial-gradient(ellipse at 40% 40%, rgba(99,102,241,0.12) 0%, transparent 60%); pointer-events:none;"></div>
+                <div class="work-card__overlay" aria-hidden="true">
+                  <span class="work-card__overlay-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__name">Tickit — Prompt Engineering × 備考 Web App</h3>
+                <p class="work-card__desc">引導 Gemini 生成題庫、Claude Code 開發程式的備考刷題 App，支援弱點分析，部署於 GitHub Pages。</p>
+                <ul class="work-card__tags">
+                  <li><span class="work-tag">#PromptEngineering</span></li>
+                  <li><span class="work-tag">#WebApp</span></li>
+                  <li><span class="work-tag">#Supabase</span></li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          </div>
         </div>
 
         <div class="featured-more reveal">

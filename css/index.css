@@ -815,6 +815,48 @@
   transform: translateY(-2px);
 }
 
+/* ────────────────────────────────────────────────
+   精選作品橫向捲動軌道
+   ──────────────────────────────────────────────── */
+.featured-scroll-wrap {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  margin: 0 -32px;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+
+.featured-scroll-wrap::-webkit-scrollbar {
+  display: none;
+}
+
+.featured-scroll-wrap:active {
+  cursor: grabbing;
+}
+
+.featured-scroll-track {
+  display: flex;
+  gap: 24px;
+  padding: 4px 32px 20px;
+}
+
+.featured-scroll-track .work-card {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+/* AI 協作：3 卡可見 */
+.featured-scroll-track--ai .work-card {
+  flex: 0 0 340px;
+}
+
+/* 設計作品：4 卡可見 */
+.featured-scroll-track--design .work-card {
+  flex: 0 0 262px;
+}
+
 /* ── 響應式 ── */
 @media (max-width: 1024px) {
   .hero__inner {
@@ -841,6 +883,22 @@
 @media (max-width: 768px) {
   .featured-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .featured-scroll-wrap {
+    margin: 0 -20px;
+  }
+
+  .featured-scroll-track {
+    padding: 4px 20px 20px;
+  }
+
+  .featured-scroll-track--ai .work-card {
+    flex: 0 0 300px;
+  }
+
+  .featured-scroll-track--design .work-card {
+    flex: 0 0 240px;
   }
 }
 
