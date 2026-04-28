@@ -375,6 +375,59 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ── 首頁精選作品卡片橫向滑動 ── */
+  document.querySelectorAll('.featured-scroll-track--cards').forEach(track => {
+    const outer = track.parentElement;
+
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'featured-scroll-btn featured-scroll-btn--prev';
+    prevBtn.setAttribute('aria-label', '向左滑動');
+    prevBtn.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
+
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'featured-scroll-btn featured-scroll-btn--next';
+    nextBtn.setAttribute('aria-label', '向右滑動');
+    nextBtn.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
+
+    outer.appendChild(prevBtn);
+    outer.appendChild(nextBtn);
+
+    const getStep = () => {
+      const card = track.querySelector('.work-card');
+      return card ? card.offsetWidth + 28 : 400;
+    };
+
+    const syncBtns = () => {
+      prevBtn.classList.toggle('is-faded', track.scrollLeft <= 0);
+      nextBtn.classList.toggle('is-faded',
+        track.scrollLeft >= track.scrollWidth - track.clientWidth - 1);
+    };
+
+    prevBtn.addEventListener('click', () => track.scrollBy({ left: -getStep(), behavior: 'smooth' }));
+    nextBtn.addEventListener('click', () => track.scrollBy({ left:  getStep(), behavior: 'smooth' }));
+    track.addEventListener('scroll', syncBtns, { passive: true });
+    requestAnimationFrame(syncBtns);
+
+    let isDown = false, startX = 0, startScrollLeft = 0;
+    track.addEventListener('mousedown', e => {
+      isDown = true;
+      startX = e.pageX;
+      startScrollLeft = track.scrollLeft;
+      track.style.cursor = 'grabbing';
+      e.preventDefault();
+    });
+    document.addEventListener('mousemove', e => {
+      if (!isDown) return;
+      track.scrollLeft = startScrollLeft - (e.pageX - startX);
+    });
+    document.addEventListener('mouseup', () => {
+      if (!isDown) return;
+      isDown = false;
+      track.style.cursor = 'grab';
+      syncBtns();
+    });
+  });
+
   /* ── 捲動進場動畫（IntersectionObserver） ── */
   const revealItems = document.querySelectorAll('.reveal');
   if (revealItems.length > 0) {

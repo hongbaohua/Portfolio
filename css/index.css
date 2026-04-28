@@ -816,46 +816,72 @@
 }
 
 /* ────────────────────────────────────────────────
-   精選作品橫向捲動軌道
+   精選作品橫向捲動 Carousel
    ──────────────────────────────────────────────── */
-.featured-scroll-wrap {
+.featured-scroll-outer {
+  position: relative;
+}
+
+.featured-scroll-track--cards {
+  display: flex;
+  gap: 28px;
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  margin: 0 -32px;
   scroll-snap-type: x proximity;
   -webkit-overflow-scrolling: touch;
   cursor: grab;
+  padding-bottom: 4px;
 }
 
-.featured-scroll-wrap::-webkit-scrollbar {
+.featured-scroll-track--cards::-webkit-scrollbar {
   display: none;
 }
 
-.featured-scroll-wrap:active {
+.featured-scroll-track--cards:active {
   cursor: grabbing;
 }
 
-.featured-scroll-track {
-  display: flex;
-  gap: 24px;
-  padding: 4px 32px 20px;
-}
-
-.featured-scroll-track .work-card {
-  flex-shrink: 0;
+/* 卡片：與原 3 欄 grid 同寬（100% = 軌道可見寬度） */
+.featured-scroll-track--cards .work-card {
+  flex: 0 0 calc((100% - 2 * 28px) / 3);
   scroll-snap-align: start;
 }
 
-/* AI 協作：3 卡可見 */
-.featured-scroll-track--ai .work-card {
-  flex: 0 0 340px;
+/* 左右導航按鈕（JS 動態插入至 .featured-scroll-outer 內） */
+.featured-scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: color 0.18s, opacity 0.18s, background 0.18s, border-color 0.18s;
 }
 
-/* 設計作品：4 卡可見 */
-.featured-scroll-track--design .work-card {
-  flex: 0 0 262px;
+.featured-scroll-btn:hover {
+  color: var(--accent-dark);
+  background: var(--accent-light);
+  border-color: var(--accent);
 }
+
+.featured-scroll-btn.is-faded {
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.featured-scroll-btn--prev { left: -19px; }
+.featured-scroll-btn--next { right: -19px; }
 
 /* ── 響應式 ── */
 @media (max-width: 1024px) {
@@ -885,20 +911,20 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .featured-scroll-wrap {
-    margin: 0 -20px;
+  /* 768px 以下：2 卡可見 */
+  .featured-scroll-track--cards .work-card {
+    flex: 0 0 calc((100% - 28px) / 2);
+  }
+}
+
+@media (max-width: 480px) {
+  /* 480px 以下：約 1.2 卡可見（提示可滑動） */
+  .featured-scroll-track--cards .work-card {
+    flex: 0 0 85%;
   }
 
-  .featured-scroll-track {
-    padding: 4px 20px 20px;
-  }
-
-  .featured-scroll-track--ai .work-card {
-    flex: 0 0 300px;
-  }
-
-  .featured-scroll-track--design .work-card {
-    flex: 0 0 240px;
+  .featured-scroll-btn {
+    display: none;
   }
 }
 
