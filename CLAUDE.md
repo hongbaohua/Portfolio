@@ -79,6 +79,63 @@ web/
 7. **設計成果排列**：使用 `.work-img-masonry`（CSS columns: 3）排列，避免不同比例圖片產生空白
 8. **平面設計合集特殊處理**：每個子類別（海報、廣告圖文等）需加 `.work-desc-block` 個別說明
 
+### 側欄欄位順序（統一規範，2026-04-28 訂定）
+
+**設計作品頁（work-*.html）側欄固定順序：**
+1. 返回作品列表（`.back-btn`）
+2. ─
+3. 作品類別
+4. ─
+5. 完成時間（系列頁用「開始時間」）
+6. ─
+7. 完成方式（`.work-badge--solo` 或 `--group`）
+8. ─
+9. 使用工具（如有，格式見下方 chip 規範）
+10. ─
+11. 核心說明（或「專案性質」等特殊欄位）
+12. ─
+13. 附件（如有）
+
+**AI 協作頁（ai-*.html）側欄固定順序：**
+1. 返回 AI 協作（`.back-btn`）
+2. ─
+3. 應用類型
+4. ─
+5. 完成時間 / 開始時間
+6. ─
+7. 使用工具（格式見下方 chip 規範）
+8. ─
+9. 技術架構（如有）
+10. ─
+11. 查看成果 / 外部連結（如有）
+
+### 使用工具 Chip 規範（2026-04-28 訂定）
+
+**格式：** 使用 `.work-info__chips` 容器包覆 `.work-info__chip` 標籤，每個 chip 顯示工具名稱（第一行）與用途（第二行）。
+
+```html
+<div class="work-info__chips">
+  <span class="work-info__chip work-info__chip--ai">
+    <span class="chip__head"><i class="fa-solid fa-robot" aria-hidden="true"></i>工具名稱</span>
+    <span class="chip__role">用途說明</span>
+  </span>
+</div>
+```
+
+**工具類型與樣式：**
+
+| 類型 | class 修飾 | 色調 | 適用工具範例 |
+|------|-----------|------|-------------|
+| 設計工具 | （無，預設金色） | 金色 | Photoshop、Illustrator、InDesign、Figma、剪映專業版 |
+| AI 工具 | `--ai` | 藍色 | ChatGPT、Gemini、Claude、SUNO、Runway、Felo、Google AI Studio |
+| 開發工具 | `--dev` | 青綠色 | Supabase、GitHub Pages、Obsidian、Vite、React |
+
+**規則：**
+- 每個 chip 必須有 `.chip__head`（icon + 工具名）和 `.chip__role`（用途說明）
+- 用途說明不超過 10 字，精準描述在這個作品中的具體用途
+- 不得省略 `chip__role`，沒有用途說明等於沒有意義
+- 設計作品中若有使用 AI 輔助，該 AI 工具必須標示 `--ai` 類型
+
 ---
 
 ## 字體大小規範（標準層級）

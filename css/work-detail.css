@@ -95,6 +95,10 @@
   align-self: start;
   position: sticky;
   top: calc(var(--nav-h) + 24px);
+  max-height: calc(100vh - var(--nav-h) - 48px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
 }
 
 .work-info__section {
@@ -124,27 +128,76 @@
 /* 工具 Chips（側欄使用工具列表） */
 .work-info__chips {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 6px;
   margin-top: 4px;
 }
 
+/* 預設：設計工具（金色調） */
 .work-info__chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
   font-size: 0.78rem;
   font-weight: 500;
-  color: var(--text-muted);
-  background: var(--bg-dark);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 3px 10px;
+  color: var(--accent-dark);
+  background: color-mix(in srgb, var(--accent-light) 15%, var(--bg));
+  border: 1px solid rgba(196, 163, 90, 0.35);
+  border-radius: var(--radius);
+  padding: 8px 12px;
 }
 
-.work-info__chip i {
+/* chip 頭部：icon + 工具名稱 */
+.work-info__chip .chip__head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.work-info__chip .chip__head i {
   font-size: 0.72rem;
   color: var(--accent-dark);
+}
+
+/* chip 用途說明（第二行） */
+.work-info__chip .chip__role {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  padding-left: 18px;
+  line-height: 1.4;
+}
+
+/* AI 工具 — 藍色調 */
+.work-info__chip--ai {
+  color: #4a6fa5;
+  background: rgba(90, 130, 196, 0.08);
+  border-color: rgba(90, 130, 196, 0.28);
+}
+
+.work-info__chip--ai .chip__head i {
+  color: #4a6fa5;
+}
+
+.work-info__chip--ai .chip__role {
+  color: rgba(74, 111, 165, 0.8);
+}
+
+/* 開發工具 — 青綠色調 */
+.work-info__chip--dev {
+  color: #2a8a72;
+  background: rgba(42, 138, 114, 0.08);
+  border-color: rgba(42, 138, 114, 0.28);
+}
+
+.work-info__chip--dev .chip__head i {
+  color: #2a8a72;
+}
+
+.work-info__chip--dev .chip__role {
+  color: rgba(42, 138, 114, 0.8);
 }
 
 /* 外連按鈕（Canva、heyzine 等） */
