@@ -826,12 +826,14 @@
   display: flex;
   gap: 28px;
   overflow-x: auto;
+  overflow-y: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
   scroll-snap-type: x proximity;
   -webkit-overflow-scrolling: touch;
   cursor: grab;
-  padding-bottom: 4px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .featured-scroll-track--cards::-webkit-scrollbar {

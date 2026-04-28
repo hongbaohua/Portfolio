@@ -408,6 +408,15 @@ document.addEventListener('DOMContentLoaded', () => {
     track.addEventListener('scroll', syncBtns, { passive: true });
     requestAnimationFrame(syncBtns);
 
+    // 滾輪：垂直轉水平
+    track.addEventListener('wheel', e => {
+      if (e.deltaY !== 0) {
+        e.preventDefault();
+        track.scrollLeft += e.deltaY;
+        syncBtns();
+      }
+    }, { passive: false });
+
     let isDown = false, startX = 0, startScrollLeft = 0;
     track.addEventListener('mousedown', e => {
       isDown = true;
