@@ -427,6 +427,33 @@
   border: none;
 }
 
+/* ── 文件導覽提示（iframe 上方） ── */
+.work-doc-hint {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  background: var(--bg-dark);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.work-doc-hint i {
+  color: var(--accent-dark);
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-size: 0.78rem;
+}
+
+.work-doc-hint strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
 /* ── 區塊標題 ── */
 .work-section-title {
   font-size: 1rem;
