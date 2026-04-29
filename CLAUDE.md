@@ -57,7 +57,7 @@ web/
 | `.reveal` + IntersectionObserver | `main.css` + `main.js` | 捲動進場，加 `data-delay` 可錯落 |
 | Hero 文字序列進場 | `index.css` | eyebrow(0.1s)→title(0.28s)→desc(0.46s)→cta(0.64s) 各自 fadeUp |
 | 捲動進度條 | `main.css` `.scroll-progress` + `main.js` | 頁頂 2px accent 線，`#scrollProgress`，隨捲動延伸 |
-| 滑鼠光暈 | `main.css` `.cursor-glow` + `main.js` | 移動時顯示，靜止 100ms 後同時縮小（scale 0.3）淡出 |
+| 滑鼠光暈 | `main.css` `.cursor-glow` + `main.js` | 移動時顯示，靜止 100ms 後同時縮小（scale 0.3）淡出；`z-index: 99999` 始終在最頂層 |
 | 圖片燈箱 | `main.js` 動態建立 | `.work-img-wrap img` 點擊放大，ESC 關閉 |
 | Work card hover | `works.css` | translateY(-6px) + shadow-lg + 圖片 scale(1.06) |
 | 按鈕 hover | `index.css` | translateY(-2px) |

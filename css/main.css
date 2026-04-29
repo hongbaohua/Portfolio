@@ -411,7 +411,7 @@ ul, ol {
   background: radial-gradient(circle, rgba(196, 163, 90, 0.45) 0%, rgba(196, 163, 90, 0) 100%);
   filter: blur(24px);
   pointer-events: none;
-  z-index: 0;
+  z-index: 99999;
   transform: translate(-50%, -50%) scale(1);
   opacity: 0;
   transition: left 0.1s ease, top 0.1s ease, opacity 0.3s ease, transform 0.3s ease;
