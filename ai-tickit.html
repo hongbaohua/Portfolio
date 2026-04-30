@@ -45,6 +45,7 @@
     <div class="container">
       <p class="section-label">AI Collaboration · Prompt Engineering · Web App 開發</p>
       <h1 class="work-hero__title">Tickit</h1>
+      <p class="work-hero__slogan">通往及格的通行證　<em>Just the ticket</em></p>
       <div class="work-hero__tags">
         <span class="work-hero-tag">#PromptEngineering</span>
         <span class="work-hero-tag">#HTML</span>
@@ -213,14 +214,21 @@
           </div>
 
 
-          <!-- ── Prompt 策略 ── -->
-          <h2 class="work-section-title">Prompt 策略：讓 Gemini 成為出題者</h2>
-
-          <div class="work-desc-block">
-            Gemini 出題的難點在於格式控制——題目、選項、答案、解析必須在同一份 Markdown 檔案中，格式嚴格符合 <code>parser.js</code> 的解析規則。第一次要求時格式不符（選項換行錯誤、分隔字串不一致），追加 Prompt 明確指定格式後才達標。Day 7 與 Day 12 刻意要求「將前期概念融合為商業情境題」，考驗情境理解而非單純記憶。
-          </div>
-
-          <pre class="work-code-block">【給 Gemini 的出題指令（節錄）】
+          <!-- ── Prompt 策略（可收合） ── -->
+          <details class="work-collapse">
+            <summary class="work-collapse__summary">
+              <div class="work-collapse__header">
+                <span class="work-collapse__bar"></span>
+                <h2 class="work-collapse__title">Prompt 策略：讓 Gemini 成為出題者</h2>
+                <i class="fa-solid fa-chevron-down work-collapse__chevron" aria-hidden="true"></i>
+              </div>
+              <p class="work-collapse__hint">設計出題格式規範，讓 Gemini 輸出符合 parser.js 嚴格解析要求的 Markdown 題庫。</p>
+            </summary>
+            <div class="work-collapse__body">
+              <div class="work-desc-block">
+                Gemini 出題的難點在於格式控制——題目、選項、答案、解析必須在同一份 Markdown 檔案中，格式嚴格符合 <code>parser.js</code> 的解析規則。第一次要求時格式不符（選項換行錯誤、分隔字串不一致），追加 Prompt 明確指定格式後才達標。Day 7 與 Day 12 刻意要求「將前期概念融合為商業情境題」，考驗情境理解而非單純記憶。
+              </div>
+              <pre class="work-code-block">【給 Gemini 的出題指令（節錄）】
 以下是「品牌企劃師初級」Day 1 的考試範圍：
 品牌相關知識 (一) - 品牌的定義、品牌元素選擇準則（意義性、保護性等）、設計概論與品牌視覺。
 
@@ -238,16 +246,25 @@
 
 1. (B) 解析說明...
 2. (A) 解析說明...</pre>
+            </div>
+          </details>
 
 
-          <!-- ── 架構開場白 ── -->
-          <h2 class="work-section-title">驅動 Claude Code 的架構開場白</h2>
-
-          <div class="work-desc-block">
-            給 Claude Code 的第一段 Prompt 是整個開發的起點，必須讓 AI 清楚理解需求邊界、技術選型與部署方式，才能避免後續大量修正。
-          </div>
-
-          <pre class="work-code-block">於 C:\Users\Master\Projects 建立資料夾 Tickit。
+          <!-- ── 架構開場白（可收合） ── -->
+          <details class="work-collapse">
+            <summary class="work-collapse__summary">
+              <div class="work-collapse__header">
+                <span class="work-collapse__bar"></span>
+                <h2 class="work-collapse__title">驅動 Claude Code 的架構開場白</h2>
+                <i class="fa-solid fa-chevron-down work-collapse__chevron" aria-hidden="true"></i>
+              </div>
+              <p class="work-collapse__hint">以完整的技術選型與三頁面需求說明作為起點，避免後續大量來回修正。</p>
+            </summary>
+            <div class="work-collapse__body">
+              <div class="work-desc-block">
+                給 Claude Code 的第一段 Prompt 是整個開發的起點，必須讓 AI 清楚理解需求邊界、技術選型與部署方式，才能避免後續大量修正。
+              </div>
+              <pre class="work-code-block">於 C:\Users\Master\Projects 建立資料夾 Tickit。
 目標：製作一個支援多使用者的線上測驗 Web App，
 題庫由 Obsidian 匯出的 Markdown 檔案管理，不定期更新。
 
@@ -259,6 +276,8 @@
 考生管理頁：過往測驗紀錄；弱點分析（依題型統計錯誤模式，提供強化建議）。
 
 完成後上傳 GitHub，部署至 GitHub Pages（靜態網站，docs/ 資料夾）。</pre>
+            </div>
+          </details>
 
 
           <!-- ── 三頁面功能架構 ── -->
@@ -323,38 +342,41 @@
           </div><!-- /三頁面 -->
 
 
-          <!-- ── 頁面截圖（補充中） ── -->
+          <!-- ── 頁面截圖 ── -->
           <h2 class="work-section-title">頁面截圖</h2>
 
-          <div class="work-doc-hint">
-            <i class="fa-solid fa-circle-info"></i>
-            <strong>截圖補充中</strong>　目前以功能開發為主，UI 設計版本尚未完成，頁面截圖將於近期更新。
+          <p class="work-section-subtitle">① 首頁</p>
+          <div class="work-img-scroll reveal">
+            <div class="work-img-wrap">
+              <img src="assets/images/Tickit/首頁_登入.jpg" alt="Tickit 首頁 — 用戶代號登入" loading="lazy" />
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Tickit/首頁_選擇主題、單元、練習模式.jpg" alt="Tickit 首頁 — 選擇主題、單元與練習模式" loading="lazy" />
+            </div>
           </div>
+          <p class="work-img-caption">左右滑動瀏覽・點擊可放大　｜　左：代號識別登入　右：主題 / 單元 / 練習模式三步驟設定</p>
 
-          <div class="work-img-grid-3">
-            <div class="work-img-wrap" style="min-height:180px; display:flex; align-items:center; justify-content:center;">
-              <div style="text-align:center; padding:32px 16px;">
-                <i class="fa-regular fa-image" style="font-size:2rem; color:var(--border); display:block; margin-bottom:10px;"></i>
-                <p style="font-size:0.78rem; color:var(--text-muted); margin:0 0 4px; font-weight:600;">① 首頁</p>
-                <p style="font-size:0.72rem; color:var(--text-muted); margin:0; opacity:0.6;">測驗設定</p>
-              </div>
+          <p class="work-section-subtitle">② 測驗頁</p>
+          <div class="work-img-scroll reveal">
+            <div class="work-img-wrap">
+              <img src="assets/images/Tickit/quiz_攻克模式_錯題再答.jpg" alt="Tickit 測驗頁 — 攻克模式錯題再答" loading="lazy" />
             </div>
-            <div class="work-img-wrap" style="min-height:180px; display:flex; align-items:center; justify-content:center;">
-              <div style="text-align:center; padding:32px 16px;">
-                <i class="fa-regular fa-image" style="font-size:2rem; color:var(--border); display:block; margin-bottom:10px;"></i>
-                <p style="font-size:0.78rem; color:var(--text-muted); margin:0 0 4px; font-weight:600;">② 測驗頁</p>
-                <p style="font-size:0.72rem; color:var(--text-muted); margin:0; opacity:0.6;">題目 + 成績</p>
-              </div>
-            </div>
-            <div class="work-img-wrap" style="min-height:180px; display:flex; align-items:center; justify-content:center;">
-              <div style="text-align:center; padding:32px 16px;">
-                <i class="fa-regular fa-image" style="font-size:2rem; color:var(--border); display:block; margin-bottom:10px;"></i>
-                <p style="font-size:0.78rem; color:var(--text-muted); margin:0 0 4px; font-weight:600;">③ 考生管理頁</p>
-                <p style="font-size:0.72rem; color:var(--text-muted); margin:0; opacity:0.6;">趨勢圖 + 弱點診斷</p>
-              </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Tickit/quiz_考後錯題題解（並可選擇查看所有題解）.jpg" alt="Tickit 測驗頁 — 考後成績與錯題解析" loading="lazy" />
             </div>
           </div>
-          <p class="work-img-caption">截圖補充後將直接替換佔位區塊</p>
+          <p class="work-img-caption">左右滑動瀏覽・點擊可放大　｜　左：攻克模式逐題作答　右：考後成績圓環 + 錯題解析</p>
+
+          <p class="work-section-subtitle">③ 考生管理頁</p>
+          <div class="work-img-scroll reveal">
+            <div class="work-img-wrap">
+              <img src="assets/images/Tickit/考生管理_回顧錯題.jpg" alt="Tickit 考生管理頁 — 測驗紀錄與回顧錯題" loading="lazy" />
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Tickit/考生管理_數據分析.jpg" alt="Tickit 考生管理頁 — 數據分析總覽" loading="lazy" />
+            </div>
+          </div>
+          <p class="work-img-caption">左右滑動瀏覽・點擊可放大　｜　左：測驗紀錄 + 回顧錯題展開　右：數據分析總覽</p>
 
 
           <!-- ── 開發挑戰一 ── -->
@@ -400,22 +422,43 @@
           <div class="work-table-wrap">
             <table class="work-table">
               <thead>
-                <tr><th>版本</th><th>主要更新</th></tr>
+                <tr><th>版本</th><th>重大改革</th></tr>
               </thead>
               <tbody>
-                <tr><td>v1.0</td><td>Streamlit 基本架構，SQLite 本地資料庫</td></tr>
-                <tr><td>v2.0</td><td>全面重設計 UI/UX（側欄導航、弱點診斷）</td></tr>
-                <tr><td>v2.1</td><td>改用 Supabase 雲端資料庫</td></tr>
-                <tr><td>v3.0</td><td>UI 完全重設計（深色側欄、線條色塊風格）</td></tr>
-                <tr><td>v3.1</td><td>修正隨機模式題號、承上題題組保護邏輯</td></tr>
+                <tr><td>v1.0</td><td>Python / Streamlit 初始架構，SQLite 本地資料庫</td></tr>
+                <tr><td>v2.1</td><td>改用 Supabase 雲端資料庫，實現跨裝置持久化</td></tr>
                 <tr><td><strong>v4.0</strong></td><td><strong>全面重構：Python/Streamlit → 純前端 HTML/CSS/JS + GitHub Pages</strong></td></tr>
-                <tr><td>v4.1</td><td>新增 ERP 軟體應用師配銷模組題庫（三單元）</td></tr>
-                <tr><td>v4.2</td><td>修正 parser.js 題號 regex bug（Q2 消失問題）</td></tr>
-                <tr><td>v4.3</td><td>品牌命名確認：Tickit；全站品牌化（✓ icon、漸層按鈕、卡片陰影）</td></tr>
-                <tr><td>v4.4</td><td>版面置中重構（layout max-width + sticky sidebar）；新增品牌企劃師 Day 9～12</td></tr>
+                <tr><td>v4.3</td><td>品牌命名確立：Tickit；全站品牌化（✓ icon、漸層按鈕、卡片陰影）</td></tr>
               </tbody>
             </table>
           </div>
+
+          <details class="work-collapse">
+            <summary class="work-collapse__summary">
+              <div class="work-collapse__header">
+                <span class="work-collapse__bar"></span>
+                <span class="work-collapse__title">展開完整版本歷史</span>
+                <i class="fa-solid fa-chevron-down work-collapse__chevron" aria-hidden="true"></i>
+              </div>
+              <p class="work-collapse__hint">UI 迭代、功能修正與版面優化（v2.0 ～ v4.4）</p>
+            </summary>
+            <div class="work-collapse__body">
+              <div class="work-table-wrap">
+                <table class="work-table">
+                  <thead>
+                    <tr><th>版本</th><th>更新內容</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>v2.0</td><td>全面重設計 UI/UX（側欄導航、弱點診斷介面）</td></tr>
+                    <tr><td>v3.0</td><td>UI 再次重設計（深色側欄、線條色塊風格）</td></tr>
+                    <tr><td>v3.1</td><td>修正隨機模式題號、承上題題組保護邏輯</td></tr>
+                    <tr><td>v4.2</td><td>修正 parser.js 題號 regex bug（Q2 消失問題）</td></tr>
+                    <tr><td>v4.4</td><td>版面置中重構（layout max-width + sticky sidebar）</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
 
 
           <!-- ── 考試成果 ── -->

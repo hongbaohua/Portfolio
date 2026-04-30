@@ -58,6 +58,20 @@
   line-height: 1.2;
 }
 
+/* 品牌 Slogan 副標（h1 正下方） */
+.work-hero__slogan {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 10px 0 0;
+  letter-spacing: 0.04em;
+}
+
+.work-hero__slogan em {
+  color: var(--accent-light);
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
 /* 標籤列 */
 .work-hero__tags {
   display: flex;
@@ -1426,4 +1440,84 @@
   .work-char-card--full {
     grid-column: auto;
   }
+}
+
+/* ────────────────────────────────────────────────
+   WORK COLLAPSE — 可收合內容區塊（<details>/<summary>）
+   ──────────────────────────────────────────────── */
+.work-collapse {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  overflow: hidden;
+}
+
+.work-collapse__summary {
+  display: block;
+  padding: 20px 24px;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  transition: background var(--transition);
+}
+
+.work-collapse__summary::-webkit-details-marker { display: none; }
+.work-collapse__summary::marker { content: none; }
+
+.work-collapse__summary:hover {
+  background: var(--bg-dark);
+}
+
+.work-collapse__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.work-collapse__bar {
+  width: 4px;
+  height: 18px;
+  background: var(--accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.work-collapse__title {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.work-collapse__chevron {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+details[open] .work-collapse__chevron {
+  transform: rotate(180deg);
+}
+
+.work-collapse__hint {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 7px 0 0 14px;
+  line-height: 1.6;
+}
+
+.work-collapse__body {
+  padding: 20px 24px 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.work-collapse__body .work-desc-block,
+.work-collapse__body .work-code-block {
+  margin-bottom: 0;
 }
