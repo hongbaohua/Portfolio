@@ -217,16 +217,8 @@
 
     .skill-item__bar {
       height: 4px;
-      background: rgba(0,0,0,0.08);
       border-radius: 2px;
-      overflow: hidden;
-    }
-
-    .skill-item__fill {
-      height: 4px;
-      background: var(--gold);
-      border-radius: 2px;
-      opacity: 0.85;
+      background: linear-gradient(to right, rgba(196,163,90,0.85) var(--w, 0%), rgba(0,0,0,0.08) var(--w, 0%));
     }
 
     /* 標籤式技能 */
@@ -573,23 +565,23 @@
       <div class="s-title">設計工具</div>
       <div class="skill-item">
         <div class="skill-item__label"><span>Adobe Illustrator</span><span>熟練</span></div>
-        <div class="skill-item__bar"><div class="skill-item__fill" style="width:75%"></div></div>
+        <div class="skill-item__bar" style="--w:75%"></div>
       </div>
       <div class="skill-item">
         <div class="skill-item__label"><span>Adobe Photoshop</span><span>熟練</span></div>
-        <div class="skill-item__bar"><div class="skill-item__fill" style="width:70%"></div></div>
+        <div class="skill-item__bar" style="--w:70%"></div>
       </div>
       <div class="skill-item">
         <div class="skill-item__label"><span>Canva</span><span>熟練</span></div>
-        <div class="skill-item__bar"><div class="skill-item__fill" style="width:65%"></div></div>
+        <div class="skill-item__bar" style="--w:65%"></div>
       </div>
       <div class="skill-item">
         <div class="skill-item__label"><span>Figma</span><span>基礎應用</span></div>
-        <div class="skill-item__bar"><div class="skill-item__fill" style="width:52%"></div></div>
+        <div class="skill-item__bar" style="--w:52%"></div>
       </div>
       <div class="skill-item">
         <div class="skill-item__label"><span>Adobe InDesign</span><span>基礎應用</span></div>
-        <div class="skill-item__bar"><div class="skill-item__fill" style="width:42%"></div></div>
+        <div class="skill-item__bar" style="--w:42%"></div>
       </div>
     </div>
 
@@ -609,10 +601,6 @@
     <!-- 證照 / 認證 -->
     <div class="s-section">
       <div class="s-title">證照 ／ 認證</div>
-      <div class="cert-item cert-item--highlight">
-        <strong>AI 新秀計畫</strong>
-        經濟部產業發展署 · 2025–2026
-      </div>
       <div class="cert-item">
         <strong>iPAS AI 應用規劃師</strong>
         經濟部 · 初級 · 2026
@@ -680,11 +668,10 @@
         </div>
         <div class="exp-item__company">華寶軒國際有限公司</div>
         <ul class="exp-item__desc">
-          <li>負責商品攝影及照片後製，維持各電商平台商品圖一致品質</li>
-          <li>執行商品上架作業，包含資料整理、貼標編號、庫存清點</li>
-          <li>協助揀貨、包裝與出貨等日常倉儲作業</li>
-          <li>發現倉儲缺乏管理系統，主動依商品種類重新分區並標號所有收納位置，建立 Excel 位置對照表，大幅減少揀貨時間</li>
-          <li>整合線上線下銷售紀錄至同一追蹤表，解決實體與電商同時販售時庫存對帳困難的問題</li>
+          <li>負責商品拍照、照片後製，並上架至各電商平台</li>
+          <li>逐件編號入庫、記錄品項描述與存放位置；接獲訂單後負責揀貨、包裝與出貨</li>
+          <li>主動建立倉儲分區與 Excel 位置對照表，減少揀貨時間</li>
+          <li>整合線上線下銷售紀錄，解決多通路庫存對帳問題</li>
         </ul>
       </div>
 
