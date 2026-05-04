@@ -282,7 +282,7 @@
 
           <!-- ── Tickit 核心功能介紹（使用者功能手冊） ── -->
           <h2 class="work-section-title">Tickit 核心功能介紹</h2>
-          <p class="work-section-subtitle">三大頁面 · 27 項功能完整手冊 — 從登入到精準備考，每一個工具的用途一覽無遺</p>
+          <p class="work-section-subtitle">三大頁面 · 功能完整手冊 — 從登入到精準備考，每一個工具的用途一覽無遺</p>
 
           <!-- App 頁面流程導覽 -->
           <div class="manual-app-nav reveal">
@@ -317,9 +317,8 @@
                 <h3 class="manual-page__title">
                   <i class="fa-solid fa-house" aria-hidden="true"></i>首頁
                 </h3>
-                <p class="manual-page__desc">登入身分 · 選擇範圍 · 設定模式 → 啟動練習</p>
+                <p class="manual-page__desc">Step 01 主題 → Step 02 單元 → Step 03 出題模式 → 開始測驗</p>
               </div>
-              <span class="manual-page__count">8 項功能</span>
             </div>
 
             <div class="manual-page__body">
@@ -336,7 +335,7 @@
                     </div>
                     <div class="manual-feature-item__body">
                       <h4 class="manual-feature-item__title">免密碼代號登入</h4>
-                      <p class="manual-feature-item__desc">輸入專屬代號即自動建立或關聯帳戶，免除記憶密碼的負擔，實現秒速登入。首次輸入自動開戶；再次輸入直接延續所有歷史紀錄。</p>
+                      <p class="manual-feature-item__desc">輸入專屬代號即可登入。若找到既有帳號直接進入；若代號不存在，系統詢問確認後建立新帳號，歷史紀錄同步延續。</p>
                     </div>
                   </div>
                   <div class="manual-feature-item">
@@ -344,17 +343,17 @@
                       <i class="fa-solid fa-users-gear"></i>
                     </div>
                     <div class="manual-feature-item__body">
-                      <h4 class="manual-feature-item__title">多使用者切換</h4>
-                      <p class="manual-feature-item__desc">支援多人共用同一平台，透過下拉選單即時切換身分。每位使用者的測驗紀錄、弱點數據各自獨立儲存，互不干擾。</p>
+                      <h4 class="manual-feature-item__title">多使用者共用平台</h4>
+                      <p class="manual-feature-item__desc">多人可共用同一個 Tickit 網址，以各自的代號登入，測驗紀錄與弱點數據完全獨立，不互相干擾。</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- 練習配置 -->
+              <!-- 題庫配置 -->
               <div class="manual-feature-group">
                 <div class="manual-group-label" style="border-left-color: var(--accent);">
-                  <i class="fa-solid fa-sliders" aria-hidden="true"></i> 練習配置
+                  <i class="fa-solid fa-sliders" aria-hidden="true"></i> 題庫配置（Step 01–02）
                 </div>
                 <div class="manual-feature-row">
                   <div class="manual-feature-item">
@@ -363,7 +362,7 @@
                     </div>
                     <div class="manual-feature-item__body">
                       <h4 class="manual-feature-item__title">主題選擇</h4>
-                      <p class="manual-feature-item__desc">選擇備考科目。目前支援「品牌企劃師初級」與「ERP 軟體應用師（SAP S/4HANA）」兩大主題，持續擴充中。</p>
+                      <p class="manual-feature-item__desc">選擇備考科目（目前：品牌企劃師初級、ERP 軟體應用師 SAP S/4HANA）。系統自動讀取 <code>manifest.json</code> 動態載入最新題庫，新增科目無需改程式碼。</p>
                     </div>
                   </div>
                   <div class="manual-feature-item">
@@ -371,59 +370,48 @@
                       <i class="fa-solid fa-list-check"></i>
                     </div>
                     <div class="manual-feature-item__body">
-                      <h4 class="manual-feature-item__title">單元多選混搭</h4>
-                      <p class="manual-feature-item__desc">打破傳統「逐章刷題」限制，可自由勾選單一或多個章節，實現跨單元的綜合練習，貼近真實考試出題方式。</p>
-                    </div>
-                  </div>
-                  <div class="manual-feature-item">
-                    <div class="manual-feature-item__icon" style="color: var(--accent);">
-                      <i class="fa-solid fa-calculator"></i>
-                    </div>
-                    <div class="manual-feature-item__body">
-                      <h4 class="manual-feature-item__title">即時題數統計</h4>
-                      <p class="manual-feature-item__desc">選定單元後，系統即時計算並顯示「當前選定範圍的可用總題數」，協助評估練習量，合理規劃備考時間。</p>
+                      <h4 class="manual-feature-item__title">單元多選混搭 + 全選</h4>
+                      <p class="manual-feature-item__desc">可自由勾選單一或多個章節進行跨單元練習，貼近真實考試出題方式。提供「全選」按鈕一鍵選取所有單元，並即時顯示可用總題數。</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- 出題模式 -->
+              <!-- 五大出題模式 -->
               <div class="manual-feature-group">
                 <div class="manual-group-label" style="border-left-color: var(--accent);">
-                  <i class="fa-solid fa-dumbbell" aria-hidden="true"></i> 出題模式
+                  <i class="fa-solid fa-dumbbell" aria-hidden="true"></i> 五大出題模式（Step 03）
                 </div>
-                <div class="manual-mode-compare">
-                  <div class="manual-mode-card">
-                    <div class="manual-mode-card__badge manual-mode-card__badge--full">完整挑戰</div>
-                    <div class="manual-mode-card__icon"><i class="fa-solid fa-infinity" style="color: var(--accent);"></i></div>
-                    <h4 class="manual-mode-card__title">全部題目練習</h4>
-                    <p class="manual-mode-card__desc">將選定範圍內的所有題目全數納入，適合深度複習，完整建立知識體系，無一遺漏。</p>
-                    <div class="manual-mode-card__tag"><i class="fa-solid fa-clock" aria-hidden="true"></i> 適合：系統性複習日</div>
+                <div class="manual-mode-grid">
+                  <div class="manual-mode-item">
+                    <div class="manual-mode-item__icon"><i class="fa-solid fa-infinity" style="color: var(--accent);"></i></div>
+                    <div class="manual-mode-item__badge manual-mode-item__badge--gold">全部題目</div>
+                    <h4 class="manual-mode-item__title">完整挑戰</h4>
+                    <p class="manual-mode-item__desc">選定範圍內所有題目全數納入，完整建立知識體系，無一遺漏。</p>
                   </div>
-                  <div class="manual-mode-card">
-                    <div class="manual-mode-card__badge manual-mode-card__badge--random">快速複習</div>
-                    <div class="manual-mode-card__icon"><i class="fa-solid fa-shuffle" style="color: #3d9fcc;"></i></div>
-                    <h4 class="manual-mode-card__title">隨機 N 題練習</h4>
-                    <p class="manual-mode-card__desc">輸入想要的題數（最少 5 題），系統隨機抽選，適合通勤、等待等零碎時間的高效備考衝刺。</p>
-                    <div class="manual-mode-card__tag"><i class="fa-solid fa-bolt" aria-hidden="true"></i> 適合：零碎時間衝刺</div>
+                  <div class="manual-mode-item">
+                    <div class="manual-mode-item__icon"><i class="fa-solid fa-shuffle" style="color: #3d9fcc;"></i></div>
+                    <div class="manual-mode-item__badge manual-mode-item__badge--blue">隨機抽取 N 題</div>
+                    <h4 class="manual-mode-item__title">快速複習</h4>
+                    <p class="manual-mode-item__desc">輸入任意題數（1–200），隨機抽選，適合零碎時間的備考衝刺。</p>
                   </div>
-                </div>
-              </div>
-
-              <!-- 系統機制 -->
-              <div class="manual-feature-group">
-                <div class="manual-group-label" style="border-left-color: var(--accent);">
-                  <i class="fa-solid fa-gear" aria-hidden="true"></i> 系統機制
-                </div>
-                <div class="manual-feature-row">
-                  <div class="manual-feature-item">
-                    <div class="manual-feature-item__icon" style="color: var(--accent);">
-                      <i class="fa-solid fa-arrows-rotate"></i>
-                    </div>
-                    <div class="manual-feature-item__body">
-                      <h4 class="manual-feature-item__title">題庫動態載入</h4>
-                      <p class="manual-feature-item__desc">自動讀取 <code>manifest.json</code> 取得最新題庫清單，新增題目或科目無需修改程式碼，擴充彈性且版本管理乾淨。</p>
-                    </div>
+                  <div class="manual-mode-item">
+                    <div class="manual-mode-item__icon"><i class="fa-solid fa-rotate-left" style="color: #e0641e;"></i></div>
+                    <div class="manual-mode-item__badge manual-mode-item__badge--orange">只練習錯題</div>
+                    <h4 class="manual-mode-item__title">錯題複習</h4>
+                    <p class="manual-mode-item__desc">從雲端自動抓取歷史上答過的錯題，專攻過去的弱點，不做無謂重複。</p>
+                  </div>
+                  <div class="manual-mode-item">
+                    <div class="manual-mode-item__icon"><i class="fa-solid fa-crosshairs" style="color: #ef4444;"></i></div>
+                    <div class="manual-mode-item__badge manual-mode-item__badge--red">攻克模式</div>
+                    <h4 class="manual-mode-item__title">答對才過關</h4>
+                    <p class="manual-mode-item__desc">答錯重練、答對才攻克，每題確認後立即顯示解析，直到全部掌握為止。</p>
+                  </div>
+                  <div class="manual-mode-item">
+                    <div class="manual-mode-item__icon"><i class="fa-solid fa-star" style="color: #f59e0b;"></i></div>
+                    <div class="manual-mode-item__badge manual-mode-item__badge--yellow">★ 標記題目</div>
+                    <h4 class="manual-mode-item__title">反覆練習</h4>
+                    <p class="manual-mode-item__desc">以攻克模式練習所有加星標記的題目，適合主觀判斷需反覆熟記的重點題。</p>
                   </div>
                 </div>
               </div>
@@ -440,16 +428,15 @@
                 <h3 class="manual-page__title">
                   <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>測驗頁
                 </h3>
-                <p class="manual-page__desc">沉浸作答 → 提交成績 → 即時解析回饋</p>
+                <p class="manual-page__desc">作答 → 提交 → 即時解析（一般 / 攻克 / 標記 三種體驗）</p>
               </div>
-              <span class="manual-page__count">11 項功能</span>
             </div>
 
             <div class="manual-page__body">
 
-              <!-- Phase: 作答中 -->
+              <!-- Phase: 作答中（一般模式） -->
               <div class="manual-phase-label">
-                <i class="fa-solid fa-pen" aria-hidden="true"></i> 作答中
+                <i class="fa-solid fa-pen" aria-hidden="true"></i> 作答中（一般 / 隨機 / 錯題 模式）
               </div>
 
               <div class="manual-feature-group">
@@ -463,7 +450,7 @@
                     </div>
                     <div class="manual-feature-item__body">
                       <h4 class="manual-feature-item__title">逐題單選作答</h4>
-                      <p class="manual-feature-item__desc">一次顯示一題，四個選項（A / B / C / D）點選即可作答，簡潔無干擾的介面讓視線聚焦在題目本身。</p>
+                      <p class="manual-feature-item__desc">一次顯示一題，四個選項（A / B / C / D）點選即可選擇，並可自由點擊「← 上一題 / 下一題 →」前後翻題，靈活作答。</p>
                     </div>
                   </div>
                   <div class="manual-feature-item">
@@ -471,8 +458,8 @@
                       <i class="fa-solid fa-bars-progress"></i>
                     </div>
                     <div class="manual-feature-item__body">
-                      <h4 class="manual-feature-item__title">動態進度條</h4>
-                      <p class="manual-feature-item__desc">頁面頂部配備動態進度條，即時反映作答進度，讓使用者隨時掌握節奏，了解目前做到第幾題、還剩多少。</p>
+                      <h4 class="manual-feature-item__title">動態進度條 + 題數顯示</h4>
+                      <p class="manual-feature-item__desc">頁面頂部動態進度條即時更新，同步顯示「Q{N} / 共 {總數} 題」題號標籤，以及「已作答 X / Y 題」計數，全程掌握節奏。</p>
                     </div>
                   </div>
                   <div class="manual-feature-item">
@@ -480,25 +467,44 @@
                       <i class="fa-solid fa-tag"></i>
                     </div>
                     <div class="manual-feature-item__body">
-                      <h4 class="manual-feature-item__title">動態題號標籤</h4>
-                      <p class="manual-feature-item__desc">清晰標示當前題號（如：第 3 題 / 共 15 題），並同步顯示該題所屬的單元名稱，讓使用者隨時了解知識範疇。</p>
+                      <h4 class="manual-feature-item__title">主題 / 單元標籤</h4>
+                      <p class="manual-feature-item__desc">每題旁同步顯示所屬「主題」與「單元」標籤，讓使用者隨時清楚這道題來自哪個知識範疇，防止迷失學習定位。</p>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              <div class="manual-feature-group">
-                <div class="manual-group-label" style="border-left-color: #5c7cfa;">
-                  <i class="fa-solid fa-shield-halved" aria-hidden="true"></i> 進階機制
-                </div>
-                <div class="manual-feature-row">
                   <div class="manual-feature-item">
                     <div class="manual-feature-item__icon" style="color: #5c7cfa;">
                       <i class="fa-solid fa-eye-slash"></i>
                     </div>
                     <div class="manual-feature-item__body">
                       <h4 class="manual-feature-item__title">無干擾作答模式</h4>
-                      <p class="manual-feature-item__desc">作答中完全不顯示對錯，避免「刷答」的心理干擾，真實模擬考場壓力與專注度，提升練習品質。</p>
+                      <p class="manual-feature-item__desc">作答中完全不顯示對錯，避免「刷答」的心理干擾，真實模擬考場壓力，提升練習品質。全部完成送出後才公布成績。</p>
+                    </div>
+                  </div>
+                  <div class="manual-feature-item">
+                    <div class="manual-feature-item__icon" style="color: #5c7cfa;">
+                      <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="manual-feature-item__body">
+                      <h4 class="manual-feature-item__title">☆ 題目標記書籤</h4>
+                      <p class="manual-feature-item__desc">每題右側有 ☆ 按鈕，點擊標記為 ★ 重點題，再點取消。標記儲存於 localStorage，作答完成後可從首頁選「★ 反覆練習標記題目」集中攻克。</p>
+                    </div>
+                  </div>
+                  <div class="manual-feature-item">
+                    <div class="manual-feature-item__icon" style="color: #5c7cfa;">
+                      <i class="fa-solid fa-comment-dots"></i>
+                    </div>
+                    <div class="manual-feature-item__body">
+                      <h4 class="manual-feature-item__title">情境題組上下文卡片</h4>
+                      <p class="manual-feature-item__desc">遇到情境題組（共用前提的連續題）時，系統自動在題目上方顯示「上一題情境」卡片，確保作答時有完整的情境脈絡參考。</p>
+                    </div>
+                  </div>
+                  <div class="manual-feature-item">
+                    <div class="manual-feature-item__icon" style="color: #5c7cfa;">
+                      <i class="fa-solid fa-floppy-disk"></i>
+                    </div>
+                    <div class="manual-feature-item__body">
+                      <h4 class="manual-feature-item__title">中斷恢復</h4>
+                      <p class="manual-feature-item__desc">作答進度即時自動儲存至 localStorage，若中途關閉或離開，下次進入同一場測驗時自動從中斷處繼續，不必從頭作答。</p>
                     </div>
                   </div>
                   <div class="manual-feature-item">
@@ -507,29 +513,77 @@
                     </div>
                     <div class="manual-feature-item__body">
                       <h4 class="manual-feature-item__title">題組保護邏輯</h4>
-                      <p class="manual-feature-item__desc">隨機模式下，「情境題」（前後有邏輯關聯的題組）不會被拆散，確保上下文完整，維持沉浸式的作答體驗。</p>
-                    </div>
-                  </div>
-                  <div class="manual-feature-item">
-                    <div class="manual-feature-item__icon" style="color: #5c7cfa;">
-                      <i class="fa-solid fa-crosshairs"></i>
-                    </div>
-                    <div class="manual-feature-item__body">
-                      <h4 class="manual-feature-item__title">攻克模式（錯題重測）</h4>
-                      <p class="manual-feature-item__desc">從「考生管理頁」針對過往某次測驗的錯題發起重測，進入攻克模式，強迫再次面對弱點，而非迴避。</p>
+                      <p class="manual-feature-item__desc">隨機抽題時，情境題（前後有邏輯關聯的題組）不會被拆散，確保上下文完整，維持沉浸式的作答體驗。</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- Phase: 提交後 -->
+              <!-- Phase: 攻克模式 -->
+              <div class="manual-phase-label">
+                <i class="fa-solid fa-crosshairs" aria-hidden="true"></i> 攻克 / 標記模式（攻克模式 · ★ 標記題目）
+              </div>
+
+              <div class="manual-feature-group">
+                <div class="manual-group-label" style="border-left-color: #ef4444;">
+                  <i class="fa-solid fa-repeat" aria-hidden="true"></i> 攻克機制
+                </div>
+
+                <!-- 攻克模式流程圖 -->
+                <div class="manual-mastery-loop">
+                  <div class="manual-mastery-loop__label">作答流程</div>
+                  <div class="manual-mastery-loop__row">
+                    <div class="manual-mastery-loop__step">顯示題目</div>
+                    <div class="manual-mastery-loop__arrow">→</div>
+                    <div class="manual-mastery-loop__step">選擇答案</div>
+                    <div class="manual-mastery-loop__arrow">→</div>
+                    <div class="manual-mastery-loop__step">確認 → 立即顯示解析</div>
+                    <div class="manual-mastery-loop__arrow">→</div>
+                    <div class="manual-mastery-loop__step manual-mastery-loop__step--correct">答對 ✓ → 攻克！</div>
+                    <div class="manual-mastery-loop__arrow">/</div>
+                    <div class="manual-mastery-loop__step manual-mastery-loop__step--wrong">答錯 ✗ → 4 題後重練</div>
+                  </div>
+                </div>
+
+                <div class="manual-feature-row">
+                  <div class="manual-feature-item">
+                    <div class="manual-feature-item__icon" style="color: #ef4444;">
+                      <i class="fa-solid fa-circle-dot"></i>
+                    </div>
+                    <div class="manual-feature-item__body">
+                      <h4 class="manual-feature-item__title">點陣進度視覺化</h4>
+                      <p class="manual-feature-item__desc">題數 ≤ 30 時，頂部顯示點陣圖：未攻克（灰）/ 當前（藍）/ 重練中（橙）/ 已攻克（綠），一眼看出剩餘狀況。</p>
+                    </div>
+                  </div>
+                  <div class="manual-feature-item">
+                    <div class="manual-feature-item__icon" style="color: #ef4444;">
+                      <i class="fa-solid fa-rotate-right"></i>
+                    </div>
+                    <div class="manual-feature-item__body">
+                      <h4 class="manual-feature-item__title">智慧重練佇列</h4>
+                      <p class="manual-feature-item__desc">答錯的題目自動插入目前位置後第 4 題處，讓記憶有短暫間隔後再挑戰，符合間隔重複學習原理，而非立即重複。</p>
+                    </div>
+                  </div>
+                  <div class="manual-feature-item">
+                    <div class="manual-feature-item__icon" style="color: #ef4444;">
+                      <i class="fa-solid fa-flag-checkered"></i>
+                    </div>
+                    <div class="manual-feature-item__body">
+                      <h4 class="manual-feature-item__title">攻克完成結算</h4>
+                      <p class="manual-feature-item__desc">全部攻克後顯示完成畫面，統計三項指標：攻克題數 / 重練次數 / 首次答對率，讓你清楚看見「真實掌握程度」。</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Phase: 提交後（一般模式） -->
               <div class="manual-phase-label manual-phase-label--result">
-                <i class="fa-solid fa-flag-checkered" aria-hidden="true"></i> 提交後
+                <i class="fa-solid fa-flag-checkered" aria-hidden="true"></i> 提交後（一般 / 隨機 / 錯題 模式）
               </div>
 
               <div class="manual-feature-group">
                 <div class="manual-group-label" style="border-left-color: #e0641e;">
-                  <i class="fa-solid fa-chart-pie" aria-hidden="true"></i> 成績與回饋
+                  <i class="fa-solid fa-chart-pie" aria-hidden="true"></i> 成績與解析
                 </div>
                 <div class="manual-feature-row">
                   <div class="manual-feature-item">
@@ -537,8 +591,8 @@
                       <i class="fa-solid fa-circle-half-stroke"></i>
                     </div>
                     <div class="manual-feature-item__body">
-                      <h4 class="manual-feature-item__title">即時成績圓環</h4>
-                      <p class="manual-feature-item__desc">提交後立即計算答對率，並以直觀的 SVG 圓環圖示呈現分數（如 80%），本次成效一眼即懂，直覺衝擊感強。</p>
+                      <h4 class="manual-feature-item__title">即時成績圓環 + 評等</h4>
+                      <p class="manual-feature-item__desc">提交後立即以 CSS conic-gradient 圓環圖呈現答對率，同步顯示「答對 / 答錯 / 評等（優秀 ≥80% / 加油 ≥60% / 需補強）」三項數據。</p>
                     </div>
                   </div>
                   <div class="manual-feature-item">
@@ -546,8 +600,8 @@
                       <i class="fa-solid fa-magnifying-glass-plus"></i>
                     </div>
                     <div class="manual-feature-item__body">
-                      <h4 class="manual-feature-item__title">錯題深度解析</h4>
-                      <p class="manual-feature-item__desc">答錯的題目自動展開詳細解析，包含正確答案說明。支援「一鍵展開所有解析」，進行全方位的知識點覆盤。</p>
+                      <h4 class="manual-feature-item__title">錯題解析 + 全題解析</h4>
+                      <p class="manual-feature-item__desc">答錯題目自動展開，顯示你的答案與正確答案對比，以及詳細解析文字。另有「查看所有題目解析」可手動展開，進行全方位覆盤。</p>
                     </div>
                   </div>
                   <div class="manual-feature-item">
@@ -555,8 +609,8 @@
                       <i class="fa-solid fa-triangle-exclamation"></i>
                     </div>
                     <div class="manual-feature-item__body">
-                      <h4 class="manual-feature-item__title">單次弱點智慧摘要</h4>
-                      <p class="manual-feature-item__desc">系統自動揪出本次練習中答對率低於 75% 的單元，以醒目警示呈現，精準指引課後加強方向，避免漫無目的複習。</p>
+                      <h4 class="manual-feature-item__title">本次弱點摘要</h4>
+                      <p class="manual-feature-item__desc">自動揪出本次答對率低於 75% 的單元，以「弱點卡」列出「答錯 X / Y 題」，並推薦優先複習的第一個弱點單元。</p>
                     </div>
                   </div>
                 </div>
@@ -574,12 +628,38 @@
                 <h3 class="manual-page__title">
                   <i class="fa-solid fa-chart-line" aria-hidden="true"></i>考生管理頁
                 </h3>
-                <p class="manual-page__desc">量化進步 · 診斷弱點 · 精準打擊盲點</p>
+                <p class="manual-page__desc">量化進步 · 多維診斷弱點 · 精準打擊盲點</p>
               </div>
-              <span class="manual-page__count">8 項功能</span>
             </div>
 
             <div class="manual-page__body">
+
+              <!-- 用戶查詢 -->
+              <div class="manual-feature-group">
+                <div class="manual-group-label" style="border-left-color: #00c8a5;">
+                  <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> 用戶查詢
+                </div>
+                <div class="manual-feature-row">
+                  <div class="manual-feature-item">
+                    <div class="manual-feature-item__icon" style="color: #00c8a5;">
+                      <i class="fa-solid fa-user-magnifying-glass"></i>
+                    </div>
+                    <div class="manual-feature-item__body">
+                      <h4 class="manual-feature-item__title">自動帶入 + 任意用戶查詢</h4>
+                      <p class="manual-feature-item__desc">已登入時自動帶入自己的帳號並載入數據；也可手動輸入其他用戶代號（支援 datalist 自動補全），查看任意考生的學習狀況，適合多人共備情境。</p>
+                    </div>
+                  </div>
+                  <div class="manual-feature-item">
+                    <div class="manual-feature-item__icon" style="color: #00c8a5;">
+                      <i class="fa-solid fa-table-columns"></i>
+                    </div>
+                    <div class="manual-feature-item__body">
+                      <h4 class="manual-feature-item__title">主題分頁切換（Tab）</h4>
+                      <p class="manual-feature-item__desc">有多個備考科目時，自動產生主題 Tab，切換分頁後所有分析圖表（KPI、趨勢圖、弱點診斷）即時同步更新為該主題的數據。</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <!-- 學習數據總覽 -->
               <div class="manual-feature-group">
@@ -604,7 +684,7 @@
                       <div class="manual-kpi-item__label">整體學習成效<br>趨勢一目了然</div>
                     </div>
                     <div class="manual-kpi-item">
-                      <div class="manual-kpi-item__value">累計總題數</div>
+                      <div class="manual-kpi-item__value">累計作答題數</div>
                       <div class="manual-kpi-item__label">練習量化指標<br>積累感受成長</div>
                     </div>
                     <div class="manual-kpi-item">
@@ -619,30 +699,30 @@
                     <i class="fa-solid fa-chart-line"></i>
                   </div>
                   <div class="manual-feature-item__body">
-                    <h4 class="manual-feature-item__title">視覺化成長曲線</h4>
-                    <p class="manual-feature-item__desc">透過 Chart.js 生成動態折線圖，追蹤每次測驗的歷史成績起伏。感受知識從零到熟的累積成就感，也清楚看見退步在哪、何時突破。</p>
+                    <h4 class="manual-feature-item__title">答對率趨勢折線圖</h4>
+                    <p class="manual-feature-item__desc">透過 Chart.js 生成動態折線圖，將每次測驗成績按時間序排列，感受知識累積的過程，清楚看見退步或突破發生在第幾次。需 2 次以上測驗才顯示。</p>
                   </div>
                 </div>
               </div>
 
-              <!-- 弱點診斷 -->
+              <!-- 多維弱點診斷 -->
               <div class="manual-feature-group">
                 <div class="manual-group-label" style="border-left-color: #00c8a5;">
-                  <i class="fa-solid fa-stethoscope" aria-hidden="true"></i> 弱點診斷
+                  <i class="fa-solid fa-stethoscope" aria-hidden="true"></i> 多維弱點診斷
                 </div>
 
                 <!-- 三色弱點診斷展示 -->
                 <div class="manual-weakness-showcase">
                   <div class="manual-weakness-header">
                     <i class="fa-solid fa-traffic-light" aria-hidden="true" style="color: #00c8a5;"></i>
-                    三色智慧弱點診斷
-                    <span class="manual-weakness-subtext">依單元歷史答對率自動配色分級</span>
+                    三色弱點診斷
+                    <span class="manual-weakness-subtext">依單元歷史答對率分級（每單元需 ≥ 3 次作答才計入）</span>
                   </div>
                   <div class="manual-weakness-tiers">
                     <div class="manual-weakness-tier manual-weakness-tier--good">
                       <span class="manual-weakness-tier__dot">●</span>
                       <div>
-                        <div class="manual-weakness-tier__label">優秀</div>
+                        <div class="manual-weakness-tier__label">掌握良好</div>
                         <div class="manual-weakness-tier__range">答對率 ≥ 80%</div>
                       </div>
                       <div class="manual-weakness-tier__action">持續保持</div>
@@ -650,7 +730,7 @@
                     <div class="manual-weakness-tier manual-weakness-tier--warn">
                       <span class="manual-weakness-tier__dot">●</span>
                       <div>
-                        <div class="manual-weakness-tier__label">待加強</div>
+                        <div class="manual-weakness-tier__label">尚可，繼續加強</div>
                         <div class="manual-weakness-tier__range">答對率 60–79%</div>
                       </div>
                       <div class="manual-weakness-tier__action">安排複習</div>
@@ -658,7 +738,7 @@
                     <div class="manual-weakness-tier manual-weakness-tier--bad">
                       <span class="manual-weakness-tier__dot">●</span>
                       <div>
-                        <div class="manual-weakness-tier__label">需補救</div>
+                        <div class="manual-weakness-tier__label">需要加強</div>
                         <div class="manual-weakness-tier__range">答對率 &lt; 60%</div>
                       </div>
                       <div class="manual-weakness-tier__action">優先攻克</div>
@@ -666,13 +746,24 @@
                   </div>
                 </div>
 
-                <div class="manual-feature-item">
-                  <div class="manual-feature-item__icon" style="color: #00c8a5;">
-                    <i class="fa-solid fa-lightbulb"></i>
+                <div class="manual-feature-row">
+                  <div class="manual-feature-item">
+                    <div class="manual-feature-item__icon" style="color: #00c8a5;">
+                      <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <div class="manual-feature-item__body">
+                      <h4 class="manual-feature-item__title">強化學習建議文字</h4>
+                      <p class="manual-feature-item__desc">診斷後自動產生建議：列出前 3 個弱點單元，提示「建議優先複習 X、Y、Z 等單元，可至首頁單獨選取這些單元進行針對性練習」。</p>
+                    </div>
                   </div>
-                  <div class="manual-feature-item__body">
-                    <h4 class="manual-feature-item__title">客製化強化學習建議</h4>
-                    <p class="manual-feature-item__desc">依各單元的答對率層級，自動提供客製化的強化學習建議文字，不只是數字，告訴你「接下來該怎麼做」。</p>
+                  <div class="manual-feature-item">
+                    <div class="manual-feature-item__icon" style="color: #00c8a5;">
+                      <i class="fa-solid fa-chart-bar"></i>
+                    </div>
+                    <div class="manual-feature-item__body">
+                      <h4 class="manual-feature-item__title">各單元答對率橫條圖</h4>
+                      <p class="manual-feature-item__desc">Chart.js 水平條形圖，將所有單元依答對率由低到高排列，條形顏色與三色診斷連動（紅 / 黃 / 綠），弱點單元一眼識別。</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -688,8 +779,8 @@
                       <i class="fa-solid fa-rectangle-list"></i>
                     </div>
                     <div class="manual-feature-item__body">
-                      <h4 class="manual-feature-item__title">完整歷史測驗紀錄</h4>
-                      <p class="manual-feature-item__desc">永久保留每一次測驗的完整足跡：日期、主題、單元、題數、成績，讓進步的軌跡有憑有據。</p>
+                      <h4 class="manual-feature-item__title">完整歷史測驗紀錄表</h4>
+                      <p class="manual-feature-item__desc">完整列表每次測驗的日期、主題、單元、答對數 / 總題數、答對率，並可展開「回顧錯題」，直接在表格內看到題目選項與解析。</p>
                     </div>
                   </div>
                   <div class="manual-feature-item">
@@ -697,17 +788,8 @@
                       <i class="fa-solid fa-ranking-star"></i>
                     </div>
                     <div class="manual-feature-item__body">
-                      <h4 class="manual-feature-item__title">高頻錯題排行榜</h4>
-                      <p class="manual-feature-item__desc">自動彙整所有紀錄中「答錯次數最多」的前 10 名題目，讓你優先解決最常掉入的陷阱，高效補強最薄弱環節。</p>
-                    </div>
-                  </div>
-                  <div class="manual-feature-item">
-                    <div class="manual-feature-item__icon" style="color: #00c8a5;">
-                      <i class="fa-solid fa-rotate-left"></i>
-                    </div>
-                    <div class="manual-feature-item__body">
-                      <h4 class="manual-feature-item__title">錯題重測（攻克模式）</h4>
-                      <p class="manual-feature-item__desc">從紀錄列表中選取任意一次測驗，針對其中的錯題發起重新挑戰，進入「攻克模式」，強制面對弱點，直到徹底掌握。</p>
+                      <h4 class="manual-feature-item__title">高頻錯題 Top 10</h4>
+                      <p class="manual-feature-item__desc">彙整所有作答紀錄，統計每道題的答錯次數，列出前 10 名最常答錯的題目，優先解決最頑固的盲點。</p>
                     </div>
                   </div>
                   <div class="manual-feature-item">
@@ -716,7 +798,7 @@
                     </div>
                     <div class="manual-feature-item__body">
                       <h4 class="manual-feature-item__title">雲端同步備份</h4>
-                      <p class="manual-feature-item__desc">所有測驗紀錄即時同步至 Supabase 雲端資料庫，更換裝置或清除瀏覽器快取，歷史紀錄依然完整保存，學習不中斷。</p>
+                      <p class="manual-feature-item__desc">所有測驗紀錄即時同步至 Supabase PostgreSQL 雲端資料庫，更換裝置或清除瀏覽器快取後登入同一代號，歷史紀錄完整延續。</p>
                     </div>
                   </div>
                 </div>
