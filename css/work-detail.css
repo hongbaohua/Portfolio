@@ -1884,6 +1884,26 @@ details[open] .work-collapse__chevron {
   background: rgba(201, 42, 42, 0.08);
 }
 
+/* ── Manual: Page Screenshot Panel ── */
+.manual-page__shots {
+  border-top: 1px solid var(--border);
+  padding: 16px 24px 20px;
+  background: var(--bg-dark);
+}
+.manual-shots__label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.manual-page__shots .work-img-scroll { margin-bottom: 0; }
+.manual-page__shots .work-img-caption { margin-top: 8px; margin-bottom: 0; }
+
 /* ── Manual: Five Mode Grid ── */
 .manual-mode-grid {
   display: grid;
