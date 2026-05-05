@@ -3,6 +3,10 @@
    涵蓋：導覽列捲動效果、漢堡選單、捲動進場動畫、active 標記
    ============================================================ */
 
+/* ── Build 版本（F12 Console 可見，用於確認 GitHub Pages 是否同步） ── */
+const BUILD_TIME = '2026-05-05 22:00';
+console.log('%c Portfolio Build: ' + BUILD_TIME, 'color: #C4A35A; font-weight: bold');
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ── 滑鼠光暈（有 #floatBg 的頁面自帶滑鼠效果，不需光暈） ── */
