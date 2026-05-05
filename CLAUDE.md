@@ -39,7 +39,7 @@ web/
 │   └── works.js            作品過濾功能
 └── assets/
     └── images/             圖片素材（logo、作品圖）
-                            ★ 需備妥：icon-192.png、icon-512.png（PWA App 圖示）
+                            ★ 已備妥：name_icon_192.png、name_icon_512.png（PWA App 圖示）
 ```
 
 ---
@@ -62,14 +62,14 @@ web/
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 <meta name="apple-mobile-web-app-title" content="Ivy Portfolio" />
-<link rel="apple-touch-icon" href="assets/images/icon-192.png" />
+<link rel="apple-touch-icon" href="assets/images/name_icon_192.png" />
 ```
 
 **App Icon 需求**（尚未備妥，需自行準備後放至 `assets/images/`）：
 | 檔名 | 尺寸 | 用途 |
 |------|------|------|
-| `icon-192.png` | 192×192 px | Android 主畫面圖示 |
-| `icon-512.png` | 512×512 px | 啟動畫面 / PWA 安裝 |
+| `name_icon_192.png` | 192×192 px | Android 主畫面圖示 ✅ 已備妥 |
+| `name_icon_512.png` | 512×512 px | 啟動畫面 / PWA 安裝 ✅ 已備妥 |
 
 **注意事項：**
 - `manifest.json` 已設定 `display: standalone`、`start_url: "./"` 及品牌金色 theme_color
