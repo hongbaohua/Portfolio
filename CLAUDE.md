@@ -209,7 +209,8 @@ web/
 任何對 web/ 內容的修改，完成後必須一併執行，不得落下：
 1. **更新 Obsidian MD 筆記**（`notes/網站架構/b.規劃/` 對應頁面）
 2. **更新本 CLAUDE.md**（若有結構、規範、頁面異動）
-3. **推上 GitHub**（git add → commit → push）
+3. **更新 `web/js/main.js` 的 `BUILD_TIME`**（格式 `'YYYY-MM-DD HH:mm'`，填當前時間）
+4. **推上 GitHub**（git add → commit → push）
 
 唯一例外：用戶明確說「先不要推」。
 
