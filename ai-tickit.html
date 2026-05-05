@@ -285,7 +285,7 @@
           <p class="work-section-subtitle">三大頁面 · 功能完整手冊 — 從登入到精準備考，每一個工具的用途一覽無遺</p>
 
           <!-- 功能頁籤導覽 -->
-          <div class="manual-tabs">
+          <div class="manual-tabs" id="manual-tabs-wrap">
           <div class="manual-tab-nav reveal">
             <button class="manual-tab-btn manual-tab-btn--p1 is-active" onclick="switchManualTab('p1')">
               <span class="manual-tab-btn__icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span>
@@ -811,17 +811,61 @@
               <p class="work-img-caption">左右滑動・點擊放大　｜　左：測驗紀錄 + 回顧錯題展開　右：數據分析總覽</p>
             </div><!-- /shots -->
           </div><!-- /panel-p3 -->
+          <!-- 浮動頁籤列（捲過頂端 tab 後顯示） -->
+          <div id="manualFloatTabs" class="manual-float-tabs" aria-hidden="true">
+            <button class="manual-float-btn manual-float-btn--p1 is-active" onclick="switchManualTab('p1',true)">
+              <i class="fa-solid fa-house" aria-hidden="true"></i>首頁
+            </button>
+            <button class="manual-float-btn manual-float-btn--p2" onclick="switchManualTab('p2',true)">
+              <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>測驗頁
+            </button>
+            <button class="manual-float-btn manual-float-btn--p3" onclick="switchManualTab('p3',true)">
+              <i class="fa-solid fa-chart-line" aria-hidden="true"></i>考生管理
+            </button>
+          </div>
+
           </div><!-- /manual-tabs -->
 
           <script>
-          function switchManualTab(id) {
+          function switchManualTab(id, scrollBack) {
             ['p1','p2','p3'].forEach(function(p) {
               document.getElementById('manual-panel-' + p).style.display = (p === id) ? '' : 'none';
               document.querySelectorAll('.manual-tab-btn--' + p).forEach(function(btn) {
                 btn.classList.toggle('is-active', p === id);
               });
+              document.querySelectorAll('.manual-float-btn--' + p).forEach(function(btn) {
+                btn.classList.toggle('is-active', p === id);
+              });
             });
+            if (scrollBack) {
+              var wrap = document.getElementById('manual-tabs-wrap');
+              if (wrap) wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
           }
+
+          // 控制浮動列顯示：tab-nav 捲出畫面後 + 整個區塊仍在視野內才顯示
+          (function() {
+            var floatBar = document.getElementById('manualFloatTabs');
+            var tabNav   = document.querySelector('.manual-tab-nav');
+            var wrap     = document.getElementById('manual-tabs-wrap');
+            var navHidden = false, wrapVisible = false;
+
+            function toggle() {
+              var show = navHidden && wrapVisible;
+              floatBar.classList.toggle('is-visible', show);
+              floatBar.setAttribute('aria-hidden', String(!show));
+            }
+
+            new IntersectionObserver(function(entries) {
+              navHidden = !entries[0].isIntersecting;
+              toggle();
+            }, { threshold: 0 }).observe(tabNav);
+
+            new IntersectionObserver(function(entries) {
+              wrapVisible = entries[0].isIntersecting;
+              toggle();
+            }, { threshold: 0 }).observe(wrap);
+          })();
           </script>
 
 
