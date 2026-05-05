@@ -462,3 +462,8 @@ document.addEventListener('DOMContentLoaded', () => {
 if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
   document.body.classList.add('pwa-standalone');
 }
+
+// Service Worker 註冊（Android Chrome PWA standalone 模式必要）
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
+}
