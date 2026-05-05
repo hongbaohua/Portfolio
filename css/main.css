@@ -459,6 +459,7 @@ ul, ol {
   }
 
   .nav__link {
+    display: block;
     width: 100%;
     padding: 18px 32px;
     font-size: 1rem;
