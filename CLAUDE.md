@@ -241,7 +241,7 @@ web/
 | work-ecdesign.html | ✅ 完成 | EC Design 電商設計練習系列頁（持續更新，初霧 Chūwù 為 No.01）|
 | ai-ecdesign.html | ✅ 完成 | AI 業主模擬練習系列頁（方法論＋各練習 AI 紀錄，持續更新）|
 | ai-pawket.html | ✅ 完成 | 喵喵財庫 Pawket 詳細頁（Prompt Engineering × App 開發，2026-04-18）|
-| ai-tickit.html | ✅ 完成 | Tickit 備考刷題 App 詳細頁（Prompt Engineering × Web App 開發，2026-04-27）|
+| ai-tickit.html | ✅ 完成 | Tickit 備考刷題 App 詳細頁（Prompt Engineering × Web App 開發，2026-04-27；2026-05-05 更新：v4.5～v4.7 版本歷史、開發挑戰三/四）|
 | resume.html | ✅ 完成 | A4 履歷（獨立頁面，不含 nav；2026-04-30 更新：新增 ERP 軟體應用師（配銷模組 SAP S/4HANA版）證照）|
 
 ### EC Design 系列頁新增練習 SOP
