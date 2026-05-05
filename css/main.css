@@ -452,8 +452,10 @@ ul, ol {
     display: flex;
   }
 
-  .nav__item {
+  .nav__links > li {
+    width: 100%;
     border-bottom: 1px solid var(--border);
+    position: relative;
   }
 
   .nav__link {
@@ -470,14 +472,9 @@ ul, ol {
     display: flex;
   }
 
-  .nav__item {
-    width: 100%;
-    flex-wrap: wrap;
-    position: relative;
-  }
-
   /* 有下拉選單的 li：link 與 caret 並排，各自獨立點擊區域 */
   .nav__item--has-dropdown {
+    flex-wrap: wrap;
     align-items: stretch;
   }
 
