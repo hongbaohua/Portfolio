@@ -156,8 +156,8 @@
             <a href="#section-flow"       class="work-outline__item">開發流程</a>
             <a href="#section-role"       class="work-outline__item">我的職責</a>
             <a href="#section-features"   class="work-outline__item">核心功能</a>
-            <a href="#section-challenge"  class="work-outline__item">開發挑戰</a>
             <a href="#section-db"         class="work-outline__item">資料庫結構</a>
+            <a href="#section-challenge"  class="work-outline__item">開發挑戰</a>
             <a href="#section-versions"   class="work-outline__item">版本迭代</a>
             <a href="#section-reflection" class="work-outline__item">過程反思</a>
           </nav>
@@ -894,6 +894,23 @@
 
 
 
+          <!-- ── 資料庫結構 ── -->
+          <h2 id="section-db" class="work-section-title">資料庫結構（Supabase / PostgreSQL）</h2>
+
+          <div class="work-table-wrap">
+            <table class="work-table">
+              <thead>
+                <tr><th>資料表</th><th>欄位</th><th>說明</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>users</td><td>id、name（唯一）、created_at</td><td>考生帳號，代號識別</td></tr>
+                <tr><td>quiz_sessions</td><td>id、user_id（FK）、topic、units（JSON）、total_questions、correct_count、taken_at</td><td>每次測驗紀錄</td></tr>
+                <tr><td>question_results</td><td>id、session_id（FK）、question_id、topic、unit、is_correct、user_answer、correct_answer</td><td>逐題作答紀錄；question_id 格式：主題__Day_N__題號</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+
           <!-- ── 開發挑戰 ── -->
           <h2 id="section-challenge" class="work-section-title">開發挑戰</h2>
 
@@ -951,23 +968,6 @@
               </div>
             </div>
 
-          </div>
-
-
-          <!-- ── 資料庫結構 ── -->
-          <h2 id="section-db" class="work-section-title">資料庫結構（Supabase / PostgreSQL）</h2>
-
-          <div class="work-table-wrap">
-            <table class="work-table">
-              <thead>
-                <tr><th>資料表</th><th>欄位</th><th>說明</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>users</td><td>id、name（唯一）、created_at</td><td>考生帳號，代號識別</td></tr>
-                <tr><td>quiz_sessions</td><td>id、user_id（FK）、topic、units（JSON）、total_questions、correct_count、taken_at</td><td>每次測驗紀錄</td></tr>
-                <tr><td>question_results</td><td>id、session_id（FK）、question_id、topic、unit、is_correct、user_answer、correct_answer</td><td>逐題作答紀錄；question_id 格式：主題__Day_N__題號</td></tr>
-              </tbody>
-            </table>
           </div>
 
 
