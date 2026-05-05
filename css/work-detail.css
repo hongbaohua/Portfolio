@@ -2003,7 +2003,7 @@ details[open] .work-collapse__chevron {
   display: flex;
   align-items: center;
   gap: 6px;
-  margin: 0 0 12px 0;
+  margin: 10px 0 16px 0;
 }
 .manual-tab-tip i { color: var(--accent); }
 .manual-tab-nav {
@@ -2164,8 +2164,23 @@ details[open] .work-collapse__chevron {
 /* Manual Responsive */
 @media (max-width: 680px) {
   .manual-tab-nav {
-    flex-direction: column;
-    gap: 8px;
+    gap: 6px;
+  }
+  .manual-tab-btn {
+    padding: 10px 6px;
+    gap: 3px;
+  }
+  .manual-tab-btn__sub {
+    display: none;
+  }
+  .manual-tab-btn__name {
+    font-size: 0.875rem;
+  }
+  .manual-tab-btn__num {
+    font-size: 0.65rem;
+  }
+  .manual-tab-btn__icon {
+    font-size: 1.1rem;
   }
   .manual-app-nav {
     flex-direction: column;
