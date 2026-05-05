@@ -135,14 +135,26 @@
         <!-- ── 右側內容區 ── -->
         <div class="work-gallery">
 
+          <nav class="work-outline" aria-label="頁面大綱">
+            <a href="#section-intro"      class="work-outline__item">作品簡介</a>
+            <a href="#section-prompt"     class="work-outline__item">Prompt 策略</a>
+            <a href="#section-arch"       class="work-outline__item">功能架構決策</a>
+            <a href="#section-formula"    class="work-outline__item">核心公式</a>
+            <a href="#section-pages"      class="work-outline__item">三頁面架構</a>
+            <a href="#section-gallery"    class="work-outline__item">App 截圖</a>
+            <a href="#section-challenge"  class="work-outline__item">開發挑戰</a>
+            <a href="#section-gap"        class="work-outline__item">設計 vs 實作</a>
+            <a href="#section-reflection" class="work-outline__item">過程反思</a>
+          </nav>
+
           <!-- 簡介 -->
-          <div class="work-desc-block">
+          <div id="section-intro" class="work-desc-block">
             Pawket（喵喵財庫）是一個以貓咪為主題的財務管理 Web App，從無到有全程以 Prompt Engineering 驅動開發。整個過程分為三個階段：先以「30年投資理財專家」角色引導 Gemini 透過 16 輪問答完成功能架構決策，再以「20年 UI/UX 設計師」角色制定貓咪主題視覺規範，最後將完整規格 Prompt 交付 Google AI Studio 生成程式碼。App 整合 Gemini API 實現帳單 OCR 辨識，以吉祥物 Meowney 作為財務健康情緒指標。
           </div>
 
 
           <!-- ── Prompt 工程設計策略 ── -->
-          <h2 class="work-section-title">Prompt 工程設計策略</h2>
+          <h2 id="section-prompt" class="work-section-title">Prompt 工程設計策略</h2>
 
           <div class="work-desc-block">
             <strong>角色設定：讓 AI 成為領域專家</strong><br /><br />
@@ -171,7 +183,7 @@
 
 
           <!-- ── 16 個架構決策 ── -->
-          <h2 class="work-section-title">16 個功能架構決策</h2>
+          <h2 id="section-arch" class="work-section-title">16 個功能架構決策</h2>
 
           <div class="work-table-wrap">
             <table class="work-table">
@@ -206,7 +218,7 @@
 
 
           <!-- ── 核心公式設計 ── -->
-          <h2 class="work-section-title">核心公式：動態時間加權警示</h2>
+          <h2 id="section-formula" class="work-section-title">核心公式：動態時間加權警示</h2>
 
           <div class="work-desc-block">
             由 Gemini 理財專家角色設計，這個公式解決了傳統記帳 App「月底才知道超支」的問題。以當月已過天數為基準，即時推算消費速率是否超出預算節奏。
@@ -224,7 +236,7 @@
 
 
           <!-- ── App 功能概覽 ── -->
-          <h2 class="work-section-title">App 三頁面架構</h2>
+          <h2 id="section-pages" class="work-section-title">App 三頁面架構</h2>
 
           <div class="work-desc-block">
             <strong>① 貓咪指揮中心（Dashboard）</strong><br /><br />
@@ -243,7 +255,7 @@
 
 
           <!-- ── App 截圖（AI Studio 原始版本） ── -->
-          <h2 class="work-section-title">App 截圖（Google AI Studio 原始版本）</h2>
+          <h2 id="section-gallery" class="work-section-title">App 截圖（Google AI Studio 原始版本）</h2>
 
           <div class="work-desc-block">
             以下為 Google AI Studio 生成完成後的實際畫面。由於 AI Studio 無法匯入自訂圖片，Meowney 吉祥物以 Lucide icon 代替，但整體功能架構與 Prompt Engineering 規格已完整呈現。
@@ -292,7 +304,7 @@
 
 
           <!-- ── 開發挑戰與版本演進 ── -->
-          <h2 class="work-section-title">開發挑戰：AI Studio 的無法復原限制</h2>
+          <h2 id="section-challenge" class="work-section-title">開發挑戰：AI Studio 的無法復原限制</h2>
 
           <div class="work-desc-block">
             Google AI Studio 的對話是覆蓋式的——每次修改都直接覆蓋前一次的程式碼，沒有 Undo。這導致「修好一個功能，後續對話又把其他功能改壞」的情況反覆發生。應對策略是在每次重大修改前手動另存一個新版本資料夾，最終累積了 9 個版本。
@@ -320,7 +332,7 @@
 
 
           <!-- ── 設計原意 vs 實作落差 ── -->
-          <h2 class="work-section-title">設計原意 vs 實作落差</h2>
+          <h2 id="section-gap" class="work-section-title">設計原意 vs 實作落差</h2>
 
           <div class="work-desc-block">
             AI Studio 的技術限制造成部分原始設計未能實現，以下是誠實的記錄：
@@ -358,7 +370,7 @@
 
 
           <!-- ── 過程反思 ── -->
-          <h2 class="work-section-title">過程反思</h2>
+          <h2 id="section-reflection" class="work-section-title">過程反思</h2>
 
           <div class="work-desc-block">
             這個專案最大的收穫是驗證了「Prompt Engineering 作為產品設計方法」的可行性——透過角色設定和問答式推進，讓 AI 扮演理財專家完成了一份紮實的功能規格書，而不是讓設計師憑空想像功能需求。16 個決策點的問答過程，其實就是一份結構化的產品思維文件。<br /><br />

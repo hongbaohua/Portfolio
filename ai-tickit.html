@@ -142,14 +142,26 @@
         <!-- ── 右側內容區 ── -->
         <div class="work-gallery">
 
+          <nav class="work-outline" aria-label="頁面大綱">
+            <a href="#section-intro"      class="work-outline__item">作品簡介</a>
+            <a href="#section-flow"       class="work-outline__item">開發流程</a>
+            <a href="#section-role"       class="work-outline__item">我的職責</a>
+            <a href="#section-features"   class="work-outline__item">核心功能</a>
+            <a href="#section-challenge"  class="work-outline__item">開發挑戰</a>
+            <a href="#section-db"         class="work-outline__item">資料庫結構</a>
+            <a href="#section-versions"   class="work-outline__item">版本迭代</a>
+            <a href="#section-result"     class="work-outline__item">考試成果</a>
+            <a href="#section-reflection" class="work-outline__item">過程反思</a>
+          </nav>
+
           <!-- 簡介 -->
-          <div class="work-desc-block">
+          <div id="section-intro" class="work-desc-block">
             Tickit（通往及格的通行證）是一個為備考「品牌企劃師初級」自製的線上刷題 Web App，後擴充至 ERP 軟體應用師。先以 Prompt Engineering 引導 Gemini 以嚴格 Markdown 格式生成題目與解析，再以完整架構規劃驅動 Claude Code 開發純前端應用。平台支援多使用者識別、主題與單元混搭出題、隨機抽題（含題組保護邏輯），完成後公布成績並自動分析弱點，所有紀錄永久保存於 Supabase 雲端資料庫。
           </div>
 
 
           <!-- ── 開發工作流程 ── -->
-          <h2 class="work-section-title">開發工作流程</h2>
+          <h2 id="section-flow" class="work-section-title">開發工作流程</h2>
 
           <div class="work-flow">
             <div class="work-flow__step">
@@ -185,7 +197,7 @@
 
 
           <!-- ── 我的角色 vs AI ── -->
-          <h2 class="work-section-title">我在這個專案中做了什麼</h2>
+          <h2 id="section-role" class="work-section-title">我在這個專案中做了什麼</h2>
 
           <div class="work-ai-split">
             <div class="work-ai-split__col work-ai-split__col--human">
@@ -281,7 +293,7 @@
 
 
           <!-- ── Tickit 核心功能介紹（使用者功能手冊） ── -->
-          <h2 class="work-section-title">Tickit 核心功能介紹</h2>
+          <h2 id="section-features" class="work-section-title">Tickit 核心功能介紹</h2>
           <p class="work-section-subtitle">三大頁面 · 功能完整手冊 — 從登入到精準備考，每一個工具的用途一覽無遺</p>
 
           <!-- 功能頁籤導覽 -->
@@ -875,7 +887,7 @@
 
 
           <!-- ── 開發挑戰一 ── -->
-          <h2 class="work-section-title">開發挑戰一：Parser Regex Bug</h2>
+          <h2 id="section-challenge" class="work-section-title">開發挑戰一：Parser Regex Bug</h2>
 
           <div class="work-desc-block">
             <strong>問題：Q2 整題從測驗中消失。</strong><br /><br />
@@ -895,7 +907,7 @@
 
 
           <!-- ── 資料庫結構 ── -->
-          <h2 class="work-section-title">資料庫結構（Supabase / PostgreSQL）</h2>
+          <h2 id="section-db" class="work-section-title">資料庫結構（Supabase / PostgreSQL）</h2>
 
           <div class="work-table-wrap">
             <table class="work-table">
@@ -912,7 +924,7 @@
 
 
           <!-- ── 版本迭代 ── -->
-          <h2 class="work-section-title">版本迭代紀錄</h2>
+          <h2 id="section-versions" class="work-section-title">版本迭代紀錄</h2>
 
           <div class="work-table-wrap">
             <table class="work-table">
@@ -957,7 +969,7 @@
 
 
           <!-- ── 考試成果 ── -->
-          <h2 class="work-section-title">考試成果</h2>
+          <h2 id="section-result" class="work-section-title">考試成果</h2>
 
           <div class="work-desc-block">
             2026 年 4 月，以 Tickit 刷題備考後，正式通過「ERP 軟體應用師 — 配銷模組（SAP S/4HANA版）」認證考試（中華企業資源規劃學會頒發）。從自製備考工具到取得認證，Tickit 完成了它最初被建造的任務。
@@ -965,7 +977,7 @@
 
 
           <!-- ── 過程反思 ── -->
-          <h2 class="work-section-title">過程反思</h2>
+          <h2 id="section-reflection" class="work-section-title">過程反思</h2>
 
           <div class="work-desc-block">
             這個專案最大的收穫是親身體驗了「設計師如何用 AI 工具完成一個完整的軟體產品」——從需求定義、Prompt 策略、架構規劃，到每輪迭代的問題排查，都需要清晰的系統思維，而不只是會下指令。<br /><br />

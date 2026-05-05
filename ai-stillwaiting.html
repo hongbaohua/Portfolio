@@ -132,8 +132,15 @@
         <!-- ── 右側內容區 ── -->
         <div class="work-gallery">
 
+          <nav class="work-outline" aria-label="頁面大綱">
+            <a href="#section-intro"      class="work-outline__item">作品簡介</a>
+            <a href="#section-prompt"     class="work-outline__item">工具與 Prompt</a>
+            <a href="#section-process"    class="work-outline__item">溝通調整</a>
+            <a href="#section-reflection" class="work-outline__item">過程反思</a>
+          </nav>
+
           <!-- 簡介 -->
-          <div class="work-desc-block">
+          <div id="section-intro" class="work-desc-block">
             「仍在等」是一首以「等公車」為主題的文言風流行抒情曲。創作過程以 ChatGPT 模擬方文山詞風產出歌詞，透過 4 輪溝通調整後，將歌詞與英文曲風 prompt 投入 SUNO v4.5 生成音樂；影像部分使用 Gemini 生成圖像、Runway Gen-4 生成動態影片片段，最後以剪映專業版剪輯合成並上傳 YouTube。整個流程橫跨 5 種 AI 工具，展示跨工具協作的完整影音創作鏈。
           </div>
 
@@ -149,7 +156,7 @@
 
 
           <!-- ── 工具與 Prompt 設計 ── -->
-          <h2 class="work-section-title">工具與 Prompt 設計</h2>
+          <h2 id="section-prompt" class="work-section-title">工具與 Prompt 設計</h2>
 
           <div class="work-desc-block">
             <strong>ChatGPT — 歌詞創作</strong><br /><br />
@@ -183,7 +190,7 @@ traditional-modern fusion</pre>
 
 
           <!-- ── 溝通調整過程 ── -->
-          <h2 class="work-section-title">溝通調整過程</h2>
+          <h2 id="section-process" class="work-section-title">溝通調整過程</h2>
 
           <div class="work-table-wrap">
             <table class="work-table">
@@ -226,7 +233,7 @@ traditional-modern fusion</pre>
 
 
           <!-- ── 過程反思 ── -->
-          <h2 class="work-section-title">過程反思</h2>
+          <h2 id="section-reflection" class="work-section-title">過程反思</h2>
 
           <div class="work-desc-block">
             這次最大的收穫是體驗了「跨工具串接」的完整創作流程——從文字到音樂到影像，每一段都由不同的 AI 工具負責，而這些工具之間的承接需要人去翻譯和轉化（例如把歌詞意境轉成 SUNO 的英文曲風描述）。這個「翻譯」環節才是最需要設計感的地方。<br /><br />
