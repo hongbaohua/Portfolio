@@ -284,43 +284,32 @@
           <h2 class="work-section-title">Tickit 核心功能介紹</h2>
           <p class="work-section-subtitle">三大頁面 · 功能完整手冊 — 從登入到精準備考，每一個工具的用途一覽無遺</p>
 
-          <!-- App 頁面流程導覽 -->
-          <div class="manual-app-nav reveal">
-            <div class="manual-app-nav__item manual-app-nav__item--p1">
-              <div class="manual-app-nav__icon"><i class="fa-solid fa-house" aria-hidden="true"></i></div>
-              <div class="manual-app-nav__num">PAGE 01</div>
-              <div class="manual-app-nav__name">首頁</div>
-              <div class="manual-app-nav__sub">識別 · 配置 · 啟動</div>
-            </div>
-            <i class="fa-solid fa-arrow-right manual-app-nav__arrow" aria-hidden="true"></i>
-            <div class="manual-app-nav__item manual-app-nav__item--p2">
-              <div class="manual-app-nav__icon"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i></div>
-              <div class="manual-app-nav__num">PAGE 02</div>
-              <div class="manual-app-nav__name">測驗頁</div>
-              <div class="manual-app-nav__sub">作答 · 提交 · 解析</div>
-            </div>
-            <i class="fa-solid fa-arrow-right manual-app-nav__arrow" aria-hidden="true"></i>
-            <div class="manual-app-nav__item manual-app-nav__item--p3">
-              <div class="manual-app-nav__icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
-              <div class="manual-app-nav__num">PAGE 03</div>
-              <div class="manual-app-nav__name">考生管理</div>
-              <div class="manual-app-nav__sub">數據 · 診斷 · 成長</div>
-            </div>
+          <!-- 功能頁籤導覽 -->
+          <div class="manual-tabs">
+          <div class="manual-tab-nav reveal">
+            <button class="manual-tab-btn manual-tab-btn--p1 is-active" onclick="switchManualTab('p1')">
+              <span class="manual-tab-btn__icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span>
+              <span class="manual-tab-btn__num">PAGE 01</span>
+              <span class="manual-tab-btn__name">首頁</span>
+              <span class="manual-tab-btn__sub">識別 · 配置 · 啟動</span>
+            </button>
+            <button class="manual-tab-btn manual-tab-btn--p2" onclick="switchManualTab('p2')">
+              <span class="manual-tab-btn__icon"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i></span>
+              <span class="manual-tab-btn__num">PAGE 02</span>
+              <span class="manual-tab-btn__name">測驗頁</span>
+              <span class="manual-tab-btn__sub">作答 · 提交 · 解析</span>
+            </button>
+            <button class="manual-tab-btn manual-tab-btn--p3" onclick="switchManualTab('p3')">
+              <span class="manual-tab-btn__icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></span>
+              <span class="manual-tab-btn__num">PAGE 03</span>
+              <span class="manual-tab-btn__name">考生管理</span>
+              <span class="manual-tab-btn__sub">數據 · 診斷 · 成長</span>
+            </button>
           </div>
 
 
-          <!-- ───────── PAGE 01：首頁 ───────── -->
-          <div class="manual-page manual-page--p1 reveal">
-            <div class="manual-page__header">
-              <div class="manual-page__num">PAGE 01</div>
-              <div class="manual-page__title-wrap">
-                <h3 class="manual-page__title">
-                  <i class="fa-solid fa-house" aria-hidden="true"></i>首頁
-                </h3>
-                <p class="manual-page__desc">Step 01 主題 → Step 02 單元 → Step 03 出題模式 → 開始測驗</p>
-              </div>
-            </div>
-
+          <!-- ───────── PANEL 01：首頁 ───────── -->
+          <div id="manual-panel-p1" class="manual-panel manual-panel--p1">
             <div class="manual-page__body">
 
               <!-- 身分識別 -->
@@ -419,7 +408,7 @@
             </div><!-- /manual-page__body -->
             <div class="manual-page__shots">
               <div class="manual-shots__label"><i class="fa-solid fa-camera" aria-hidden="true"></i> 頁面截圖</div>
-              <div class="work-img-scroll reveal">
+              <div class="work-img-scroll">
                 <div class="work-img-wrap">
                   <img src="assets/images/Tickit/首頁_登入.jpg" alt="Tickit 首頁 — 用戶代號登入" loading="lazy" />
                 </div>
@@ -429,21 +418,11 @@
               </div>
               <p class="work-img-caption">左右滑動・點擊放大　｜　左：代號識別登入　右：主題 / 單元 / 五大模式三步驟設定</p>
             </div><!-- /shots -->
-          </div><!-- /PAGE 01 -->
+          </div><!-- /panel-p1 -->
 
 
-          <!-- ───────── PAGE 02：測驗頁 ───────── -->
-          <div class="manual-page manual-page--p2 reveal">
-            <div class="manual-page__header">
-              <div class="manual-page__num">PAGE 02</div>
-              <div class="manual-page__title-wrap">
-                <h3 class="manual-page__title">
-                  <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>測驗頁
-                </h3>
-                <p class="manual-page__desc">作答 → 提交 → 即時解析（一般 / 攻克 / 標記 三種體驗）</p>
-              </div>
-            </div>
-
+          <!-- ───────── PANEL 02：測驗頁 ───────── -->
+          <div id="manual-panel-p2" class="manual-panel manual-panel--p2" style="display:none;">
             <div class="manual-page__body">
 
               <!-- Phase: 作答中（一般模式） -->
@@ -631,7 +610,7 @@
             </div><!-- /manual-page__body -->
             <div class="manual-page__shots">
               <div class="manual-shots__label"><i class="fa-solid fa-camera" aria-hidden="true"></i> 頁面截圖</div>
-              <div class="work-img-scroll reveal">
+              <div class="work-img-scroll">
                 <div class="work-img-wrap">
                   <img src="assets/images/Tickit/quiz_攻克模式_錯題再答.jpg" alt="Tickit 測驗頁 — 攻克模式錯題再答" loading="lazy" />
                 </div>
@@ -641,21 +620,11 @@
               </div>
               <p class="work-img-caption">左右滑動・點擊放大　｜　左：攻克模式逐題作答　右：考後成績圓環 + 錯題解析</p>
             </div><!-- /shots -->
-          </div><!-- /PAGE 02 -->
+          </div><!-- /panel-p2 -->
 
 
-          <!-- ───────── PAGE 03：考生管理頁 ───────── -->
-          <div class="manual-page manual-page--p3 reveal">
-            <div class="manual-page__header">
-              <div class="manual-page__num">PAGE 03</div>
-              <div class="manual-page__title-wrap">
-                <h3 class="manual-page__title">
-                  <i class="fa-solid fa-chart-line" aria-hidden="true"></i>考生管理頁
-                </h3>
-                <p class="manual-page__desc">量化進步 · 多維診斷弱點 · 精準打擊盲點</p>
-              </div>
-            </div>
-
+          <!-- ───────── PANEL 03：考生管理頁 ───────── -->
+          <div id="manual-panel-p3" class="manual-panel manual-panel--p3" style="display:none;">
             <div class="manual-page__body">
 
               <!-- 用戶查詢 -->
@@ -831,7 +800,7 @@
             </div><!-- /manual-page__body -->
             <div class="manual-page__shots">
               <div class="manual-shots__label"><i class="fa-solid fa-camera" aria-hidden="true"></i> 頁面截圖</div>
-              <div class="work-img-scroll reveal">
+              <div class="work-img-scroll">
                 <div class="work-img-wrap">
                   <img src="assets/images/Tickit/考生管理_回顧錯題.jpg" alt="Tickit 考生管理頁 — 測驗紀錄與回顧錯題" loading="lazy" />
                 </div>
@@ -841,7 +810,19 @@
               </div>
               <p class="work-img-caption">左右滑動・點擊放大　｜　左：測驗紀錄 + 回顧錯題展開　右：數據分析總覽</p>
             </div><!-- /shots -->
-          </div><!-- /PAGE 03 -->
+          </div><!-- /panel-p3 -->
+          </div><!-- /manual-tabs -->
+
+          <script>
+          function switchManualTab(id) {
+            ['p1','p2','p3'].forEach(function(p) {
+              document.getElementById('manual-panel-' + p).style.display = (p === id) ? '' : 'none';
+              document.querySelectorAll('.manual-tab-btn--' + p).forEach(function(btn) {
+                btn.classList.toggle('is-active', p === id);
+              });
+            });
+          }
+          </script>
 
 
 

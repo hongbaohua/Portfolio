@@ -1993,8 +1993,93 @@ details[open] .work-collapse__chevron {
   flex-shrink: 0;
 }
 
+/* ── Manual Tab Interface ── */
+.manual-tabs {
+  margin-bottom: 4px;
+}
+.manual-tab-nav {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.manual-tab-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 14px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-dark);
+  cursor: pointer;
+  transition: border-color 0.18s, box-shadow 0.18s, transform 0.15s, background 0.18s;
+  text-align: center;
+  font-family: inherit;
+}
+.manual-tab-btn:hover {
+  transform: translateY(-2px);
+}
+.manual-tab-btn__icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+.manual-tab-btn__num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.manual-tab-btn__name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.manual-tab-btn__sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+/* P1 gold */
+.manual-tab-btn--p1 .manual-tab-btn__icon { color: var(--accent); }
+.manual-tab-btn--p1:hover { border-color: var(--accent); }
+.manual-tab-btn--p1.is-active {
+  border-color: var(--accent);
+  box-shadow: 0 3px 0 var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, var(--bg-dark));
+}
+/* P2 blue */
+.manual-tab-btn--p2 .manual-tab-btn__icon { color: #5c7cfa; }
+.manual-tab-btn--p2:hover { border-color: #5c7cfa; }
+.manual-tab-btn--p2.is-active {
+  border-color: #5c7cfa;
+  box-shadow: 0 3px 0 #5c7cfa;
+  background: rgba(92, 124, 250, 0.08);
+}
+/* P3 teal */
+.manual-tab-btn--p3 .manual-tab-btn__icon { color: #00c8a5; }
+.manual-tab-btn--p3:hover { border-color: #00c8a5; }
+.manual-tab-btn--p3.is-active {
+  border-color: #00c8a5;
+  box-shadow: 0 3px 0 #00c8a5;
+  background: rgba(0, 200, 165, 0.08);
+}
+/* Panels */
+.manual-panel {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.manual-panel--p1 { border-left: 4px solid var(--accent); }
+.manual-panel--p2 { border-left: 4px solid #5c7cfa; }
+.manual-panel--p3 { border-left: 4px solid #00c8a5; }
+
 /* Manual Responsive */
 @media (max-width: 680px) {
+  .manual-tab-nav {
+    flex-direction: column;
+    gap: 8px;
+  }
   .manual-app-nav {
     flex-direction: column;
     gap: 8px;
