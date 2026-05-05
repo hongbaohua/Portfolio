@@ -4,7 +4,7 @@
    ============================================================ */
 
 /* ── Build 版本（F12 Console 可見，用於確認 GitHub Pages 是否同步） ── */
-const BUILD_TIME = '2026-05-05 23:30';
+const BUILD_TIME = '2026-05-05 20:46';
 console.log('%c Portfolio Build: ' + BUILD_TIME, 'color: #C4A35A; font-weight: bold');
 
 document.addEventListener('DOMContentLoaded', () => {
