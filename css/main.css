@@ -502,28 +502,26 @@ ul, ol {
 
   .nav__dropdown {
     position: static;
-    opacity: 0;
-    visibility: hidden;
-    transform: none;
+    display: none;
     box-shadow: none;
     border: none;
     border-left: 2px solid var(--border);
     border-radius: 0;
     background: transparent;
-    padding: 0;
-    margin-left: 0;
+    padding: 4px 0;
     width: 100%;
-    display: block;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.25s ease, opacity 0.2s ease, visibility 0.2s ease;
+    transform: none;
+    z-index: auto;
   }
 
   .nav__item--has-dropdown.is-open .nav__dropdown {
-    opacity: 1;
-    visibility: visible;
-    padding: 4px 0;
-    max-height: 200px;
+    display: block;
+    animation: mobileDropOpen 0.18s ease;
+  }
+
+  @keyframes mobileDropOpen {
+    from { opacity: 0; }
+    to   { opacity: 1; }
   }
 
   .nav__dropdown-link {
