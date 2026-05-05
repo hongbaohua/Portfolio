@@ -543,3 +543,16 @@ ul, ol {
     gap: 12px;
   }
 }
+
+/* ================================================
+   PWA 獨立模式（Standalone）
+   ================================================ */
+@media (display-mode: standalone) {
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .nav {
+    padding-top: max(env(safe-area-inset-top), 0px);
+  }
+}

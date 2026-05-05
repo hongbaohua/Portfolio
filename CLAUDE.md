@@ -33,11 +33,13 @@ web/
 │   ├── works.css           作品列表專用（含 ai-tools-grid、ai-timeline 等）
 │   ├── work-detail.css     作品詳細頁共用
 │   └── ai.css              AI 頁專用
+├── manifest.json           PWA 配置（display: standalone）
 ├── js/
-│   ├── main.js             全站共用 JS（nav toggle、scroll reveal）
+│   ├── main.js             全站共用 JS（nav toggle、scroll reveal、PWA 偵測）
 │   └── works.js            作品過濾功能
 └── assets/
     └── images/             圖片素材（logo、作品圖）
+                            ★ 需備妥：icon-192.png、icon-512.png（PWA App 圖示）
 ```
 
 ---
@@ -47,6 +49,32 @@ web/
 - 字型：Noto Sans TC（Google Fonts）
 - 圖示：Font Awesome 6.5
 - 無使用任何 CSS 框架（非 Tailwind）
+
+### PWA 規範（2026-05-05 新增）
+網站支援「加入主畫面」後以全螢幕獨立 App 模式開啟（display: standalone）。
+
+**新增 HTML 頁面時必須加入以下 head 標籤**（插入 `<link rel="preconnect" href="https://fonts.googleapis.com" />` 之前）：
+```html
+<!-- PWA -->
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#C4A35A" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="Ivy Portfolio" />
+<link rel="apple-touch-icon" href="assets/images/icon-192.png" />
+```
+
+**App Icon 需求**（尚未備妥，需自行準備後放至 `assets/images/`）：
+| 檔名 | 尺寸 | 用途 |
+|------|------|------|
+| `icon-192.png` | 192×192 px | Android 主畫面圖示 |
+| `icon-512.png` | 512×512 px | 啟動畫面 / PWA 安裝 |
+
+**注意事項：**
+- `manifest.json` 已設定 `display: standalone`、`start_url: "./"` 及品牌金色 theme_color
+- `main.css` 底部已加入 `@media (display-mode: standalone)` 安全區域 padding
+- `main.js` 底部已加入 standalone 偵測（body 加 `.pwa-standalone` class 可供 CSS 使用）
 
 ### 動效系統（2026-04-13 建立）
 勿重複實作已有的動效，新增動效前先確認此清單：
