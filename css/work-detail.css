@@ -1997,6 +1997,15 @@ details[open] .work-collapse__chevron {
 .manual-tabs {
   margin-bottom: 4px;
 }
+.manual-tab-tip {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 12px 0;
+}
+.manual-tab-tip i { color: var(--accent); }
 .manual-tab-nav {
   display: flex;
   gap: 12px;
