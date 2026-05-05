@@ -526,8 +526,8 @@ ul, ol {
   }
 
   .nav__dropdown-link {
-    padding: 10px 16px;
-    font-size: 0.9rem;
+    padding: 12px 16px 12px 52px;
+    font-size: 0.85rem;
   }
 
   .container {
