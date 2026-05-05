@@ -510,7 +510,7 @@ ul, ol {
     border-left: 2px solid var(--border);
     border-radius: 0;
     background: transparent;
-    padding: 4px 0;
+    padding: 0;
     margin-left: 0;
     width: 100%;
     display: block;
@@ -522,6 +522,7 @@ ul, ol {
   .nav__item--has-dropdown.is-open .nav__dropdown {
     opacity: 1;
     visibility: visible;
+    padding: 4px 0;
     max-height: 200px;
   }
 
