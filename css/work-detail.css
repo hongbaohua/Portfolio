@@ -2077,44 +2077,62 @@ details[open] .work-collapse__chevron {
 /* Floating mini tab bar */
 .manual-float-tabs {
   position: fixed;
-  bottom: 28px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 32px;
+  right: 28px;
   display: flex;
+  flex-direction: column;
   gap: 6px;
   background: var(--bg-dark);
   border: 1px solid var(--border);
-  border-radius: 40px;
-  padding: 5px 8px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  border-radius: 14px;
+  padding: 10px 10px;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.35);
   z-index: 9000;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.22s, transform 0.22s;
-  transform: translateX(-50%) translateY(8px);
-  white-space: nowrap;
+  transform: translateY(10px);
+  min-width: 130px;
 }
 .manual-float-tabs.is-visible {
   opacity: 1;
   pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
+}
+.manual-float-tabs__hint {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding-bottom: 8px;
+  margin-bottom: 2px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
 }
 .manual-float-btn {
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 5px 14px;
-  border: 1.5px solid transparent;
-  border-radius: 20px;
-  background: transparent;
+  gap: 7px;
+  padding: 7px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 9px;
+  background: var(--bg);
   cursor: pointer;
   font-family: inherit;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--text-muted);
-  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  transition: border-color 0.15s, color 0.15s, background 0.15s, transform 0.12s;
+  width: 100%;
+  text-align: left;
 }
-.manual-float-btn i { font-size: 0.82rem; }
+.manual-float-btn:hover {
+  transform: translateX(-2px);
+}
+.manual-float-btn i { font-size: 0.85rem; flex-shrink: 0; }
 .manual-float-btn--p1 i { color: var(--accent); }
 .manual-float-btn--p2 i { color: #5c7cfa; }
 .manual-float-btn--p3 i { color: #00c8a5; }
