@@ -895,43 +895,63 @@
 
 
 
-          <!-- ── 開發挑戰一 ── -->
-          <h2 id="section-challenge" class="work-section-title">開發挑戰一：Parser Regex Bug</h2>
+          <!-- ── 開發挑戰 ── -->
+          <h2 id="section-challenge" class="work-section-title">開發挑戰</h2>
 
-          <div class="work-desc-block">
-            <strong>問題：Q2 整題從測驗中消失。</strong><br /><br />
-            ERP 共同科目題庫中，某題的解析以數字條列格式呈現（<code>1. R/2</code>、<code>2. ERP ECC</code>），而 <code>parser.js</code> 解析題號的 regex 為 <code>/^\s*(\d+)[.、\s]\s*/gm</code>，這個格式完全符合 regex 的題號判斷條件——parser 把解析裡的子項目誤判為新題號，導致 Q2 被「切斷」，整題從測驗中消失，且 Q2 的選項變成一道沒有題目文字的孤立題。<br /><br />
-            修正方式：將解析中的數字條列改為括號格式（<code>(1) R/2</code>），避免觸發 regex。這次 bug 讓我深刻體會到：題庫格式的每個細節都可能影響 parser 行為，Markdown 格式規範必須納入題庫管理流程。
-          </div>
+          <div class="challenge-grid">
 
+            <div class="challenge-card challenge-card--01">
+              <span class="challenge-card__num">CHALLENGE 01</span>
+              <h3 class="challenge-card__title">Parser Regex Bug</h3>
+              <div class="challenge-card__row">
+                <span class="challenge-card__label challenge-card__label--problem">問題</span>
+                <span class="challenge-card__text">解析文字含數字條列（<code>1. R/2</code>），被 regex 誤判為新題號，導致 Q2 被切斷、整題消失。</span>
+              </div>
+              <div class="challenge-card__row">
+                <span class="challenge-card__label challenge-card__label--fix">解法</span>
+                <span class="challenge-card__text">解析內的數字條列改為括號格式 <code>(1)</code>，不再觸發題號判斷 regex。</span>
+              </div>
+            </div>
 
-          <!-- ── 開發挑戰二 ── -->
-          <h2 class="work-section-title">開發挑戰二：版面「數學正確但視覺偏左」</h2>
+            <div class="challenge-card challenge-card--02">
+              <span class="challenge-card__num">CHALLENGE 02</span>
+              <h3 class="challenge-card__title">版面「數學正確但視覺偏左」</h3>
+              <div class="challenge-card__row">
+                <span class="challenge-card__label challenge-card__label--problem">問題</span>
+                <span class="challenge-card__text">側欄 <code>fixed</code> + 主內容 padding 補償，數學置中卻因右側剩餘區域偏移，視覺仍偏左。</span>
+              </div>
+              <div class="challenge-card__row">
+                <span class="challenge-card__label challenge-card__label--fix">解法</span>
+                <span class="challenge-card__text">側欄改 <code>sticky</code>，整個 layout 以 <code>max-width + margin: 0 auto</code> 讓兩欄整體真正居中。</span>
+              </div>
+            </div>
 
-          <div class="work-desc-block">
-            <strong>問題：主內容區明明置中計算，但視覺上仍偏向左側。</strong><br /><br />
-            第一次嘗試：側欄使用 <code>position: fixed</code>，主內容以 <code>padding</code> 公式補償（<code>padding: 2rem max(1.5rem, calc((100vw - 220px - 680px) / 2))</code>）。數學上是對的，但因為側欄佔據了左側固定空間，「右側剩餘區域的中央」並非「整個畫面的中央」，視覺感知還是偏左。<br /><br />
-            真正的解法：讓側欄回到文件流（<code>position: sticky</code>），整個 <code>.layout</code> 容器設 <code>max-width: 1280px; margin: 0 auto</code>，主內容區再以 <code>align-items: center</code> + <code>.main &gt; * { max-width: 660px }</code> 控制寬度。側欄與主內容並排，整體容器在畫面中央，才真正達到視覺置中。
-          </div>
+            <div class="challenge-card challenge-card--03">
+              <span class="challenge-card__num">CHALLENGE 03</span>
+              <h3 class="challenge-card__title">ERP 錯題模式篩選失效</h3>
+              <div class="challenge-card__row">
+                <span class="challenge-card__label challenge-card__label--problem">問題</span>
+                <span class="challenge-card__text">ERP 主題下錯題/攻克模式一題不顯示；資料庫有紀錄，卻因 topic 字串格式不一致全部篩選不到。</span>
+              </div>
+              <div class="challenge-card__row">
+                <span class="challenge-card__label challenge-card__label--fix">解法</span>
+                <span class="challenge-card__text">統一 <code>question_id</code> 的寫入與查詢邏輯，確保兩端 topic 字串來源一致。</span>
+              </div>
+            </div>
 
+            <div class="challenge-card challenge-card--04">
+              <span class="challenge-card__num">CHALLENGE 04</span>
+              <h3 class="challenge-card__title">ERP 多選答案格式導致題目消失</h3>
+              <div class="challenge-card__row">
+                <span class="challenge-card__label challenge-card__label--problem">問題</span>
+                <span class="challenge-card__text">ERP 題庫含多選答案（<code>(C)(D)</code>/<code>C/D</code>），parser 無法解析，答案為 undefined，連帶造成 <code>shuffleOptions</code> 崩潰、整題消失。</span>
+              </div>
+              <div class="challenge-card__row">
+                <span class="challenge-card__label challenge-card__label--fix">解法</span>
+                <span class="challenge-card__text">parser 補多選容錯（取第一字母）；<code>shuffleOptions</code> 格式不符時保留原順序而非崩潰。</span>
+              </div>
+            </div>
 
-          <!-- ── 開發挑戰三 ── -->
-          <h2 class="work-section-title">開發挑戰三：ERP 錯題模式篩選失效</h2>
-
-          <div class="work-desc-block">
-            <strong>問題：ERP 主題下，錯題複習與攻克模式進入後一題都無法顯示。</strong><br /><br />
-            每次測驗的作答紀錄存入 Supabase 的 <code>question_results</code> 資料表，<code>question_id</code> 格式為 <code>{主題}＿＿{單元}＿＿{題號}</code>。問題出在：資料寫入時用的主題名稱字串，與前端篩選錯題時拿來比對的 manifest.json 主題識別字串格式不一致（空格、版本文字的細微差異），導致篩選條件完全命中不了 ERP 的歷史紀錄，錯題模式顯示「找不到任何錯題」，但實際上資料庫中是有紀錄的。<br /><br />
-            修正方式：統一 <code>question_id</code> 的生成邏輯與查詢邏輯，確保寫入資料庫與讀取時都使用同一份主題識別字串來源。這次 bug 讓我意識到：凡是跨模組傳遞的 ID 字串，必須有明確的格式規範並集中管理，而不是讓各處自行拼接。
-          </div>
-
-
-          <!-- ── 開發挑戰四 ── -->
-          <h2 class="work-section-title">開發挑戰四：ERP 多選答案格式導致題目載入失敗</h2>
-
-          <div class="work-desc-block">
-            <strong>問題：ERP 題庫中部分題目在測驗頁完全無法顯示，整題消失。</strong><br /><br />
-            ERP 題庫有少數題目的正確答案為多個選項，Gemini 輸出時寫成 <code>(C)(D)</code> 或 <code>C/D</code> 格式。<code>parser.js</code> 的答案解析 regex 只預期單一字母格式（如 <code>(A)</code>），無法識別多選格式，導致答案欄位解析為 undefined。答案缺失後，<code>shuffleOptions</code> 函數在嘗試重排選項時因格式不符而崩潰，整題從測驗中消失。<br /><br />
-            修正方式：在 <code>parser.js</code> 補上多選答案的容錯解析（以第一個字母為準）；並在 <code>shuffleOptions</code> 加入防呆機制，當選項格式不符預期時保留原始順序而非崩潰，避免連帶影響同一份題庫的其他題目。
           </div>
 
 

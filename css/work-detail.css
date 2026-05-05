@@ -1523,6 +1523,85 @@ details[open] .work-collapse__chevron {
 }
 
 /* ────────────────────────────────────────────────
+   CHALLENGE CARDS — 開發挑戰卡片組
+   ──────────────────────────────────────────────── */
+.challenge-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.challenge-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.challenge-card--01 { border-top-color: #ef4444; }
+.challenge-card--02 { border-top-color: #3d9fcc; }
+.challenge-card--03 { border-top-color: #f59e0b; }
+.challenge-card--04 { border-top-color: #8b5cf6; }
+
+.challenge-card__num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.challenge-card__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.challenge-card__row {
+  display: flex;
+  gap: 8px;
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+
+.challenge-card__label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-top: 2px;
+  letter-spacing: 0.03em;
+}
+
+.challenge-card__label--problem {
+  background: rgba(239, 68, 68, 0.1);
+  color: #c92a2a;
+}
+
+.challenge-card__label--fix {
+  background: rgba(16, 185, 129, 0.1);
+  color: #065f46;
+}
+
+.challenge-card__text {
+  color: var(--text-muted);
+  flex: 1;
+}
+
+@media (max-width: 680px) {
+  .challenge-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ────────────────────────────────────────────────
    MANUAL — Tickit 核心功能介紹（使用者功能手冊）
    ──────────────────────────────────────────────── */
 
