@@ -98,6 +98,12 @@ web/
 | 首頁浮動背景 | `js/float-index.js` + `#floatBg` canvas | 細線段/幾何形/圓點；磁力排斥+軌跡殘影+Hero光暈 |
 | AI頁浮動背景 | `js/float-ai.js` + `#floatBg` canvas | 節點圖+二進位字元；滑鼠超級節點+點擊脈衝波+靜止吸引 |
 
+### Pawket／Tickit 卡片預覽圖規範（2026-07-28 訂定）
+`index.html`／`ai.html`／`ai-learning.html` 三處的 Pawket、Tickit 作品卡（`.work-card__img`）目前無實際截圖縮圖，改用「品牌主視覺色＋標誌圖示」呈現，取代原本兩者共用的深藍底佔位樣式：
+- **Pawket**：暖米白底（`#FFFBF5 → #FFE7BE`），橘黃漸層膠囊徽章（`#FEE0A7 → #FBA440`）內置白色線稿貓臉 SVG（貓咪指揮中心 Meowney 圖示風格），文字「PAWKET」用深琥珀色 `#B9701E`。顏色取樣自 App 實際畫面（暖米白背景 `#FFFBF5`、橘黃 icon 漸層）。
+- **Tickit**：淺薰衣草底（`#F1F4F9 → #E3E6F7`），靛藍漸層圓角方形徽章（`#6366F1 → #4F46E5`）內置白色勾勾，文字「TICKIT」用深靛藍 `#4338CA`。顏色取樣自 App 實際登入畫面（淺藍灰背景、靛藍 Logo 徽章）。
+- 三處程式碼各自獨立內嵌（inline style + SVG），未抽成共用 class，之後若三處其中之一的卡片版型有異動，記得同步檢查另外兩處是否也要更新。
+
 ### 作品詳情頁統一規範（2026-04-13 訂定）
 所有設計作品詳情頁必須符合以下規範，模板參考 `work-detail-template.html`：
 
@@ -227,7 +233,7 @@ web/
 
 ---
 
-## 目前網站狀態（最後更新：2026-07-28，新增 iPAS 品牌企劃師認證（不標示級別）；首頁 AI 協作精選卡片順序調整為 仍在等＞Tickit＞Pawket＞AI業主模擬練習；全站 20 個 HTML 頁面加入 favicon；ai-pawket.html 新增醒目試用按鈕（ai-tickit.html 因 Supabase 免費版資料庫閒置問題移除同按鈕）
+## 目前網站狀態（最後更新：2026-07-28，新增 iPAS 品牌企劃師認證（不標示級別）；首頁 AI 協作精選卡片順序調整為 仍在等＞Tickit＞Pawket＞AI業主模擬練習；全站 20 個 HTML 頁面加入 favicon；ai-pawket.html 新增醒目試用按鈕（ai-tickit.html 因 Supabase 免費版資料庫閒置問題移除同按鈕）；Pawket／Tickit 全站卡片預覽圖改為品牌主視覺色＋標誌圖示
 
 ### 已完成頁面
 | 頁面 | 狀態 | 說明 |
