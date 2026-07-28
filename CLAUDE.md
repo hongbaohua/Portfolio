@@ -50,6 +50,9 @@ web/
 - 圖示：Font Awesome 6.5
 - 無使用任何 CSS 框架（非 Tailwind）
 
+### 網站頁籤 Favicon（2026-07-28 新增）
+所有 HTML 頁面 `<head>` 已加入 `<link rel="icon" type="image/png" href="assets/images/name_icon_192.png" />`（緊接在 apple-touch-icon 之後），瀏覽器分頁圖示統一使用品牌 logo（`name_icon_192.png`）。新增頁面時需一併加上此標籤。
+
 ### PWA 規範（2026-05-05 新增）
 網站支援「加入主畫面」後以全螢幕獨立 App 模式開啟（display: standalone）。
 
@@ -221,7 +224,7 @@ web/
 
 ---
 
-## 目前網站狀態（最後更新：2026-07-28，新增 iPAS 品牌企劃師認證（不標示級別）；首頁 AI 協作精選卡片順序調整為 仍在等＞Tickit＞Pawket＞AI業主模擬練習）
+## 目前網站狀態（最後更新：2026-07-28，新增 iPAS 品牌企劃師認證（不標示級別）；首頁 AI 協作精選卡片順序調整為 仍在等＞Tickit＞Pawket＞AI業主模擬練習；全站 20 個 HTML 頁面加入 favicon）
 
 ### 已完成頁面
 | 頁面 | 狀態 | 說明 |
