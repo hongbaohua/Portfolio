@@ -114,6 +114,7 @@ web/
 5. **試用按鈕**：已停用的版本用 `.work-try-btn.work-try-btn--disabled`（純文字說明，不可點擊，附「已由OO版取代，僅存截圖記錄」字樣）；仍可用的版本維持原本 `.work-try-btn` 連結
 6. **截圖未到位時**：用 `.work-gallery-pending` 佔位區塊（虛線框＋圖示＋「製作中」文字），不要放假截圖或留空
 7. **`.reveal` 動畫慎用**：新版區塊避免加 `.reveal` class（IntersectionObserver 搭配 `display:none` 切換偶爾會有動畫卡在隱藏狀態的風險），純表格／文字區塊維持無動畫即可，跟現有 `.work-table-wrap`／`.work-desc-block` 慣例一致
+8. **內容用詞：不要用「有沒有用 Prompt Engineering」來區分版本差異**（2026-08-02 訂定，Ivy 糾正過一次）：不管是驅動 AI Studio 一次性生成、還是驅動 Claude Code 逐步開發，本質上都是「Prompt／指令驅動 AI」，真正的差異在工程深度與性質（一次性生成雛形 vs. 持續診斷/驗證/維運真實產品），文案上要說清楚「兩者都是 Prompt 驅動，只是形式跟顆粒度不同」，不能寫成「重啟版脫離了 Prompt Engineering」這種對立語氣
 
 ### 作品詳情頁統一規範（2026-04-13 訂定）
 所有設計作品詳情頁必須符合以下規範，模板參考 `work-detail-template.html`：
