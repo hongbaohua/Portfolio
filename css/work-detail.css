@@ -246,6 +246,76 @@
   color: var(--accent-dark);
 }
 
+/* 版本對照切換器（App/網站作品有明顯前後版本演進時使用） */
+.version-switch {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 28px;
+  padding: 6px;
+  background: color-mix(in srgb, var(--accent-light) 20%, var(--bg));
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+}
+
+.version-switch__btn {
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.version-switch__btn.is-active {
+  background: var(--accent-dark);
+  color: var(--white);
+}
+
+.version-switch__btn:hover:not(.is-active) {
+  background: color-mix(in srgb, var(--accent-light) 40%, var(--bg));
+  color: var(--accent-dark);
+}
+
+/* 截圖／素材待補佔位區 */
+.work-gallery-pending {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 48px 24px;
+  background: var(--bg-dark);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.work-gallery-pending i {
+  font-size: 2rem;
+  color: var(--border);
+}
+
+.work-gallery-pending p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.work-gallery-pending span {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* 版本切換內容顯示控制：搭配 .version-switch 使用，母層需有 data-active-version */
+[data-active-version="prototype"] [data-vshow="rebuild"] { display: none; }
+[data-active-version="rebuild"] [data-vshow="prototype"] { display: none; }
+
 /* 醒目試用按鈕（App／網站類作品，位於簡介前） */
 .work-try-btn {
   display: flex;
@@ -271,6 +341,22 @@
 
 .work-try-btn i {
   font-size: 1rem;
+}
+
+/* 停用狀態的試用按鈕（版本已無法試用，僅存截圖記錄時使用） */
+.work-try-btn--disabled {
+  cursor: default;
+  background: var(--bg-dark);
+  color: var(--text-muted);
+  box-shadow: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.work-try-btn--disabled:hover {
+  background: var(--bg-dark);
+  transform: none;
+  box-shadow: none;
 }
 
 /* 資訊分隔線 */

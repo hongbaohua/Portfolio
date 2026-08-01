@@ -104,6 +104,17 @@ web/
 - **Tickit**：淺薰衣草底（`#F1F4F9 → #E3E6F7`），靛藍漸層圓角方形徽章（`#6366F1 → #4F46E5`）內置白色勾勾，文字「TICKIT」用深靛藍 `#4338CA`。顏色取樣自 App 實際登入畫面（淺藍灰背景、靛藍 Logo 徽章）。
 - 三處程式碼各自獨立內嵌（inline style + SVG），未抽成共用 class，之後若三處其中之一的卡片版型有異動，記得同步檢查另外兩處是否也要更新。
 
+### 版本對照切換器（2026-08-02 訂定，首次套用於 ai-pawket.html）
+當一個作品有明顯的「前後兩個版本」（例如 AI Studio 原型 → Claude Code 重啟版），且兩版落差大到需要各自完整敘事時，用同頁切換器呈現，不開新頁面、不直接覆蓋舊內容：
+
+1. **切換器 UI**：`.version-switch` 置於 `.container` 內、`.work-layout` 之前，兩個 `.version-switch__btn`（`data-vswitch="prototype"` / `"rebuild"`，命名可依實際版本調整），預設第一個按鈕帶 `.is-active`
+2. **狀態容器**：`<main class="work-content" data-active-version="prototype">` 上帶 `data-active-version`，JS 點擊切換器按鈕時改寫這個屬性（見頁面底部 inline `<script>`，邏輯很短，不需要抽成 main.js 共用函式）
+3. **內容顯示控制**：純 CSS，`[data-active-version="prototype"] [data-vshow="rebuild"] { display:none }`（反向同理），所有會隨版本改變的區塊都包一層 `data-vshow="prototype"` 或 `"rebuild"`——包含側欄 `work-info__section`、試用按鈕、大綱 nav（兩份完整的 `.work-outline`）、簡介、中段所有敘事區塊
+4. **id 命名**：兩版各自 section 的 `id` 不可重複，第二版一律加 `r-` 前綴（例如 `r-arch`、`r-gallery`），大綱 nav 的錨點對應各自版本的 id
+5. **試用按鈕**：已停用的版本用 `.work-try-btn.work-try-btn--disabled`（純文字說明，不可點擊，附「已由OO版取代，僅存截圖記錄」字樣）；仍可用的版本維持原本 `.work-try-btn` 連結
+6. **截圖未到位時**：用 `.work-gallery-pending` 佔位區塊（虛線框＋圖示＋「製作中」文字），不要放假截圖或留空
+7. **`.reveal` 動畫慎用**：新版區塊避免加 `.reveal` class（IntersectionObserver 搭配 `display:none` 切換偶爾會有動畫卡在隱藏狀態的風險），純表格／文字區塊維持無動畫即可，跟現有 `.work-table-wrap`／`.work-desc-block` 慣例一致
+
 ### 作品詳情頁統一規範（2026-04-13 訂定）
 所有設計作品詳情頁必須符合以下規範，模板參考 `work-detail-template.html`：
 
@@ -233,7 +244,7 @@ web/
 
 ---
 
-## 目前網站狀態（最後更新：2026-07-28，新增 iPAS 品牌企劃師認證（不標示級別）；首頁 AI 協作精選卡片順序調整為 仍在等＞Tickit＞Pawket＞AI業主模擬練習；全站 20 個 HTML 頁面加入 favicon；ai-pawket.html 新增醒目試用按鈕（ai-tickit.html 因 Supabase 免費版資料庫閒置問題移除同按鈕）；Pawket／Tickit 全站卡片預覽圖改為品牌主視覺色＋標誌圖示
+## 目前網站狀態（最後更新：2026-07-28，新增 iPAS 品牌企劃師認證（不標示級別）；首頁 AI 協作精選卡片順序調整為 仍在等＞Tickit＞Pawket＞AI業主模擬練習；全站 20 個 HTML 頁面加入 favicon；ai-pawket.html 新增醒目試用按鈕（ai-tickit.html 因 Supabase 免費版資料庫閒置問題移除同按鈕）；Pawket／Tickit 全站卡片預覽圖改為品牌主視覺色＋標誌圖示；ai-pawket.html 新增前後版本對照切換器（原型版／重啟版），重啟版截圖待補
 
 ### 已完成頁面
 | 頁面 | 狀態 | 說明 |
@@ -253,7 +264,7 @@ web/
 | work-yuejilabs.html | ✅ 完成 | 月記LAB 手搖飲 |
 | work-ecdesign.html | ✅ 完成 | EC Design 電商設計練習系列頁（持續更新，初霧 Chūwù 為 No.01）|
 | ai-ecdesign.html | ✅ 完成 | AI 業主模擬練習系列頁（方法論＋各練習 AI 紀錄，持續更新）|
-| ai-pawket.html | ✅ 完成 | 喵喵財庫 Pawket 詳細頁（Prompt Engineering × App 開發，2026-04-18）|
+| ai-pawket.html | ✅ 完成 | 喵喵財庫 Pawket 詳細頁（Prompt Engineering × App 開發，2026-04-18；2026-08-02 新增前後版本對照切換器，見下方「版本對照切換器」規範）|
 | ai-tickit.html | ✅ 完成 | Tickit 備考刷題 App 詳細頁（Prompt Engineering × Web App 開發，2026-04-27；2026-05-05 更新：v4.5～v4.7 版本歷史、開發挑戰三/四）|
 | resume.html | ✅ 完成 | A4 履歷（獨立頁面，不含 nav；2026-04-30 更新：新增 ERP 軟體應用師（配銷模組 SAP S/4HANA版）證照）|
 
@@ -272,7 +283,7 @@ web/
 | AI Works 詳細頁 | 「仍在等」、「Pawket」、「Tickit」已完成；更多 AI 應用仍待製作 |
 | ai-learning.html 時間軸 | ✅ 已新增「AI新秀計畫（2025）」節點；內容細節待作品集完整後補充 |
 | index.html AI 技能 chips | 作品集圖片全部上傳完成後，根據實際作品使用工具更新 AI 輔助創作分組內容 |
-| **ai-pawket.html 加「前後版本對照」切換器**（2026-07-23 討論，待做） | 目前這頁只講「Prompt Engineering 驅動 AI Studio 生成原型」的故事，但 Pawket 後來由 Claude Code 接手做了一次徹底重啟（資料庫化、多帳戶系統、真實資料匯入核對、資料品質全面查核…），跟「Bug 修正」完全不是同一個量級，需要在頁面上補完整。討論後決定：不開新頁面、不用現有頁面直接覆蓋，而是**在同一頁做一個版本切換器**（例如頂部固定雙選鈕「🎨 AI Studio 原型」／「⚙️ Claude Code 重啟版」），點擊用 JS 切換畫面內容（不換網址）：左側 `work-info` 資訊欄、中間敘事段落／表格、截圖區都整組換成對應版本。兩個版本共用同一套 HTML 結構/CSS class，只是內容不同，符合「大框架一樣、內容自由發揮」的原則。**動工前提**：①原型版內容可以直接沿用現有頁面文字；②重啟版的截圖不能用 Ivy 真實記帳資料（隱私），要另外用測試帳號（假資料）截圖，或 Ivy 自己準備幾張精選截圖；③重啟版的故事素材要去 Pawket 專案的 `專案文件/PROJECT_STATUS.md` 挖，那份文件從 2026-07-23 起會刻意保留敘事細節（不只是技術狀態）方便之後轉寫成作品集文字，見該專案 CLAUDE.md。 |
+| **ai-pawket.html 重啟版截圖補上**（2026-08-02，待做） | 版面／文字內容已完成（見下方「版本對照切換器」規範），`#r-gallery` 目前是 `.work-gallery-pending` 待補佔位區。等 Ivy 準備好**測試帳號（非真實記帳資料）**畫面截圖後，比照原型版 `#section-gallery` 的 `.work-img-scroll`／`.work-img-grid` 結構換上，同時記得把 `.work-gallery-pending` 移除。 |
 
 ---
 

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>喵喵財庫 Pawket — Prompt Engineering 驅動的智慧記帳 App · Ivy Hong</title>
-  <meta name="description" content="以 Prompt Engineering 引導 Gemini 完成 16 個功能架構決策，再由 Google AI Studio 生成完整 React + TypeScript 財務管理 Web App。" />
+  <meta name="description" content="從 Prompt Engineering 驅動的 AI Studio 原型，到 Claude Code 接手全面重啟的資料庫化財務管理 Web App，完整前後版本對照。" />
 
   <!-- PWA -->
   <link rel="manifest" href="manifest.json" />
@@ -64,13 +64,22 @@
         <span class="work-hero-tag">#財務管理</span>
         <span class="work-hero-tag">#WebApp</span>
         <span class="work-hero-tag">#AI新秀計畫</span>
+        <span class="work-hero-tag">#Supabase</span>
+        <span class="work-hero-tag">#ClaudeCode</span>
       </div>
     </div>
   </header>
 
   <!-- 主體內容 -->
-  <main class="work-content">
+  <main class="work-content" data-active-version="prototype">
     <div class="container">
+
+      <!-- 版本對照切換器 -->
+      <div class="version-switch" role="tablist" aria-label="版本切換">
+        <button type="button" class="version-switch__btn is-active" data-vswitch="prototype" role="tab" aria-selected="true">🎨 AI Studio 原型</button>
+        <button type="button" class="version-switch__btn" data-vswitch="rebuild" role="tab" aria-selected="false">⚙️ Claude Code 重啟版</button>
+      </div>
+
       <div class="work-layout">
 
         <!-- ── 左側資訊欄 ── -->
@@ -82,9 +91,17 @@
           </a>
           <div class="work-info__divider"></div>
 
-          <div class="work-info__section">
+          <div class="work-info__section" data-vshow="prototype">
             <p class="work-info__label">查看成果</p>
-            <a href="https://pawket-omega.vercel.app" target="_blank" rel="noopener" class="work-external-btn">
+            <p class="work-info__text">此版本已由重啟版取代，僅存截圖記錄（見下方）</p>
+            <a href="https://github.com/hongbaohua/Pawket" target="_blank" rel="noopener" class="work-external-btn secondary" style="margin-top: 10px;">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              GitHub
+            </a>
+          </div>
+          <div class="work-info__section" data-vshow="rebuild">
+            <p class="work-info__label">查看成果</p>
+            <a href="https://pawket-meowney.vercel.app" target="_blank" rel="noopener" class="work-external-btn">
               <i class="fa-solid fa-cat" aria-hidden="true"></i>
               試用 App
             </a>
@@ -96,14 +113,18 @@
 
           <div class="work-info__divider"></div>
 
-          <div class="work-info__section">
+          <div class="work-info__section" data-vshow="prototype">
             <p class="work-info__label">應用類型</p>
             <p class="work-info__text">App 開發 · Prompt Engineering</p>
+          </div>
+          <div class="work-info__section" data-vshow="rebuild">
+            <p class="work-info__label">應用類型</p>
+            <p class="work-info__text">App 開發 · 資料工程 · 全端重啟</p>
           </div>
 
           <div class="work-info__divider"></div>
 
-          <div class="work-info__section">
+          <div class="work-info__section" data-vshow="prototype">
             <p class="work-info__label">使用工具</p>
             <div class="work-info__chips">
               <span class="work-info__chip work-info__chip--ai">
@@ -124,19 +145,48 @@
               </span>
             </div>
           </div>
-
-          <div class="work-info__divider"></div>
-
-          <div class="work-info__section">
-            <p class="work-info__label">技術架構</p>
-            <p class="work-info__text">React 18 + TypeScript · Tailwind CSS · Vite · Recharts</p>
+          <div class="work-info__section" data-vshow="rebuild">
+            <p class="work-info__label">使用工具</p>
+            <div class="work-info__chips">
+              <span class="work-info__chip work-info__chip--dev">
+                <span class="chip__head"><i class="fa-solid fa-terminal" aria-hidden="true"></i>Claude Code</span>
+                <span class="chip__role">全端重啟開發</span>
+              </span>
+              <span class="work-info__chip work-info__chip--dev">
+                <span class="chip__head"><i class="fa-solid fa-database" aria-hidden="true"></i>Supabase</span>
+                <span class="chip__role">資料庫＋驗證</span>
+              </span>
+              <span class="work-info__chip work-info__chip--ai">
+                <span class="chip__head"><i class="fa-solid fa-robot" aria-hidden="true"></i>Gemini</span>
+                <span class="chip__role">商家智能判斷</span>
+              </span>
+              <span class="work-info__chip work-info__chip--dev">
+                <span class="chip__head"><i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>Vercel</span>
+                <span class="chip__role">正式部署</span>
+              </span>
+            </div>
           </div>
 
           <div class="work-info__divider"></div>
 
-          <div class="work-info__section">
+          <div class="work-info__section" data-vshow="prototype">
+            <p class="work-info__label">技術架構</p>
+            <p class="work-info__text">React 18 + TypeScript · Tailwind CSS · Vite · Recharts</p>
+          </div>
+          <div class="work-info__section" data-vshow="rebuild">
+            <p class="work-info__label">技術架構</p>
+            <p class="work-info__text">React 19 + TypeScript + Vite · Supabase（Postgres + Auth）· Vercel 部署</p>
+          </div>
+
+          <div class="work-info__divider"></div>
+
+          <div class="work-info__section" data-vshow="prototype">
             <p class="work-info__label">開始時間</p>
-            <p class="work-info__text">2025 年 11 月，持續開發中</p>
+            <p class="work-info__text">2025 年 11 月，AI Studio 原型完成</p>
+          </div>
+          <div class="work-info__section" data-vshow="rebuild">
+            <p class="work-info__label">重啟時間</p>
+            <p class="work-info__text">2026 年 7 月 17 日起，持續開發中</p>
           </div>
 
         </aside><!-- /work-info -->
@@ -145,7 +195,7 @@
         <!-- ── 右側內容區 ── -->
         <div class="work-gallery">
 
-          <nav class="work-outline" aria-label="頁面大綱">
+          <nav class="work-outline" aria-label="頁面大綱" data-vshow="prototype">
             <a href="#section-intro"      class="work-outline__item">作品簡介</a>
             <a href="#section-prompt"     class="work-outline__item">Prompt 策略</a>
             <a href="#section-arch"       class="work-outline__item">功能架構決策</a>
@@ -156,18 +206,37 @@
             <a href="#section-gap"        class="work-outline__item">設計 vs 實作</a>
             <a href="#section-reflection" class="work-outline__item">過程反思</a>
           </nav>
+          <nav class="work-outline" aria-label="頁面大綱" data-vshow="rebuild">
+            <a href="#section-intro-rebuild" class="work-outline__item">作品簡介</a>
+            <a href="#r-arch"           class="work-outline__item">資料庫化與帳戶模型</a>
+            <a href="#r-import"         class="work-outline__item">真實資料匯入與查核</a>
+            <a href="#r-reconcile"      class="work-outline__item">對帳與商家辨識</a>
+            <a href="#r-gallery"        class="work-outline__item">App 截圖</a>
+            <a href="#r-roadmap"        class="work-outline__item">開發階段進度</a>
+            <a href="#r-challenge"      class="work-outline__item">開發挑戰</a>
+            <a href="#r-reflection"     class="work-outline__item">過程反思</a>
+          </nav>
 
           <!-- 醒目試用按鈕 -->
-          <a href="https://pawket-omega.vercel.app" target="_blank" rel="noopener" class="work-try-btn reveal">
+          <div class="work-try-btn work-try-btn--disabled" data-vshow="prototype">
+            <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
+            此版本已停用，僅存截圖記錄（見下方）
+          </div>
+          <a href="https://pawket-meowney.vercel.app" target="_blank" rel="noopener" class="work-try-btn" data-vshow="rebuild">
             <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
             立即試用 Pawket
           </a>
 
           <!-- 簡介 -->
-          <div id="section-intro" class="work-desc-block">
+          <div id="section-intro" class="work-desc-block" data-vshow="prototype">
             Pawket（喵喵財庫）是一個以貓咪為主題的財務管理 Web App，從無到有全程以 Prompt Engineering 驅動開發。整個過程分為三個階段：先以「30年投資理財專家」角色引導 Gemini 透過 16 輪問答完成功能架構決策，再以「20年 UI/UX 設計師」角色制定貓咪主題視覺規範，最後將完整規格 Prompt 交付 Google AI Studio 生成程式碼。App 整合 Gemini API 實現帳單 OCR 辨識，以吉祥物 Meowney 作為財務健康情緒指標。
           </div>
+          <div id="section-intro-rebuild" class="work-desc-block" data-vshow="rebuild">
+            2026 年 7 月 17 日起，Pawket 由 Claude Code 正式接手全面重啟：從原本 AI Studio 生成、沒有資料持久化的靜態原型，轉型為資料庫化的正式產品——重新設計帳戶模型、匯入並反覆查核真實記帳資料、建置對帳與商家智能辨識模組。這是跟最初「用 Prompt Engineering 生出雛形」完全不同量級的工程投入，過程細節見下方。
+          </div>
 
+
+          <div data-vshow="prototype">
 
           <!-- ── Prompt 工程設計策略 ── -->
           <h2 id="section-prompt" class="work-section-title">Prompt 工程設計策略</h2>
@@ -394,6 +463,113 @@
             最後接手 Claude Code 修正 Bug 的過程，讓我體驗了不同 AI 工具在同一個專案中各自扮演的角色——Gemini 適合發散思考與規格設計，AI Studio 適合初始程式碼生成，Claude Code 適合精確的除錯與邏輯修正。三者組合，才是完整的 AI 輔助開發鏈。
           </div>
 
+          </div><!-- /data-vshow="prototype" -->
+
+          <div data-vshow="rebuild">
+
+          <!-- ── 資料庫化與帳戶模型 ── -->
+          <h2 id="r-arch" class="work-section-title">資料庫化與帳戶模型</h2>
+
+          <div class="work-desc-block">
+            AI Studio 原型完全沒有資料持久化能力——重新整理頁面資料就會消失。重啟的第一步是接上 Supabase（Postgres + Auth），把整個 App 從「一次性生成的靜態展示」轉型為「資料真的存得住」的產品，並重新設計帳戶模型：使用者可自訂帳戶清單，依「現金 → 金融卡 → 信用卡 → 電子支付 → 儲值卡」排序，刻意照「誰是真正的錢、誰是衍生出來的」設計，交易類型也擴充為收入／支出／轉帳三種，轉帳不計入收支統計。
+          </div>
+
+          <div class="work-table-wrap">
+            <table class="work-table">
+              <thead>
+                <tr><th>能力</th><th>AI Studio 原型</th><th>Claude Code 重啟版</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>資料持久化</td><td>❌ 重新整理即消失</td><td>✅ Supabase 雲端資料庫</td></tr>
+                <tr><td>登入／多使用者</td><td>❌ 無</td><td>✅ Email + 密碼登入</td></tr>
+                <tr><td>帳戶管理</td><td>❌ 無帳戶概念</td><td>✅ 自訂多帳戶模型</td></tr>
+                <tr><td>交易金額結構</td><td>單一金額欄位</td><td>原始金額／折扣明細／備註分欄</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- ── 真實資料匯入與查核 ── -->
+          <h2 id="r-import" class="work-section-title">真實資料匯入與資料品質查核</h2>
+
+          <div class="work-desc-block">
+            資料庫接上後，下一步是把真實記帳資料匯入系統——這一段的重點不是「匯進去」，而是「匯得對」。分類邏輯採三層判斷：優先比對既有的人工標註紀錄，比對不到的用商家關鍵字規則庫分類，兩者都不行才需要人工確認。匯入完成後並不是結束，而是接著進行一輪完整的資料品質查核：金額與日期逐筆覆核、商家分類逐一覆核，過程中實際抓到並修正了好幾個真實的資料錯誤與分類判斷失誤。
+          </div>
+
+          <div class="work-desc-block">
+            <strong>不是做完就結束，是建立一套持續驗證的流程</strong><br /><br />
+            比起「一次性匯入」，這個階段更像是在建立一套可以重複執行的資料驗證機制——每次發現新的資料品質問題，就把它變成下一輪查核的檢查項目，逐步把「資料看起來是對的」提升到「資料真的是對的」。
+          </div>
+
+          <!-- ── 對帳與商家智能辨識 ── -->
+          <h2 id="r-reconcile" class="work-section-title">對帳模組與商家智能辨識</h2>
+
+          <div class="work-desc-block">
+            <strong>對帳模組</strong><br /><br />
+            比對銀行月結單 PDF 與系統內既有交易記錄，找出漏記或重複的項目。真實銀行對帳單多半是密碼保護的 PDF，且文字在檔案內部的儲存順序不等於視覺上由左到右的閱讀順序，解析時須先依座標分組成列，同列再依座標排序，才能還原正確的閱讀順序。
+          </div>
+
+          <div class="work-desc-block">
+            <strong>商家智能辨識三層架構</strong><br /><br />
+            銀行帳單上的商家代碼常常是同一間店、每次代碼卻略有不同的截斷字串。設計了三層判斷：先做免費即時的模糊比對（跟已知商家名稱做相似度比對），比對信心不足時交給 Gemini 判斷最可能對應哪個已知商家，兩層都不確定才問使用者本人——確認後存成新的商家對照紀錄，下次同類代碼出現就不用再問，逐步累積成一套會自我學習的商家資料庫，而不是一份要手動維護的靜態對照表。
+          </div>
+
+          <!-- ── App 截圖（重啟版） ── -->
+          <h2 id="r-gallery" class="work-section-title">App 截圖（Claude Code 重啟版）</h2>
+
+          <div class="work-gallery-pending">
+            <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
+            <p>重啟版畫面截圖製作中</p>
+            <span>將使用測試帳號（非真實記帳資料）畫面補充，敬請期待</span>
+          </div>
+
+          <!-- ── 開發階段進度 ── -->
+          <h2 id="r-roadmap" class="work-section-title">7 階段開發路線圖進度</h2>
+
+          <div class="work-table-wrap">
+            <table class="work-table">
+              <thead>
+                <tr><th>#</th><th>階段</th><th>狀態</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>資料持久化</td><td>✅ 完成</td></tr>
+                <tr><td>2</td><td>帳戶模型＋轉帳交易</td><td>✅ 完成</td></tr>
+                <tr><td>3</td><td>PDF 結構化解析取代圖片 OCR</td><td>🟡 第一版完成</td></tr>
+                <tr><td>4</td><td>交易金額拆分（原始／折扣／實付）</td><td>✅ 完成</td></tr>
+                <tr><td>5</td><td>對帳模組</td><td>🟡 首批可用切片完成</td></tr>
+                <tr><td>6</td><td>商家別名智能辨識</td><td>🟡 持續累積中</td></tr>
+                <tr><td>7</td><td>共同支出／代墊分帳</td><td>🟡 首批可用切片完成</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- ── 開發挑戰 ── -->
+          <h2 id="r-challenge" class="work-section-title">開發挑戰</h2>
+
+          <div class="work-desc-block">
+            <strong>部署卡在 95 天前的舊版本</strong><br /><br />
+            正式重啟上線後，發現線上網址其實還停留在一個更早、完全沒有登入功能的版本——原因是 Vercel 專案當時沒有接上 GitHub 自動部署，push 到 GitHub 並不會觸發重新部署。排查後手動重新部署，並完整接上 Git 自動部署整合，確保之後每次 push 都會自動更新線上版本。
+          </div>
+
+          <div class="work-desc-block">
+            <strong>資料庫權限意外查核</strong><br /><br />
+            用查詢工具檢查資料時，意外發現資料庫裡還留有幾筆早期測試帳號的殘留資料。雖然 Row Level Security 已經確保使用者彼此看不到對方資料，但這次順勢建立了一套「新的查詢能力只做讀取、任何寫入都必須先產出 SQL 由本人確認執行」的把關流程，把資安意識落實到日常工作習慣裡。
+          </div>
+
+          <div class="work-desc-block">
+            <strong>AI API 額度限制下的容錯設計</strong><br /><br />
+            大量歷史交易需要重新做語意判斷分類，但 Gemini API 免費額度有嚴格的每日請求上限，很快就撞到上限。改為分批處理＋進度存檔（中斷可從上次進度接續），額度用盡時則切換由 Claude 直接判斷，確保整個流程不會因為單一 API 限制而卡住。
+          </div>
+
+          <!-- ── 過程反思 ── -->
+          <h2 id="r-reflection" class="work-section-title">過程反思</h2>
+
+          <div class="work-desc-block">
+            這次重啟讓我體會到「AI 生成的原型」和「可以每天真實使用的產品」之間，中間還有一大段距離——資料要能安全存起來、金額計算邏輯要禁得起真實使用情境的檢驗、部署與版本控管要穩定可靠，這些都是原型階段不會遇到、卻是產品上線後每天都要面對的課題。<br /><br />
+            這個階段我的角色也從「用 Prompt 驅動 AI 設計功能」轉變成「與 Claude Code 一起維運一個真實在用的產品」——包含資料品質的持續查核、發現問題後拆解成可驗證的修正項目、以及每個修改前先確認影響範圍。這是跟第一階段完全不同、但同樣重要的能力。
+          </div>
+
+          </div><!-- /data-vshow="rebuild" -->
+
         </div><!-- /work-gallery -->
       </div><!-- /work-layout -->
     </div>
@@ -411,5 +587,22 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    (function () {
+      var content = document.querySelector('.work-content');
+      var btns = document.querySelectorAll('.version-switch__btn');
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var v = btn.getAttribute('data-vswitch');
+          content.setAttribute('data-active-version', v);
+          btns.forEach(function (b) {
+            var active = b === btn;
+            b.classList.toggle('is-active', active);
+            b.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
