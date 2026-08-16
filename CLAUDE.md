@@ -46,6 +46,7 @@ web/
 
 ## 開發注意事項
 - 純靜態，不需 build，直接開啟 .html 預覽
+- **驗證涉及 CSS/JS 互動的頁面時**（例如版本切換器、燈箱），瀏覽器工具直接開 `file://` 會把頁面轉成 `data:` 快照，導致 `css/`、`js/` 相對路徑資源讀不到（外部 CDN 連結不受影響）。已在 `.claude/launch.json` 設定本機靜態伺服器（`portfolio-static`，port 8743，Python `http.server`），驗證這類頁面前先用 preview 工具啟動它，再用 `http://localhost:8743/xxx.html` 開頁面，才能看到 CSS/JS 真正生效的結果
 - 字型：Noto Sans TC（Google Fonts）
 - 圖示：Font Awesome 6.5
 - 無使用任何 CSS 框架（非 Tailwind）
@@ -245,7 +246,8 @@ web/
 
 ---
 
-## 目前網站狀態（最後更新：2026-07-28，新增 iPAS 品牌企劃師認證（不標示級別）；首頁 AI 協作精選卡片順序調整為 仍在等＞Tickit＞Pawket＞AI業主模擬練習；全站 20 個 HTML 頁面加入 favicon；ai-pawket.html 新增醒目試用按鈕（ai-tickit.html 因 Supabase 免費版資料庫閒置問題移除同按鈕）；Pawket／Tickit 全站卡片預覽圖改為品牌主視覺色＋標誌圖示；ai-pawket.html 新增前後版本對照切換器（原型版／重啟版），重啟版截圖待補
+## 目前網站狀態（最後更新：2026-08-17，ai-pawket.html 重啟版依 Pawket 專案最新進度更新：新增「功能命名系統」段落、開發挑戰新增2則、7階段路線圖狀態更新）
+（歷史：2026-07-28，新增 iPAS 品牌企劃師認證（不標示級別）；首頁 AI 協作精選卡片順序調整為 仍在等＞Tickit＞Pawket＞AI業主模擬練習；全站 20 個 HTML 頁面加入 favicon；ai-pawket.html 新增醒目試用按鈕（ai-tickit.html 因 Supabase 免費版資料庫閒置問題移除同按鈕）；Pawket／Tickit 全站卡片預覽圖改為品牌主視覺色＋標誌圖示；ai-pawket.html 新增前後版本對照切換器（原型版／重啟版），重啟版截圖待補）
 
 ### 已完成頁面
 | 頁面 | 狀態 | 說明 |
@@ -265,7 +267,7 @@ web/
 | work-yuejilabs.html | ✅ 完成 | 月記LAB 手搖飲 |
 | work-ecdesign.html | ✅ 完成 | EC Design 電商設計練習系列頁（持續更新，初霧 Chūwù 為 No.01）|
 | ai-ecdesign.html | ✅ 完成 | AI 業主模擬練習系列頁（方法論＋各練習 AI 紀錄，持續更新）|
-| ai-pawket.html | ✅ 完成 | 喵喵財庫 Pawket 詳細頁（Prompt Engineering × App 開發，2026-04-18；2026-08-02 新增前後版本對照切換器，見下方「版本對照切換器」規範）|
+| ai-pawket.html | ✅ 完成 | 喵喵財庫 Pawket 詳細頁（Prompt Engineering × App 開發，2026-04-18；2026-08-02 新增前後版本對照切換器；2026-08-17 依 Pawket 專案最新進度更新重啟版內容，見下方「版本對照切換器」規範）|
 | ai-tickit.html | ✅ 完成 | Tickit 備考刷題 App 詳細頁（Prompt Engineering × Web App 開發，2026-04-27；2026-05-05 更新：v4.5～v4.7 版本歷史、開發挑戰三/四）|
 | resume.html | ✅ 完成 | A4 履歷（獨立頁面，不含 nav；2026-04-30 更新：新增 ERP 軟體應用師（配銷模組 SAP S/4HANA版）證照）|
 
@@ -285,6 +287,7 @@ web/
 | ai-learning.html 時間軸 | ✅ 已新增「AI新秀計畫（2025）」節點；內容細節待作品集完整後補充 |
 | index.html AI 技能 chips | 作品集圖片全部上傳完成後，根據實際作品使用工具更新 AI 輔助創作分組內容 |
 | **ai-pawket.html 重啟版截圖補上**（2026-08-02，待做） | 版面／文字內容已完成（見下方「版本對照切換器」規範），`#r-gallery` 目前是 `.work-gallery-pending` 待補佔位區。等 Ivy 準備好**測試帳號（非真實記帳資料）**畫面截圖後，比照原型版 `#section-gallery` 的 `.work-img-scroll`／`.work-img-grid` 結構換上，同時記得把 `.work-gallery-pending` 移除。 |
+| **ai-pawket.html 重啟版內容持續追更**（2026-08-17 起固定流程） | Pawket 專案（`C:\Users\Master\Projects\Pawket\`）本身還在密集開發中，`專案文件\PROJECT_STATUS.md` 會持續累積新的「現況速覽」節點。之後 Ivy 說「Pawket 有新更新了」時，流程固定：①重新讀該檔案最新幾節（找最後一個 `## 0.x 現況速覽` 或文件最後一節）②只抽取「工程決策層級」的抽象化描述，**絕對不能**把任何真實商家名稱／金額／帳戶餘額／user_id 寫進作品集③優先更新 `r-roadmap` 進度表、`r-challenge` 新增代表性挑戰、必要時才新增新的 `r-*` 段落④同步這裡跟 Obsidian 對應筆記。 |
 
 ---
 
