@@ -323,9 +323,18 @@
     return ratio < RATIO_PORTRAIT ? "spread" : "single";      // auto：直式攤開、橫式單頁
   };
 
+  /**
+   * 全螢幕時可用高度：視窗高度扣掉 root 自己的上下 padding，再扣掉工具列實際高度
+   * （不能用固定數字猜，手機版工具列按鈕會自動換成兩排，比桌機單排高很多 ——
+   * 2026-09-23 修正：原本固定扣 104px，手機兩排工具列扣不夠，導致書被切到看不見）。
+   */
   FlipBook.prototype.maxStageHeight = function () {
-    // 全螢幕時無視 data-height，盡量佔滿螢幕（扣掉工具列與留白）
-    if (this.isFullscreen) return Math.max(240, window.innerHeight - 104);
+    if (this.isFullscreen) {
+      var cs = getComputedStyle(this.root);
+      var padV = (parseFloat(cs.paddingTop) || 0) + (parseFloat(cs.paddingBottom) || 0);
+      var toolbarH = this.toolbar ? this.toolbar.offsetHeight + 18 : 90;  // 18 = 全螢幕下 .fb-toolbar 的 margin-top
+      return Math.max(160, window.innerHeight - padV - toolbarH);
+    }
 
     var attr = this.root.getAttribute("data-height");
     var winCap = Math.round(window.innerHeight * 0.82);
@@ -337,6 +346,20 @@
   };
 
   /**
+   * 容器可用寬度：扣掉 root 自己的左右 padding。
+   * 全螢幕模式的 `.fb--fullscreen` 有 20px padding，root.clientWidth 本身仍是「整個螢幕寬」
+   * （clientWidth 包含 padding），若照單全收去算頁面寬度，算出來的書會比 padding 內側能放的
+   * 空間寬 40px，兩邊各多出 20px 蓋到 viewport 的 overflow:hidden 裁切線外——
+   * 2026-09-23 修正：這正是「手機全螢幕四周被裁切」的原因（垂直方向的裁切則是上面 maxStageHeight 的問題）。
+   */
+  FlipBook.prototype.availWidth = function () {
+    var cs = getComputedStyle(this.root);
+    var padH = (parseFloat(cs.paddingLeft) || 0) + (parseFloat(cs.paddingRight) || 0);
+    var w = this.root.clientWidth || this.root.offsetWidth || 900;
+    return Math.max(100, w - padH);
+  };
+
+  /**
    * 在維持原始比例的前提下，算出容器內能放下的最大單頁尺寸。
    * 舞台（fb-stage）寬度會被設成剛好 1 頁或 2 頁寬 ——
    * 這一步是必要的：StPageFlip 用「容器寬 < 單頁寬 × 2」來判定要不要單頁顯示。
@@ -344,7 +367,7 @@
   FlipBook.prototype.computeSize = function () {
     var m = this.manifest;
     var ratio = (m.page && m.page.aspectRatio) || 0.707;
-    var availW = this.root.clientWidth || this.root.offsetWidth || 900;
+    var availW = this.availWidth();
     var availH = this.maxStageHeight();
 
     this.mode = this.decideMode(availW);
@@ -813,6 +836,15 @@
    * 放大後改成拖曳平移。
    * 用捕獲階段攔下事件並停止傳遞，翻頁引擎才不會同時收到 —— 它是用元素座標算拖曳的，
    * 畫面被 scale 過之後那套算法會失準（跟上下翻轉 90° 是同一類問題）。
+   *
+   * ⚠️ 放大時多次誤觸翻頁的真正原因（2026-09-23 修正）：
+   * 上面這段攔的是「pointerdown／click」，但 StPageFlip 自己另外**獨立**綁了
+   * touchstart（在書本元素本身）／touchmove／touchend（在 window 上）來偵測滑動翻頁，
+   * 這兩套事件系統互不相干——擋掉 pointerdown 完全不會影響它的 touchstart。
+   * 結果就是放大後用手指拖曳想平移圖片，同一根手指的觸控同時被引擎當成翻頁手勢，
+   * 拖越遠越容易連續翻好幾頁。
+   * 修法：在放大時，於 viewport 的**捕獲階段**直接擋掉 touchstart／mousedown
+   * （捕獲階段在事件抵達引擎綁定的目標元素之前就攔截，引擎的監聽器根本收不到事件）。
    */
   FlipBook.prototype.bindZoomPan = function () {
     var self = this;
@@ -854,6 +886,13 @@
     vp.addEventListener("click", function (e) {
       if (self.zoom > 1) e.stopPropagation();
     }, true);
+
+    // 放大時把引擎自己的 touch／mouse 翻頁手勢徹底擋在門外（見上方說明）
+    ["touchstart", "touchmove", "touchend", "mousedown"].forEach(function (type) {
+      vp.addEventListener(type, function (e) {
+        if (self.zoom > 1) e.stopPropagation();
+      }, true);
+    });
 
     // Ctrl／⌘ ＋ 滾輪縮放（跟大部分看圖軟體一致）
     vp.addEventListener("wheel", function (e) {
