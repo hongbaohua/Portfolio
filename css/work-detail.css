@@ -2412,3 +2412,89 @@ details[open] .work-collapse__chevron {
     width: 100%;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   App 截圖版面（2026-09-22 新增，目前用在 ai-pawket.html 重啟版）
+   ─────────────────────────────────────────────────────────
+   為什麼要另外一套：這類 App 截圖的形狀差異很大——卡片特寫是很寬很扁的
+   長條（例如 1076×146）、彈窗是接近方形、整頁截圖是很長的直式
+   （1440×3006）、手機版更極端（390×2600）。全部丟進同一個 2 欄 grid 的話，
+   長條圖會被縮到字看不清楚、長截圖又會把版面撐到爆，圖說長度不一也會讓
+   兩欄高度參差。依形狀分成三種排法，並把圖說統一放到框外。
+   ═══════════════════════════════════════════════════════════ */
+
+/* 一張一列（滿版）：寬度 ≥ 1000px 的截圖都走這個，縮到內容欄寬仍看得清楚 */
+.shot-list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin: 4px 0 8px;
+}
+
+/* 小尺寸特寫兩張並排：原圖寬度 ≤ 600px，並排後接近原尺寸，最清楚 */
+.shot-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+  margin: 4px 0 8px;
+}
+
+/* 手機版截圖：等寬小卡，框內限高可捲動 */
+.shot-phones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  align-items: start;
+  margin: 4px 0 8px;
+}
+
+.shot {
+  margin: 0;
+}
+
+.shot__frame {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-dark);
+}
+
+.shot__frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 直式長截圖：框內限高可捲動，不讓單張圖把整個版面洗掉 */
+.shot__frame--scroll {
+  max-height: 620px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.shot-phones .shot__frame--scroll {
+  max-height: 560px;
+}
+
+/* 圖說統一放在框外，固定字級與行高，長度不一也不會影響圖片對齊 */
+.shot__cap {
+  font-size: 0.82rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin: 10px 2px 0;
+}
+
+.shot__cap strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+@media (max-width: 720px) {
+  .shot-pair {
+    grid-template-columns: 1fr;
+  }
+  .shot__frame--scroll {
+    max-height: 520px;
+  }
+}

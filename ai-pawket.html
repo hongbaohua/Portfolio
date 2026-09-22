@@ -476,21 +476,28 @@
           <div data-vshow="rebuild">
 
 
+
+
+
           <h2 id="r-arch" class="work-section-title">從原型到產品：底層整個重建</h2>
 
           <div class="work-desc-block">
-            AI Studio 原型完全沒有資料持久化能力——重新整理頁面，剛剛記的帳就消失了。重啟的第一件事是接上 Supabase（Postgres + Auth），讓資料真的存得住、而且是「我的資料只有我看得到」（資料表全部開啟 Row Level Security）。接著重新設計帳戶模型：現金、銀行簽帳卡、電子支付錢包、實體儲值卡各自是一個「碗」，每一筆交易都要說清楚是從哪個碗裡出去的，餘額不是手動輸入的數字，而是從每一筆交易即時加總出來的結果。
+            AI Studio 原型完全沒有資料持久化能力——重新整理頁面，剛剛記的帳就消失了。重啟的第一件事是接上 Supabase（Postgres + Auth），讓資料真的存得住，而且是「我的資料只有我看得到」（資料表全部開啟 Row Level Security）。接著重新設計帳戶模型：現金、銀行簽帳卡、電子支付錢包、實體儲值卡各自是一個「碗」，每一筆交易都要說清楚錢是從哪個碗裡出去的；餘額不是手動輸入的數字，而是從每一筆交易即時加總出來的結果。
           </div>
 
-          <div class="work-img-grid reveal">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/00_登入畫面.png" alt="Pawket 登入畫面" loading="lazy" />
-              <p class="work-img-caption">① 帳號系統：原型沒有登入概念，重啟版用 Email + 密碼登入，資料跟著帳號走、換裝置也還在。</p>
-            </div>
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/04_首頁_帳戶餘額總覽.png" alt="Pawket 帳戶餘額總覽" loading="lazy" />
-              <p class="work-img-caption">② 多帳戶餘額：依「現金 → 銀行 → 電子支付 → 儲值卡」分組，總資產刻意不含信用卡——那是負債不是資產。</p>
-            </div>
+          <div class="shot-list reveal">
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/00_登入畫面.png" alt="帳號系統" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>帳號系統</strong>｜原型沒有登入概念，重啟版用 Email + 密碼登入，資料跟著帳號走、換裝置也還在。</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/04_首頁_帳戶餘額總覽.png" alt="多帳戶餘額" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>多帳戶餘額</strong>｜依「現金 → 銀行 → 電子支付 → 儲值卡」分組，總資產刻意不含信用卡——那是負債不是資產。</figcaption>
+            </figure>
           </div>
 
           <div class="work-table-wrap">
@@ -513,7 +520,7 @@
           <h2 id="r-naming" class="work-section-title">功能命名系統：養貓主題</h2>
 
           <div class="work-desc-block">
-            資料庫、帳戶模型這些底層架構穩定後，回頭處理一個純設計層面的問題：功能一個個加上去，介面文字卻是隨手取的技術名詞（對帳、帳戶管理、應收應付……），跟「喵喵財庫」這個品牌調性完全脫節。跟 Claude Code 腦力激盪、來回調整幾輪後定案一個世界觀：<strong>「使用者使用＝餵食，餵飽貓咪後，貓咪才會工作」</strong>，延伸出「餵食」「碗」兩條命名主線，統一改寫全站使用者看得到的文字——刻意只改介面文字，不動程式內部的變數／元件／欄位名稱，把這次改名的風險範圍壓在最小。
+            資料庫、帳戶模型這些底層架構穩定後，回頭處理一個純設計層面的問題：功能一個個加上去，介面文字卻是隨手取的技術名詞（對帳、帳戶管理、應收應付……），跟「喵喵財庫」這個品牌調性完全脫節。跟 Claude Code 腦力激盪、來回調整幾輪後定案一個世界觀：<strong>「使用者使用＝餵食，餵飽貓咪後，貓咪才會工作」</strong>，延伸出「餵食」「碗」兩條命名主線，統一改寫全站使用者看得到的文字——刻意只改介面文字，不動程式內部的變數／元件／欄位名稱，把改名的風險範圍壓到最小。
           </div>
 
           <div class="work-table-wrap">
@@ -533,15 +540,19 @@
             </table>
           </div>
 
-          <div class="work-img-grid reveal">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/08_首頁_糧食往來簿摘要.png" alt="糧食往來簿摘要卡" loading="lazy" />
-              <p class="work-img-caption">「應收／應付」改叫糧食往來簿：誰還沒還我、我還欠誰，一眼看完。</p>
-            </div>
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/90_重新裝碗紀錄.png" alt="重新裝碗紀錄頁面" loading="lazy" />
-              <p class="work-img-caption">「編輯歷程」改叫重新裝碗紀錄：所有批次異動都留底，整批改錯了可以整批復原。</p>
-            </div>
+          <div class="shot-list reveal">
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/08_首頁_糧食往來簿摘要.png" alt="糧食往來簿" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>糧食往來簿</strong>｜原本叫「應收應付」：誰還沒還我、我還欠誰，首頁一眼看完。</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/90_重新裝碗紀錄.png" alt="重新裝碗紀錄" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>重新裝碗紀錄</strong>｜原本叫「編輯歷程」：所有批次異動都留底，整批改錯了可以整批復原。</figcaption>
+            </figure>
           </div>
 
           <div class="work-desc-block">
@@ -552,97 +563,115 @@
           <h2 id="r-dashboard" class="work-section-title">貓咪指揮中心：一頁看完財務狀況</h2>
 
           <div class="work-desc-block">
-            首頁不是把數字排出來就好，而是回答幾個真正會影響決定的問題：這個月還好嗎？手上的錢還能撐多久？哪一類花超過了？想買的東西買得起嗎？每一張卡片都對應一個問題，而且所有門檻與基準都可以追溯到「使用者自己設定過的數字」或「自己的歷史紀錄」，不是系統憑空猜的。
+            首頁不是把數字排出來就好，而是回答幾個真正會影響決定的問題：這個月還好嗎？手上的錢還能撐多久？哪一類花超過了？想買的東西買得起嗎？每張卡片對應一個問題，而且所有門檻與基準都可以追溯到「使用者自己設定過的數字」或「自己的歷史紀錄」，不是系統憑空猜的。
           </div>
 
-          <div class="work-img-grid reveal" style="grid-template-columns: 1fr;">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/01_首頁_全頁總覽.png" alt="Pawket 貓咪指揮中心全頁" loading="lazy" />
-              <p class="work-img-caption">首頁全貌：情緒指標 → 現金流 → 現金緩衝 → 心願罐與消費分類 → 分類洞察 → 配速警示 → 財務結構 → 固定週期性支出，由上而下從「概況」走到「細節」。</p>
-            </div>
+          <div class="shot-list reveal">
+            <figure class="shot">
+              <div class="shot__frame shot__frame--scroll">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/01_首頁_全頁總覽.png" alt="版面順序" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>版面順序</strong>｜由上而下從「概況」走到「細節」：情緒指標 → 現金流 → 現金緩衝 → 心願與消費分類 → 分類洞察 → 配速警示 → 財務結構 → 固定週期性支出。以下逐張說明每個區塊在做什麼。（框內可上下捲動看完整畫面）</figcaption>
+            </figure>
           </div>
 
-          <div class="work-img-grid reveal">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/02b_首頁_情緒指標_注意.png" alt="Meowney 情緒指標：注意狀態" loading="lazy" />
-              <p class="work-img-caption">① Meowney 情緒指標：把「有沒有超支、固定支出重不重、有沒有觸發罰則」三個判斷收斂成一句貓咪口吻的狀態，情緒＝當期財務健康的第一眼訊號。</p>
-            </div>
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/03_首頁_本期現金流.png" alt="本期現金流卡片" loading="lazy" />
-              <p class="work-img-caption">② 本期現金流：錢包這期真的進出多少。代購／代墊／借貸／分帳結清這些「幫別人先付、之後收回來」的錢也算在內，因為錢確實有離開戶頭；但它們不會進入下面任何一項消費分析。</p>
-            </div>
+          <div class="shot-list reveal">
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/02b_首頁_情緒指標_注意.png" alt="① Meowney 情緒指標" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>① Meowney 情緒指標</strong>｜把「有沒有超支、固定支出重不重、有沒有觸發罰則」三個判斷收斂成一句貓咪口吻的狀態，是當期財務健康的第一眼訊號。</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/03_首頁_本期現金流.png" alt="② 本期現金流" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>② 本期現金流</strong>｜錢包這期真的進出多少。代購、代墊、借貸、分帳結清這些「幫別人先付、之後收回來」的錢也算在內，因為錢確實有離開戶頭；但它們不會進入下面任何一項消費分析。</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/05_首頁_現金緩衝耗盡預警.png" alt="③ 現金緩衝耗盡預警" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>③ 現金緩衝耗盡預警</strong>｜可動用的錢 ÷ 最近 90 天日均花費＝還能撐幾天。日均花費會先用統計方法排除單筆極端值（買筆電、一次繳整年保費），避免一次性大額支出把數字嚇成快沒錢。</figcaption>
+            </figure>
           </div>
 
-          <div class="work-img-grid reveal">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/05_首頁_現金緩衝耗盡預警.png" alt="現金緩衝耗盡預警" loading="lazy" />
-              <p class="work-img-caption">③ 現金緩衝耗盡預警：可動用的錢 ÷ 最近 90 天日均花費＝還能撐幾天。日均花費會先用統計方法排除單筆極端值（買筆電、一次繳整年保費），避免一次性大額支出把「還能撐幾天」嚇成快沒錢。</p>
-            </div>
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/07_首頁_本期消費分類比率.png" alt="本期消費分類比率圓餅圖" loading="lazy" />
-              <p class="work-img-caption">④ 消費分類比率：預設用次分類分塊，但某個細項單獨超過總支出 15% 時會自己拆出來獨立顯示（例如「飲料」從「餐飲食品」裡跳出來），讓真正的錢坑不會被上層分類蓋掉。</p>
-            </div>
+          <div class="shot-pair reveal">
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/07_首頁_本期消費分類比率.png" alt="④ 消費分類比率" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>④ 消費分類比率</strong>｜預設用次分類分塊，但某個細項單獨超過總支出 15% 時會自己拆出來獨立顯示（例如「飲料」從「餐飲食品」裡跳出來），真正的錢坑不會被上層分類蓋掉。</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/06_首頁_最想買的心願卡.png" alt="⑤ 心願罐前導卡" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>⑤ 心願罐前導卡</strong>｜首頁常駐顯示排第一順位的願望，直接告訴你「買得起了」或「還差多少」，把存錢目標放進每天看得到的地方。</figcaption>
+            </figure>
           </div>
 
-          <div class="work-img-grid reveal" style="grid-template-columns: 1fr;">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/09_首頁_分類洞察三卡.png" alt="分類洞察：支出排行榜、異常消費偵測、收入來源分析" loading="lazy" />
-              <p class="work-img-caption">⑤ 分類洞察：支出排行／異常消費／收入來源三張並排。異常偵測刻意設得保守——同類別要有 5 筆以上歷史、單筆超過平均 2.2 倍才提醒，早期版本太敏感，結果「什麼都是異常」反而讓警示失去意義。</p>
-            </div>
+          <div class="shot-list reveal">
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/09_首頁_分類洞察三卡.png" alt="⑥ 分類洞察" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>⑥ 分類洞察</strong>｜支出排行／異常消費／收入來源三張並排。異常偵測刻意設得保守——同類別要有 5 筆以上歷史、單筆超過平均 2.2 倍才提醒，早期版本太敏感，結果「什麼都是異常」反而讓警示失去意義。</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/10_首頁_需立即關注的項目.png" alt="⑦ 配速警示" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>⑦ 配速警示</strong>｜只有自己設過月預算的分類才會出現，照「本期已過幾天」算出「到今天應該花多少」再比對。沒設定的分類完全不提醒——上一版用歷史中位數自動外推基準，月初幾筆消費就會誤判成整月嚴重超支。</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/11_首頁_財務結構分析.png" alt="⑧ 財務結構" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>⑧ 財務結構</strong>｜固定支出佔收入的比重，以及固定／變動／儲蓄各佔多少。本期還沒有收入紀錄時會顯示「—」而不是硬算一個爆表的百分比（曾因為月初薪水還沒入帳而誤報）。</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/12_首頁_固定週期性支出.png" alt="⑨ 固定週期性支出" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>⑨ 固定週期性支出</strong>｜不是看分類，是看行為模式——同一個商家連續出現 3 個月以上、出現月份佔比超過 75%、而且每月金額都落在中位數附近，才會被認定成「固定」，避免常去的飲料店也被當成訂閱制。</figcaption>
+            </figure>
           </div>
 
-          <div class="work-img-grid reveal">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/10_首頁_需立即關注的項目.png" alt="需立即關注的項目（月度配速警示）" loading="lazy" />
-              <p class="work-img-caption">⑥ 配速警示：只有自己設過月預算的分類才會出現，照「本期已過幾天」算出「到今天應該花多少」再比對。沒設定的分類完全不提醒——上一版用歷史中位數自動外推基準，月初幾筆消費就會誤判成整月嚴重超支。</p>
-            </div>
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/11_首頁_財務結構分析.png" alt="財務結構分析：固定支出負擔比" loading="lazy" />
-              <p class="work-img-caption">⑦ 財務結構：固定支出佔收入的比重，以及固定／變動／儲蓄各佔多少。本期還沒有收入紀錄時會顯示「—」而不是硬算一個爆表的百分比（曾經因為月初薪水還沒入帳而誤報）。</p>
-            </div>
+          <div class="shot-list reveal">
+            <figure class="shot" style="max-width: 423px;">
+              <div class="shot__frame shot__frame--scroll">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/13_首頁_期間切換與超支扣零食設定.png" alt="⑩ 期間切換與設定" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>⑩ 期間切換與設定</strong>｜至今累積／自然月／自訂結算週期三種視角；結算日與「超支扣零食」（超支就從下期預算先扣一部分）都存進帳號設定裡，換裝置、重新整理都還在。（框內可上下捲動看完整畫面）</figcaption>
+            </figure>
           </div>
-
-          <div class="work-img-grid reveal">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/12_首頁_固定週期性支出.png" alt="固定週期性支出偵測" loading="lazy" />
-              <p class="work-img-caption">⑧ 固定週期性支出：不是看分類，是看行為模式——同一個商家連續出現 3 個月以上、出現月份佔比超過 75%、而且每月金額都落在中位數附近，才會被認定成「固定」，避免常去的飲料店也被當成訂閱制。</p>
-            </div>
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/06_首頁_最想買的心願卡.png" alt="最優先想買的心願卡片" loading="lazy" />
-              <p class="work-img-caption">⑨ 心願罐前導卡：首頁常駐顯示排第一順位的願望，直接告訴你「買得起了」或「還差多少」，把存錢目標放進每天會看到的地方。</p>
-            </div>
-          </div>
-
-          <div class="work-img-grid reveal" style="grid-template-columns: 1fr;">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/13_首頁_期間切換與超支扣零食設定.png" alt="期間切換與超支扣零食設定" loading="lazy" />
-              <p class="work-img-caption">⑩ 期間切換與設定：至今累積／自然月／自訂結算週期三種視角；結算日與「超支扣零食」（超支就從下期預算先扣一部分）都存進帳號設定裡，換裝置、重新整理都還在。</p>
-            </div>
-          </div>
-
 
           <div class="work-desc-block">
-            <strong>同一份資料、三種情緒</strong><br /><br />
-            情緒指標的三種狀態不是隨機的表情變化，而是同一套判斷在不同預算設定下的結果：
-            下面三張圖是<strong>完全同一個月的資料</strong>，只改了「分類月預算」這一個變因。
-            這也是刻意的設計——警示的基準必須是使用者自己確認過的數字，系統不自己猜，
-            所以同樣的花費，在不同人的預算標準下本來就該得到不同的提醒。
+            <strong>同一份資料、三種情緒</strong><br /><br />情緒指標的三種狀態不是隨機的表情變化，而是同一套判斷在不同預算設定下的結果。下面三張是<strong>完全同一個月的資料</strong>，只改了「分類月預算」這一個變因——這也是刻意的設計：警示的基準必須是使用者自己確認過的數字，系統不自己猜，所以同樣的花費，在不同人的預算標準下本來就該得到不同的提醒。
           </div>
 
-          <div class="work-img-grid reveal" style="grid-template-columns: 1fr;">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/02a_首頁_情緒指標_健康.png" alt="Meowney 情緒指標：健康狀態" loading="lazy" />
-              <p class="work-img-caption">預算寬鬆時：「財務狀況很健康喔！」——所有分類都在配速內。</p>
-            </div>
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/02b_首頁_情緒指標_注意.png" alt="Meowney 情緒指標：注意狀態" loading="lazy" />
-              <p class="work-img-caption">有分類略微超前時：「注意喔！花費有點快了…」——黃色提醒，還不到要停下來的程度。</p>
-            </div>
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/02c_首頁_情緒指標_超支.png" alt="Meowney 情緒指標：超支狀態" loading="lazy" />
-              <p class="work-img-caption">預算設得緊、確實超支時：「超支囉！下期零食要被扣了」——同時觸發「超支扣零食」，下一期預算會先被扣掉一部分。</p>
-            </div>
+          <div class="shot-list reveal">
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/02a_首頁_情緒指標_健康.png" alt="狀態一：健康" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>狀態一：健康</strong>｜預算寬鬆時「財務狀況很健康喔！」——所有分類都在配速內。</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/02b_首頁_情緒指標_注意.png" alt="狀態二：注意" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>狀態二：注意</strong>｜有分類略微超前時「注意喔！花費有點快了…」——黃色提醒，還不到要停下來的程度。</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/02c_首頁_情緒指標_超支.png" alt="狀態三：超支" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>狀態三：超支</strong>｜預算設得緊、確實超支時「超支囉！下期零食要被扣了」——同時觸發「超支扣零食」，下一期預算會先被扣掉一部分。</figcaption>
+            </figure>
           </div>
+
 
           <h2 id="r-ledger" class="work-section-title">罐罐明細本：每天真的會用的那一頁</h2>
 
@@ -650,130 +679,154 @@
             明細本是使用頻率最高的頁面，設計重點是「一列就看完一筆帳的全部資訊」，不用點進去才知道自己買了什麼。
           </div>
 
-          <div class="work-img-grid reveal" style="grid-template-columns: 1fr;">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/21_明細本_一列裡有什麼.png" alt="罐罐明細本單列資訊結構" loading="lazy" />
-              <p class="work-img-caption">一列裡有：日期、帳戶（含實際刷的付款通道 VISA）、商家、品項與套餐子品項、分類、金額，以及右側四個操作（分裝／編輯／複製這筆／刪除）。</p>
-            </div>
-          </div>
-
-          <div class="work-img-grid reveal">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/20_明細本_全頁.png" alt="罐罐明細本全頁" loading="lazy" />
-              <p class="work-img-caption">列表全貌：帳戶與分類都用顏色標籤區分，同一筆分裝過的交易會收成一組顯示，不會散成好幾列干擾閱讀。</p>
-            </div>
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/22_明細本_分類階層篩選.png" alt="分類階層樹篩選面板" loading="lazy" />
-              <p class="work-img-caption">分類篩選是階層樹（大類 → 次分類 → 細項標籤），旁邊標著各分類目前有幾筆，不用先記得自己當初怎麼分類。</p>
-            </div>
-          </div>
-
-          <div class="work-img-grid reveal">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/23_明細本_快速查找.png" alt="明細本快速查找" loading="lazy" />
-              <p class="work-img-caption">快速查找同時比對商家、品項與備註，所以打「喵星人」找得到店名，打「貓砂」也找得到品項。</p>
-            </div>
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/24_明細本_垃圾桶.png" alt="垃圾桶（軟刪除）" loading="lazy" />
-              <p class="work-img-caption">刪除是「軟刪除」：先進垃圾桶，可以救回或永久刪除。分裝過的原始整筆也會留在這裡，隨時能追溯拆分前長什麼樣子。</p>
-            </div>
+          <div class="shot-list reveal">
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/21_明細本_一列裡有什麼.png" alt="一列裡有什麼" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>一列裡有什麼</strong>｜日期、帳戶（含實際刷的付款通道 VISA）、商家、品項與套餐子品項、分類、金額，以及右側四個操作：分裝、編輯、複製這筆、刪除。</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame shot__frame--scroll">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/20_明細本_全頁.png" alt="列表全貌" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>列表全貌</strong>｜帳戶與分類都用顏色標籤區分，同一筆分裝過的交易會收成一組顯示，不會散成好幾列干擾閱讀。（框內可上下捲動看完整畫面）</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame shot__frame--scroll">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/22_明細本_分類階層篩選.png" alt="分類階層篩選" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>分類階層篩選</strong>｜篩選是階層樹（大類 → 次分類 → 細項標籤），旁邊標著各分類目前有幾筆，不用先記得自己當初怎麼分類。（框內可上下捲動看完整畫面）</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/23_明細本_快速查找.png" alt="快速查找" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>快速查找</strong>｜同時比對商家、品項與備註，所以打「喵星人」找得到店名，打「貓砂」也找得到品項。</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/24_明細本_垃圾桶.png" alt="垃圾桶（軟刪除）" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>垃圾桶（軟刪除）</strong>｜刪除是軟刪除：先進垃圾桶，可以救回或永久刪除。分裝過的原始整筆也會留在這裡，隨時能追溯拆分前長什麼樣子。</figcaption>
+            </figure>
           </div>
 
 
           <h2 id="r-entry" class="work-section-title">記一筆帳：真實生活比「一個金額」複雜得多</h2>
 
           <div class="work-desc-block">
-            真實的一筆消費常常不是單純的「商家＋金額」：有折價券、有好幾樣品項、有套餐、有外幣、有時候是幫別人買的、有時候一張發票要分給好幾個預算分類。新增／編輯表單把這些情境全部收進同一張表單，但用摺疊的方式分層，平常只要填三個欄位就能存檔。
+            真實的一筆消費常常不是單純的「商家＋金額」：有折價券、有好幾樣品項、有套餐、有外幣、有時候是幫別人買的、有時候一張發票要分給好幾個預算分類。新增／編輯表單把這些情境全部收進同一張表單，但用摺疊分層，平常只要填三個欄位就能存檔。
           </div>
 
-          <div class="work-img-grid reveal" style="grid-template-columns: 1fr;">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/30_新增交易_完整表單.png" alt="新增交易完整表單" loading="lazy" />
-              <p class="work-img-caption">完整表單：日期、商家、收支別、付款通道與帳戶、特殊性質、品項清單、實付金額、分類歸屬、分裝與備註。上方還有「上傳收據照片自動辨識」，用 Gemini 直接把收據轉成商家／金額／品項。</p>
-            </div>
+          <div class="shot-list reveal">
+            <figure class="shot">
+              <div class="shot__frame shot__frame--scroll">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/30_新增交易_完整表單.png" alt="完整表單" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>完整表單</strong>｜日期、商家、收支別、付款通道與帳戶、特殊性質、品項清單、實付金額、分類歸屬、分裝與備註。上方還有「上傳收據照片自動辨識」，用 Gemini 直接把收據轉成商家／金額／品項。（框內可上下捲動看完整畫面）</figcaption>
+            </figure>
           </div>
 
-          <div class="work-img-grid reveal">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/31_編輯交易_金額拆分.png" alt="金額拆分：原始金額、折扣明細、實付金額" loading="lazy" />
-              <p class="work-img-caption">① 金額拆分：原始金額與每一項折扣分開記，實付金額自動算。這樣「我省了多少」跟「我實際付了多少」都留得下來，不會被壓成同一個數字。</p>
-            </div>
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/32_編輯交易_喵喵購物清單與套餐子品項.png" alt="喵喵購物清單與套餐子品項" loading="lazy" />
-              <p class="work-img-caption">② 品項與套餐子品項：一張票券發票裡的「票價／系統手續費／超商取票費」是同一次購買的三個組成，做成父品項底下的子項目，而不是三筆平行品項。</p>
-            </div>
+          <div class="shot-pair reveal">
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/31_編輯交易_金額拆分.png" alt="① 金額拆分" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>① 金額拆分</strong>｜原始金額與每一項折扣分開記，實付金額自動算——「我省了多少」跟「我實際付了多少」都留得下來。</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/32_編輯交易_喵喵購物清單與套餐子品項.png" alt="② 品項與套餐子品項" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>② 品項與套餐子品項</strong>｜一張票券發票裡的「票價／系統手續費／超商取票費」是同一次購買的三個組成，做成父品項底下的子項目，而不是三筆平行品項。</figcaption>
+            </figure>
           </div>
 
-          <div class="work-img-grid reveal">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/33_編輯交易_特殊性質與快速結清.png" alt="特殊性質標記與快速結清" loading="lazy" />
-              <p class="work-img-caption">③ 特殊性質：代購／工作代墊／借貸三種「不是自己花的錢」。最常見的「整筆代墊、單一對象、當下就結清」可以直接在這裡勾完，不用跳到完整版分帳畫面。</p>
-            </div>
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/34_編輯交易_分類歸屬.png" alt="分類歸屬三層選擇" loading="lazy" />
-              <p class="work-img-caption">④ 分類歸屬：大類 → 次分類 → 細項標籤三層，次分類與細項都可以自訂；同一個商家下次再記帳時會自動帶出上次的分類。</p>
-            </div>
+          <div class="shot-pair reveal">
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/33_編輯交易_特殊性質與快速結清.png" alt="③ 特殊性質" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>③ 特殊性質</strong>｜代購／工作代墊／借貸三種「不是自己花的錢」。最常見的「整筆代墊、單一對象、當下就結清」可以直接在這裡勾完。</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/34_編輯交易_分類歸屬.png" alt="④ 分類歸屬" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>④ 分類歸屬</strong>｜大類 → 次分類 → 細項標籤三層，次分類與細項都可自訂；同一個商家下次再記帳時會自動帶出上次的分類。</figcaption>
+            </figure>
           </div>
 
-          <div class="work-img-grid reveal">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/36_帳戶互轉.png" alt="帳戶互轉（換一個碗）" loading="lazy" />
-              <p class="work-img-caption">⑤ 帳戶互轉：領現金、悠遊卡加值、電子錢包儲值都是「錢從一個碗換到另一個碗」，記成互轉就不會被重複計入收入或支出。</p>
-            </div>
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/37_貓咪零食分裝盤.png" alt="貓咪零食分裝盤（一筆拆成多個分類）" loading="lazy" />
-              <p class="work-img-caption">⑥ 分裝盤：一張超市發票拆成生活日用／餐飲食品／寵物花費三份，主項目金額由總額自動減去子項目。拆完之後原始那筆會進垃圾桶，不會兩邊都算一次。</p>
-            </div>
+          <div class="shot-list reveal">
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/36_帳戶互轉.png" alt="⑤ 帳戶互轉（換一個碗）" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>⑤ 帳戶互轉（換一個碗）</strong>｜領現金、悠遊卡加值、電子錢包儲值都是「錢從一個碗換到另一個碗」，記成互轉就不會被重複計入收入或支出。</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame shot__frame--scroll">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/37_貓咪零食分裝盤.png" alt="⑥ 貓咪零食分裝盤" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>⑥ 貓咪零食分裝盤</strong>｜一張超市發票拆成生活日用／餐飲食品／寵物花費三份，主項目金額由總額自動減去子項目。拆完後原始那筆會進垃圾桶，不會兩邊都算一次。（框內可上下捲動看完整畫面）</figcaption>
+            </figure>
           </div>
 
 
           <h2 id="r-shared" class="work-section-title">幫別人先付的錢：分帳與往來追蹤</h2>
 
           <div class="work-desc-block">
-            代購、代墊、借錢給朋友這些錢，會讓記帳變得很尷尬：錢確實離開了戶頭，但它不是「我的消費」。Pawket 的處理方式是把兩件事分開——<strong>現金流照算，消費分析不算</strong>。借出跟收回可能相隔當天、好幾天、甚至跨月，現金流要看得出錢包真實的凹陷與回填；但這些金額一旦混進消費分析，就會讓分類佔比、超支警示、燒錢速度全部失真。
+            代購、代墊、借錢給朋友這些錢，會讓記帳變得很尷尬：錢確實離開了戶頭，但它不是「我的消費」。Pawket 的處理方式是把兩件事分開——<strong>現金流照算，消費分析不算</strong>。借出跟收回可能相隔當天、好幾天、甚至跨月，現金流要看得出錢包真實的凹陷與回填；但這些金額一旦混進消費分析，分類佔比、超支警示、燒錢速度就全部失真。
           </div>
 
-          <div class="work-img-grid reveal" style="grid-template-columns: 1fr;">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/40_這碗跟誰分.png" alt="這碗跟誰分（完整版分帳）" loading="lazy" />
-              <p class="work-img-caption">完整版分帳：一筆錢可以分給多個對象，各自記「對方欠我」或「我欠對方」、各自標記已結清；結清時可以順便記一筆交易，也可以連結到已經記過的那一筆，避免同一筆還款被算兩次。</p>
-            </div>
-          </div>
-
-          <div class="work-img-grid reveal">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/41_糧食往來簿清單.png" alt="糧食往來簿：未結清清單" loading="lazy" />
-              <p class="work-img-caption">糧食往來簿把所有還沒結清的往來集中在一起，應收與應付分兩欄，不用去翻明細本才想起來誰還沒還錢。</p>
-            </div>
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/42_糧食往來簿_標記已結清.png" alt="標記已結清的兩種方式" loading="lazy" />
-              <p class="work-img-caption">標記已結清時有兩個選項：「順便記一筆」自動產生對應的收入／支出交易，或「已經記過帳了」直接連結到既有交易——這個選項是實際使用後才補上的，因為還錢當下往往早就先記過帳了。</p>
-            </div>
+          <div class="shot-list reveal">
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/40_這碗跟誰分.png" alt="完整版分帳" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>完整版分帳</strong>｜一筆錢可以分給多個對象，各自記「對方欠我」或「我欠對方」、各自標記已結清；結清時可以順便記一筆交易，也可以連結到已經記過的那一筆，避免同一筆還款被算兩次。</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/41_糧食往來簿清單.png" alt="未結清一覽" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>未結清一覽</strong>｜所有還沒結清的往來集中在一起，應收與應付分兩欄，不用翻明細本才想起來誰還沒還錢。</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/42_糧食往來簿_標記已結清.png" alt="兩種結清方式" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>兩種結清方式</strong>｜「順便記一筆」自動產生對應的收入／支出交易，或「已經記過帳了」直接連結到既有交易——後者是實際使用後才補上的，因為還錢當下往往早就先記過帳了。</figcaption>
+            </figure>
           </div>
 
 
           <h2 id="r-reconcile" class="work-section-title">餵食核對：跟銀行月結單互相核對</h2>
 
           <div class="work-desc-block">
-            <strong>對帳模組</strong><br /><br />上傳銀行月結單 PDF，跟自己記的帳互相核對，找出漏記、重複或金額打錯的項目。刻意不比對商家名稱——銀行代碼常常是截斷、無意義的字串——而是用「日期區間＋金額」比對：每個帳戶可以各自設定預期入帳延遲天數（例如簽帳卡 1～3 天），消費日與入帳日差在範圍內就算對得上。實際使用後還發現兩個真實世界的狀況並補上處理：銀行會把同一期帳單拆成多份 PDF 寄發（改成支援一次上傳多份合併比對），以及銀行把同一筆消費拆成兩列印出（改成會嘗試把同一天的兩列加總起來比對）。
+            上傳銀行月結單 PDF，跟自己記的帳互相核對，找出漏記、重複或金額打錯的項目。刻意不比對商家名稱——銀行代碼常常是截斷、無意義的字串——而是用「日期區間＋金額」比對：每個帳戶可以各自設定預期入帳延遲天數（例如簽帳卡 1～3 天），消費日與入帳日差在範圍內就算對得上。實際使用後還補上兩個真實世界的狀況：銀行會把同一期帳單拆成多份 PDF 寄發（改成支援一次上傳多份合併比對），以及銀行把同一筆消費拆成兩列印出（改成會嘗試把同一天的兩列加總起來比對）。
           </div>
 
-          <div class="work-img-grid reveal">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/50_餵食核對_上傳對帳單.png" alt="餵食核對：上傳對帳單" loading="lazy" />
-              <p class="work-img-caption">① 上傳：選帳戶、丟 PDF（有密碼保護的月結單會跳出來問密碼）。帳戶還沒設定入帳延遲天數時會先擋下來，因為那是比對的基準。</p>
-            </div>
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/51_餵食核對_比對結果.png" alt="餵食核對：比對結果三種狀態" loading="lazy" />
-              <p class="work-img-caption">② 比對結果分成三種狀態：已對到、「官方有紀錄但你沒記」（可以一鍵帶資料去新增）、「你記了但官方一直沒出現」（可能日期或金額打錯）。還在入帳延遲區間內的則標成正常等待入帳，不用理會。</p>
-            </div>
-          </div>
-
-          <div class="work-img-grid reveal" style="grid-template-columns: 1fr;">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/52_餵食核對_逐筆原始資料.png" alt="餵食核對：對帳單完整原始資料" loading="lazy" />
-              <p class="work-img-caption">③ 完整原始資料：列出從 PDF 抽出來的每一列銀行資料，以及各自對到自己的哪一筆記帳。這個區塊是實際使用後補的——只看「幾筆對到」沒辦法用肉眼複驗，需要能逐筆攤開對照。</p>
-            </div>
+          <div class="shot-list reveal">
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/50_餵食核對_上傳對帳單.png" alt="① 上傳" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>① 上傳</strong>｜選帳戶、丟 PDF（有密碼保護的月結單會跳出來問密碼）。帳戶還沒設定入帳延遲天數時會先擋下來，因為那是比對的基準。</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/51_餵食核對_比對結果.png" alt="② 比對結果" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>② 比對結果</strong>｜分成三種狀態：已對到、「官方有紀錄但你沒記」（可一鍵帶資料去新增）、「你記了但官方一直沒出現」（可能日期或金額打錯）。還在延遲區間內的則標成正常等待入帳，不用理會。</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame shot__frame--scroll">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/52_餵食核對_逐筆原始資料.png" alt="③ 完整原始資料" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>③ 完整原始資料</strong>｜列出從 PDF 抽出來的每一列銀行資料，以及各自對到自己的哪一筆記帳。這區塊是實際使用後補的——只看「幾筆對到」沒辦法用肉眼複驗。（框內可上下捲動看完整畫面）</figcaption>
+            </figure>
           </div>
 
           <div class="work-desc-block">
@@ -787,11 +840,13 @@
             心願罐刻意不做成「存錢進度條」。這個 App 的本質是記帳，使用者並沒有真的把錢撥到另一個罐子裡——錢就是帳戶餘額本身。所以心願罐追蹤的是「排隊順序」：可動用餘額扣掉排在前面還沒買的項目，才知道排後面的還差多少，並用最近幾個月的平均淨現金流推估「照這個速度大概什麼時候買得起」。
           </div>
 
-          <div class="work-img-grid reveal" style="grid-template-columns: 1fr;">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/60_喵喵心願罐.png" alt="喵喵心願罐清單" loading="lazy" />
-              <p class="work-img-caption">清單順序＝優先順序，可以上下調整；已經買到的項目標記起來後就不再佔用可動用餘額的計算。</p>
-            </div>
+          <div class="shot-list reveal">
+            <figure class="shot">
+              <div class="shot__frame shot__frame--scroll">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/60_喵喵心願罐.png" alt="排隊清單" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>排隊清單</strong>｜清單順序＝優先順序，可以上下調整；已經買到的項目標記起來後就不再佔用可動用餘額的計算。（框內可上下捲動看完整畫面）</figcaption>
+            </figure>
           </div>
 
 
@@ -801,51 +856,59 @@
             這個功能原本叫「匯出報告」，做法是把畫面圖表截圖拼成 PDF——看起來像報告，但它沒有「解讀」。改版後改成：把首頁已經算好的統計數字（分類加總、配速警示、異常偵測、固定週期性支出），加上資料量不大時的逐筆明細，一起交給 Gemini 寫一份白話的整體評語、重點摘要、異常發現與建議。每份報告都會存進資料庫，可以回頭看、重新下載，不用重複消耗 AI 額度。
           </div>
 
-          <div class="work-img-grid reveal">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/70_戰情報告_選擇分析期間.png" alt="戰情報告：選擇分析期間" loading="lazy" />
-              <p class="work-img-caption">① 先選分析期間：至今累積、自然月、自訂結算週期、任意區間（含前一個月／前三個月／前一整年快捷鍵），下方列出之前產生過的報告。</p>
-            </div>
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/71_戰情報告_AI解讀內容.png" alt="戰情報告：AI 解讀內容" loading="lazy" />
-              <p class="work-img-caption">② AI 解讀內容：整體評語、重點摘要、異常發現、具體建議四段。PDF 下載改用瀏覽器渲染後截圖貼進 PDF——因為 PDF 函式庫內建字型完全不支援中文，直接寫會整份變亂碼。</p>
-            </div>
+          <div class="shot-list reveal">
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/70_戰情報告_選擇分析期間.png" alt="① 選擇分析期間" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>① 選擇分析期間</strong>｜至今累積、自然月、自訂結算週期、任意區間（含前一個月／前三個月／前一整年快捷鍵），下方列出之前產生過的報告。</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/71_戰情報告_AI解讀內容.png" alt="② AI 解讀內容" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>② AI 解讀內容</strong>｜整體評語、重點摘要、異常發現、具體建議四段。PDF 下載改用瀏覽器渲染後截圖貼進 PDF——因為 PDF 函式庫內建字型完全不支援中文，直接寫會整份變亂碼。</figcaption>
+            </figure>
           </div>
 
 
           <h2 id="r-settings" class="work-section-title">系統設定：把「基準」交回使用者手上</h2>
 
           <div class="work-desc-block">
-            這個 App 有很多會主動跳出來的警示，而警示最怕的是「基準是系統自己猜的」——猜錯一次，使用者就再也不相信它。所以所有門檻都收進系統設定，由使用者自己確認：分類月預算、長期預留支出（年繳保費、稅金這種大額低頻支出的月均攤）、每個帳戶的入帳延遲天數。系統只負責提供「近 3 個月」與「全部歷史」兩個參考數字，不會自己填進去。
+            這個 App 有很多會主動跳出來的警示，而警示最怕的是「基準是系統自己猜的」——猜錯一次，使用者就再也不相信它。所以所有門檻都收進系統設定由使用者自己確認：分類月預算、長期預留支出（年繳保費、稅金這種大額低頻支出的月均攤）、每個帳戶的入帳延遲天數。系統只負責提供「近 3 個月」與「全部歷史」兩個參考數字，不會自己填進去。
           </div>
 
-          <div class="work-img-grid reveal">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/80_系統設定_總覽.png" alt="系統設定總覽（手風琴）" loading="lazy" />
-              <p class="work-img-caption">① 設定總覽：用戶設定、分類預算、長期預留支出、碗盤總覽收成手風琴，每一段標題直接顯示現況摘要（幾個分類已設定、每月預留多少），不用點開才知道。</p>
-            </div>
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/81_系統設定_分類月預算.png" alt="分類月預算設定" loading="lazy" />
-              <p class="work-img-caption">② 分類月預算：列出「近 3 個月」與「全部歷史」的花費中位數當參考，但一定要自己決定要填多少。沒設定的分類完全不會出現在配速警示裡。</p>
-            </div>
-          </div>
-
-          <div class="work-img-grid reveal">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/82_系統設定_長期預留支出與安全水位.png" alt="長期預留支出與安全水位" loading="lazy" />
-              <p class="work-img-caption">③ 長期預留支出：年繳保費、綜所稅這類大額低頻支出，在 12 個月裡只出現一兩次，取中位數時會被稀釋掉，導致「可以安心花的錢」被高估。改成記「每次繳多少、多久繳一次」換算成月均攤，再併進安全水位。</p>
-            </div>
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/83_系統設定_碗盤總覽.png" alt="碗盤總覽：帳戶管理" loading="lazy" />
-              <p class="work-img-caption">④ 碗盤總覽：依帳戶型別分組管理，支援封存（不刪資料、只是從選單裡收起來）與永久刪除，新增同名帳戶時會提醒。</p>
-            </div>
-          </div>
-
-          <div class="work-img-grid reveal" style="grid-template-columns: 1fr;">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/84_系統設定_帳戶與入帳延遲設定.png" alt="帳戶編輯與入帳延遲天數" loading="lazy" />
-              <p class="work-img-caption">⑤ 帳戶設定：每個帳戶各自設定「預期入帳延遲最短／最長天數」——這是餵食核對比對日期的基準，不同銀行、不同卡別的入帳速度並不一樣。</p>
-            </div>
+          <div class="shot-list reveal">
+            <figure class="shot">
+              <div class="shot__frame">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/80_系統設定_總覽.png" alt="① 設定總覽" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>① 設定總覽</strong>｜用戶設定、分類預算、長期預留支出、碗盤總覽收成手風琴，每段標題直接顯示現況摘要（幾個分類已設定、每月預留多少），不用點開才知道。</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame shot__frame--scroll">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/81_系統設定_分類月預算.png" alt="② 分類月預算" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>② 分類月預算</strong>｜列出「近 3 個月」與「全部歷史」的花費中位數當參考，但一定要自己決定填多少。沒設定的分類完全不會出現在配速警示裡。（框內可上下捲動看完整畫面）</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame shot__frame--scroll">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/82_系統設定_長期預留支出與安全水位.png" alt="③ 長期預留支出" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>③ 長期預留支出</strong>｜年繳保費、綜所稅這類支出在 12 個月裡只出現一兩次，取中位數時會被稀釋掉，導致「可以安心花的錢」被高估。改成記「每次繳多少、多久繳一次」換算成月均攤，再併進安全水位。（框內可上下捲動看完整畫面）</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame shot__frame--scroll">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/83_系統設定_碗盤總覽.png" alt="④ 碗盤總覽" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>④ 碗盤總覽</strong>｜依帳戶型別分組管理，支援封存（不刪資料、只是從選單收起來）與永久刪除，新增同名帳戶時會提醒。（框內可上下捲動看完整畫面）</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame shot__frame--scroll">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/84_系統設定_帳戶與入帳延遲設定.png" alt="⑤ 入帳延遲天數" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>⑤ 入帳延遲天數</strong>｜每個帳戶各自設定「預期入帳延遲最短／最長天數」——這是餵食核對比對日期的基準，不同銀行、不同卡別的入帳速度並不一樣。（框內可上下捲動看完整畫面）</figcaption>
+            </figure>
           </div>
 
 
@@ -855,29 +918,33 @@
             記帳幾乎都發生在剛結完帳、站在店門口的那一刻，所以手機版不是桌機版縮小，而是重新排過：導覽從側欄改成頂部橫列、表格改成卡片式堆疊、新增交易改成四步驟的引導式表單，每一步只問幾個欄位，不用在小螢幕上面對一整張長表單。
           </div>
 
-          <div class="work-img-grid-3 reveal">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/M1_手機_貓咪指揮中心.png" alt="手機版貓咪指揮中心" loading="lazy" />
-              <p class="work-img-caption">① 首頁：卡片依序堆疊，分類比率的圓餅圖與圖例改成上下排列。</p>
-            </div>
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/M2_手機_罐罐明細本.png" alt="手機版罐罐明細本" loading="lazy" />
-              <p class="work-img-caption">② 明細本：表格改成卡片，日期與帳戶一行、商家與品項一行、分類與金額一行。</p>
-            </div>
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/M3_手機_新增交易步驟式表單.png" alt="手機版新增交易步驟式表單" loading="lazy" />
-              <p class="work-img-caption">③ 新增交易：改成四步驟，上方有進度點，一次只處理一件事。</p>
-            </div>
+          <div class="shot-phones reveal">
+            <figure class="shot">
+              <div class="shot__frame shot__frame--scroll">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/M1_手機_貓咪指揮中心.png" alt="首頁" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>首頁</strong>｜卡片依序堆疊，分類比率的圓餅圖與圖例改成上下排列。（框內可上下捲動看完整畫面）</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame shot__frame--scroll">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/M2_手機_罐罐明細本.png" alt="明細本" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>明細本</strong>｜表格改成卡片：日期與帳戶一行、商家與品項一行、分類與金額一行。（框內可上下捲動看完整畫面）</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame shot__frame--scroll">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/M3_手機_新增交易步驟式表單.png" alt="新增交易" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>新增交易</strong>｜改成四步驟，上方有進度點，一次只處理一件事。（框內可上下捲動看完整畫面）</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="shot__frame shot__frame--scroll">
+                <img src="assets/images/Pawket/Claude%20Code重啟版截圖/M4_手機_餵食核對.png" alt="餵食核對" loading="lazy" />
+              </div>
+              <figcaption class="shot__cap"><strong>餵食核對</strong>｜上傳區與比對結果改成單欄堆疊，收到銀行通知信就能直接對帳。（框內可上下捲動看完整畫面）</figcaption>
+            </figure>
           </div>
 
-          <div class="work-img-grid reveal" style="grid-template-columns: 1fr;">
-            <div class="work-img-wrap">
-              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/M4_手機_餵食核對.png" alt="手機版餵食核對" loading="lazy" />
-              <p class="work-img-caption">④ 餵食核對：上傳區與比對結果同樣改成單欄堆疊，手機上收到銀行通知信就能直接對帳。</p>
-            </div>
-          </div>
-
-          <!-- ── 真實資料匯入與查核 ── -->
           <h2 id="r-import" class="work-section-title">真實資料匯入與資料品質查核</h2>
 
           <div class="work-desc-block">

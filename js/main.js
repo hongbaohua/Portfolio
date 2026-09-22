@@ -4,7 +4,7 @@
    ============================================================ */
 
 /* ── Build 版本（F12 Console 可見，用於確認 GitHub Pages 是否同步） ── */
-const BUILD_TIME = '2026-09-22 10:18';
+const BUILD_TIME = '2026-09-22 10:48';
 console.log('%c Portfolio Build: ' + BUILD_TIME, 'color: #C4A35A; font-weight: bold');
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ── 圖片燈箱（點擊開啟，支援切換 / 縮放 / 平移） ── */
-  const workImgsArr = Array.from(document.querySelectorAll('.work-img-wrap img'));
+  const workImgsArr = Array.from(document.querySelectorAll('.work-img-wrap img, .shot__frame img'));
   if (workImgsArr.length > 0) {
     const lb = document.createElement('div');
     lb.className = 'lightbox';
