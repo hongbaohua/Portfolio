@@ -246,8 +246,8 @@ web/
 
 ---
 
-## 目前網站狀態（最後更新：2026-08-17，ai-pawket.html 重啟版依 Pawket 專案最新進度更新：新增「功能命名系統」段落、開發挑戰新增2則、7階段路線圖狀態更新）
-（歷史：2026-07-28，新增 iPAS 品牌企劃師認證（不標示級別）；首頁 AI 協作精選卡片順序調整為 仍在等＞Tickit＞Pawket＞AI業主模擬練習；全站 20 個 HTML 頁面加入 favicon；ai-pawket.html 新增醒目試用按鈕（ai-tickit.html 因 Supabase 免費版資料庫閒置問題移除同按鈕）；Pawket／Tickit 全站卡片預覽圖改為品牌主視覺色＋標誌圖示；ai-pawket.html 新增前後版本對照切換器（原型版／重啟版），重啟版截圖待補）
+## 目前網站狀態（最後更新：2026-09-22，ai-pawket.html 重啟版截圖全部補齊並改版成「功能細分導覽」：47 張示範帳號截圖、新增 8 個功能段落、`#r-gallery` 佔位區移除）
+（歷史：2026-08-17 ai-pawket.html 重啟版依 Pawket 專案進度更新（功能命名系統段落、開發挑戰2則、路線圖狀態）；2026-07-28，新增 iPAS 品牌企劃師認證（不標示級別）；首頁 AI 協作精選卡片順序調整為 仍在等＞Tickit＞Pawket＞AI業主模擬練習；全站 20 個 HTML 頁面加入 favicon；ai-pawket.html 新增醒目試用按鈕（ai-tickit.html 因 Supabase 免費版資料庫閒置問題移除同按鈕）；Pawket／Tickit 全站卡片預覽圖改為品牌主視覺色＋標誌圖示；ai-pawket.html 新增前後版本對照切換器（原型版／重啟版），重啟版截圖待補）
 
 ### 已完成頁面
 | 頁面 | 狀態 | 說明 |
@@ -286,8 +286,8 @@ web/
 | AI Works 詳細頁 | 「仍在等」、「Pawket」、「Tickit」已完成；更多 AI 應用仍待製作 |
 | ai-learning.html 時間軸 | ✅ 已新增「AI新秀計畫（2025）」節點；內容細節待作品集完整後補充 |
 | index.html AI 技能 chips | 作品集圖片全部上傳完成後，根據實際作品使用工具更新 AI 輔助創作分組內容 |
-| **ai-pawket.html 重啟版截圖補上**（2026-08-02，待做） | 版面／文字內容已完成（見下方「版本對照切換器」規範），`#r-gallery` 目前是 `.work-gallery-pending` 待補佔位區。等 Ivy 準備好**測試帳號（非真實記帳資料）**畫面截圖後，比照原型版 `#section-gallery` 的 `.work-img-scroll`／`.work-img-grid` 結構換上，同時記得把 `.work-gallery-pending` 移除。 |
-| **ai-pawket.html 重啟版內容持續追更**（2026-08-17 起固定流程） | Pawket 專案（`C:\Users\Master\Projects\Pawket\`）本身還在密集開發中，`專案文件\PROJECT_STATUS.md` 會持續累積新的「現況速覽」節點。之後 Ivy 說「Pawket 有新更新了」時，流程固定：①重新讀該檔案最新幾節（找最後一個 `## 0.x 現況速覽` 或文件最後一節）②只抽取「工程決策層級」的抽象化描述，**絕對不能**把任何真實商家名稱／金額／帳戶餘額／user_id 寫進作品集③優先更新 `r-roadmap` 進度表、`r-challenge` 新增代表性挑戰、必要時才新增新的 `r-*` 段落④同步這裡跟 Obsidian 對應筆記。 |
+| ~~ai-pawket.html 重啟版截圖補上~~ **✅ 2026-09-22 完成** | 47 張截圖已放在 `assets/images/Pawket/Claude Code重啟版截圖/`，`.work-gallery-pending` 佔位區已移除，改成按功能細分的 8 個段落＋每張圖獨立圖說。截圖全部來自 Pawket 專案的「作品集截圖專用示範帳號」（虛構假資料、虛構銀行名稱），重拍方式見 Pawket repo 的 `data-import/seed_demo_account.py` 與 `capture_demo_screenshots.mjs`。 |
+| **ai-pawket.html 重啟版內容持續追更**（2026-08-17 起固定流程） | Pawket 專案（`C:\Users\user\Projects\Pawket\`）本身還在密集開發中，`專案文件\PROJECT_STATUS.md` 會持續累積新的「現況速覽」節點。之後 Ivy 說「Pawket 有新更新了」時，流程固定：①重新讀該檔案最新幾節（找最後一個 `## 0.x 現況速覽` 或文件最後一節）②只抽取「工程決策層級」的抽象化描述，**絕對不能**把任何真實商家名稱／金額／帳戶餘額／user_id 寫進作品集③優先更新 `r-roadmap` 進度表、`r-challenge` 新增代表性挑戰、必要時才新增新的 `r-*` 段落④同步這裡跟 Obsidian 對應筆記。**⑤如果那次更新有改到 App 畫面，截圖也要一起重拍**：到 Pawket 專案跑 `data-import/seed_demo_account.py` 重建示範帳號資料，再跑 `data-import/capture_demo_screenshots.mjs` 自動重拍，縮圖成 1 倍後覆蓋 `assets/images/Pawket/Claude Code重啟版截圖/`。 |
 
 ---
 

@@ -186,7 +186,7 @@
           </div>
           <div class="work-info__section" data-vshow="rebuild">
             <p class="work-info__label">重啟時間</p>
-            <p class="work-info__text">2026 年 7 月 17 日起，持續開發中（最新更新：2026 年 8 月）</p>
+            <p class="work-info__text">2026 年 7 月 17 日起，持續開發中（最新更新：2026 年 9 月）</p>
           </div>
 
         </aside><!-- /work-info -->
@@ -208,11 +208,18 @@
           </nav>
           <nav class="work-outline" aria-label="頁面大綱" data-vshow="rebuild">
             <a href="#section-intro-rebuild" class="work-outline__item">作品簡介</a>
-            <a href="#r-arch"           class="work-outline__item">資料庫化與帳戶模型</a>
+            <a href="#r-arch"           class="work-outline__item">底層重建</a>
             <a href="#r-naming"         class="work-outline__item">功能命名系統</a>
+            <a href="#r-dashboard"      class="work-outline__item">貓咪指揮中心</a>
+            <a href="#r-ledger"         class="work-outline__item">罐罐明細本</a>
+            <a href="#r-entry"          class="work-outline__item">記一筆帳</a>
+            <a href="#r-shared"         class="work-outline__item">分帳與往來</a>
+            <a href="#r-reconcile"      class="work-outline__item">餵食核對</a>
+            <a href="#r-wishlist"       class="work-outline__item">喵喵心願罐</a>
+            <a href="#r-ai"             class="work-outline__item">戰情報告</a>
+            <a href="#r-settings"       class="work-outline__item">系統設定</a>
+            <a href="#r-mobile"         class="work-outline__item">手機版</a>
             <a href="#r-import"         class="work-outline__item">真實資料匯入與查核</a>
-            <a href="#r-reconcile"      class="work-outline__item">對帳與商家辨識</a>
-            <a href="#r-gallery"        class="work-outline__item">App 截圖</a>
             <a href="#r-roadmap"        class="work-outline__item">開發階段進度</a>
             <a href="#r-challenge"      class="work-outline__item">開發挑戰</a>
             <a href="#r-reflection"     class="work-outline__item">過程反思</a>
@@ -468,11 +475,22 @@
 
           <div data-vshow="rebuild">
 
-          <!-- ── 資料庫化與帳戶模型 ── -->
-          <h2 id="r-arch" class="work-section-title">資料庫化與帳戶模型</h2>
+
+          <h2 id="r-arch" class="work-section-title">從原型到產品：底層整個重建</h2>
 
           <div class="work-desc-block">
-            AI Studio 原型完全沒有資料持久化能力——重新整理頁面資料就會消失。重啟的第一步是接上 Supabase（Postgres + Auth），把整個 App 從「一次性生成的靜態展示」轉型為「資料真的存得住」的產品，並重新設計帳戶模型：使用者可自訂帳戶清單，依「現金 → 金融卡 → 信用卡 → 電子支付 → 儲值卡」排序，刻意照「誰是真正的錢、誰是衍生出來的」設計，交易類型也擴充為收入／支出／轉帳三種，轉帳不計入收支統計。
+            AI Studio 原型完全沒有資料持久化能力——重新整理頁面，剛剛記的帳就消失了。重啟的第一件事是接上 Supabase（Postgres + Auth），讓資料真的存得住、而且是「我的資料只有我看得到」（資料表全部開啟 Row Level Security）。接著重新設計帳戶模型：現金、銀行簽帳卡、電子支付錢包、實體儲值卡各自是一個「碗」，每一筆交易都要說清楚是從哪個碗裡出去的，餘額不是手動輸入的數字，而是從每一筆交易即時加總出來的結果。
+          </div>
+
+          <div class="work-img-grid reveal">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/00_登入畫面.png" alt="Pawket 登入畫面" loading="lazy" />
+              <p class="work-img-caption">① 帳號系統：原型沒有登入概念，重啟版用 Email + 密碼登入，資料跟著帳號走、換裝置也還在。</p>
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/04_首頁_帳戶餘額總覽.png" alt="Pawket 帳戶餘額總覽" loading="lazy" />
+              <p class="work-img-caption">② 多帳戶餘額：依「現金 → 銀行 → 電子支付 → 儲值卡」分組，總資產刻意不含信用卡——那是負債不是資產。</p>
+            </div>
           </div>
 
           <div class="work-table-wrap">
@@ -482,18 +500,20 @@
               </thead>
               <tbody>
                 <tr><td>資料持久化</td><td>❌ 重新整理即消失</td><td>✅ Supabase 雲端資料庫</td></tr>
-                <tr><td>登入／多使用者</td><td>❌ 無</td><td>✅ Email + 密碼登入</td></tr>
-                <tr><td>帳戶管理</td><td>❌ 無帳戶概念</td><td>✅ 自訂多帳戶模型</td></tr>
-                <tr><td>交易金額結構</td><td>單一金額欄位</td><td>原始金額／折扣明細／備註分欄</td></tr>
+                <tr><td>登入／多使用者</td><td>❌ 無</td><td>✅ Email + 密碼登入，RLS 資料隔離</td></tr>
+                <tr><td>帳戶管理</td><td>❌ 無帳戶概念</td><td>✅ 5 種帳戶型別，餘額即時加總</td></tr>
+                <tr><td>交易類型</td><td>收入／支出</td><td>收入／支出／帳戶互轉（互轉不計入收支）</td></tr>
+                <tr><td>交易金額結構</td><td>單一金額欄位</td><td>原始金額／折扣明細／實付金額＋品項清單</td></tr>
+                <tr><td>資料正確性</td><td>展示用假資料</td><td>真實記帳資料，可跟銀行月結單對帳</td></tr>
               </tbody>
             </table>
           </div>
 
-          <!-- ── 功能命名系統（養貓主題） ── -->
+
           <h2 id="r-naming" class="work-section-title">功能命名系統：養貓主題</h2>
 
           <div class="work-desc-block">
-            資料庫、帳戶模型這些底層架構穩定後，回頭處理一個純設計層面的問題：功能一個個加上去，介面文字卻是隨手取的技術名詞（對帳、帳戶管理、應收應付……），跟「喵喵財庫」這個品牌調性完全脫節。跟 Claude Code 腦力激盪+來回調整幾輪，定案一個世界觀：「使用者使用＝餵食，餵飽貓咪後，貓咪才會工作」，延伸出「餵食」「碗」兩條命名主線，統一改寫全站使用者看得到的文字——刻意只改介面文字，不動程式內部的變數／元件／欄位名稱，降低這次改名的風險範圍。
+            資料庫、帳戶模型這些底層架構穩定後，回頭處理一個純設計層面的問題：功能一個個加上去，介面文字卻是隨手取的技術名詞（對帳、帳戶管理、應收應付……），跟「喵喵財庫」這個品牌調性完全脫節。跟 Claude Code 腦力激盪、來回調整幾輪後定案一個世界觀：<strong>「使用者使用＝餵食，餵飽貓咪後，貓咪才會工作」</strong>，延伸出「餵食」「碗」兩條命名主線，統一改寫全站使用者看得到的文字——刻意只改介面文字，不動程式內部的變數／元件／欄位名稱，把這次改名的風險範圍壓在最小。
           </div>
 
           <div class="work-table-wrap">
@@ -513,9 +533,348 @@
             </table>
           </div>
 
+          <div class="work-img-grid reveal">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/08_首頁_糧食往來簿摘要.png" alt="糧食往來簿摘要卡" loading="lazy" />
+              <p class="work-img-caption">「應收／應付」改叫糧食往來簿：誰還沒還我、我還欠誰，一眼看完。</p>
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/90_重新裝碗紀錄.png" alt="重新裝碗紀錄頁面" loading="lazy" />
+              <p class="work-img-caption">「編輯歷程」改叫重新裝碗紀錄：所有批次異動都留底，整批改錯了可以整批復原。</p>
+            </div>
+          </div>
+
           <div class="work-desc-block">
-            <strong>更早之前就定案、這次延續沿用的命名</strong><br /><br />
-            帳單／交易＝餵食、拆帳＝分裝盤、帳戶互轉＝換一個碗、安全水位設定＝存糧警戒線、垃圾桶＝貓砂盆、首頁＝貓咪指揮中心、明細本＝罐罐明細本。整套命名系統讓原本冷冰冰的財務工具，讀起來更像在照顧一隻貓——這是設計背景在工程專案裡最直接派得上用場的地方。
+            <strong>更早之前就定案、這次延續沿用的命名</strong><br /><br />帳單／交易＝餵食、拆帳＝貓咪零食分裝盤、帳戶互轉＝換一個碗、安全水位設定＝存糧警戒線、首頁＝貓咪指揮中心、明細本＝罐罐明細本。整套命名讓原本冷冰冰的財務工具，讀起來像在照顧一隻貓——這是設計背景在工程專案裡最直接派得上用場的地方。
+          </div>
+
+
+          <h2 id="r-dashboard" class="work-section-title">貓咪指揮中心：一頁看完財務狀況</h2>
+
+          <div class="work-desc-block">
+            首頁不是把數字排出來就好，而是回答幾個真正會影響決定的問題：這個月還好嗎？手上的錢還能撐多久？哪一類花超過了？想買的東西買得起嗎？每一張卡片都對應一個問題，而且所有門檻與基準都可以追溯到「使用者自己設定過的數字」或「自己的歷史紀錄」，不是系統憑空猜的。
+          </div>
+
+          <div class="work-img-grid reveal" style="grid-template-columns: 1fr;">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/01_首頁_全頁總覽.png" alt="Pawket 貓咪指揮中心全頁" loading="lazy" />
+              <p class="work-img-caption">首頁全貌：情緒指標 → 現金流 → 現金緩衝 → 心願罐與消費分類 → 分類洞察 → 配速警示 → 財務結構 → 固定週期性支出，由上而下從「概況」走到「細節」。</p>
+            </div>
+          </div>
+
+          <div class="work-img-grid reveal">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/02b_首頁_情緒指標_注意.png" alt="Meowney 情緒指標：注意狀態" loading="lazy" />
+              <p class="work-img-caption">① Meowney 情緒指標：把「有沒有超支、固定支出重不重、有沒有觸發罰則」三個判斷收斂成一句貓咪口吻的狀態，情緒＝當期財務健康的第一眼訊號。</p>
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/03_首頁_本期現金流.png" alt="本期現金流卡片" loading="lazy" />
+              <p class="work-img-caption">② 本期現金流：錢包這期真的進出多少。代購／代墊／借貸／分帳結清這些「幫別人先付、之後收回來」的錢也算在內，因為錢確實有離開戶頭；但它們不會進入下面任何一項消費分析。</p>
+            </div>
+          </div>
+
+          <div class="work-img-grid reveal">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/05_首頁_現金緩衝耗盡預警.png" alt="現金緩衝耗盡預警" loading="lazy" />
+              <p class="work-img-caption">③ 現金緩衝耗盡預警：可動用的錢 ÷ 最近 90 天日均花費＝還能撐幾天。日均花費會先用統計方法排除單筆極端值（買筆電、一次繳整年保費），避免一次性大額支出把「還能撐幾天」嚇成快沒錢。</p>
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/07_首頁_本期消費分類比率.png" alt="本期消費分類比率圓餅圖" loading="lazy" />
+              <p class="work-img-caption">④ 消費分類比率：預設用次分類分塊，但某個細項單獨超過總支出 15% 時會自己拆出來獨立顯示（例如「飲料」從「餐飲食品」裡跳出來），讓真正的錢坑不會被上層分類蓋掉。</p>
+            </div>
+          </div>
+
+          <div class="work-img-grid reveal" style="grid-template-columns: 1fr;">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/09_首頁_分類洞察三卡.png" alt="分類洞察：支出排行榜、異常消費偵測、收入來源分析" loading="lazy" />
+              <p class="work-img-caption">⑤ 分類洞察：支出排行／異常消費／收入來源三張並排。異常偵測刻意設得保守——同類別要有 5 筆以上歷史、單筆超過平均 2.2 倍才提醒，早期版本太敏感，結果「什麼都是異常」反而讓警示失去意義。</p>
+            </div>
+          </div>
+
+          <div class="work-img-grid reveal">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/10_首頁_需立即關注的項目.png" alt="需立即關注的項目（月度配速警示）" loading="lazy" />
+              <p class="work-img-caption">⑥ 配速警示：只有自己設過月預算的分類才會出現，照「本期已過幾天」算出「到今天應該花多少」再比對。沒設定的分類完全不提醒——上一版用歷史中位數自動外推基準，月初幾筆消費就會誤判成整月嚴重超支。</p>
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/11_首頁_財務結構分析.png" alt="財務結構分析：固定支出負擔比" loading="lazy" />
+              <p class="work-img-caption">⑦ 財務結構：固定支出佔收入的比重，以及固定／變動／儲蓄各佔多少。本期還沒有收入紀錄時會顯示「—」而不是硬算一個爆表的百分比（曾經因為月初薪水還沒入帳而誤報）。</p>
+            </div>
+          </div>
+
+          <div class="work-img-grid reveal">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/12_首頁_固定週期性支出.png" alt="固定週期性支出偵測" loading="lazy" />
+              <p class="work-img-caption">⑧ 固定週期性支出：不是看分類，是看行為模式——同一個商家連續出現 3 個月以上、出現月份佔比超過 75%、而且每月金額都落在中位數附近，才會被認定成「固定」，避免常去的飲料店也被當成訂閱制。</p>
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/06_首頁_最想買的心願卡.png" alt="最優先想買的心願卡片" loading="lazy" />
+              <p class="work-img-caption">⑨ 心願罐前導卡：首頁常駐顯示排第一順位的願望，直接告訴你「買得起了」或「還差多少」，把存錢目標放進每天會看到的地方。</p>
+            </div>
+          </div>
+
+          <div class="work-img-grid reveal" style="grid-template-columns: 1fr;">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/13_首頁_期間切換與超支扣零食設定.png" alt="期間切換與超支扣零食設定" loading="lazy" />
+              <p class="work-img-caption">⑩ 期間切換與設定：至今累積／自然月／自訂結算週期三種視角；結算日與「超支扣零食」（超支就從下期預算先扣一部分）都存進帳號設定裡，換裝置、重新整理都還在。</p>
+            </div>
+          </div>
+
+
+          <div class="work-desc-block">
+            <strong>同一份資料、三種情緒</strong><br /><br />
+            情緒指標的三種狀態不是隨機的表情變化，而是同一套判斷在不同預算設定下的結果：
+            下面三張圖是<strong>完全同一個月的資料</strong>，只改了「分類月預算」這一個變因。
+            這也是刻意的設計——警示的基準必須是使用者自己確認過的數字，系統不自己猜，
+            所以同樣的花費，在不同人的預算標準下本來就該得到不同的提醒。
+          </div>
+
+          <div class="work-img-grid reveal" style="grid-template-columns: 1fr;">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/02a_首頁_情緒指標_健康.png" alt="Meowney 情緒指標：健康狀態" loading="lazy" />
+              <p class="work-img-caption">預算寬鬆時：「財務狀況很健康喔！」——所有分類都在配速內。</p>
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/02b_首頁_情緒指標_注意.png" alt="Meowney 情緒指標：注意狀態" loading="lazy" />
+              <p class="work-img-caption">有分類略微超前時：「注意喔！花費有點快了…」——黃色提醒，還不到要停下來的程度。</p>
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/02c_首頁_情緒指標_超支.png" alt="Meowney 情緒指標：超支狀態" loading="lazy" />
+              <p class="work-img-caption">預算設得緊、確實超支時：「超支囉！下期零食要被扣了」——同時觸發「超支扣零食」，下一期預算會先被扣掉一部分。</p>
+            </div>
+          </div>
+
+          <h2 id="r-ledger" class="work-section-title">罐罐明細本：每天真的會用的那一頁</h2>
+
+          <div class="work-desc-block">
+            明細本是使用頻率最高的頁面，設計重點是「一列就看完一筆帳的全部資訊」，不用點進去才知道自己買了什麼。
+          </div>
+
+          <div class="work-img-grid reveal" style="grid-template-columns: 1fr;">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/21_明細本_一列裡有什麼.png" alt="罐罐明細本單列資訊結構" loading="lazy" />
+              <p class="work-img-caption">一列裡有：日期、帳戶（含實際刷的付款通道 VISA）、商家、品項與套餐子品項、分類、金額，以及右側四個操作（分裝／編輯／複製這筆／刪除）。</p>
+            </div>
+          </div>
+
+          <div class="work-img-grid reveal">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/20_明細本_全頁.png" alt="罐罐明細本全頁" loading="lazy" />
+              <p class="work-img-caption">列表全貌：帳戶與分類都用顏色標籤區分，同一筆分裝過的交易會收成一組顯示，不會散成好幾列干擾閱讀。</p>
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/22_明細本_分類階層篩選.png" alt="分類階層樹篩選面板" loading="lazy" />
+              <p class="work-img-caption">分類篩選是階層樹（大類 → 次分類 → 細項標籤），旁邊標著各分類目前有幾筆，不用先記得自己當初怎麼分類。</p>
+            </div>
+          </div>
+
+          <div class="work-img-grid reveal">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/23_明細本_快速查找.png" alt="明細本快速查找" loading="lazy" />
+              <p class="work-img-caption">快速查找同時比對商家、品項與備註，所以打「喵星人」找得到店名，打「貓砂」也找得到品項。</p>
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/24_明細本_垃圾桶.png" alt="垃圾桶（軟刪除）" loading="lazy" />
+              <p class="work-img-caption">刪除是「軟刪除」：先進垃圾桶，可以救回或永久刪除。分裝過的原始整筆也會留在這裡，隨時能追溯拆分前長什麼樣子。</p>
+            </div>
+          </div>
+
+
+          <h2 id="r-entry" class="work-section-title">記一筆帳：真實生活比「一個金額」複雜得多</h2>
+
+          <div class="work-desc-block">
+            真實的一筆消費常常不是單純的「商家＋金額」：有折價券、有好幾樣品項、有套餐、有外幣、有時候是幫別人買的、有時候一張發票要分給好幾個預算分類。新增／編輯表單把這些情境全部收進同一張表單，但用摺疊的方式分層，平常只要填三個欄位就能存檔。
+          </div>
+
+          <div class="work-img-grid reveal" style="grid-template-columns: 1fr;">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/30_新增交易_完整表單.png" alt="新增交易完整表單" loading="lazy" />
+              <p class="work-img-caption">完整表單：日期、商家、收支別、付款通道與帳戶、特殊性質、品項清單、實付金額、分類歸屬、分裝與備註。上方還有「上傳收據照片自動辨識」，用 Gemini 直接把收據轉成商家／金額／品項。</p>
+            </div>
+          </div>
+
+          <div class="work-img-grid reveal">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/31_編輯交易_金額拆分.png" alt="金額拆分：原始金額、折扣明細、實付金額" loading="lazy" />
+              <p class="work-img-caption">① 金額拆分：原始金額與每一項折扣分開記，實付金額自動算。這樣「我省了多少」跟「我實際付了多少」都留得下來，不會被壓成同一個數字。</p>
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/32_編輯交易_喵喵購物清單與套餐子品項.png" alt="喵喵購物清單與套餐子品項" loading="lazy" />
+              <p class="work-img-caption">② 品項與套餐子品項：一張票券發票裡的「票價／系統手續費／超商取票費」是同一次購買的三個組成，做成父品項底下的子項目，而不是三筆平行品項。</p>
+            </div>
+          </div>
+
+          <div class="work-img-grid reveal">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/33_編輯交易_特殊性質與快速結清.png" alt="特殊性質標記與快速結清" loading="lazy" />
+              <p class="work-img-caption">③ 特殊性質：代購／工作代墊／借貸三種「不是自己花的錢」。最常見的「整筆代墊、單一對象、當下就結清」可以直接在這裡勾完，不用跳到完整版分帳畫面。</p>
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/34_編輯交易_分類歸屬.png" alt="分類歸屬三層選擇" loading="lazy" />
+              <p class="work-img-caption">④ 分類歸屬：大類 → 次分類 → 細項標籤三層，次分類與細項都可以自訂；同一個商家下次再記帳時會自動帶出上次的分類。</p>
+            </div>
+          </div>
+
+          <div class="work-img-grid reveal">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/36_帳戶互轉.png" alt="帳戶互轉（換一個碗）" loading="lazy" />
+              <p class="work-img-caption">⑤ 帳戶互轉：領現金、悠遊卡加值、電子錢包儲值都是「錢從一個碗換到另一個碗」，記成互轉就不會被重複計入收入或支出。</p>
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/37_貓咪零食分裝盤.png" alt="貓咪零食分裝盤（一筆拆成多個分類）" loading="lazy" />
+              <p class="work-img-caption">⑥ 分裝盤：一張超市發票拆成生活日用／餐飲食品／寵物花費三份，主項目金額由總額自動減去子項目。拆完之後原始那筆會進垃圾桶，不會兩邊都算一次。</p>
+            </div>
+          </div>
+
+
+          <h2 id="r-shared" class="work-section-title">幫別人先付的錢：分帳與往來追蹤</h2>
+
+          <div class="work-desc-block">
+            代購、代墊、借錢給朋友這些錢，會讓記帳變得很尷尬：錢確實離開了戶頭，但它不是「我的消費」。Pawket 的處理方式是把兩件事分開——<strong>現金流照算，消費分析不算</strong>。借出跟收回可能相隔當天、好幾天、甚至跨月，現金流要看得出錢包真實的凹陷與回填；但這些金額一旦混進消費分析，就會讓分類佔比、超支警示、燒錢速度全部失真。
+          </div>
+
+          <div class="work-img-grid reveal" style="grid-template-columns: 1fr;">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/40_這碗跟誰分.png" alt="這碗跟誰分（完整版分帳）" loading="lazy" />
+              <p class="work-img-caption">完整版分帳：一筆錢可以分給多個對象，各自記「對方欠我」或「我欠對方」、各自標記已結清；結清時可以順便記一筆交易，也可以連結到已經記過的那一筆，避免同一筆還款被算兩次。</p>
+            </div>
+          </div>
+
+          <div class="work-img-grid reveal">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/41_糧食往來簿清單.png" alt="糧食往來簿：未結清清單" loading="lazy" />
+              <p class="work-img-caption">糧食往來簿把所有還沒結清的往來集中在一起，應收與應付分兩欄，不用去翻明細本才想起來誰還沒還錢。</p>
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/42_糧食往來簿_標記已結清.png" alt="標記已結清的兩種方式" loading="lazy" />
+              <p class="work-img-caption">標記已結清時有兩個選項：「順便記一筆」自動產生對應的收入／支出交易，或「已經記過帳了」直接連結到既有交易——這個選項是實際使用後才補上的，因為還錢當下往往早就先記過帳了。</p>
+            </div>
+          </div>
+
+
+          <h2 id="r-reconcile" class="work-section-title">餵食核對：跟銀行月結單互相核對</h2>
+
+          <div class="work-desc-block">
+            <strong>對帳模組</strong><br /><br />上傳銀行月結單 PDF，跟自己記的帳互相核對，找出漏記、重複或金額打錯的項目。刻意不比對商家名稱——銀行代碼常常是截斷、無意義的字串——而是用「日期區間＋金額」比對：每個帳戶可以各自設定預期入帳延遲天數（例如簽帳卡 1～3 天），消費日與入帳日差在範圍內就算對得上。實際使用後還發現兩個真實世界的狀況並補上處理：銀行會把同一期帳單拆成多份 PDF 寄發（改成支援一次上傳多份合併比對），以及銀行把同一筆消費拆成兩列印出（改成會嘗試把同一天的兩列加總起來比對）。
+          </div>
+
+          <div class="work-img-grid reveal">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/50_餵食核對_上傳對帳單.png" alt="餵食核對：上傳對帳單" loading="lazy" />
+              <p class="work-img-caption">① 上傳：選帳戶、丟 PDF（有密碼保護的月結單會跳出來問密碼）。帳戶還沒設定入帳延遲天數時會先擋下來，因為那是比對的基準。</p>
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/51_餵食核對_比對結果.png" alt="餵食核對：比對結果三種狀態" loading="lazy" />
+              <p class="work-img-caption">② 比對結果分成三種狀態：已對到、「官方有紀錄但你沒記」（可以一鍵帶資料去新增）、「你記了但官方一直沒出現」（可能日期或金額打錯）。還在入帳延遲區間內的則標成正常等待入帳，不用理會。</p>
+            </div>
+          </div>
+
+          <div class="work-img-grid reveal" style="grid-template-columns: 1fr;">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/52_餵食核對_逐筆原始資料.png" alt="餵食核對：對帳單完整原始資料" loading="lazy" />
+              <p class="work-img-caption">③ 完整原始資料：列出從 PDF 抽出來的每一列銀行資料，以及各自對到自己的哪一筆記帳。這個區塊是實際使用後補的——只看「幾筆對到」沒辦法用肉眼複驗，需要能逐筆攤開對照。</p>
+            </div>
+          </div>
+
+          <div class="work-desc-block">
+            <strong>商家智能辨識三層架構</strong><br /><br />銀行帳單上的商家代碼常常是同一間店、每次代碼卻略有不同的截斷字串。設計了三層判斷：先做免費即時的模糊比對（跟已知商家名稱做相似度比對），信心不足時交給 Gemini 判斷最可能對應哪個已知商家，兩層都不確定才問使用者本人——確認後存成新的商家對照紀錄，下次同類代碼出現就不用再問。對照表也刻意不是「一個代碼＝一個商家」，而是候選清單：實測發現近兩成代碼背後其實對應過兩種以上不同用途（例如同一組 Google Play 代碼背後可能是好幾款不同遊戲），只有候選剛好一筆時才自動帶入。
+          </div>
+
+
+          <h2 id="r-wishlist" class="work-section-title">喵喵心願罐：不是存錢進度，是排隊清單</h2>
+
+          <div class="work-desc-block">
+            心願罐刻意不做成「存錢進度條」。這個 App 的本質是記帳，使用者並沒有真的把錢撥到另一個罐子裡——錢就是帳戶餘額本身。所以心願罐追蹤的是「排隊順序」：可動用餘額扣掉排在前面還沒買的項目，才知道排後面的還差多少，並用最近幾個月的平均淨現金流推估「照這個速度大概什麼時候買得起」。
+          </div>
+
+          <div class="work-img-grid reveal" style="grid-template-columns: 1fr;">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/60_喵喵心願罐.png" alt="喵喵心願罐清單" loading="lazy" />
+              <p class="work-img-caption">清單順序＝優先順序，可以上下調整；已經買到的項目標記起來後就不再佔用可動用餘額的計算。</p>
+            </div>
+          </div>
+
+
+          <h2 id="r-ai" class="work-section-title">戰情報告：讓 AI 真的讀資料、寫一份看得懂的解讀</h2>
+
+          <div class="work-desc-block">
+            這個功能原本叫「匯出報告」，做法是把畫面圖表截圖拼成 PDF——看起來像報告，但它沒有「解讀」。改版後改成：把首頁已經算好的統計數字（分類加總、配速警示、異常偵測、固定週期性支出），加上資料量不大時的逐筆明細，一起交給 Gemini 寫一份白話的整體評語、重點摘要、異常發現與建議。每份報告都會存進資料庫，可以回頭看、重新下載，不用重複消耗 AI 額度。
+          </div>
+
+          <div class="work-img-grid reveal">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/70_戰情報告_選擇分析期間.png" alt="戰情報告：選擇分析期間" loading="lazy" />
+              <p class="work-img-caption">① 先選分析期間：至今累積、自然月、自訂結算週期、任意區間（含前一個月／前三個月／前一整年快捷鍵），下方列出之前產生過的報告。</p>
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/71_戰情報告_AI解讀內容.png" alt="戰情報告：AI 解讀內容" loading="lazy" />
+              <p class="work-img-caption">② AI 解讀內容：整體評語、重點摘要、異常發現、具體建議四段。PDF 下載改用瀏覽器渲染後截圖貼進 PDF——因為 PDF 函式庫內建字型完全不支援中文，直接寫會整份變亂碼。</p>
+            </div>
+          </div>
+
+
+          <h2 id="r-settings" class="work-section-title">系統設定：把「基準」交回使用者手上</h2>
+
+          <div class="work-desc-block">
+            這個 App 有很多會主動跳出來的警示，而警示最怕的是「基準是系統自己猜的」——猜錯一次，使用者就再也不相信它。所以所有門檻都收進系統設定，由使用者自己確認：分類月預算、長期預留支出（年繳保費、稅金這種大額低頻支出的月均攤）、每個帳戶的入帳延遲天數。系統只負責提供「近 3 個月」與「全部歷史」兩個參考數字，不會自己填進去。
+          </div>
+
+          <div class="work-img-grid reveal">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/80_系統設定_總覽.png" alt="系統設定總覽（手風琴）" loading="lazy" />
+              <p class="work-img-caption">① 設定總覽：用戶設定、分類預算、長期預留支出、碗盤總覽收成手風琴，每一段標題直接顯示現況摘要（幾個分類已設定、每月預留多少），不用點開才知道。</p>
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/81_系統設定_分類月預算.png" alt="分類月預算設定" loading="lazy" />
+              <p class="work-img-caption">② 分類月預算：列出「近 3 個月」與「全部歷史」的花費中位數當參考，但一定要自己決定要填多少。沒設定的分類完全不會出現在配速警示裡。</p>
+            </div>
+          </div>
+
+          <div class="work-img-grid reveal">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/82_系統設定_長期預留支出與安全水位.png" alt="長期預留支出與安全水位" loading="lazy" />
+              <p class="work-img-caption">③ 長期預留支出：年繳保費、綜所稅這類大額低頻支出，在 12 個月裡只出現一兩次，取中位數時會被稀釋掉，導致「可以安心花的錢」被高估。改成記「每次繳多少、多久繳一次」換算成月均攤，再併進安全水位。</p>
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/83_系統設定_碗盤總覽.png" alt="碗盤總覽：帳戶管理" loading="lazy" />
+              <p class="work-img-caption">④ 碗盤總覽：依帳戶型別分組管理，支援封存（不刪資料、只是從選單裡收起來）與永久刪除，新增同名帳戶時會提醒。</p>
+            </div>
+          </div>
+
+          <div class="work-img-grid reveal" style="grid-template-columns: 1fr;">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/84_系統設定_帳戶與入帳延遲設定.png" alt="帳戶編輯與入帳延遲天數" loading="lazy" />
+              <p class="work-img-caption">⑤ 帳戶設定：每個帳戶各自設定「預期入帳延遲最短／最長天數」——這是餵食核對比對日期的基準，不同銀行、不同卡別的入帳速度並不一樣。</p>
+            </div>
+          </div>
+
+
+          <h2 id="r-mobile" class="work-section-title">手機版：真正記帳的場景在手機上</h2>
+
+          <div class="work-desc-block">
+            記帳幾乎都發生在剛結完帳、站在店門口的那一刻，所以手機版不是桌機版縮小，而是重新排過：導覽從側欄改成頂部橫列、表格改成卡片式堆疊、新增交易改成四步驟的引導式表單，每一步只問幾個欄位，不用在小螢幕上面對一整張長表單。
+          </div>
+
+          <div class="work-img-grid-3 reveal">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/M1_手機_貓咪指揮中心.png" alt="手機版貓咪指揮中心" loading="lazy" />
+              <p class="work-img-caption">① 首頁：卡片依序堆疊，分類比率的圓餅圖與圖例改成上下排列。</p>
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/M2_手機_罐罐明細本.png" alt="手機版罐罐明細本" loading="lazy" />
+              <p class="work-img-caption">② 明細本：表格改成卡片，日期與帳戶一行、商家與品項一行、分類與金額一行。</p>
+            </div>
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/M3_手機_新增交易步驟式表單.png" alt="手機版新增交易步驟式表單" loading="lazy" />
+              <p class="work-img-caption">③ 新增交易：改成四步驟，上方有進度點，一次只處理一件事。</p>
+            </div>
+          </div>
+
+          <div class="work-img-grid reveal" style="grid-template-columns: 1fr;">
+            <div class="work-img-wrap">
+              <img src="assets/images/Pawket/Claude%20Code重啟版截圖/M4_手機_餵食核對.png" alt="手機版餵食核對" loading="lazy" />
+              <p class="work-img-caption">④ 餵食核對：上傳區與比對結果同樣改成單欄堆疊，手機上收到銀行通知信就能直接對帳。</p>
+            </div>
           </div>
 
           <!-- ── 真實資料匯入與查核 ── -->
@@ -530,27 +889,6 @@
             比起「一次性匯入」，這個階段更像是在建立一套可以重複執行的資料驗證機制——每次發現新的資料品質問題，就把它變成下一輪查核的檢查項目，逐步把「資料看起來是對的」提升到「資料真的是對的」。持續驗證的成果：其中一個帳戶後來重新下載完整銀行歷史明細、逐筆核對超過 800 筆交易，最終跟正式對帳單的落差收斂到 $0。
           </div>
 
-          <!-- ── 對帳與商家智能辨識 ── -->
-          <h2 id="r-reconcile" class="work-section-title">對帳模組與商家智能辨識</h2>
-
-          <div class="work-desc-block">
-            <strong>對帳模組</strong><br /><br />
-            比對銀行月結單 PDF 與系統內既有交易記錄，找出漏記或重複的項目。真實銀行對帳單多半是密碼保護的 PDF，且文字在檔案內部的儲存順序不等於視覺上由左到右的閱讀順序，解析時須先依座標分組成列，同列再依座標排序，才能還原正確的閱讀順序。實際使用後發現部分銀行帳單會拆成多份 PDF 寄發，原本一次只能上傳一份的設計會漏比對——已改成支援一次選取多份檔案、密碼共用一次輸入，合併後再一起送進比對邏輯。
-          </div>
-
-          <div class="work-desc-block">
-            <strong>商家智能辨識三層架構</strong><br /><br />
-            銀行帳單上的商家代碼常常是同一間店、每次代碼卻略有不同的截斷字串。設計了三層判斷：先做免費即時的模糊比對（跟已知商家名稱做相似度比對），比對信心不足時交給 Gemini 判斷最可能對應哪個已知商家，兩層都不確定才問使用者本人——確認後存成新的商家對照紀錄，下次同類代碼出現就不用再問，逐步累積成一套會自我學習的商家資料庫，而不是一份要手動維護的靜態對照表。
-          </div>
-
-          <!-- ── App 截圖（重啟版） ── -->
-          <h2 id="r-gallery" class="work-section-title">App 截圖（Claude Code 重啟版）</h2>
-
-          <div class="work-gallery-pending">
-            <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
-            <p>重啟版畫面截圖製作中</p>
-            <span>將使用測試帳號（非真實記帳資料）畫面補充，敬請期待</span>
-          </div>
 
           <!-- ── 開發階段進度 ── -->
           <h2 id="r-roadmap" class="work-section-title">7 階段開發路線圖進度</h2>
@@ -563,17 +901,17 @@
               <tbody>
                 <tr><td>1</td><td>資料持久化</td><td>✅ 完成</td></tr>
                 <tr><td>2</td><td>帳戶模型＋轉帳交易</td><td>✅ 完成</td></tr>
-                <tr><td>3</td><td>PDF 結構化解析取代圖片 OCR</td><td>🟡 第一版完成</td></tr>
-                <tr><td>4</td><td>交易金額拆分（原始／折扣／實付）</td><td>✅ 完成</td></tr>
-                <tr><td>5</td><td>對帳模組</td><td>✅ 支援多檔案上傳，已用真實資料驗證</td></tr>
-                <tr><td>6</td><td>商家別名智能辨識</td><td>🟡 持續累積中</td></tr>
-                <tr><td>7</td><td>共同支出／代墊分帳</td><td>✅ 已加入借貸類型，經真實使用驗證</td></tr>
+                <tr><td>3</td><td>PDF 結構化解析取代圖片 OCR</td><td>✅ 已用真實月結單驗證，含掃描檔偵測與中文編碼異常偵測</td></tr>
+                <tr><td>4</td><td>交易金額拆分（原始／折扣／實付）</td><td>✅ 完成，並延伸出品項清單與套餐子品項</td></tr>
+                <tr><td>5</td><td>對帳模組</td><td>✅ 支援多檔案上傳、銀行拆列合併比對，已用真實資料驗證</td></tr>
+                <tr><td>6</td><td>商家別名智能辨識</td><td>🟡 候選清單結構完成，靠實際對帳流程持續累積</td></tr>
+                <tr><td>7</td><td>共同支出／代墊分帳</td><td>✅ 已加入借貸類型與快速結清，經真實使用驗證</td></tr>
               </tbody>
             </table>
           </div>
 
           <div class="work-desc-block">
-            原規格書 7 階段之外，這個階段陸續新增了規格書當初沒有規劃、但真實使用後發現必要的系統：分類預算與長期預留支出（取代原本自動猜測的配速警示）、全站修改／刪除動作二次確認、以及上面提到的功能命名系統。
+            原規格書 7 階段之外，這個階段陸續新增了規格書當初沒有規劃、但真實使用後發現必要的系統：分類預算與長期預留支出（取代原本自動猜測的配速警示）、貓咪零食分裝盤、外幣與代購金額試算、戰情報告（AI 解讀）、重新裝碗紀錄與整批復原、全站修改／刪除動作二次確認，以及上面提到的功能命名系統。
           </div>
 
           <!-- ── 開發挑戰 ── -->
@@ -600,6 +938,24 @@
           </div>
 
           <div class="work-desc-block">
+            <strong>統計口徑不一致：同一筆錢在兩張卡片上被算了兩種樣子</strong><br /><br />
+            「幫別人先付的錢」這件事踩過一個很隱晦的坑：花出去那一筆因為標了「代購／代墊／借貸」而被排除在統計外，
+            但對方還錢時自動產生的那筆收入卻沒有被排除，於是淨現金流憑空多出一筆收入；同一時間，
+            「還錢給別人」又被算進「社交人情」的消費裡，還會觸發超支警示。
+            釐清後定下一條明確規則：<strong>錢真的有進出戶頭 → 現金流照算；但那不是你的消費 → 所有消費分析一律排除</strong>，
+            並把這條規則收斂成一個共用判斷，讓分類比率、支出排行、配速警示、燒錢速度、預算建議全部套用同一套標準。
+          </div>
+
+          <div class="work-desc-block">
+            <strong>會自己失效的設定：按了儲存，重新整理就變回預設值</strong><br /><br />
+            全面體檢介面時發現，首頁齒輪裡的「結算日」與「超支扣零食」兩個設定只存在瀏覽器記憶體裡——
+            按下儲存看起來有效，重新整理就默默變回預設值。修正時又踩到第二個坑：
+            兩個設定分成兩次寫入使用者資料，兩次請求互相競爭，結果只有其中一個存得起來，
+            最後改成同一次寫入。另外也發現「超支罰則」比對的是一份早就沒有任何畫面可以修改的預設預算，
+            門檻永遠停在舊數字、正常生活一定超支——改成比對使用者自己設定的分類月預算總和，沒設定就不啟動。
+          </div>
+
+          <div class="work-desc-block">
             <strong>真實使用才會浮現的邊界案例</strong><br /><br />
             對帳模組上線後，實際拿真實對帳單試用時發現部分交易一直被誤判成「系統記了、但銀行對帳單沒有」，追查後才發現是銀行把同一期帳單拆成兩份 PDF 寄發，當時只上傳了其中一份。這類問題只有在真實使用情境下才會浮現——這也是這個階段跟原型階段最大的不同：不是把功能做出來就結束，而是要持續跟著真實使用回饋修正。
           </div>
@@ -609,7 +965,13 @@
 
           <div class="work-desc-block">
             這次重啟讓我體會到「AI 生成的原型」和「可以每天真實使用的產品」之間，中間還有一大段距離——資料要能安全存起來、金額計算邏輯要禁得起真實使用情境的檢驗、部署與版本控管要穩定可靠，這些都是原型階段不會遇到、卻是產品上線後每天都要面對的課題。<br /><br />
-            兩個階段其實都是「用 Prompt／指令驅動 AI 開發」，差別不在有沒有用 Prompt Engineering，而在指令的顆粒度跟工程的性質完全不同：原型階段是一次次用結構化 Prompt 換取一整塊新功能；這個階段更常是針對某個具體問題（一個 bug、一筆錯誤資料、一個安全疑慮）下達精確指令，跟 Claude Code 一起診斷根因、驗證修正、確認不影響其他功能，再決定是否上線。這是「與 AI 一起維運一個真實在用的產品」所需要的能力，跟第一階段同樣重要，只是形式不同。
+            兩個階段其實都是「用 Prompt／指令驅動 AI 開發」，差別不在有沒有用 Prompt Engineering，而在指令的顆粒度跟工程的性質完全不同：原型階段是一次次用結構化 Prompt 換取一整塊新功能；這個階段更常是針對某個具體問題（一個 bug、一筆錯誤資料、一個安全疑慮）下達精確指令，跟 Claude Code 一起診斷根因、驗證修正、確認不影響其他功能，再決定是否上線。這是「與 AI 一起維運一個真實在用的產品」所需要的能力，跟第一階段同樣重要，只是形式不同。<br /><br />
+            最近一次的全面介面體檢又補上了第三種能力：<strong>主動去找還沒有人抱怨的問題</strong>。
+            沒有人回報「設定存不起來」，是因為那個功能本來就沒人在用；沒有人發現統計口徑不一致，
+            是因為兩個數字剛好在多數情況下互相抵消。這些問題不會自己浮上來，
+            要靠有意識地逐一檢查每個畫面、每段文案、每個算式，才會被翻出來——
+            而這也是 AI 協作最需要人來把關的部分：AI 可以很快把功能做出來，
+            但「這個數字到底代表什麼、使用者會不會誤解」始終要有人負責定義。
           </div>
 
           </div><!-- /data-vshow="rebuild" -->
