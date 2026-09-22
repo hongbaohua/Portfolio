@@ -1,0 +1,608 @@
+{
+  "id": "egg",
+  "title": "孩能學做菜──料理從蛋開始",
+  "source": {
+    "file": "source.pdf",
+    "downloadable": true,
+    "sizeLabel": "15.3 MB",
+    "originalName": "孩能學做菜.pdf"
+  },
+  "page": {
+    "width": 595,
+    "height": 841,
+    "unit": "pt",
+    "aspectRatio": 0.7075
+  },
+  "layout": "auto",
+  "direction": "ltr",
+  "showCover": true,
+  "pages": [
+    {
+      "type": "image",
+      "src": "pages/p001.webp",
+      "thumb": "thumbs/t001.webp",
+      "w": 1131,
+      "h": 1600,
+      "hard": true
+    },
+    {
+      "type": "image",
+      "src": "pages/p002.webp",
+      "thumb": "thumbs/t002.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p003.webp",
+      "thumb": "thumbs/t003.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p004.webp",
+      "thumb": "thumbs/t004.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p005.webp",
+      "thumb": "thumbs/t005.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p006.webp",
+      "thumb": "thumbs/t006.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p007.webp",
+      "thumb": "thumbs/t007.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p008.webp",
+      "thumb": "thumbs/t008.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p009.webp",
+      "thumb": "thumbs/t009.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p010.webp",
+      "thumb": "thumbs/t010.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p011.webp",
+      "thumb": "thumbs/t011.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p012.webp",
+      "thumb": "thumbs/t012.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p013.webp",
+      "thumb": "thumbs/t013.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p014.webp",
+      "thumb": "thumbs/t014.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p015.webp",
+      "thumb": "thumbs/t015.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p016.webp",
+      "thumb": "thumbs/t016.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p017.webp",
+      "thumb": "thumbs/t017.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p018.webp",
+      "thumb": "thumbs/t018.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p019.webp",
+      "thumb": "thumbs/t019.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p020.webp",
+      "thumb": "thumbs/t020.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p021.webp",
+      "thumb": "thumbs/t021.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p022.webp",
+      "thumb": "thumbs/t022.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p023.webp",
+      "thumb": "thumbs/t023.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p024.webp",
+      "thumb": "thumbs/t024.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p025.webp",
+      "thumb": "thumbs/t025.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p026.webp",
+      "thumb": "thumbs/t026.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p027.webp",
+      "thumb": "thumbs/t027.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p028.webp",
+      "thumb": "thumbs/t028.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p029.webp",
+      "thumb": "thumbs/t029.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p030.webp",
+      "thumb": "thumbs/t030.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p031.webp",
+      "thumb": "thumbs/t031.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p032.webp",
+      "thumb": "thumbs/t032.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p033.webp",
+      "thumb": "thumbs/t033.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p034.webp",
+      "thumb": "thumbs/t034.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p035.webp",
+      "thumb": "thumbs/t035.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p036.webp",
+      "thumb": "thumbs/t036.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p037.webp",
+      "thumb": "thumbs/t037.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p038.webp",
+      "thumb": "thumbs/t038.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p039.webp",
+      "thumb": "thumbs/t039.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p040.webp",
+      "thumb": "thumbs/t040.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p041.webp",
+      "thumb": "thumbs/t041.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p042.webp",
+      "thumb": "thumbs/t042.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p043.webp",
+      "thumb": "thumbs/t043.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p044.webp",
+      "thumb": "thumbs/t044.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p045.webp",
+      "thumb": "thumbs/t045.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p046.webp",
+      "thumb": "thumbs/t046.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p047.webp",
+      "thumb": "thumbs/t047.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p048.webp",
+      "thumb": "thumbs/t048.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p049.webp",
+      "thumb": "thumbs/t049.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p050.webp",
+      "thumb": "thumbs/t050.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p051.webp",
+      "thumb": "thumbs/t051.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p052.webp",
+      "thumb": "thumbs/t052.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p053.webp",
+      "thumb": "thumbs/t053.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p054.webp",
+      "thumb": "thumbs/t054.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p055.webp",
+      "thumb": "thumbs/t055.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p056.webp",
+      "thumb": "thumbs/t056.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p057.webp",
+      "thumb": "thumbs/t057.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p058.webp",
+      "thumb": "thumbs/t058.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p059.webp",
+      "thumb": "thumbs/t059.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p060.webp",
+      "thumb": "thumbs/t060.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p061.webp",
+      "thumb": "thumbs/t061.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p062.webp",
+      "thumb": "thumbs/t062.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p063.webp",
+      "thumb": "thumbs/t063.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p064.webp",
+      "thumb": "thumbs/t064.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p065.webp",
+      "thumb": "thumbs/t065.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p066.webp",
+      "thumb": "thumbs/t066.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p067.webp",
+      "thumb": "thumbs/t067.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p068.webp",
+      "thumb": "thumbs/t068.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p069.webp",
+      "thumb": "thumbs/t069.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p070.webp",
+      "thumb": "thumbs/t070.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p071.webp",
+      "thumb": "thumbs/t071.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p072.webp",
+      "thumb": "thumbs/t072.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p073.webp",
+      "thumb": "thumbs/t073.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p074.webp",
+      "thumb": "thumbs/t074.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p075.webp",
+      "thumb": "thumbs/t075.webp",
+      "w": 1131,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p076.webp",
+      "thumb": "thumbs/t076.webp",
+      "w": 1131,
+      "h": 1600
+    }
+  ],
+  "toc": [
+    {
+      "label": "封面",
+      "page": 1
+    },
+    {
+      "label": "目錄",
+      "page": 4
+    },
+    {
+      "label": "Chapter 1. 什麼是「食用蛋」？",
+      "page": 6
+    },
+    {
+      "label": "Chapter 2. 為什麼要吃蛋？",
+      "page": 8
+    },
+    {
+      "label": "Chapter 3. 如何分辨新鮮蛋和舊蛋？",
+      "page": 12
+    },
+    {
+      "label": "Chapter 4. 常見的食用蛋有什麼？",
+      "page": 17
+    },
+    {
+      "label": "Chapter 5. 臺灣的味道",
+      "page": 22
+    },
+    {
+      "label": "Chapter 6. 小試身手",
+      "page": 49
+    }
+  ],
+  "hotspots": [],
+  "generated": "2026-09-22 03:20",
+  "numbering": {
+    "mode": "labels",
+    "ranges": [
+      {
+        "from": 1,
+        "style": "none"
+      },
+      {
+        "from": 4,
+        "style": "none"
+      },
+      {
+        "from": 6,
+        "style": "arabic",
+        "start": 1
+      }
+    ]
+  }
+}

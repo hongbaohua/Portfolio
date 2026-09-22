@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/work-detail.css" />
+  <link rel="stylesheet" href="vendor/stPageFlip.css" />
+  <link rel="stylesheet" href="css/flipbook.css" />
 </head>
 
 <body class="page-body">
@@ -76,7 +78,7 @@
 
           <div class="work-info__section">
             <p class="work-info__label">查看成果</p>
-            <a href="https://heyzine.com/flip-book/c81d93fe9d.html" target="_blank" rel="noopener" class="work-external-btn">
+            <a href="#section-book" class="work-external-btn">
               <i class="fa-solid fa-book-open" aria-hidden="true"></i>
               線上閱讀電子書
             </a>
@@ -209,17 +211,13 @@ Kids Can Cook!  The EGG-cellent Start.
           <!-- 電子書 -->
           <section id="section-book">
             <h2 class="work-section-title">電子書</h2>
-            <div class="work-pdf-wrap reveal">
-              <iframe
-                src="https://heyzine.com/flip-book/c81d93fe9d.html"
-                title="孩能學做菜電子書"
-                loading="lazy"
-                allowfullscreen
-              ></iframe>
+
+            <div class="flipbook"
+                 data-book="assets/books/egg/book.json"
+                 data-height="640">
+              <p><a href="assets/books/egg/source.pdf">下載 PDF（15.3 MB）</a></p>
             </div>
-            <p class="work-img-caption">支援目錄跳轉、書籤標記、PDF 下載、文字查找．
-              <a href="https://heyzine.com/flip-book/c81d93fe9d.html" target="_blank" rel="noopener" style="color:var(--accent-dark);">開新分頁閱讀</a>
-            </p>
+            <p class="work-img-caption">支援目錄跳轉、頁碼輸入、放大縮小、全螢幕、PDF 下載</p>
           </section>
 
           <!-- 製前分析 -->
@@ -248,5 +246,7 @@ Kids Can Cook!  The EGG-cellent Start.
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="vendor/page-flip.browser.js"></script>
+  <script src="js/flipbook.js"></script>
 </body>
 </html>

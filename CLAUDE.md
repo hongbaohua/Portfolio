@@ -19,7 +19,7 @@ web/
 ├── ai.html                 AI 學習歷程頁
 ├── ai-case-template.html   AI 案例詳細頁模板（尚未正式使用）
 ├── work-detail-template.html  設計作品詳情頁 HTML 模板
-├── work-egg.html           作品詳細頁：EGG 餅乾品牌
+├── work-egg.html           作品詳細頁：孩能學做菜（兒童烹飪教育圖書；電子書用自架 FlipBook，見下）
 ├── work-graphic.html       作品詳細頁：平面設計合集
 ├── work-larkzhu.html       作品詳細頁：節節高 LARKZHU
 ├── work-liangkouxi.html    作品詳細頁：倆口囍
@@ -32,14 +32,21 @@ web/
 │   ├── index.css           首頁專用
 │   ├── works.css           作品列表專用（含 ai-tools-grid、ai-timeline 等）
 │   ├── work-detail.css     作品詳細頁共用
-│   └── ai.css              AI 頁專用
+│   ├── ai.css              AI 頁專用
+│   └── flipbook.css        ★ FlipBook 電子書元件樣式（2026-09-22 新增）
 ├── manifest.json           PWA 配置（display: standalone）
 ├── js/
 │   ├── main.js             全站共用 JS（nav toggle、scroll reveal、PWA 偵測）
-│   └── works.js            作品過濾功能
+│   ├── works.js            作品過濾功能
+│   └── flipbook.js         ★ 自架翻頁電子書元件（2026-09-22 新增，見下方「FlipBook 電子書元件」）
+├── vendor/
+│   ├── page-flip.browser.js  翻頁引擎 StPageFlip（MIT，本地副本，不吃 CDN）
+│   └── stPageFlip.css
 └── assets/
-    └── images/             圖片素材（logo、作品圖）
-                            ★ 已備妥：name_icon_192.png、name_icon_512.png（PWA App 圖示）
+    ├── images/             圖片素材（logo、作品圖）
+    │                       ★ 已備妥：name_icon_192.png、name_icon_512.png（PWA App 圖示）
+    └── books/              ★ FlipBook 電子書資料，一本書一個資料夾（book.json + pages/ + thumbs/ + source.pdf）
+        └── egg/            孩能學做菜（work-egg.html 使用中）
 ```
 
 ---
@@ -153,6 +160,35 @@ web/
 
 實際產生這段 HTML 的腳本在 Pawket 專案：`data-import/` 沒有放，是一次性的產生器，
 但規則就是上面這張表，手寫或重新產生都照這個走。
+
+### FlipBook 電子書元件（2026-09-22 訂定，首次套用於 work-egg.html）
+
+作品有多頁 PDF／簡報要展示時（企劃書、電子書、提案簡報），一律用自架的 FlipBook 翻頁元件，
+**不再用 Canva iframe 嵌入或 Heyzine 外連**（兩者都會被對方改版／收權限／關站影響，且無法客製外觀）。
+
+製作與維護在獨立專案 `C:\Users\user\Projects\FlipBook\`（規劃文件、轉檔工具、製作工作台都在那裡，
+不要在 Portfolio 這邊寫轉檔或設定邏輯）。完整的「怎麼做一本新電子書、怎麼放進這個網站」流程見
+`FlipBook\docs\04_產出什麼與怎麼放進作品集.md`。這裡只記**套進 Portfolio 之後**要遵守的規則：
+
+1. **全站共用檔案只放一份**：`vendor/page-flip.browser.js`、`vendor/stPageFlip.css`（翻頁引擎）、
+   `js/flipbook.js`、`css/flipbook.css`（播放器本體）。新增第二本書時**不要**重複複製這四個檔案。
+2. **每本書一個資料夾**：放在 `assets/books/<id>/`，從 `FlipBook\books\<id>\` 整份複製過來
+   （含 `book.json`、`pages/`、`thumbs/`，有開放下載的書才有 `source.pdf`）。
+3. **頁面要加的東西**：`<head>` 兩行 CSS（`vendor/stPageFlip.css` ＋ `css/flipbook.css`，
+   接在 `work-detail.css` 之後）、`</body>` 前兩行 JS（`vendor/page-flip.browser.js` ＋
+   `js/flipbook.js`，接在 `main.js` 之後）；要放電子書的地方貼：
+   ```html
+   <div class="flipbook" data-book="assets/books/<id>/book.json" data-height="640">
+     <p><a href="assets/books/<id>/source.pdf">下載 PDF</a></p>  <!-- 沒開放下載就寫別的退路文字 -->
+   </div>
+   ```
+   翻頁方向、封面模式、頁碼顯示、目錄都存在 `book.json` 裡（在 FlipBook 工作台設定），
+   這裡的 HTML 不用寫這些。
+4. **側欄「查看成果」連結**：電子書就在同一頁，改成**頁內錨點**（`href="#section-book"`）而不是外部連結，
+   不要再套 `target="_blank"`。
+5. **既有的社群文案／舊敘述裡若殘留 Canva 或 Heyzine 的連結與功能說明**（例如「支援文字查找」——
+   我們的翻頁器目前沒有這個功能），**不要自己動去改**，那通常是已經對外發布過的文案存檔；
+   標記起來問 Ivy 要不要更新。
 
 ### 側欄欄位順序（統一規範，2026-04-29 訂定）
 
@@ -268,7 +304,7 @@ web/
 
 ---
 
-## 目前網站狀態（最後更新：2026-09-22，ai-pawket.html 重啟版截圖全部補齊並改版成「功能細分導覽」：47 張示範帳號截圖、新增 8 個功能段落、`#r-gallery` 佔位區移除；同日依實際閱讀體驗重排版面，新增 `.shot-*` 一套截圖排版規範，見下方）
+## 目前網站狀態（最後更新：2026-09-22，work-egg.html 電子書改用自架 FlipBook 元件取代 Heyzine——是 FlipBook 專案 Phase 5「套回作品集」的第一個實裝頁面，新增 `vendor/`、`assets/books/`，見上方「FlipBook 電子書元件」規範；同日 ai-pawket.html 重啟版截圖全部補齊並改版成「功能細分導覽」：47 張示範帳號截圖、新增 8 個功能段落、`#r-gallery` 佔位區移除；同日依實際閱讀體驗重排版面，新增 `.shot-*` 一套截圖排版規範，見下方）
 （歷史：2026-08-17 ai-pawket.html 重啟版依 Pawket 專案進度更新（功能命名系統段落、開發挑戰2則、路線圖狀態）；2026-07-28，新增 iPAS 品牌企劃師認證（不標示級別）；首頁 AI 協作精選卡片順序調整為 仍在等＞Tickit＞Pawket＞AI業主模擬練習；全站 20 個 HTML 頁面加入 favicon；ai-pawket.html 新增醒目試用按鈕（ai-tickit.html 因 Supabase 免費版資料庫閒置問題移除同按鈕）；Pawket／Tickit 全站卡片預覽圖改為品牌主視覺色＋標誌圖示；ai-pawket.html 新增前後版本對照切換器（原型版／重啟版），重啟版截圖待補）
 
 ### 已完成頁面
@@ -279,7 +315,7 @@ web/
 | ai.html | ✅ 完成 | AI 應用成果作品卡列表（格式同 works.html），4 卡；nav 主項改名「AI 協作」 |
 | ai-learning.html | ✅ 完成 | AI 學習歷程：工具卡、Callout、時間軸（5節點含AI新秀計畫）、精選 AI 協作（3卡） |
 | ai-stillwaiting.html | ✅ 完成 | 「仍在等」AI 作品詳細頁（影音 MV） |
-| work-egg.html | ✅ 完成 | EGG 餅乾品牌 |
+| work-egg.html | ✅ 完成 | 孩能學做菜 兒童烹飪教育圖書；電子書已改用自架 FlipBook 元件（2026-09-22，取代 Heyzine，見上方「FlipBook 電子書元件」規範）|
 | work-graphic.html | ✅ 完成 | 平面設計合集 |
 | work-larkzhu.html | ✅ 完成 | 節節高 LARKZHU |
 | work-liangkouxi.html | ✅ 完成 | 倆口囍糕餅 |
@@ -309,6 +345,7 @@ web/
 | ai-learning.html 時間軸 | ✅ 已新增「AI新秀計畫（2025）」節點；內容細節待作品集完整後補充 |
 | index.html AI 技能 chips | 作品集圖片全部上傳完成後，根據實際作品使用工具更新 AI 輔助創作分組內容 |
 | ~~ai-pawket.html 重啟版截圖補上~~ **✅ 2026-09-22 完成** | 47 張截圖已放在 `assets/images/Pawket/Claude Code重啟版截圖/`，`.work-gallery-pending` 佔位區已移除，改成按功能細分的 8 個段落＋每張圖獨立圖說。截圖全部來自 Pawket 專案的「作品集截圖專用示範帳號」（虛構假資料、虛構銀行名稱），重拍方式見 Pawket repo 的 `data-import/seed_demo_account.py` 與 `capture_demo_screenshots.mjs`。 |
+| **FlipBook Phase 5 剩餘 4 頁**（2026-09-22 起） | work-egg.html 已改用自架 FlipBook（見上方規範）；還有 4 個頁面的 Canva 嵌入待換：`work-yuejilabs.html`、`work-liangkouxi.html`（兩份簡報）、`work-yebuff.html`、`work-qihang.html`（原生 PDF iframe）。對應的電子書資料已在 `FlipBook\books\` 轉檔完成，複製套用流程同 `work-egg.html` 這次的做法 |
 | **ai-pawket.html 重啟版內容持續追更**（2026-08-17 起固定流程） | Pawket 專案（`C:\Users\user\Projects\Pawket\`）本身還在密集開發中，`專案文件\PROJECT_STATUS.md` 會持續累積新的「現況速覽」節點。之後 Ivy 說「Pawket 有新更新了」時，流程固定：①重新讀該檔案最新幾節（找最後一個 `## 0.x 現況速覽` 或文件最後一節）②只抽取「工程決策層級」的抽象化描述，**絕對不能**把任何真實商家名稱／金額／帳戶餘額／user_id 寫進作品集③優先更新 `r-roadmap` 進度表、`r-challenge` 新增代表性挑戰、必要時才新增新的 `r-*` 段落④同步這裡跟 Obsidian 對應筆記。**⑤如果那次更新有改到 App 畫面，截圖也要一起重拍**：到 Pawket 專案跑 `data-import/seed_demo_account.py` 重建示範帳號資料，再跑 `data-import/capture_demo_screenshots.mjs` 自動重拍，縮圖成 1 倍後覆蓋 `assets/images/Pawket/Claude Code重啟版截圖/`。 |
 
 ---
