@@ -47,6 +47,7 @@ web/
 ## 開發注意事項
 - 純靜態，不需 build，直接開啟 .html 預覽
 - **驗證涉及 CSS/JS 互動的頁面時**（例如版本切換器、燈箱），瀏覽器工具直接開 `file://` 會把頁面轉成 `data:` 快照，導致 `css/`、`js/` 相對路徑資源讀不到（外部 CDN 連結不受影響）。已在 `.claude/launch.json` 設定本機靜態伺服器（`portfolio-static`，port 8743，Python `http.server`），驗證這類頁面前先用 preview 工具啟動它，再用 `http://localhost:8743/xxx.html` 開頁面，才能看到 CSS/JS 真正生效的結果
+  - **2026-09-22 修正**：`runtimeExecutable` 原本寫死 `C:\Python314\python`，該路徑已不存在（實際 Python 在 `C:\Users\user\AppData\Local\Programs\Python\Python313\`），導致伺服器啟動失敗。已改成 `"python"` 走 PATH，之後換 Python 版本也不用再改。已實測 `main.css`／`work-detail.css` 與 CSS 變數都正常生效
 - 字型：Noto Sans TC（Google Fonts）
 - 圖示：Font Awesome 6.5
 - 無使用任何 CSS 框架（非 Tailwind）
