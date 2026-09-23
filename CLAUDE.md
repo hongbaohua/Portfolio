@@ -22,11 +22,11 @@ web/
 ├── work-egg.html           作品詳細頁：孩能學做菜（兒童烹飪教育圖書；電子書用自架 FlipBook，見下）
 ├── work-graphic.html       作品詳細頁：平面設計合集
 ├── work-larkzhu.html       作品詳細頁：節節高 LARKZHU
-├── work-liangkouxi.html    作品詳細頁：倆口囍
-├── work-qihang.html        作品詳細頁：啟航
+├── work-liangkouxi.html    作品詳細頁：倆口囍（兩份簡報皆用自架 FlipBook，見下）
+├── work-qihang.html        作品詳細頁：啟航（企劃書用自架 FlipBook，見下）
 ├── work-tempy.html         作品詳細頁：小恆 Tempy
-├── work-yebuff.html        作品詳細頁：YeBuff
-├── work-yuejilabs.html     作品詳細頁：月記LAB
+├── work-yebuff.html        作品詳細頁：YeBuff（企劃簡報用自架 FlipBook，Figma 原型維持外連，見下）
+├── work-yuejilabs.html     作品詳細頁：月記LAB（企劃簡報用自架 FlipBook，見下）
 ├── css/
 │   ├── main.css            全站共用樣式（nav、footer、CSS 變數）
 │   ├── index.css           首頁專用
@@ -45,8 +45,14 @@ web/
 └── assets/
     ├── images/             圖片素材（logo、作品圖）
     │                       ★ 已備妥：name_icon_192.png、name_icon_512.png（PWA App 圖示）
-    └── books/              ★ FlipBook 電子書資料，一本書一個資料夾（book.json + pages/ + thumbs/ + source.pdf）
-        └── egg/            孩能學做菜（work-egg.html 使用中）
+    └── books/              ★ FlipBook 電子書資料，一本書一個資料夾（book.json + pages/ + thumbs/，
+        │                     有開放下載的書才有 source.pdf——目前只有 egg 有）
+        ├── egg/                  孩能學做菜（work-egg.html）
+        ├── qihang/               啟航企劃書（work-qihang.html）
+        ├── yuejilabs/            月記LAB 企劃簡報（work-yuejilabs.html）
+        ├── liangkouxi-package/   倆口囍 包裝最終提案（work-liangkouxi.html）
+        ├── liangkouxi-research/  倆口囍 前期調查與初步提案（work-liangkouxi.html）
+        └── yebuff/               YeBuff 企劃簡報（work-yebuff.html）
 ```
 
 ---
@@ -304,7 +310,12 @@ web/
 
 ---
 
-## 目前網站狀態（最後更新：2026-09-22，work-egg.html 電子書改用自架 FlipBook 元件取代 Heyzine——是 FlipBook 專案 Phase 5「套回作品集」的第一個實裝頁面，新增 `vendor/`、`assets/books/`，見上方「FlipBook 電子書元件」規範；同日 ai-pawket.html 重啟版截圖全部補齊並改版成「功能細分導覽」：47 張示範帳號截圖、新增 8 個功能段落、`#r-gallery` 佔位區移除；同日依實際閱讀體驗重排版面，新增 `.shot-*` 一套截圖排版規範，見下方）
+## 目前網站狀態（最後更新：2026-09-23，**FlipBook Phase 5 全部完成**：剩下的 4 個頁面
+`work-qihang.html`／`work-yuejilabs.html`／`work-liangkouxi.html`（兩份簡報）／`work-yebuff.html`
+全部換成自架 FlipBook，PDF iframe／Canva 嵌入從全站移除乾淨（`grep canva.com` 全站已無結果）；
+側欄外連改成頁內錨點「查看成果」，`assets/images/啟航_企劃書.pdf` 已刪除（換成的電子書不重複附下載）；
+見上方「FlipBook 電子書元件」規範）
+（歷史：2026-09-22 work-egg.html 電子書改用自架 FlipBook 元件取代 Heyzine——是 Phase 5 第一個實裝頁面，新增 `vendor/`、`assets/books/`；同日 ai-pawket.html 重啟版截圖全部補齊並改版成「功能細分導覽」：47 張示範帳號截圖、新增 8 個功能段落、`#r-gallery` 佔位區移除；同日依實際閱讀體驗重排版面，新增 `.shot-*` 一套截圖排版規範，見下方）
 （歷史：2026-08-17 ai-pawket.html 重啟版依 Pawket 專案進度更新（功能命名系統段落、開發挑戰2則、路線圖狀態）；2026-07-28，新增 iPAS 品牌企劃師認證（不標示級別）；首頁 AI 協作精選卡片順序調整為 仍在等＞Tickit＞Pawket＞AI業主模擬練習；全站 20 個 HTML 頁面加入 favicon；ai-pawket.html 新增醒目試用按鈕（ai-tickit.html 因 Supabase 免費版資料庫閒置問題移除同按鈕）；Pawket／Tickit 全站卡片預覽圖改為品牌主視覺色＋標誌圖示；ai-pawket.html 新增前後版本對照切換器（原型版／重啟版），重啟版截圖待補）
 
 ### 已完成頁面
@@ -318,11 +329,11 @@ web/
 | work-egg.html | ✅ 完成 | 孩能學做菜 兒童烹飪教育圖書；電子書已改用自架 FlipBook 元件（2026-09-22，取代 Heyzine，見上方「FlipBook 電子書元件」規範）|
 | work-graphic.html | ✅ 完成 | 平面設計合集 |
 | work-larkzhu.html | ✅ 完成 | 節節高 LARKZHU |
-| work-liangkouxi.html | ✅ 完成 | 倆口囍糕餅 |
-| work-qihang.html | ✅ 完成 | 啟航餅乾品牌 |
+| work-liangkouxi.html | ✅ 完成 | 倆口囍糕餅；兩份簡報都改用自架 FlipBook（2026-09-23），側欄「查看成果」分別深連到 `#section-doc-package`／`#section-doc-research` |
+| work-qihang.html | ✅ 完成 | 啟航餅乾品牌；企劃書改用自架 FlipBook（2026-09-23，取代原生 PDF iframe），原始 PDF 檔已刪除 |
 | work-tempy.html | ✅ 完成 | 小恆 Tempy 保溫杯吉祥物 |
-| work-yebuff.html | ✅ 完成 | YeBuff 金運面膜 |
-| work-yuejilabs.html | ✅ 完成 | 月記LAB 手搖飲 |
+| work-yebuff.html | ✅ 完成 | YeBuff 金運面膜；企劃簡報改用自架 FlipBook（2026-09-23，取代 Canva 嵌入），Figma 互動原型維持原樣外連 |
+| work-yuejilabs.html | ✅ 完成 | 月記LAB 手搖飲；企劃簡報改用自架 FlipBook（2026-09-23，取代 Canva 嵌入） |
 | work-ecdesign.html | ✅ 完成 | EC Design 電商設計練習系列頁（持續更新，初霧 Chūwù 為 No.01）|
 | ai-ecdesign.html | ✅ 完成 | AI 業主模擬練習系列頁（方法論＋各練習 AI 紀錄，持續更新）|
 | ai-pawket.html | ✅ 完成 | 喵喵財庫 Pawket 詳細頁（Prompt Engineering × App 開發，2026-04-18；2026-08-02 新增前後版本對照切換器；2026-08-17 依 Pawket 專案最新進度更新重啟版內容，見下方「版本對照切換器」規範）|
@@ -345,7 +356,7 @@ web/
 | ai-learning.html 時間軸 | ✅ 已新增「AI新秀計畫（2025）」節點；內容細節待作品集完整後補充 |
 | index.html AI 技能 chips | 作品集圖片全部上傳完成後，根據實際作品使用工具更新 AI 輔助創作分組內容 |
 | ~~ai-pawket.html 重啟版截圖補上~~ **✅ 2026-09-22 完成** | 47 張截圖已放在 `assets/images/Pawket/Claude Code重啟版截圖/`，`.work-gallery-pending` 佔位區已移除，改成按功能細分的 8 個段落＋每張圖獨立圖說。截圖全部來自 Pawket 專案的「作品集截圖專用示範帳號」（虛構假資料、虛構銀行名稱），重拍方式見 Pawket repo 的 `data-import/seed_demo_account.py` 與 `capture_demo_screenshots.mjs`。 |
-| **FlipBook Phase 5 剩餘 4 頁**（2026-09-22 起） | work-egg.html 已改用自架 FlipBook（見上方規範）；還有 4 個頁面的 Canva 嵌入待換：`work-yuejilabs.html`、`work-liangkouxi.html`（兩份簡報）、`work-yebuff.html`、`work-qihang.html`（原生 PDF iframe）。對應的電子書資料已在 `FlipBook\books\` 轉檔完成，複製套用流程同 `work-egg.html` 這次的做法 |
+| ~~FlipBook Phase 5 剩餘 4 頁~~ **✅ 2026-09-23 完成** | `work-qihang.html`、`work-yuejilabs.html`、`work-liangkouxi.html`（兩份簡報）、`work-yebuff.html` 全部換成自架 FlipBook。全站 6 個頁面（含 work-egg.html）都不再有 Canva／Heyzine／原生 PDF iframe 嵌入。FlipBook Phase 5「套回作品集」全部完成，接下來的 Phase 4（獨立全頁閱讀器 `reader.html`）與後續各書的翻頁方向／頁碼細部微調在 `FlipBook` 專案那邊繼續 |
 | **ai-pawket.html 重啟版內容持續追更**（2026-08-17 起固定流程） | Pawket 專案（`C:\Users\user\Projects\Pawket\`）本身還在密集開發中，`專案文件\PROJECT_STATUS.md` 會持續累積新的「現況速覽」節點。之後 Ivy 說「Pawket 有新更新了」時，流程固定：①重新讀該檔案最新幾節（找最後一個 `## 0.x 現況速覽` 或文件最後一節）②只抽取「工程決策層級」的抽象化描述，**絕對不能**把任何真實商家名稱／金額／帳戶餘額／user_id 寫進作品集③優先更新 `r-roadmap` 進度表、`r-challenge` 新增代表性挑戰、必要時才新增新的 `r-*` 段落④同步這裡跟 Obsidian 對應筆記。**⑤如果那次更新有改到 App 畫面，截圖也要一起重拍**：到 Pawket 專案跑 `data-import/seed_demo_account.py` 重建示範帳號資料，再跑 `data-import/capture_demo_screenshots.mjs` 自動重拍，縮圖成 1 倍後覆蓋 `assets/images/Pawket/Claude Code重啟版截圖/`。 |
 
 ---

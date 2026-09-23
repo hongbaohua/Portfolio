@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/work-detail.css" />
+  <link rel="stylesheet" href="vendor/stPageFlip.css" />
+  <link rel="stylesheet" href="css/flipbook.css" />
 </head>
 <body class="page-body">
 
@@ -71,6 +73,16 @@
             返回作品列表
           </a>
           <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
+            <p class="work-info__label">查看成果</p>
+            <a href="#section-doc" class="work-external-btn">
+              <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+              線上閱讀企劃書
+            </a>
+          </div>
+
+          <div class="work-info__divider"></div>
           <div class="work-info__section">
             <p class="work-info__label">核心說明</p>
             <p class="work-info__text">既有品牌形象翻新，展現完整 VI 應用。從 LOGO 重塑到包裝系統的一體化規劃。</p>
@@ -120,13 +132,6 @@
             <p class="work-info__text">2023年</p>
           </div>
 
-          <div class="work-info__divider"></div>
-          <div class="work-info__section">
-            <p class="work-info__label">相關文件</p>
-            <a href="assets/images/啟航_企劃書.pdf" target="_blank" rel="noopener" class="work-external-btn">
-              <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> 查看企劃書
-            </a>
-          </div>
         </aside>
 
         <div class="work-gallery">
@@ -169,8 +174,10 @@
           <section id="section-doc">
             <h2 class="work-section-title">完整企劃書</h2>
             <p class="work-doc-hint"><i class="fa-solid fa-circle-info" aria-hidden="true"></i>前半為品牌調查與定位分析；<strong>第 6 頁起</strong>進入設計展示，<strong>第 7 頁起</strong>為<strong>完整 LOGO 設計與識別系統</strong>。</p>
-            <div class="work-pdf-wrap reveal">
-              <iframe src="assets/images/啟航_企劃書.pdf" title="啟航餅乾品牌設計企劃書" loading="lazy"></iframe>
+            <div class="flipbook"
+                 data-book="assets/books/qihang/book.json"
+                 data-height="640">
+              <p>這份文件需要開啟 JavaScript 才能閱讀。</p>
             </div>
             <p class="work-img-caption">企劃書涵蓋品牌調查、視覺規範與包裝設計展示</p>
           </section>
@@ -187,5 +194,7 @@
     </div>
   </footer>
   <script src="js/main.js"></script>
+  <script src="vendor/page-flip.browser.js"></script>
+  <script src="js/flipbook.js"></script>
 </body>
 </html>

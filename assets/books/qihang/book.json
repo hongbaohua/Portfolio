@@ -1,0 +1,137 @@
+{
+  "id": "qihang",
+  "title": "啟航餅乾品牌設計企劃書",
+  "source": null,
+  "page": {
+    "width": 595,
+    "height": 842,
+    "unit": "pt",
+    "aspectRatio": 0.7067
+  },
+  "layout": "auto",
+  "direction": "ltr",
+  "showCover": true,
+  "pages": [
+    {
+      "type": "image",
+      "src": "pages/p001.webp",
+      "thumb": "thumbs/t001.webp",
+      "w": 1130,
+      "h": 1600,
+      "hard": true
+    },
+    {
+      "type": "image",
+      "src": "pages/p002.webp",
+      "thumb": "thumbs/t002.webp",
+      "w": 1130,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p003.webp",
+      "thumb": "thumbs/t003.webp",
+      "w": 1130,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p004.webp",
+      "thumb": "thumbs/t004.webp",
+      "w": 1130,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p005.webp",
+      "thumb": "thumbs/t005.webp",
+      "w": 1130,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p006.webp",
+      "thumb": "thumbs/t006.webp",
+      "w": 1130,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p007.webp",
+      "thumb": "thumbs/t007.webp",
+      "w": 1130,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p008.webp",
+      "thumb": "thumbs/t008.webp",
+      "w": 1130,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p009.webp",
+      "thumb": "thumbs/t009.webp",
+      "w": 1130,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p010.webp",
+      "thumb": "thumbs/t010.webp",
+      "w": 1130,
+      "h": 1600
+    },
+    {
+      "type": "image",
+      "src": "pages/p011.webp",
+      "thumb": "thumbs/t011.webp",
+      "w": 1130,
+      "h": 1600
+    }
+  ],
+  "toc": [
+    {
+      "label": "背景說明",
+      "page": 1
+    },
+    {
+      "label": "競品分析",
+      "page": 2
+    },
+    {
+      "label": "SWOT",
+      "page": 4
+    },
+    {
+      "label": "STP",
+      "page": 5
+    },
+    {
+      "label": "品牌原型及理念",
+      "page": 6
+    },
+    {
+      "label": "品牌調性、LOGO及標準字",
+      "page": 7
+    },
+    {
+      "label": "LOGO與輔助圖形",
+      "page": 8
+    },
+    {
+      "label": "應用系統及攤車設計",
+      "page": 9
+    },
+    {
+      "label": "商品包裝",
+      "page": 10
+    }
+  ],
+  "hotspots": [],
+  "generated": "2026-09-22 02:46",
+  "numbering": {
+    "mode": "sheet"
+  }
+}

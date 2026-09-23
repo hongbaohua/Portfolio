@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/work-detail.css" />
+  <link rel="stylesheet" href="vendor/stPageFlip.css" />
+  <link rel="stylesheet" href="css/flipbook.css" />
 </head>
 
 <body class="page-body">
@@ -77,6 +79,16 @@
           <div class="work-info__divider"></div>
 
           <div class="work-info__section">
+            <p class="work-info__label">查看成果</p>
+            <a href="#section-doc" class="work-external-btn">
+              <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+              線上閱讀企劃書
+            </a>
+          </div>
+
+          <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
             <p class="work-info__label">核心說明</p>
             <p class="work-info__text">從零開始的品牌建立與視覺調性設定，涵蓋色彩計畫、視覺識別系統與海報設計，打造完整的手搖飲品牌識別應用。</p>
           </div>
@@ -129,15 +141,6 @@
             <p class="work-info__text">2024年</p>
           </div>
 
-          <div class="work-info__divider"></div>
-
-          <div class="work-info__section">
-            <p class="work-info__label">相關文件</p>
-            <a href="https://www.canva.com/design/DAHG9Ksmqe8/9N7hfd_2USRoz8wTNpqChQ/view" target="_blank" rel="noopener" class="work-external-btn">
-              <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> 查看企劃書
-            </a>
-          </div>
-
         </aside>
 
         <!-- 右側內容區 -->
@@ -181,8 +184,10 @@
           <section id="section-doc">
             <h2 class="work-section-title">企劃書</h2>
             <p class="work-doc-hint"><i class="fa-solid fa-circle-info" aria-hidden="true"></i>前半為市場定位與品牌分析；<strong>第 10 頁起</strong>為<strong>完整設計成果</strong>，包含色彩系統、識別規範與應用設計。</p>
-            <div class="work-pdf-wrap reveal">
-              <iframe src="https://www.canva.com/design/DAHG9Ksmqe8/9N7hfd_2USRoz8wTNpqChQ/view?embed" title="月記LAB 企劃簡報" loading="lazy" allowfullscreen allow="fullscreen"></iframe>
+            <div class="flipbook"
+                 data-book="assets/books/yuejilabs/book.json"
+                 data-height="560">
+              <p>這份文件需要開啟 JavaScript 才能閱讀。</p>
             </div>
             <p class="work-img-caption">企劃書涵蓋品牌定位、色彩計畫、視覺識別系統與菜單設計展示</p>
           </section>
@@ -200,5 +205,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="vendor/page-flip.browser.js"></script>
+  <script src="js/flipbook.js"></script>
 </body>
 </html>

@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/work-detail.css" />
+  <link rel="stylesheet" href="vendor/stPageFlip.css" />
+  <link rel="stylesheet" href="css/flipbook.css" />
 </head>
 
 <body class="page-body">
@@ -72,6 +74,20 @@
             <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
             返回作品列表
           </a>
+          <div class="work-info__divider"></div>
+
+          <div class="work-info__section">
+            <p class="work-info__label">查看成果</p>
+            <a href="#section-doc-package" class="work-external-btn">
+              <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+              包裝提案簡報
+            </a>
+            <a href="#section-doc-research" class="work-external-btn" style="margin-top: 10px;">
+              <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+              前期調查簡報
+            </a>
+          </div>
+
           <div class="work-info__divider"></div>
 
           <div class="work-info__section">
@@ -132,20 +148,6 @@
             <p class="work-info__text">2025年</p>
           </div>
 
-          <div class="work-info__divider"></div>
-
-          <div class="work-info__section">
-            <p class="work-info__label">相關文件</p>
-            <a href="https://www.canva.com/design/DAG3q0lkPBo/bGLttsXZjnYL8487A8vyLA/view" target="_blank" rel="noopener" class="work-external-btn">
-              <i class="fa-solid fa-file-powerpoint" aria-hidden="true"></i>
-              前期調查簡報
-            </a>
-            <a href="https://www.canva.com/design/DAG3q4zyW-o/Fr5IX0fZl6_f_O6KvMf_1g/view" target="_blank" rel="noopener" class="work-external-btn" style="margin-top: 10px;">
-              <i class="fa-solid fa-file-powerpoint" aria-hidden="true"></i>
-              包裝提案簡報
-            </a>
-          </div>
-
         </aside>
 
         <div class="work-gallery">
@@ -177,24 +179,18 @@
           <section id="section-doc">
             <h2 class="work-section-title">提案簡報</h2>
 
-            <h3 class="work-section-subtitle">包裝最終提案</h3>
-            <div class="work-pdf-wrap reveal">
-              <iframe
-                src="https://www.canva.com/design/DAG3q4zyW-o/Fr5IX0fZl6_f_O6KvMf_1g/view?embed"
-                title="倆口囍包裝最終提案簡報"
-                loading="lazy"
-                allowfullscreen
-              ></iframe>
+            <h3 class="work-section-subtitle" id="section-doc-package">包裝最終提案</h3>
+            <div class="flipbook"
+                 data-book="assets/books/liangkouxi-package/book.json"
+                 data-height="560">
+              <p>這份文件需要開啟 JavaScript 才能閱讀。</p>
             </div>
 
-            <h3 class="work-section-subtitle">前期調查與初步提案</h3>
-            <div class="work-pdf-wrap reveal">
-              <iframe
-                src="https://www.canva.com/design/DAG3q0lkPBo/bGLttsXZjnYL8487A8vyLA/view?embed"
-                title="倆口囍前期調查與初步提案簡報"
-                loading="lazy"
-                allowfullscreen
-              ></iframe>
+            <h3 class="work-section-subtitle" id="section-doc-research" style="margin-top: 40px;">前期調查與初步提案</h3>
+            <div class="flipbook"
+                 data-book="assets/books/liangkouxi-research/book.json"
+                 data-height="560">
+              <p>這份文件需要開啟 JavaScript 才能閱讀。</p>
             </div>
           </section>
 
@@ -211,5 +207,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="vendor/page-flip.browser.js"></script>
+  <script src="js/flipbook.js"></script>
 </body>
 </html>

@@ -1,0 +1,145 @@
+{
+  "id": "liangkouxi-package",
+  "title": "倆口囍 包裝最終提案",
+  "source": null,
+  "page": {
+    "width": 1440,
+    "height": 809,
+    "unit": "pt",
+    "aspectRatio": 1.78
+  },
+  "layout": "auto",
+  "direction": "ltr",
+  "showCover": false,
+  "pages": [
+    {
+      "type": "image",
+      "src": "pages/p001.webp",
+      "thumb": "thumbs/t001.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p002.webp",
+      "thumb": "thumbs/t002.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p003.webp",
+      "thumb": "thumbs/t003.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p004.webp",
+      "thumb": "thumbs/t004.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p005.webp",
+      "thumb": "thumbs/t005.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p006.webp",
+      "thumb": "thumbs/t006.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p007.webp",
+      "thumb": "thumbs/t007.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p008.webp",
+      "thumb": "thumbs/t008.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p009.webp",
+      "thumb": "thumbs/t009.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p010.webp",
+      "thumb": "thumbs/t010.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p011.webp",
+      "thumb": "thumbs/t011.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p012.webp",
+      "thumb": "thumbs/t012.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p013.webp",
+      "thumb": "thumbs/t013.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p014.webp",
+      "thumb": "thumbs/t014.webp",
+      "w": 1600,
+      "h": 899
+    }
+  ],
+  "toc": [
+    {
+      "label": "A版 LOGO與標準字",
+      "page": 1
+    },
+    {
+      "label": "A版 LOGO",
+      "page": 2
+    },
+    {
+      "label": "A版 包裝",
+      "page": 5
+    },
+    {
+      "label": "B版 LOGO與標準字",
+      "page": 8
+    },
+    {
+      "label": "B版 輔助圖形",
+      "page": 9
+    },
+    {
+      "label": "B版 包裝",
+      "page": 10
+    }
+  ],
+  "hotspots": [],
+  "generated": "2026-09-22 03:19",
+  "numbering": {
+    "mode": "sheet"
+  }
+}

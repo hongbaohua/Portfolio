@@ -1,0 +1,423 @@
+{
+  "id": "liangkouxi-research",
+  "title": "倆口囍 前期調查與初步提案",
+  "source": null,
+  "page": {
+    "width": 1440,
+    "height": 809,
+    "unit": "pt",
+    "aspectRatio": 1.78
+  },
+  "layout": "auto",
+  "direction": "ltr",
+  "showCover": true,
+  "pages": [
+    {
+      "type": "image",
+      "src": "pages/p001.webp",
+      "thumb": "thumbs/t001.webp",
+      "w": 1600,
+      "h": 899,
+      "hard": true
+    },
+    {
+      "type": "image",
+      "src": "pages/p002.webp",
+      "thumb": "thumbs/t002.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p003.webp",
+      "thumb": "thumbs/t003.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p004.webp",
+      "thumb": "thumbs/t004.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p005.webp",
+      "thumb": "thumbs/t005.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p006.webp",
+      "thumb": "thumbs/t006.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p007.webp",
+      "thumb": "thumbs/t007.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p008.webp",
+      "thumb": "thumbs/t008.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p009.webp",
+      "thumb": "thumbs/t009.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p010.webp",
+      "thumb": "thumbs/t010.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p011.webp",
+      "thumb": "thumbs/t011.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p012.webp",
+      "thumb": "thumbs/t012.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p013.webp",
+      "thumb": "thumbs/t013.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p014.webp",
+      "thumb": "thumbs/t014.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p015.webp",
+      "thumb": "thumbs/t015.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p016.webp",
+      "thumb": "thumbs/t016.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p017.webp",
+      "thumb": "thumbs/t017.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p018.webp",
+      "thumb": "thumbs/t018.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p019.webp",
+      "thumb": "thumbs/t019.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p020.webp",
+      "thumb": "thumbs/t020.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p021.webp",
+      "thumb": "thumbs/t021.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p022.webp",
+      "thumb": "thumbs/t022.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p023.webp",
+      "thumb": "thumbs/t023.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p024.webp",
+      "thumb": "thumbs/t024.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p025.webp",
+      "thumb": "thumbs/t025.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p026.webp",
+      "thumb": "thumbs/t026.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p027.webp",
+      "thumb": "thumbs/t027.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p028.webp",
+      "thumb": "thumbs/t028.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p029.webp",
+      "thumb": "thumbs/t029.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p030.webp",
+      "thumb": "thumbs/t030.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p031.webp",
+      "thumb": "thumbs/t031.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p032.webp",
+      "thumb": "thumbs/t032.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p033.webp",
+      "thumb": "thumbs/t033.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p034.webp",
+      "thumb": "thumbs/t034.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p035.webp",
+      "thumb": "thumbs/t035.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p036.webp",
+      "thumb": "thumbs/t036.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p037.webp",
+      "thumb": "thumbs/t037.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p038.webp",
+      "thumb": "thumbs/t038.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p039.webp",
+      "thumb": "thumbs/t039.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p040.webp",
+      "thumb": "thumbs/t040.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p041.webp",
+      "thumb": "thumbs/t041.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p042.webp",
+      "thumb": "thumbs/t042.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p043.webp",
+      "thumb": "thumbs/t043.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p044.webp",
+      "thumb": "thumbs/t044.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p045.webp",
+      "thumb": "thumbs/t045.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p046.webp",
+      "thumb": "thumbs/t046.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p047.webp",
+      "thumb": "thumbs/t047.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p048.webp",
+      "thumb": "thumbs/t048.webp",
+      "w": 1600,
+      "h": 899
+    },
+    {
+      "type": "image",
+      "src": "pages/p049.webp",
+      "thumb": "thumbs/t049.webp",
+      "w": 1600,
+      "h": 899
+    }
+  ],
+  "toc": [
+    {
+      "label": "封面",
+      "page": 1
+    },
+    {
+      "label": "目錄",
+      "page": 2
+    },
+    {
+      "label": "市場概況",
+      "page": 4
+    },
+    {
+      "label": "消費者在意觀點",
+      "page": 6
+    },
+    {
+      "label": "人物誌",
+      "page": 10
+    },
+    {
+      "label": "同理心地圖",
+      "page": 15
+    },
+    {
+      "label": "競爭者分析",
+      "page": 16
+    },
+    {
+      "label": "價格分析",
+      "page": 26
+    },
+    {
+      "label": "LOGO與包裝分析",
+      "page": 27
+    },
+    {
+      "label": "品牌定位分析",
+      "page": 31
+    },
+    {
+      "label": "LOGO設計發想",
+      "page": 32
+    },
+    {
+      "label": "包裝定位分析",
+      "page": 38
+    },
+    {
+      "label": "包裝設計發想",
+      "page": 39
+    },
+    {
+      "label": "包裝草圖",
+      "page": 45
+    }
+  ],
+  "hotspots": [],
+  "generated": "2026-09-22 03:34",
+  "numbering": {
+    "mode": "sheet"
+  }
+}

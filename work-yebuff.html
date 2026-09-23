@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/work-detail.css" />
+  <link rel="stylesheet" href="vendor/stPageFlip.css" />
+  <link rel="stylesheet" href="css/flipbook.css" />
 </head>
 
 <body class="page-body">
@@ -81,6 +83,10 @@
               <i class="fa-brands fa-figma" aria-hidden="true"></i>
               互動網站原型
             </a>
+            <a href="#section-doc" class="work-external-btn" style="margin-top: 10px;">
+              <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+              線上閱讀企劃簡報
+            </a>
           </div>
 
           <div class="work-info__divider"></div>
@@ -136,16 +142,6 @@
           <div class="work-info__section">
             <p class="work-info__label">完成時間</p>
             <p class="work-info__text">2025年</p>
-          </div>
-
-          <div class="work-info__divider"></div>
-
-          <div class="work-info__section">
-            <p class="work-info__label">相關文件</p>
-            <a href="https://www.canva.com/design/DAG3q57FnP8/l9IRv_N5Kb-20XP7OgVP5g/view" target="_blank" rel="noopener" class="work-external-btn">
-              <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
-              查看企劃書
-            </a>
           </div>
 
         </aside>
@@ -228,13 +224,10 @@
           <section id="section-doc">
             <h2 class="work-section-title">企劃簡報</h2>
             <p class="work-doc-hint"><i class="fa-solid fa-circle-info" aria-hidden="true"></i>前半為品牌定位與分析；<strong>第 9 頁</strong>為包裝草圖，<strong>第 10 頁起</strong>為<strong>完整定案設計</strong>，包含 LOGO 與包裝設計。</p>
-            <div class="work-pdf-wrap reveal">
-              <iframe
-                src="https://www.canva.com/design/DAG3q57FnP8/l9IRv_N5Kb-20XP7OgVP5g/view?embed"
-                title="YeBuff 金運面膜企劃簡報"
-                loading="lazy"
-                allowfullscreen
-              ></iframe>
+            <div class="flipbook"
+                 data-book="assets/books/yebuff/book.json"
+                 data-height="560">
+              <p>這份文件需要開啟 JavaScript 才能閱讀。</p>
             </div>
             <p class="work-img-caption">涵蓋品牌定位、包裝設計與網站原型規劃</p>
           </section>
@@ -252,5 +245,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="vendor/page-flip.browser.js"></script>
+  <script src="js/flipbook.js"></script>
 </body>
 </html>
