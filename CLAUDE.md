@@ -122,8 +122,8 @@ web/
 ### 版本對照切換器（2026-08-02 訂定，首次套用於 ai-pawket.html）
 當一個作品有明顯的「前後兩個版本」（例如 AI Studio 原型 → Claude Code 重啟版），且兩版落差大到需要各自完整敘事時，用同頁切換器呈現，不開新頁面、不直接覆蓋舊內容：
 
-1. **切換器 UI**：`.version-switch` 置於 `.container` 內、`.work-layout` 之前，兩個 `.version-switch__btn`（`data-vswitch="prototype"` / `"rebuild"`，命名可依實際版本調整），預設第一個按鈕帶 `.is-active`
-2. **狀態容器**：`<main class="work-content" data-active-version="prototype">` 上帶 `data-active-version`，JS 點擊切換器按鈕時改寫這個屬性（見頁面底部 inline `<script>`，邏輯很短，不需要抽成 main.js 共用函式）
+1. **切換器 UI**：`.version-switch` 置於 `.container` 內、`.work-layout` 之前，兩個 `.version-switch__btn`（`data-vswitch="prototype"` / `"rebuild"`，命名可依實際版本調整），**預設顯示新版**（2026-10-01 Ivy 要求改成一進頁面就是重啟版）：`rebuild` 按鈕帶 `.is-active`／`aria-selected="true"`
+2. **狀態容器**：`<main class="work-content" data-active-version="rebuild">` 上帶 `data-active-version`（初始值要跟帶 `.is-active` 的按鈕一致），JS 點擊切換器按鈕時改寫這個屬性（見頁面底部 inline `<script>`，邏輯很短，不需要抽成 main.js 共用函式）
 3. **內容顯示控制**：純 CSS，`[data-active-version="prototype"] [data-vshow="rebuild"] { display:none }`（反向同理），所有會隨版本改變的區塊都包一層 `data-vshow="prototype"` 或 `"rebuild"`——包含側欄 `work-info__section`、試用按鈕、大綱 nav（兩份完整的 `.work-outline`）、簡介、中段所有敘事區塊
 4. **id 命名**：兩版各自 section 的 `id` 不可重複，第二版一律加 `r-` 前綴（例如 `r-arch`、`r-gallery`），大綱 nav 的錨點對應各自版本的 id
 5. **試用按鈕**：已停用的版本用 `.work-try-btn.work-try-btn--disabled`（純文字說明，不可點擊，附「已由OO版取代，僅存截圖記錄」字樣）；仍可用的版本維持原本 `.work-try-btn` 連結
